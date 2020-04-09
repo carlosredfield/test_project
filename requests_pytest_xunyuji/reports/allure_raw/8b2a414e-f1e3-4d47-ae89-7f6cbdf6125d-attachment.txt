@@ -1,0 +1,4 @@
+INFO     root:test_shopping_car.py:20 开始测试：添加商品至购物车成功用例
+INFO     root:test_shopping_car.py:25 添加商品至购物车
+INFO     root:method.py:18 发起post请求
+INFO     root:test_shopping_car.py:29 添加消息为：添加成功

@@ -2599,3 +2599,4 @@
 2020-04-09 11:54:17,783 shopping_car_page.py[line:37] INFO 点击编辑按钮
 2020-04-09 11:54:19,033 shopping_car_page.py[line:41] INFO 点击全选
 2020-04-09 11:54:20,111 shopping_car_page.py[line:45] INFO 点击删除所选
+2020-04-09 13:28:14,156 conftest.py[line:37] INFO 开始启动app

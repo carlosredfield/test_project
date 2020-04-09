@@ -1,0 +1,2 @@
+寻渔记web端接口自动化测试
+python+requests+pytest+allure

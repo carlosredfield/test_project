@@ -1,0 +1,2 @@
+茶7网app端自动化测试
+python+appium+pytest+jenkins
