@@ -1,0 +1,35 @@
+{
+	
+	
+	"test_add_address_scuess":
+		{
+		"url":"https://www.rzmwzc.com/Member/memberaddress/add_do",
+		"header":
+			{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0",
+	        "Accept-Language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
+	        "Accept-Encoding": "gzip, deflate, br",
+	        "Connection": "keep-alive"},
+        "data":
+			[{"name": "qiaoben","province": "huoxingsheng","city": "huoxingshi",
+              "district": "huoxingjieban","address": "qiaobencun13hao32dong",
+              "main_phone": "19999999999","default": 0}]
+
+		},
+
+
+	"test_add_address_fail":
+		{
+		"url":"https://www.rzmwzc.com/Member/memberaddress/add_do",
+		"header":
+			{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0",
+	        "Accept-Language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
+	        "Accept-Encoding": "gzip, deflate, br",
+	        "Connection": "keep-alive"},
+        "data":
+			[{"name": "","province": "", "city": "","district": "",
+              "address": "","main_phone": "","default": 0}]
+			
+		}
+
+
+}

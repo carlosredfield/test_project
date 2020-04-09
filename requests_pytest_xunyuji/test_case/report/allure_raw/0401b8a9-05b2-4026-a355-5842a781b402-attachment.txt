@@ -1,0 +1,6 @@
+INFO     root:test_login.py:36 开始测试：登录成功用例
+INFO     root:test_login.py:25 获取cookies
+INFO     root:method.py:13 发起get请求
+INFO     root:test_login.py:38 登录
+INFO     root:method.py:18 发起post请求
+INFO     root:test_login.py:42 判断登录成功，成功状态码为1，当前状态码的值为：0

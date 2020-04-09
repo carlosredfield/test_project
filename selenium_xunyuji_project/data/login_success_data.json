@@ -1,0 +1,22 @@
+{
+   "test_login_success_01":{
+        "num":1,
+        "username":"16533907260",
+        "password":"xunyuji123"
+    },
+    "test_login_success_02":{
+        "num":2,
+        "username":"user",
+        "password":"",
+    },
+    "test_login_success_03":{
+        "num":3,
+        "username":"error",
+        "password":"error",
+    },
+    "test_login_success_04":{
+        "num":4,
+        "username":"admin",
+        "password":"admin123456",
+    }
+} 

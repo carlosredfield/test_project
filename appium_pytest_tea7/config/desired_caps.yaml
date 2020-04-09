@@ -1,0 +1,13 @@
+platformName: Android
+platformVersion: '5.1'
+deviceName: 192.168.3.24:5556
+
+appname: com.tea7.app.activity.SplashActivity.apk
+noReset: False
+unicodeKeyboard: True
+resetKeyboard: True
+
+appPackage: com.tea7.app
+appActivity: com.tea7.app.activity.SplashActivity
+ip: 127.0.0.1
+port: 4723

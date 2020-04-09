@@ -1,0 +1,21 @@
+
+DB: 
+    host: 127.0.0.1
+    port: 3306
+    user: root
+    password: 
+    db: test
+    charset: utf8
+
+send_mail: 
+    send_user: zjpcarlos1230@163.com
+    password: 163carlos1230
+    host: smtp.163.com
+    subject: 寻渔记项目接口自动化测试报告
+    contents: 内容
+    enclosure:
+        - ../report
+
+    rece_user: 
+        - zjpcarlos1230@163.com
+  

@@ -1,0 +1,5792 @@
+
+
+
+
+
+
+User 8%, System 5%, IOW 0%, IRQ 0%
+
+User 11 + Nice 0 + Sys 7 + Idle 110 + IOW 0 + IRQ 0 + SIRQ 0 = 128
+
+
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+
+26600  0   9% R     1  12748K   1668K  fg shell    top
+
+  819  0   2% S   124 2367272K 148760K  fg system   system_server
+
+22826  0   1% S    85 1959064K 238140K  fg u0_a150  com.tea7.app
+
+  174  1   0% S     1      0K      0K  fg root     mmcqd/0
+
+ 3888  0   0% S    35 1582432K  47944K  bg u0_a64   com.meizu.flyme.service.find
+
+ 1032  0   0% S    48 2254228K 184956K  fg u0_a32   com.android.systemui
+
+24043  0   0% S     1      0K      0K  fg root     kworker/0:2
+
+  302  0   0% S    19 144576K   6612K  fg system   /system/bin/surfaceflinger
+
+20344  0   0% S     1      0K      0K  fg root     kworker/u16:5
+
+   12  1   0% R     1      0K      0K  fg root     ksoftirqd/1
+
+   15  2   0% R     1      0K      0K  fg root     migration/2
+
+   16  2   0% R     1      0K      0K  fg root     ksoftirqd/2
+
+   18  2   0% S     1      0K      0K  fg root     kworker/2:0H
+
+   19  3   0% R     1      0K      0K  fg root     migration/3
+
+   20  3   0% R     1      0K      0K  fg root     ksoftirqd/3
+
+   22  3   0% S     1      0K      0K  fg root     kworker/3:0H
+
+   23  4   0% R     1      0K      0K  fg root     migration/4
+
+   24  4   0% R     1      0K      0K  fg root     ksoftirqd/4
+
+   26  4   0% S     1      0K      0K  fg root     kworker/4:0H
+
+   27  5   0% R     1      0K      0K  fg root     migration/5
+
+   28  5   0% R     1      0K      0K  fg root     ksoftirqd/5
+
+   30  5   0% S     1      0K      0K  fg root     kworker/5:0H
+
+   31  6   0% R     1      0K      0K  fg root     migration/6
+
+   32  6   0% R     1      0K      0K  fg root     ksoftirqd/6
+
+   33  6   0% S     1      0K      0K  fg root     kworker/6:0
+
+   34  6   0% S     1      0K      0K  fg root     kworker/6:0H
+
+   35  7   0% R     1      0K      0K  fg root     migration/7
+
+   36  7   0% R     1      0K      0K  fg root     ksoftirqd/7
+
+   37  0   0% S     1      0K      0K  fg root     kworker/7:0
+
+   38  7   0% S     1      0K      0K  fg root     kworker/7:0H
+
+   39  0   0% S     1      0K      0K  fg root     khelper
+
+   40  0   0% S     1      0K      0K  fg root     fs_sync
+
+   41  0   0% S     1      0K      0K  fg root     suspend
+
+   42  0   0% S     1      0K      0K  fg root     writeback
+
+   43  4   0% S     1      0K      0K  fg root     bioset
+
+   44  4   0% S     1      0K      0K  fg root     crypto
+
+   45  4   0% S     1      0K      0K  fg root     kblockd
+
+   46  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   47  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   48  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   49  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   50  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   51  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   52  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   53  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   54  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   55  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   56  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   57  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   58  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   59  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   60  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   61  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   62  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   63  4   0% S     1      0K      0K  fg root     cmdq_task
+
+   65  4   0% S     1      0K      0K  fg root     pool_reload_wor
+
+   66  4   0% S     1      0K      0K  fg root     mmdvfs_gpumon
+
+   67  4   0% S     1      0K      0K  fg root     khubd
+
+   69  5   0% S     1      0K      0K  fg root     cfg80211
+
+   70  0   0% S     1      0K      0K  fg root     pmic_6331_threa
+
+   71  4   0% S     1      0K      0K  fg root     pmic_6332_threa
+
+   72  0   0% S     1      0K      0K  fg root     cfinteractive
+
+   85  0   0% S     1      0K      0K  fg root     input_boost
+
+   86  1   0% S     1      0K      0K  fg root     kswapd0
+
+   87  0   0% S     1      0K      0K  fg root     fsnotify_mark
+
+   88  0   0% S     1      0K      0K  fg root     cifsiod
+
+  104  0   0% S     1      0K      0K  fg root     ion_mm_heap
+
+  105  0   0% S     1      0K      0K  fg root     mt_gpufreq_inpu
+
+  106  0   0% S     1      0K      0K  fg root     hps_main
+
+  107  0   0% S     1      0K      0K  fg root     hang_detect
+
+  108  0   0% S     1      0K      0K  fg root     rrc_set_refresh
+
+  109  0   0% S     1      0K      0K  fg root     rrc_set_low_ref
+
+  110  0   0% S     1      0K      0K  fg root     conn-md-thread
+
+  111  0   0% S     1      0K      0K  fg root     md1_cldma_worke
+
+  112  0   0% S     1      0K      0K  fg root     md1_tx0_worker
+
+  113  0   0% S     1      0K      0K  fg root     md1_tx1_worker
+
+  114  0   0% S     1      0K      0K  fg root     md1_tx2_worker
+
+  115  0   0% S     1      0K      0K  fg root     md1_tx3_worker
+
+  116  0   0% S     1      0K      0K  fg root     md1_tx4_worker
+
+  117  0   0% S     1      0K      0K  fg root     md1_tx5_worker
+
+  118  0   0% S     1      0K      0K  fg root     md1_tx6_worker
+
+  119  0   0% S     1      0K      0K  fg root     md1_tx7_worker
+
+  120  0   0% S     1      0K      0K  fg root     md1_rx0_worker
+
+  121  0   0% S     1      0K      0K  fg root     md1_rx1_worker
+
+  122  0   0% S     1      0K      0K  fg root     md1_rx2_worker
+
+  124  0   0% S     1      0K      0K  fg root     md1_rx3_worker
+
+  125  0   0% S     1      0K      0K  fg root     md1_rx4_worker
+
+  126  0   0% S     1      0K      0K  fg root     md1_rx5_worker
+
+  127  0   0% S     1      0K      0K  fg root     md1_rx6_worker
+
+  128  0   0% S     1      0K      0K  fg root     md1_rx7_worker
+
+  129  0   0% S     1      0K      0K  fg root     ccci_ipc_3
+
+  130  0   0% S     1      0K      0K  fg root     ccci_ipc_6
+
+  131  1   0% S     1      0K      0K  fg root     ccci_ctrl
+
+  132  0   0% S     1      0K      0K  fg root     ccci_sys
+
+  133  0   0% S     1      0K      0K  fg root     ccci_poll
+
+  134  0   0% S     1      0K      0K  fg root     mc_fastcall
+
+  137  6   0% S     1      0K      0K  fg root     decouple_update
+
+  139  4   0% S     1      0K      0K  fg root     decouple_trigge
+
+  140  3   0% S     1      0K      0K  fg root     display_check_a
+
+  141  0   0% S     1      0K      0K  fg root     present_fence_w
+
+  142  0   0% S     1      0K      0K  fg root     frame_update_wo
+
+  143  0   0% D     1      0K      0K  fg root     disp_idlemgr
+
+  144  0   0% S     1      0K      0K  fg root     accdet
+
+  145  0   0% S     1      0K      0K  fg root     weird_headphone
+
+  146  5   0% S     1      0K      0K  fg root     accdet_disable
+
+  147  0   0% S     1      0K      0K  fg root     accdet_eint
+
+  148  4   0% S     1      0K      0K  fg root     vcm_work
+
+  149  1   0% S     1      0K      0K  fg root     mtk-tpd
+
+  150  0   0% S     1      0K      0K  fg root     dsx_exp_workque
+
+  151  5   0% S     1      0K      0K  fg root     kworker/5:1
+
+  153  0   0% S     1      0K      0K  fg root     fwu_workqueue
+
+  154  0   0% S     1      0K      0K  fg root     isl29125wq
+
+  155  0   0% S     1      0K      0K  fg root     pa1212wq
+
+  156  0   0% S     1      0K      0K  fg root     kthermp
+
+  158  0   0% S     1      0K      0K  fg root     vcorefs
+
+  159  4   0% S     1      0K      0K  fg root     pvr_timer
+
+  160  3   0% S     1      0K      0K  fg root     pvr_defer_free
+
+  161  0   0% S     1      0K      0K  fg root     pvr_devices_wd_
+
+  162  4   0% S     1      0K      0K  fg root     pvr_sync_defer_
+
+  163  4   0% S     1      0K      0K  fg root     pvr_sync_check_
+
+  164  4   0% S     1      0K      0K  fg root     mwp
+
+  165  4   0% S     1      0K      0K  fg root     emi_mpu
+
+  166  4   0% S     1      0K      0K  fg root     MD32_REBOOT_WQ
+
+  167  4   0% S     1      0K      0K  fg root     MD32_WDT_WQ
+
+  168  4   0% S     1      0K      0K  fg root     MD32_ASSERT_WQ
+
+  169  0   0% S     1      0K      0K  fg root     fpc1020_worker
+
+  170  0   0% S     1      0K      0K  fg root     uether
+
+  171  0   0% S     1      0K      0K  fg root     uether_rx1
+
+  172  0   0% S     1      0K      0K  fg root     bat_thread_kthr
+
+  173  0   0% S     1      0K      0K  fg root     mtk charger_hv_
+
+  175  0   0% S     1      0K      0K  fg root     mmcqd/0boot0
+
+  176  0   0% S     1      0K      0K  fg root     mmcqd/0boot1
+
+  177  0   0% S     1      0K      0K  fg root     mmcqd/0rpmb
+
+  178  1   0% S     1      0K      0K  fg root     kworker/1:1H
+
+  179  5   0% S     1      0K      0K  fg root     kworker/5:1H
+
+  180  1   0% S     1      0K      0K  fg root     binder
+
+  181  0   0% S     1      0K      0K  fg root     mtk_vibrator
+
+  183  0   0% S     1      0K      0K  fg root     irq/297-inv_irq
+
+  184  0   0% S     1      0K      0K  fg root     tspdrv_workqueu
+
+  189  0   0% S     1      0K      0K  fg root     kworker/6:1
+
+  190  3   0% S     1      0K      0K  fg root     kworker/3:1
+
+  191  0   0% S     1      0K      0K  fg root     pkt_thread
+
+  192  0   0% S     1      0K      0K  fg root     deferwq
+
+  193  1   0% S     1      0K      0K  fg root     PTP_CTRL_CPU
+
+  194  1   0% S     1      0K      0K  fg root     PTP_CTRL_LTE
+
+  195  0   0% S     1      0K      0K  fg root     PTP_CTRL_GPU
+
+  196  1   0% S     1      0K      0K  fg root     PTP_CTRL_SOC
+
+  199  0   0% S     1      0K      0K  fg root     irq/410-gpio-ke
+
+  200  0   0% S     1      0K      0K  fg root     irq/411-gpio-ke
+
+  201  0   0% S     1      0K      0K  fg root     irq/289-gpio-ke
+
+  202  0   0% S     1      0K      0K  fg root     wdtk-0
+
+  203  1   0% S     1      0K      0K  fg root     wdtk-1
+
+  204  0   0% S     1      0K      0K  fg root     wdtk-2
+
+  205  0   0% S     1      0K      0K  fg root     wdtk-3
+
+  206  0   0% S     1      0K      0K  fg root     wdtk-4
+
+  207  0   0% S     1      0K      0K  fg root     wdtk-5
+
+  208  0   0% S     1      0K      0K  fg root     wdtk-6
+
+  209  0   0% S     1      0K      0K  fg root     wdtk-7
+
+  210  0   0% S     1      0K      0K  fg root     f_mtp
+
+  211  0   0% S     1      0K      0K  fg root     file-storage
+
+  212  7   0% S     1      0K      0K  fg root     kworker/7:1H
+
+  213  6   0% S     1      0K      0K  fg root     kworker/6:1H
+
+  215  0   0% S     1      0K      0K  fg root     kworker/0:1H
+
+  216  4   0% S     1      0K      0K  fg root     kworker/4:1H
+
+  217  3   0% S     1      0K      0K  fg root     kworker/3:1H
+
+  218  2   0% S     1      0K      0K  fg root     kworker/2:1H
+
+  219  0   0% S     1   9036K    860K  fg root     /sbin/ueventd
+
+  221  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p18
+
+  222  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  223  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p14
+
+  224  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  229  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p20
+
+  230  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  234  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p19
+
+  235  1   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  241  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p5-
+
+  242  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  248  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p6-
+
+  249  1   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  265  1   0% S     1      0K      0K  fg root     loop0
+
+  266  0   0% S    10  22328K   1376K  fg system   /system/bin/mcDriverDaemon
+
+  267  2   0% S     1      0K      0K  fg root     mc_log
+
+  296  0   0% S     5  20832K   1432K  fg logd     /system/bin/logd
+
+  297  0   0% S     1  10076K    476K  fg root     /sbin/healthd
+
+  298  0   0% S     1  10264K    604K  fg root     /system/bin/sh
+
+  299  0   0% S     1  14060K    868K  fg root     /system/bin/lmkd
+
+  300  1   0% S     1  10448K    664K  fg system   /system/bin/servicemanager
+
+  301  0   0% S     3  22964K   1412K  fg root     /system/bin/vold
+
+  303  0   0% S     1  11108K    752K  fg system   /system/bin/autokd
+
+  307  0   0% S     1  10160K    576K  fg system   /system/bin/6620_launcher
+
+  308  0   0% S     1  10156K    612K  fg root     /system/bin/stp_dump3
+
+  309  0   0% S     1   9748K    912K  fg radio    /system/bin/ccci_fsd
+
+  310  0   0% S     2  11824K   1140K  fg system   /system/bin/ccci_mdinit
+
+  321  0   0% S     1      0K      0K  fg root     kauditd
+
+  322  0   0% S     9  25256K   1392K  fg root     /system/bin/netd
+
+  323  0   0% S     2  17900K    932K  fg root     /system/bin/flymed
+
+  324  0   0% S     1  10880K   1160K  fg root     /system/bin/debuggerd
+
+  325  0   0% S     1  12700K    900K  fg root     /system/bin/debuggerd64
+
+  326  3   0% S     6  57672K   4804K  fg drm      /system/bin/drmserver
+
+  327  0   0% S    34 288204K  24532K  fg media    /system/bin/mediaserver
+
+  328  1   0% S     1  10532K    704K  fg install  /system/bin/installd
+
+  332  2   0% S     1  16428K   1428K  fg keystore /system/bin/keystore
+
+  334  0   0% S     2  15584K    996K  fg shell    /system/bin/mobile_log_d
+
+  336  3   0% S     2  13372K    688K  fg shell    /system/bin/netdiag
+
+  339  4   0% S     3  35956K   2012K  fg system   /system/bin/aal
+
+  341  1   0% S     2  19816K    904K  fg system   /system/bin/dm_agent_binder
+
+  342  4   0% S     2  19548K    968K  fg system   /system/bin/ppl_agent
+
+  343  0   0% S     2  18968K    784K  fg system   /system/bin/matv
+
+  344  5   0% S    33  50584K   2504K  fg gps      /system/bin/mtk_agpsd
+
+  345  0   0% S     1  10336K    676K  fg wifi     /system/bin/wifi2agps
+
+  350  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  351  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  352  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  390  0   0% S     1  16088K   1332K  fg gps      /system/xbin/mnld
+
+  392  1   0% S     2  19404K   1000K  fg system   /system/bin/nvram_agent_binder
+
+  394  0   0% S     3  11400K    636K  fg system   /system/bin/thermal
+
+  395  0   0% S     1  12836K    824K  fg system   /system/bin/thermald
+
+  396  0   0% S     1  12828K    776K  fg shell    /system/bin/batterywarning
+
+  397  4   0% S     2  17096K   1132K  fg system   /system/bin/MtkCodecService
+
+  398  2   0% S     3  24068K   1456K  fg system   /system/bin/guiext-server
+
+  399  0   0% S     2  11400K    696K  fg system   /system/bin/immvibed
+
+  401  0   0% S     6 2126352K  39748K  fg root     zygote64
+
+  402  5   0% S     6 1535524K  37476K  fg root     zygote
+
+  404  0   0% S     6  34776K   4936K  fg bluetoot /system/bin/mtkbt
+
+  405  3   0% S     3  66848K   4008K  fg system   /system/bin/program_binary_service
+
+  406  0   0% S     2  17208K    800K  fg root     /system/bin/sdcard
+
+  420  2   0% S     1      0K      0K  fg root     pkgld
+
+  590  3   0% S     1  64888K   4104K  fg system   /system/bin/em_svr
+
+  740  0   0% S     1      0K      0K  fg root     mtk_stp_psm
+
+  741  0   0% S     1      0K      0K  fg root     mtk_stp_btm
+
+  742  0   0% S     1      0K      0K  fg root     mtk_wmtd
+
+  770  0   0% S     1      0K      0K  fg root     ksdioirqd/mmc1
+
+  771  0   0% S     1      0K      0K  fg root     stp_sdio_tx_rx
+
+  772  0   0% S     1      0K      0K  fg root     test_report_wor
+
+  774  0   0% S     3  14916K   1036K  fg shell    /system/bin/emdlogger1
+
+  775  0   0% S    15  27848K    936K  fg radio    /system/bin/gsm0710muxd
+
+  791  2   0% S    28  47188K   2000K  fg radio    /system/bin/mtkrild
+
+  933  2   0% S     1      0K      0K  fg root     kworker/2:2
+
+ 1020  0   0% S     1      0K      0K  fg root     tx_thread
+
+ 1021  0   0% S     1      0K      0K  fg root     hif_thread
+
+ 1022  0   0% S     1      0K      0K  fg root     rx_thread
+
+ 1063  0   0% S     1  17324K   2272K  fg wifi     /system/bin/wpa_supplicant
+
+ 1153  5   0% S    45 2267796K  74224K  fg system   com.meizu.battery
+
+ 1236  0   0% S    21 2143672K  48236K  fg system   com.meizu.experiencedatasync
+
+ 1324  0   0% S    37 2177080K  51720K  bg u0_a18   com.meizu.location
+
+ 1387  3   0% S     1      0K      0K  fg root     kworker/3:2
+
+ 1440  2   0% S    32 2175700K  72428K  fg u0_a4    com.android.incallui
+
+ 1487  0   0% S    18 2140164K  37280K  fg u0_a68   com.mediatek.nlpservice
+
+ 1497  5   0% S    56 2188528K  54156K  fg system   com.meizu.alphame
+
+ 1554  4   0% S    16 2138856K  39428K  fg system   com.fingerprints.service
+
+ 1587  0   0% S    64 2239476K  79412K  fg radio    com.android.phone
+
+ 1726  3   0% S    73 2399976K 116308K  fg system   com.meizu.safe
+
+ 2063  0   0% S    42 2186460K  64624K  fg system   com.meizu.dataservice
+
+ 2476  0   0% S    39 2190808K  65340K  fg u0_a32   com.flyme.systemuitools
+
+ 2545  3   0% S    26 2158488K  43712K  bg u0_a65   com.meizu.share
+
+ 3050  1   0% S     1      0K      0K  fg root     kworker/1:2H
+
+ 3483  0   0% S    27 1562736K  42760K  bg u0_a61   com.meizu.cloud
+
+ 4203  0   0% S    22 1557612K  42632K  bg u0_a61   com.meizu.cloud:mzservice_v1
+
+ 4464  4   0% S     1      0K      0K  fg root     kworker/4:2
+
+ 4589  0   0% S    41 2185856K  51380K  bg u0_a60   com.meizu.account
+
+ 5042  1   0% S    28 2167300K  56884K  bg u0_a67   com.meizu.mzsyncservice
+
+ 5874  0   0% S    43 2223636K  73392K  fg system   com.meizu.flyme.update
+
+ 5925  3   0% S    25 2169608K  48964K  fg system   com.app.activate
+
+ 5938  3   0% S    23 2167492K  43764K  bg system   com.app.xcore
+
+ 5959  2   0% S    37 2297316K  60872K  fg system   com.app.meteor
+
+ 5980  0   0% S    39 2297092K  59320K  bg system   com.android.packageinstaller
+
+ 6416  0   0% S    32 1602180K  50452K  fg u0_a74   com.flyme.roamingpay
+
+ 6648  0   0% S    28 1572352K  40972K  bg u0_a85   com.meizu.net.pedometer
+
+ 7475  1   0% S     4  92256K  18180K  bg u0_a74   /data/app/com.flyme.roamingpay-2/lib/arm/libweexjsb.so
+
+ 9376  3   0% S    41 1651148K  78520K  bg u0_a25   com.meizu.flyme.input
+
+13031  4   0% S    78 1667716K  63868K  bg u0_a38   com.meizu.mstore
+
+13096  0   0% S    32 2190204K  58248K  bg u0_a9    android.process.media
+
+14894  4   0% S    23 1562624K  41324K  bg u0_a61   com.meizu.cloud:mz_tracker
+
+15822  0   0% S   134 2142216K  92364K  bg u0_a98   com.tencent.mm:tools
+
+15903  0   0% S   171 2134924K 163460K  fg u0_a98   com.tencent.mm
+
+16079  0   0% S    92 1892772K  81248K  fg u0_a98   com.tencent.mm:push
+
+16161  0   0% S    18 2141768K  45136K  bg u0_a3    com.android.providers.calendar
+
+16319  0   0% S   127 2138724K 125352K  bg u0_a98   com.tencent.mm:appbrand0
+
+16340  0   0% S   102 1992228K  95032K  bg u0_a98   com.tencent.mm:appbrand1
+
+19300  0   0% S    28 1573232K  46448K  bg u0_a51   com.iflytek.speechsuite
+
+20680  0   0% T     1  10264K    564K  fg u0_a88   sh
+
+20917  0   0% S    63 1670912K  75732K  bg u0_a73   com.meizu.media.reader
+
+21960  0   0% S     1      0K      0K  fg root     kworker/u16:2
+
+22215  0   0% T     1 1651216K  53872K  fg u0_a88   com.houwei.guaishang
+
+22331  1   0% S     1      0K      0K  fg root     fs_suspend_syss
+
+22881  0   0% S    27 1581312K  71736K  fg u0_a150  com.tea7.app:core
+
+22912  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+22927  0   0% S    31 1598696K  78688K  bg u0_a150  com.tea7.app:pushservice
+
+23147  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+23150  0   0% S     1      0K      0K  fg root     kworker/u16:4
+
+23315  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23373  0   0% S    55 1627776K  68992K  bg u0_a21   com.meizu.media.music
+
+    1  0   0% S     1   9044K   1284K  fg root     /init
+
+23516  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23627  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+23664  1   0% S     1      0K      0K  fg root     kworker/u16:7
+
+23673  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23775  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23820  0   0% S    32 2186120K  67012K  bg u0_a40   com.android.calendar:remote
+
+23919  2   0% S     1      0K      0K  fg root     kworker/2:1
+
+23927  0   0% S    25 2167500K  63740K  bg u0_a13   com.meizu.flyme.launcher
+
+23933  1   0% S    23 2148408K  46444K  fg radio    com.flyme.virtual.softsim
+
+23962  0   0% S    17 2139120K  40412K  fg radio    com.android.flyme.bridge.softsim
+
+24019  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24073  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24138  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24200  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24245  0   0% S    49 1632540K  74416K  bg u0_a5    com.meizu.customizecenter
+
+24305  5   0% S     4  92256K  22908K  bg u0_a5    /data/app/com.meizu.customizecenter-2/lib/arm/libweexjsb.so
+
+24410  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24473  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24544  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24545  0   0% S     1      0K      0K  fg root     kworker/u16:6
+
+24630  1   0% S     1      0K      0K  fg root     kworker/1:0
+
+24674  0   0% S     1      0K      0K  fg root     kworker/u17:3
+
+24716  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24850  1   0% S     1      0K      0K  fg root     kworker/1:2
+
+24930  0   0% S     1      0K      0K  fg root     kworker/u16:1
+
+24931  0   0% S     1      0K      0K  fg root     kworker/u16:8
+
+24937  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+25026  2   0% S     1      0K      0K  fg root     kworker/u17:1
+
+25069  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+25099  0   0% S    39 1601864K  59020K  bg u0_a11   com.android.email
+
+25178  0   0% S     1      0K      0K  fg root     kworker/0:3
+
+25217  0   0% S    45 2189728K  66168K  bg system   com.meizu.voiceassistant
+
+25238  0   0% S    24 2198808K  61096K  bg u0_a4    android.process.acore
+
+25320  0   0% S    32 1607016K  84096K  bg u0_a7    com.meizu.netcontactservice
+
+25342  4   0% S     1      0K      0K  fg root     kworker/4:0
+
+25389  1   0% S    16 2158272K  45620K  bg u0_a31   com.android.soundrecorder
+
+25452  0   0% S     1      0K      0K  fg root     kworker/u17:2
+
+25477  0   0% S    36 1613176K  59184K  bg u0_a10   com.meizu.media.ebook:pushservice
+
+25503  3   0% S    59 1629108K  71616K  bg u0_a10   com.meizu.media.ebook
+
+25646  4   0% S    31 1631356K  61096K  bg u0_a29   com.meizu.sceneinfo
+
+25705  0   0% S    33 1588160K  67132K  bg u0_a7    com.android.dialer
+
+25778  0   0% S    32 1576708K  52448K  bg u0_a48   com.meizu.flyme.telecom
+
+25803  0   0% S    25 1566436K  50260K  bg u0_a47   com.meizu.flymecommunication
+
+25885  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+25893  2   0% S     1      0K      0K  fg root     kworker/2:0
+
+25924  0   0% S     1      0K      0K  fg root     kworker/0:0
+
+25943  1   0% S    17 2144640K  42692K  bg system   com.flyme.systemuiplugin
+
+25968  0   0% S    18 2140596K  43592K  bg private_ com.meizu.privacy
+
+26048  3   0% S    21 1589728K  50496K  bg u0_a76   com.meizu.net.search
+
+26430  2   0% Z     1      0K      0K  fg u0_a150  ps
+
+28462  5   0% S     1      0K      0K  fg root     kworker/5:2
+
+31028  1   0% S     1  10372K    656K  fg dhcp     /system/bin/dhcpcd
+
+32449  0   0% S     8  20344K    352K  fg shell    /sbin/adbd
+
+23445  1   0% S     1      0K      0K  fg root     kworker/1:3
+
+    2  1   0% S     1      0K      0K  fg root     kthreadd
+
+    3  0   0% S     1      0K      0K  fg root     ksoftirqd/0
+
+    5  0   0% S     1      0K      0K  fg root     kworker/0:0H
+
+    7  0   0% S     1      0K      0K  fg root     migration/0
+
+    8  0   0% R     1      0K      0K  fg root     rcu_preempt
+
+    9  0   0% S     1      0K      0K  fg root     rcu_bh
+
+   10  0   0% S     1      0K      0K  fg root     rcu_sched
+
+   11  1   0% R     1      0K      0K  fg root     migration/1
+
+
+
+
+
+
+
+User 0%, System 0%, IOW 734809399369%, IRQ 0%
+
+User 83 + Nice 3 + Sys 42 + Idle 25107846 + IOW -3853 + IRQ 0 + SIRQ 0 = 25104121
+
+
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+
+22826  1   0% S    86 1961756K 238036K  fg u0_a150  com.tea7.app
+
+  327  1   0% S    34 288204K  24532K  fg media    /system/bin/mediaserver
+
+26600  0   0% R     1  12748K   1696K  fg shell    top
+
+  819  2   0% S   124 2367272K 148728K  fg system   system_server
+
+  302  0   0% S    19 144576K   6612K  fg system   /system/bin/surfaceflinger
+
+ 1021  0   0% S     1      0K      0K  fg root     hif_thread
+
+16319  0   0% S   128 2139804K 125460K  bg u0_a98   com.tencent.mm:appbrand0
+
+24043  0   0% S     1      0K      0K  fg root     kworker/0:2
+
+  770  1   0% S     1      0K      0K  fg root     ksdioirqd/mmc1
+
+  142  0   0% S     1      0K      0K  fg root     frame_update_wo
+
+24545  2   0% S     1      0K      0K  fg root     kworker/u16:6
+
+  106  1   0% S     1      0K      0K  fg root     hps_main
+
+16340  1   0% S   103 1993308K  95132K  bg u0_a98   com.tencent.mm:appbrand1
+
+23664  2   0% S     1      0K      0K  fg root     kworker/u16:7
+
+  339  4   0% S     3  35956K   2012K  fg system   /system/bin/aal
+
+20344  2   0% S     1      0K      0K  fg root     kworker/u16:5
+
+24931  1   0% S     1      0K      0K  fg root     kworker/u16:8
+
+ 1020  2   0% S     1      0K      0K  fg root     tx_thread
+
+  322  0   0% S     9  25256K   1344K  fg root     /system/bin/netd
+
+  105  0   0% S     1      0K      0K  fg root     mt_gpufreq_inpu
+
+ 1022  0   0% S     1      0K      0K  fg root     rx_thread
+
+ 1032  0   0% S    48 2254228K 184956K  fg u0_a32   com.android.systemui
+
+   72  0   0% S     1      0K      0K  fg root     cfinteractive
+
+   32  6   0% R     1      0K      0K  fg root     ksoftirqd/6
+
+   33  6   0% S     1      0K      0K  fg root     kworker/6:0
+
+   34  6   0% S     1      0K      0K  fg root     kworker/6:0H
+
+   35  7   0% R     1      0K      0K  fg root     migration/7
+
+   36  7   0% R     1      0K      0K  fg root     ksoftirqd/7
+
+   37  0   0% S     1      0K      0K  fg root     kworker/7:0
+
+   38  7   0% S     1      0K      0K  fg root     kworker/7:0H
+
+   39  0   0% S     1      0K      0K  fg root     khelper
+
+   40  0   0% S     1      0K      0K  fg root     fs_sync
+
+   41  0   0% S     1      0K      0K  fg root     suspend
+
+   42  0   0% S     1      0K      0K  fg root     writeback
+
+   43  4   0% S     1      0K      0K  fg root     bioset
+
+   44  4   0% S     1      0K      0K  fg root     crypto
+
+   45  4   0% S     1      0K      0K  fg root     kblockd
+
+   46  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   47  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   48  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   49  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   50  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   51  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   52  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   53  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   54  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   55  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   56  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   57  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   58  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   59  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   60  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   61  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   62  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   63  4   0% S     1      0K      0K  fg root     cmdq_task
+
+   65  4   0% S     1      0K      0K  fg root     pool_reload_wor
+
+   66  4   0% S     1      0K      0K  fg root     mmdvfs_gpumon
+
+   67  4   0% S     1      0K      0K  fg root     khubd
+
+   69  5   0% S     1      0K      0K  fg root     cfg80211
+
+   70  0   0% S     1      0K      0K  fg root     pmic_6331_threa
+
+   71  4   0% S     1      0K      0K  fg root     pmic_6332_threa
+
+   85  0   0% S     1      0K      0K  fg root     input_boost
+
+   86  1   0% S     1      0K      0K  fg root     kswapd0
+
+   87  0   0% S     1      0K      0K  fg root     fsnotify_mark
+
+   88  0   0% S     1      0K      0K  fg root     cifsiod
+
+  104  0   0% S     1      0K      0K  fg root     ion_mm_heap
+
+  107  0   0% S     1      0K      0K  fg root     hang_detect
+
+  108  0   0% S     1      0K      0K  fg root     rrc_set_refresh
+
+  109  0   0% S     1      0K      0K  fg root     rrc_set_low_ref
+
+  110  0   0% S     1      0K      0K  fg root     conn-md-thread
+
+  111  0   0% S     1      0K      0K  fg root     md1_cldma_worke
+
+  112  0   0% S     1      0K      0K  fg root     md1_tx0_worker
+
+  113  0   0% S     1      0K      0K  fg root     md1_tx1_worker
+
+  114  0   0% S     1      0K      0K  fg root     md1_tx2_worker
+
+  115  0   0% S     1      0K      0K  fg root     md1_tx3_worker
+
+  116  0   0% S     1      0K      0K  fg root     md1_tx4_worker
+
+  117  0   0% S     1      0K      0K  fg root     md1_tx5_worker
+
+  118  0   0% S     1      0K      0K  fg root     md1_tx6_worker
+
+  119  0   0% S     1      0K      0K  fg root     md1_tx7_worker
+
+  120  0   0% S     1      0K      0K  fg root     md1_rx0_worker
+
+  121  0   0% S     1      0K      0K  fg root     md1_rx1_worker
+
+  122  0   0% S     1      0K      0K  fg root     md1_rx2_worker
+
+  124  0   0% S     1      0K      0K  fg root     md1_rx3_worker
+
+  125  0   0% S     1      0K      0K  fg root     md1_rx4_worker
+
+  126  0   0% S     1      0K      0K  fg root     md1_rx5_worker
+
+  127  0   0% S     1      0K      0K  fg root     md1_rx6_worker
+
+  128  0   0% S     1      0K      0K  fg root     md1_rx7_worker
+
+  129  0   0% S     1      0K      0K  fg root     ccci_ipc_3
+
+  130  0   0% S     1      0K      0K  fg root     ccci_ipc_6
+
+  131  1   0% S     1      0K      0K  fg root     ccci_ctrl
+
+  132  0   0% S     1      0K      0K  fg root     ccci_sys
+
+  133  0   0% S     1      0K      0K  fg root     ccci_poll
+
+  134  0   0% S     1      0K      0K  fg root     mc_fastcall
+
+  137  6   0% S     1      0K      0K  fg root     decouple_update
+
+  139  4   0% S     1      0K      0K  fg root     decouple_trigge
+
+  140  0   0% S     1      0K      0K  fg root     display_check_a
+
+  141  0   0% S     1      0K      0K  fg root     present_fence_w
+
+  143  0   0% D     1      0K      0K  fg root     disp_idlemgr
+
+  144  0   0% S     1      0K      0K  fg root     accdet
+
+  145  0   0% S     1      0K      0K  fg root     weird_headphone
+
+  146  5   0% S     1      0K      0K  fg root     accdet_disable
+
+  147  0   0% S     1      0K      0K  fg root     accdet_eint
+
+  148  4   0% S     1      0K      0K  fg root     vcm_work
+
+  149  1   0% S     1      0K      0K  fg root     mtk-tpd
+
+  150  0   0% S     1      0K      0K  fg root     dsx_exp_workque
+
+  151  5   0% S     1      0K      0K  fg root     kworker/5:1
+
+  153  0   0% S     1      0K      0K  fg root     fwu_workqueue
+
+  154  0   0% S     1      0K      0K  fg root     isl29125wq
+
+  155  0   0% S     1      0K      0K  fg root     pa1212wq
+
+  156  0   0% S     1      0K      0K  fg root     kthermp
+
+  158  0   0% S     1      0K      0K  fg root     vcorefs
+
+  159  4   0% S     1      0K      0K  fg root     pvr_timer
+
+  160  3   0% S     1      0K      0K  fg root     pvr_defer_free
+
+  161  0   0% S     1      0K      0K  fg root     pvr_devices_wd_
+
+  162  4   0% S     1      0K      0K  fg root     pvr_sync_defer_
+
+  163  4   0% S     1      0K      0K  fg root     pvr_sync_check_
+
+  164  4   0% S     1      0K      0K  fg root     mwp
+
+  165  4   0% S     1      0K      0K  fg root     emi_mpu
+
+  166  4   0% S     1      0K      0K  fg root     MD32_REBOOT_WQ
+
+  167  4   0% S     1      0K      0K  fg root     MD32_WDT_WQ
+
+  168  4   0% S     1      0K      0K  fg root     MD32_ASSERT_WQ
+
+  169  2   0% S     1      0K      0K  fg root     fpc1020_worker
+
+  170  0   0% S     1      0K      0K  fg root     uether
+
+  171  0   0% S     1      0K      0K  fg root     uether_rx1
+
+  172  0   0% S     1      0K      0K  fg root     bat_thread_kthr
+
+  173  2   0% S     1      0K      0K  fg root     mtk charger_hv_
+
+  174  0   0% S     1      0K      0K  fg root     mmcqd/0
+
+  175  0   0% S     1      0K      0K  fg root     mmcqd/0boot0
+
+  176  0   0% S     1      0K      0K  fg root     mmcqd/0boot1
+
+  177  0   0% S     1      0K      0K  fg root     mmcqd/0rpmb
+
+  178  1   0% S     1      0K      0K  fg root     kworker/1:1H
+
+  179  5   0% S     1      0K      0K  fg root     kworker/5:1H
+
+  180  1   0% S     1      0K      0K  fg root     binder
+
+  181  0   0% S     1      0K      0K  fg root     mtk_vibrator
+
+  183  0   0% S     1      0K      0K  fg root     irq/297-inv_irq
+
+  184  0   0% S     1      0K      0K  fg root     tspdrv_workqueu
+
+  189  0   0% S     1      0K      0K  fg root     kworker/6:1
+
+  190  3   0% S     1      0K      0K  fg root     kworker/3:1
+
+  191  0   0% S     1      0K      0K  fg root     pkt_thread
+
+  192  0   0% S     1      0K      0K  fg root     deferwq
+
+  193  1   0% S     1      0K      0K  fg root     PTP_CTRL_CPU
+
+  194  1   0% S     1      0K      0K  fg root     PTP_CTRL_LTE
+
+  195  0   0% S     1      0K      0K  fg root     PTP_CTRL_GPU
+
+  196  1   0% S     1      0K      0K  fg root     PTP_CTRL_SOC
+
+  199  0   0% S     1      0K      0K  fg root     irq/410-gpio-ke
+
+  200  0   0% S     1      0K      0K  fg root     irq/411-gpio-ke
+
+  201  0   0% S     1      0K      0K  fg root     irq/289-gpio-ke
+
+  202  0   0% S     1      0K      0K  fg root     wdtk-0
+
+  203  1   0% S     1      0K      0K  fg root     wdtk-1
+
+  204  2   0% S     1      0K      0K  fg root     wdtk-2
+
+  205  3   0% S     1      0K      0K  fg root     wdtk-3
+
+  206  0   0% S     1      0K      0K  fg root     wdtk-4
+
+  207  0   0% S     1      0K      0K  fg root     wdtk-5
+
+  208  0   0% S     1      0K      0K  fg root     wdtk-6
+
+  209  0   0% S     1      0K      0K  fg root     wdtk-7
+
+  210  0   0% S     1      0K      0K  fg root     f_mtp
+
+  211  0   0% S     1      0K      0K  fg root     file-storage
+
+  212  7   0% S     1      0K      0K  fg root     kworker/7:1H
+
+  213  6   0% S     1      0K      0K  fg root     kworker/6:1H
+
+  215  0   0% S     1      0K      0K  fg root     kworker/0:1H
+
+  216  4   0% S     1      0K      0K  fg root     kworker/4:1H
+
+  217  3   0% S     1      0K      0K  fg root     kworker/3:1H
+
+  218  2   0% S     1      0K      0K  fg root     kworker/2:1H
+
+  219  0   0% S     1   9036K    860K  fg root     /sbin/ueventd
+
+  221  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p18
+
+  222  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  223  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p14
+
+  224  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  229  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p20
+
+  230  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  234  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p19
+
+  235  1   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  241  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p5-
+
+  242  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  248  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p6-
+
+  249  1   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  265  1   0% S     1      0K      0K  fg root     loop0
+
+  266  0   0% S    10  22328K   1376K  fg system   /system/bin/mcDriverDaemon
+
+  267  2   0% S     1      0K      0K  fg root     mc_log
+
+  296  0   0% S     5  20832K   1432K  fg logd     /system/bin/logd
+
+  297  0   0% S     1  10076K    476K  fg root     /sbin/healthd
+
+  298  0   0% S     1  10264K    604K  fg root     /system/bin/sh
+
+  299  0   0% S     1  14060K    868K  fg root     /system/bin/lmkd
+
+  300  0   0% S     1  10448K    664K  fg system   /system/bin/servicemanager
+
+  301  0   0% S     3  22964K   1412K  fg root     /system/bin/vold
+
+  303  0   0% S     1  11108K    752K  fg system   /system/bin/autokd
+
+  307  1   0% S     1  10160K    576K  fg system   /system/bin/6620_launcher
+
+  308  0   0% S     1  10156K    612K  fg root     /system/bin/stp_dump3
+
+  309  0   0% S     1   9748K    912K  fg radio    /system/bin/ccci_fsd
+
+  310  0   0% S     2  11824K   1140K  fg system   /system/bin/ccci_mdinit
+
+  321  0   0% S     1      0K      0K  fg root     kauditd
+
+  323  0   0% S     2  17900K    932K  fg root     /system/bin/flymed
+
+  324  0   0% S     1  10880K   1160K  fg root     /system/bin/debuggerd
+
+  325  0   0% S     1  12700K    900K  fg root     /system/bin/debuggerd64
+
+  326  3   0% S     6  57672K   4804K  fg drm      /system/bin/drmserver
+
+  328  1   0% S     1  10532K    704K  fg install  /system/bin/installd
+
+  332  2   0% S     1  16428K   1428K  fg keystore /system/bin/keystore
+
+  334  0   0% S     2  15584K    996K  fg shell    /system/bin/mobile_log_d
+
+  336  3   0% S     2  13372K    688K  fg shell    /system/bin/netdiag
+
+  341  1   0% S     2  19816K    904K  fg system   /system/bin/dm_agent_binder
+
+  342  4   0% S     2  19548K    968K  fg system   /system/bin/ppl_agent
+
+  343  0   0% S     2  18968K    784K  fg system   /system/bin/matv
+
+  344  5   0% S    33  50584K   2504K  fg gps      /system/bin/mtk_agpsd
+
+  345  0   0% S     1  10336K    676K  fg wifi     /system/bin/wifi2agps
+
+  350  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  351  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  352  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  390  0   0% S     1  16088K   1332K  fg gps      /system/xbin/mnld
+
+  392  1   0% S     2  19404K   1000K  fg system   /system/bin/nvram_agent_binder
+
+  394  0   0% S     3  11400K    636K  fg system   /system/bin/thermal
+
+  395  0   0% S     1  12836K    824K  fg system   /system/bin/thermald
+
+  396  0   0% S     1  12828K    776K  fg shell    /system/bin/batterywarning
+
+  397  4   0% S     2  17096K   1132K  fg system   /system/bin/MtkCodecService
+
+  398  2   0% S     3  24068K   1456K  fg system   /system/bin/guiext-server
+
+  399  0   0% S     2  11400K    696K  fg system   /system/bin/immvibed
+
+  401  0   0% S     6 2126352K  39748K  fg root     zygote64
+
+  402  5   0% S     6 1535524K  37476K  fg root     zygote
+
+  404  0   0% S     6  34776K   4936K  fg bluetoot /system/bin/mtkbt
+
+  405  3   0% S     3  66848K   4008K  fg system   /system/bin/program_binary_service
+
+  406  0   0% S     2  17208K    800K  fg root     /system/bin/sdcard
+
+  420  2   0% S     1      0K      0K  fg root     pkgld
+
+  590  3   0% S     1  64888K   4104K  fg system   /system/bin/em_svr
+
+  740  0   0% S     1      0K      0K  fg root     mtk_stp_psm
+
+  741  0   0% S     1      0K      0K  fg root     mtk_stp_btm
+
+  742  0   0% S     1      0K      0K  fg root     mtk_wmtd
+
+  771  0   0% S     1      0K      0K  fg root     stp_sdio_tx_rx
+
+  772  0   0% S     1      0K      0K  fg root     test_report_wor
+
+  774  0   0% S     3  14916K   1036K  fg shell    /system/bin/emdlogger1
+
+  775  0   0% S    15  27848K    936K  fg radio    /system/bin/gsm0710muxd
+
+  791  2   0% S    28  47188K   2000K  fg radio    /system/bin/mtkrild
+
+  933  2   0% S     1      0K      0K  fg root     kworker/2:2
+
+ 1063  0   0% S     1  17324K   2272K  fg wifi     /system/bin/wpa_supplicant
+
+ 1153  5   0% S    45 2267796K  74224K  fg system   com.meizu.battery
+
+ 1236  0   0% S    21 2143672K  48236K  fg system   com.meizu.experiencedatasync
+
+ 1324  0   0% S    37 2177080K  51720K  bg u0_a18   com.meizu.location
+
+ 1387  3   0% S     1      0K      0K  fg root     kworker/3:2
+
+ 1440  2   0% S    32 2175700K  72428K  fg u0_a4    com.android.incallui
+
+ 1487  0   0% S    18 2140164K  37280K  fg u0_a68   com.mediatek.nlpservice
+
+ 1497  5   0% S    56 2188528K  54156K  fg system   com.meizu.alphame
+
+ 1554  4   0% S    16 2138856K  39428K  fg system   com.fingerprints.service
+
+ 1587  0   0% S    64 2239476K  79412K  fg radio    com.android.phone
+
+ 1726  3   0% S    73 2399976K 116308K  fg system   com.meizu.safe
+
+ 2063  0   0% S    42 2186460K  64624K  fg system   com.meizu.dataservice
+
+ 2476  0   0% S    39 2190808K  65340K  fg u0_a32   com.flyme.systemuitools
+
+ 2545  3   0% S    26 2158488K  43712K  bg u0_a65   com.meizu.share
+
+ 3050  1   0% S     1      0K      0K  fg root     kworker/1:2H
+
+ 3483  0   0% S    27 1562736K  42760K  bg u0_a61   com.meizu.cloud
+
+ 3888  0   0% S    35 1582432K  47944K  bg u0_a64   com.meizu.flyme.service.find
+
+ 4203  0   0% S    22 1557612K  42632K  bg u0_a61   com.meizu.cloud:mzservice_v1
+
+ 4464  4   0% S     1      0K      0K  fg root     kworker/4:2
+
+ 4589  0   0% S    41 2185856K  51380K  bg u0_a60   com.meizu.account
+
+ 5042  1   0% S    28 2167300K  56884K  bg u0_a67   com.meizu.mzsyncservice
+
+ 5874  0   0% S    43 2223636K  73392K  fg system   com.meizu.flyme.update
+
+ 5925  3   0% S    25 2169608K  48964K  fg system   com.app.activate
+
+ 5938  3   0% S    23 2167492K  43764K  bg system   com.app.xcore
+
+ 5959  2   0% S    37 2297316K  60872K  fg system   com.app.meteor
+
+ 5980  0   0% S    39 2297092K  59320K  bg system   com.android.packageinstaller
+
+ 6416  0   0% S    32 1602180K  50452K  fg u0_a74   com.flyme.roamingpay
+
+ 6648  0   0% S    28 1572352K  40972K  bg u0_a85   com.meizu.net.pedometer
+
+ 7475  1   0% S     4  92256K  18180K  bg u0_a74   /data/app/com.flyme.roamingpay-2/lib/arm/libweexjsb.so
+
+ 9376  2   0% S    41 1651148K  78784K  bg u0_a25   com.meizu.flyme.input
+
+13031  4   0% S    78 1667716K  63868K  bg u0_a38   com.meizu.mstore
+
+13096  0   0% S    32 2190204K  58248K  bg u0_a9    android.process.media
+
+14894  4   0% S    23 1562624K  41324K  bg u0_a61   com.meizu.cloud:mz_tracker
+
+15822  0   0% S   134 2142216K  92364K  bg u0_a98   com.tencent.mm:tools
+
+15903  0   0% S   171 2134924K 163460K  fg u0_a98   com.tencent.mm
+
+16079  0   0% S    92 1892772K  81248K  fg u0_a98   com.tencent.mm:push
+
+16161  0   0% S    18 2141768K  45136K  bg u0_a3    com.android.providers.calendar
+
+19300  0   0% S    28 1573232K  46448K  bg u0_a51   com.iflytek.speechsuite
+
+20680  0   0% T     1  10264K    564K  fg u0_a88   sh
+
+20917  0   0% S    63 1670912K  75732K  bg u0_a73   com.meizu.media.reader
+
+21960  0   0% S     1      0K      0K  fg root     kworker/u16:2
+
+22215  0   0% T     1 1651216K  53872K  fg u0_a88   com.houwei.guaishang
+
+22331  1   0% S     1      0K      0K  fg root     fs_suspend_syss
+
+22881  0   0% S    27 1581312K  71736K  fg u0_a150  com.tea7.app:core
+
+22912  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+22927  0   0% S    31 1598696K  78688K  bg u0_a150  com.tea7.app:pushservice
+
+23147  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+23150  0   0% S     1      0K      0K  fg root     kworker/u16:4
+
+23315  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23373  0   0% S    55 1627776K  68992K  bg u0_a21   com.meizu.media.music
+
+    1  0   0% S     1   9044K   1284K  fg root     /init
+
+23516  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23627  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+23673  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23775  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23820  0   0% S    32 2186120K  67012K  bg u0_a40   com.android.calendar:remote
+
+23919  2   0% S     1      0K      0K  fg root     kworker/2:1
+
+23927  0   0% S    25 2167500K  63740K  bg u0_a13   com.meizu.flyme.launcher
+
+23933  1   0% S    23 2148408K  46444K  fg radio    com.flyme.virtual.softsim
+
+23962  0   0% S    17 2139120K  40412K  fg radio    com.android.flyme.bridge.softsim
+
+24019  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24073  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24138  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24200  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24245  0   0% S    49 1632540K  74416K  bg u0_a5    com.meizu.customizecenter
+
+24305  5   0% S     4  92256K  22908K  bg u0_a5    /data/app/com.meizu.customizecenter-2/lib/arm/libweexjsb.so
+
+24410  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24473  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24544  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24630  1   0% S     1      0K      0K  fg root     kworker/1:0
+
+24674  0   0% S     1      0K      0K  fg root     kworker/u17:3
+
+24716  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24850  1   0% S     1      0K      0K  fg root     kworker/1:2
+
+24930  0   0% S     1      0K      0K  fg root     kworker/u16:1
+
+24937  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+25026  2   0% S     1      0K      0K  fg root     kworker/u17:1
+
+25069  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+25099  0   0% S    39 1601864K  59020K  bg u0_a11   com.android.email
+
+25178  0   0% S     1      0K      0K  fg root     kworker/0:3
+
+25217  0   0% S    45 2189728K  66168K  bg system   com.meizu.voiceassistant
+
+25238  0   0% S    24 2198808K  61096K  bg u0_a4    android.process.acore
+
+25320  0   0% S    32 1607016K  84096K  bg u0_a7    com.meizu.netcontactservice
+
+25342  4   0% S     1      0K      0K  fg root     kworker/4:0
+
+25389  1   0% S    16 2158272K  45620K  bg u0_a31   com.android.soundrecorder
+
+25452  0   0% S     1      0K      0K  fg root     kworker/u17:2
+
+25477  0   0% S    36 1613176K  59184K  bg u0_a10   com.meizu.media.ebook:pushservice
+
+25503  3   0% S    59 1629108K  71616K  bg u0_a10   com.meizu.media.ebook
+
+25646  4   0% S    31 1631356K  61096K  bg u0_a29   com.meizu.sceneinfo
+
+25705  0   0% S    33 1588160K  67132K  bg u0_a7    com.android.dialer
+
+25778  0   0% S    32 1576708K  52448K  bg u0_a48   com.meizu.flyme.telecom
+
+25803  0   0% S    25 1566436K  50260K  bg u0_a47   com.meizu.flymecommunication
+
+25885  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+25893  2   0% S     1      0K      0K  fg root     kworker/2:0
+
+25924  0   0% S     1      0K      0K  fg root     kworker/0:0
+
+25943  1   0% S    17 2144640K  42692K  bg system   com.flyme.systemuiplugin
+
+25968  0   0% S    18 2140596K  43592K  bg private_ com.meizu.privacy
+
+26048  3   0% S    21 1589728K  50496K  bg u0_a76   com.meizu.net.search
+
+26430  2   0% Z     1      0K      0K  fg u0_a150  ps
+
+28462  5   0% S     1      0K      0K  fg root     kworker/5:2
+
+31028  1   0% S     1  10372K    656K  fg dhcp     /system/bin/dhcpcd
+
+32449  0   0% S     8  20344K    352K  fg shell    /sbin/adbd
+
+23445  1   0% S     1      0K      0K  fg root     kworker/1:3
+
+    2  1   0% S     1      0K      0K  fg root     kthreadd
+
+    3  0   0% S     1      0K      0K  fg root     ksoftirqd/0
+
+    5  0   0% S     1      0K      0K  fg root     kworker/0:0H
+
+    7  0   0% S     1      0K      0K  fg root     migration/0
+
+    8  1   0% S     1      0K      0K  fg root     rcu_preempt
+
+    9  0   0% S     1      0K      0K  fg root     rcu_bh
+
+   10  1   0% S     1      0K      0K  fg root     rcu_sched
+
+   11  1   0% S     1      0K      0K  fg root     migration/1
+
+   12  1   0% S     1      0K      0K  fg root     ksoftirqd/1
+
+   15  2   0% S     1      0K      0K  fg root     migration/2
+
+   16  2   0% S     1      0K      0K  fg root     ksoftirqd/2
+
+   18  2   0% S     1      0K      0K  fg root     kworker/2:0H
+
+   19  3   0% S     1      0K      0K  fg root     migration/3
+
+   20  3   0% S     1      0K      0K  fg root     ksoftirqd/3
+
+   22  3   0% S     1      0K      0K  fg root     kworker/3:0H
+
+   23  4   0% R     1      0K      0K  fg root     migration/4
+
+   24  4   0% R     1      0K      0K  fg root     ksoftirqd/4
+
+   26  4   0% S     1      0K      0K  fg root     kworker/4:0H
+
+   27  5   0% R     1      0K      0K  fg root     migration/5
+
+   28  5   0% R     1      0K      0K  fg root     ksoftirqd/5
+
+   30  5   0% S     1      0K      0K  fg root     kworker/5:0H
+
+   31  6   0% R     1      0K      0K  fg root     migration/6
+
+
+
+
+
+
+
+User 41%, System 18%, IOW 0%, IRQ 0%
+
+User 188 + Nice 38 + Sys 102 + Idle 216 + IOW 0 + IRQ 0 + SIRQ 3 = 547
+
+
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+
+22826  2  38% S    88 1961668K 232964K  fg u0_a150  com.tea7.app
+
+  327  2   7% S    34 288204K  24532K  fg media    /system/bin/mediaserver
+
+26600  3   1% R     1  12748K   1696K  fg shell    top
+
+  302  2   1% S    19 144576K   6612K  fg system   /system/bin/surfaceflinger
+
+  819  3   1% S   124 2367272K 148896K  fg system   system_server
+
+ 1021  0   0% S     1      0K      0K  fg root     hif_thread
+
+  770  1   0% S     1      0K      0K  fg root     ksdioirqd/mmc1
+
+24043  0   0% S     1      0K      0K  fg root     kworker/0:2
+
+ 1022  4   0% S     1      0K      0K  fg root     rx_thread
+
+ 1032  2   0% S    48 2254228K 184888K  fg u0_a32   com.android.systemui
+
+ 1020  1   0% S     1      0K      0K  fg root     tx_thread
+
+24931  2   0% S     1      0K      0K  fg root     kworker/u16:8
+
+ 9376  0   0% S    41 1651148K  78784K  bg u0_a25   com.meizu.flyme.input
+
+32449  0   0% S     8  20344K    448K  fg shell    /sbin/adbd
+
+  297  1   0% S     1  10076K    476K  fg root     /sbin/healthd
+
+    8  0   0% S     1      0K      0K  fg root     rcu_preempt
+
+   11  1   0% S     1      0K      0K  fg root     migration/1
+
+  300  1   0% S     1  10448K    664K  fg system   /system/bin/servicemanager
+
+   72  0   0% S     1      0K      0K  fg root     cfinteractive
+
+  775  0   0% S    15  27848K    936K  fg radio    /system/bin/gsm0710muxd
+
+24545  1   0% S     1      0K      0K  fg root     kworker/u16:6
+
+23664  2   0% S     1      0K      0K  fg root     kworker/u16:7
+
+  149  1   0% S     1      0K      0K  fg root     mtk-tpd
+
+   34  6   0% S     1      0K      0K  fg root     kworker/6:0H
+
+   35  7   0% R     1      0K      0K  fg root     migration/7
+
+   36  7   0% R     1      0K      0K  fg root     ksoftirqd/7
+
+   37  0   0% S     1      0K      0K  fg root     kworker/7:0
+
+   38  7   0% S     1      0K      0K  fg root     kworker/7:0H
+
+   39  0   0% S     1      0K      0K  fg root     khelper
+
+   40  0   0% S     1      0K      0K  fg root     fs_sync
+
+   41  0   0% S     1      0K      0K  fg root     suspend
+
+   42  0   0% S     1      0K      0K  fg root     writeback
+
+   43  4   0% S     1      0K      0K  fg root     bioset
+
+   44  4   0% S     1      0K      0K  fg root     crypto
+
+   45  4   0% S     1      0K      0K  fg root     kblockd
+
+   46  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   47  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   48  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   49  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   50  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   51  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   52  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   53  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   54  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   55  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   56  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   57  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   58  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   59  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   60  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   61  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   62  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   63  4   0% S     1      0K      0K  fg root     cmdq_task
+
+   65  4   0% S     1      0K      0K  fg root     pool_reload_wor
+
+   66  4   0% S     1      0K      0K  fg root     mmdvfs_gpumon
+
+   67  4   0% S     1      0K      0K  fg root     khubd
+
+   69  5   0% S     1      0K      0K  fg root     cfg80211
+
+   70  0   0% S     1      0K      0K  fg root     pmic_6331_threa
+
+   71  4   0% S     1      0K      0K  fg root     pmic_6332_threa
+
+   85  0   0% S     1      0K      0K  fg root     input_boost
+
+   86  1   0% S     1      0K      0K  fg root     kswapd0
+
+   87  0   0% S     1      0K      0K  fg root     fsnotify_mark
+
+   88  0   0% S     1      0K      0K  fg root     cifsiod
+
+  104  0   0% S     1      0K      0K  fg root     ion_mm_heap
+
+  105  0   0% S     1      0K      0K  fg root     mt_gpufreq_inpu
+
+  106  1   0% S     1      0K      0K  fg root     hps_main
+
+  107  0   0% S     1      0K      0K  fg root     hang_detect
+
+  108  0   0% S     1      0K      0K  fg root     rrc_set_refresh
+
+  109  0   0% S     1      0K      0K  fg root     rrc_set_low_ref
+
+  110  0   0% S     1      0K      0K  fg root     conn-md-thread
+
+  111  0   0% S     1      0K      0K  fg root     md1_cldma_worke
+
+  112  0   0% S     1      0K      0K  fg root     md1_tx0_worker
+
+  113  0   0% S     1      0K      0K  fg root     md1_tx1_worker
+
+  114  0   0% S     1      0K      0K  fg root     md1_tx2_worker
+
+  115  0   0% S     1      0K      0K  fg root     md1_tx3_worker
+
+  116  0   0% S     1      0K      0K  fg root     md1_tx4_worker
+
+  117  0   0% S     1      0K      0K  fg root     md1_tx5_worker
+
+  118  0   0% S     1      0K      0K  fg root     md1_tx6_worker
+
+  119  0   0% S     1      0K      0K  fg root     md1_tx7_worker
+
+  120  0   0% S     1      0K      0K  fg root     md1_rx0_worker
+
+  121  0   0% S     1      0K      0K  fg root     md1_rx1_worker
+
+  122  0   0% S     1      0K      0K  fg root     md1_rx2_worker
+
+  124  0   0% S     1      0K      0K  fg root     md1_rx3_worker
+
+  125  0   0% S     1      0K      0K  fg root     md1_rx4_worker
+
+  126  0   0% S     1      0K      0K  fg root     md1_rx5_worker
+
+  127  0   0% S     1      0K      0K  fg root     md1_rx6_worker
+
+  128  0   0% S     1      0K      0K  fg root     md1_rx7_worker
+
+  129  0   0% S     1      0K      0K  fg root     ccci_ipc_3
+
+  130  0   0% S     1      0K      0K  fg root     ccci_ipc_6
+
+  131  1   0% S     1      0K      0K  fg root     ccci_ctrl
+
+  132  0   0% S     1      0K      0K  fg root     ccci_sys
+
+  133  0   0% S     1      0K      0K  fg root     ccci_poll
+
+  134  0   0% S     1      0K      0K  fg root     mc_fastcall
+
+  137  6   0% S     1      0K      0K  fg root     decouple_update
+
+  139  4   0% S     1      0K      0K  fg root     decouple_trigge
+
+  140  2   0% S     1      0K      0K  fg root     display_check_a
+
+  141  0   0% S     1      0K      0K  fg root     present_fence_w
+
+  142  2   0% S     1      0K      0K  fg root     frame_update_wo
+
+  143  0   0% D     1      0K      0K  fg root     disp_idlemgr
+
+  144  0   0% S     1      0K      0K  fg root     accdet
+
+  145  0   0% S     1      0K      0K  fg root     weird_headphone
+
+  146  5   0% S     1      0K      0K  fg root     accdet_disable
+
+  147  0   0% S     1      0K      0K  fg root     accdet_eint
+
+  148  4   0% S     1      0K      0K  fg root     vcm_work
+
+  150  0   0% S     1      0K      0K  fg root     dsx_exp_workque
+
+  151  5   0% S     1      0K      0K  fg root     kworker/5:1
+
+  153  0   0% S     1      0K      0K  fg root     fwu_workqueue
+
+  154  0   0% S     1      0K      0K  fg root     isl29125wq
+
+  155  0   0% S     1      0K      0K  fg root     pa1212wq
+
+  156  0   0% S     1      0K      0K  fg root     kthermp
+
+  158  0   0% S     1      0K      0K  fg root     vcorefs
+
+  159  4   0% S     1      0K      0K  fg root     pvr_timer
+
+  160  3   0% S     1      0K      0K  fg root     pvr_defer_free
+
+  161  3   0% S     1      0K      0K  fg root     pvr_devices_wd_
+
+  162  4   0% S     1      0K      0K  fg root     pvr_sync_defer_
+
+  163  4   0% S     1      0K      0K  fg root     pvr_sync_check_
+
+  164  4   0% S     1      0K      0K  fg root     mwp
+
+  165  4   0% S     1      0K      0K  fg root     emi_mpu
+
+  166  4   0% S     1      0K      0K  fg root     MD32_REBOOT_WQ
+
+  167  4   0% S     1      0K      0K  fg root     MD32_WDT_WQ
+
+  168  4   0% S     1      0K      0K  fg root     MD32_ASSERT_WQ
+
+  169  2   0% S     1      0K      0K  fg root     fpc1020_worker
+
+  170  0   0% S     1      0K      0K  fg root     uether
+
+  171  0   0% S     1      0K      0K  fg root     uether_rx1
+
+  172  1   0% S     1      0K      0K  fg root     bat_thread_kthr
+
+  173  1   0% S     1      0K      0K  fg root     mtk charger_hv_
+
+  174  0   0% S     1      0K      0K  fg root     mmcqd/0
+
+  175  0   0% S     1      0K      0K  fg root     mmcqd/0boot0
+
+  176  0   0% S     1      0K      0K  fg root     mmcqd/0boot1
+
+  177  0   0% S     1      0K      0K  fg root     mmcqd/0rpmb
+
+  178  1   0% S     1      0K      0K  fg root     kworker/1:1H
+
+  179  5   0% S     1      0K      0K  fg root     kworker/5:1H
+
+  180  1   0% S     1      0K      0K  fg root     binder
+
+  181  0   0% S     1      0K      0K  fg root     mtk_vibrator
+
+  183  0   0% S     1      0K      0K  fg root     irq/297-inv_irq
+
+  184  0   0% S     1      0K      0K  fg root     tspdrv_workqueu
+
+  189  0   0% S     1      0K      0K  fg root     kworker/6:1
+
+  190  3   0% S     1      0K      0K  fg root     kworker/3:1
+
+  191  0   0% S     1      0K      0K  fg root     pkt_thread
+
+  192  0   0% S     1      0K      0K  fg root     deferwq
+
+  193  2   0% S     1      0K      0K  fg root     PTP_CTRL_CPU
+
+  194  1   0% S     1      0K      0K  fg root     PTP_CTRL_LTE
+
+  195  0   0% S     1      0K      0K  fg root     PTP_CTRL_GPU
+
+  196  1   0% S     1      0K      0K  fg root     PTP_CTRL_SOC
+
+  199  0   0% S     1      0K      0K  fg root     irq/410-gpio-ke
+
+  200  0   0% S     1      0K      0K  fg root     irq/411-gpio-ke
+
+  201  0   0% S     1      0K      0K  fg root     irq/289-gpio-ke
+
+  202  0   0% S     1      0K      0K  fg root     wdtk-0
+
+  203  1   0% S     1      0K      0K  fg root     wdtk-1
+
+  204  2   0% S     1      0K      0K  fg root     wdtk-2
+
+  205  3   0% S     1      0K      0K  fg root     wdtk-3
+
+  206  4   0% S     1      0K      0K  fg root     wdtk-4
+
+  207  0   0% S     1      0K      0K  fg root     wdtk-5
+
+  208  0   0% S     1      0K      0K  fg root     wdtk-6
+
+  209  0   0% S     1      0K      0K  fg root     wdtk-7
+
+  210  0   0% S     1      0K      0K  fg root     f_mtp
+
+  211  0   0% S     1      0K      0K  fg root     file-storage
+
+  212  7   0% S     1      0K      0K  fg root     kworker/7:1H
+
+  213  6   0% S     1      0K      0K  fg root     kworker/6:1H
+
+  215  0   0% S     1      0K      0K  fg root     kworker/0:1H
+
+  216  4   0% S     1      0K      0K  fg root     kworker/4:1H
+
+  217  3   0% S     1      0K      0K  fg root     kworker/3:1H
+
+  218  2   0% S     1      0K      0K  fg root     kworker/2:1H
+
+  219  3   0% S     1   9036K    860K  fg root     /sbin/ueventd
+
+  221  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p18
+
+  222  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  223  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p14
+
+  224  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  229  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p20
+
+  230  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  234  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p19
+
+  235  1   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  241  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p5-
+
+  242  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  248  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p6-
+
+  249  1   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  265  1   0% S     1      0K      0K  fg root     loop0
+
+  266  0   0% S    10  22328K   1376K  fg system   /system/bin/mcDriverDaemon
+
+  267  2   0% S     1      0K      0K  fg root     mc_log
+
+  296  0   0% S     5  20832K   1432K  fg logd     /system/bin/logd
+
+  298  0   0% S     1  10264K    604K  fg root     /system/bin/sh
+
+  299  0   0% S     1  14060K    868K  fg root     /system/bin/lmkd
+
+  301  0   0% S     3  22964K   1412K  fg root     /system/bin/vold
+
+  303  1   0% S     1  11108K    752K  fg system   /system/bin/autokd
+
+  307  1   0% S     1  10160K    576K  fg system   /system/bin/6620_launcher
+
+  308  0   0% S     1  10156K    612K  fg root     /system/bin/stp_dump3
+
+  309  0   0% S     1   9748K    912K  fg radio    /system/bin/ccci_fsd
+
+  310  0   0% S     2  11824K   1140K  fg system   /system/bin/ccci_mdinit
+
+  321  0   0% S     1      0K      0K  fg root     kauditd
+
+  322  0   0% S     9  25256K   1312K  fg root     /system/bin/netd
+
+  323  0   0% S     2  17900K    932K  fg root     /system/bin/flymed
+
+  324  0   0% S     1  10880K   1160K  fg root     /system/bin/debuggerd
+
+  325  0   0% S     1  12700K    900K  fg root     /system/bin/debuggerd64
+
+  326  3   0% S     6  57672K   4804K  fg drm      /system/bin/drmserver
+
+  328  1   0% S     1  10532K    704K  fg install  /system/bin/installd
+
+  332  2   0% S     1  16428K   1428K  fg keystore /system/bin/keystore
+
+  334  0   0% S     2  15584K    996K  fg shell    /system/bin/mobile_log_d
+
+  336  3   0% S     2  13372K    688K  fg shell    /system/bin/netdiag
+
+  339  4   0% S     3  35956K   2012K  fg system   /system/bin/aal
+
+  341  1   0% S     2  19816K    904K  fg system   /system/bin/dm_agent_binder
+
+  342  4   0% S     2  19548K    968K  fg system   /system/bin/ppl_agent
+
+  343  0   0% S     2  18968K    784K  fg system   /system/bin/matv
+
+  344  5   0% S    33  50584K   2504K  fg gps      /system/bin/mtk_agpsd
+
+  345  0   0% S     1  10336K    676K  fg wifi     /system/bin/wifi2agps
+
+  350  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  351  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  352  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  390  0   0% S     1  16088K   1332K  fg gps      /system/xbin/mnld
+
+  392  1   0% S     2  19404K   1000K  fg system   /system/bin/nvram_agent_binder
+
+  394  4   0% S     3  11400K    636K  fg system   /system/bin/thermal
+
+  395  0   0% S     1  12836K    824K  fg system   /system/bin/thermald
+
+  396  0   0% S     1  12828K    776K  fg shell    /system/bin/batterywarning
+
+  397  4   0% S     2  17096K   1132K  fg system   /system/bin/MtkCodecService
+
+  398  2   0% S     3  24068K   1456K  fg system   /system/bin/guiext-server
+
+  399  0   0% S     2  11400K    696K  fg system   /system/bin/immvibed
+
+  401  0   0% S     6 2126352K  39748K  fg root     zygote64
+
+  402  5   0% S     6 1535524K  37476K  fg root     zygote
+
+  404  3   0% S     6  34776K   4936K  fg bluetoot /system/bin/mtkbt
+
+  405  3   0% S     3  66848K   4008K  fg system   /system/bin/program_binary_service
+
+  406  0   0% S     2  17208K    800K  fg root     /system/bin/sdcard
+
+  420  2   0% S     1      0K      0K  fg root     pkgld
+
+  590  3   0% S     1  64888K   4104K  fg system   /system/bin/em_svr
+
+  740  0   0% S     1      0K      0K  fg root     mtk_stp_psm
+
+  741  0   0% S     1      0K      0K  fg root     mtk_stp_btm
+
+  742  0   0% S     1      0K      0K  fg root     mtk_wmtd
+
+  771  0   0% S     1      0K      0K  fg root     stp_sdio_tx_rx
+
+  772  0   0% S     1      0K      0K  fg root     test_report_wor
+
+  774  0   0% S     3  14916K   1036K  fg shell    /system/bin/emdlogger1
+
+  791  2   0% S    28  47188K   2000K  fg radio    /system/bin/mtkrild
+
+  933  2   0% S     1      0K      0K  fg root     kworker/2:2
+
+ 1063  3   0% S     1  17324K   2272K  fg wifi     /system/bin/wpa_supplicant
+
+ 1153  5   0% S    45 2267796K  74224K  fg system   com.meizu.battery
+
+ 1236  0   0% S    21 2143672K  48236K  fg system   com.meizu.experiencedatasync
+
+ 1324  0   0% S    37 2177080K  51720K  bg u0_a18   com.meizu.location
+
+ 1387  3   0% S     1      0K      0K  fg root     kworker/3:2
+
+ 1440  2   0% S    32 2175700K  72428K  fg u0_a4    com.android.incallui
+
+ 1487  0   0% S    18 2140164K  37280K  fg u0_a68   com.mediatek.nlpservice
+
+ 1497  5   0% S    56 2188528K  54156K  fg system   com.meizu.alphame
+
+ 1554  4   0% S    16 2138856K  39428K  fg system   com.fingerprints.service
+
+ 1587  0   0% S    64 2239476K  79412K  fg radio    com.android.phone
+
+ 1726  3   0% S    73 2399976K 116308K  fg system   com.meizu.safe
+
+ 2063  0   0% S    42 2186460K  64624K  fg system   com.meizu.dataservice
+
+ 2476  0   0% S    39 2190808K  65340K  fg u0_a32   com.flyme.systemuitools
+
+ 2545  3   0% S    26 2158488K  43712K  bg u0_a65   com.meizu.share
+
+ 3050  1   0% S     1      0K      0K  fg root     kworker/1:2H
+
+ 3483  0   0% S    27 1562736K  42760K  bg u0_a61   com.meizu.cloud
+
+ 3888  0   0% S    35 1582432K  47944K  bg u0_a64   com.meizu.flyme.service.find
+
+ 4203  0   0% S    22 1557612K  42632K  bg u0_a61   com.meizu.cloud:mzservice_v1
+
+ 4464  4   0% S     1      0K      0K  fg root     kworker/4:2
+
+ 4589  0   0% S    41 2185856K  51380K  bg u0_a60   com.meizu.account
+
+ 5042  1   0% S    28 2167300K  56884K  bg u0_a67   com.meizu.mzsyncservice
+
+ 5874  0   0% S    43 2223636K  73392K  fg system   com.meizu.flyme.update
+
+ 5925  3   0% S    25 2169608K  48964K  fg system   com.app.activate
+
+ 5938  3   0% S    23 2167492K  43764K  bg system   com.app.xcore
+
+ 5959  2   0% S    37 2297316K  60872K  fg system   com.app.meteor
+
+ 5980  0   0% S    39 2297092K  59320K  bg system   com.android.packageinstaller
+
+ 6416  0   0% S    32 1602180K  50452K  fg u0_a74   com.flyme.roamingpay
+
+ 6648  0   0% S    28 1572352K  40972K  bg u0_a85   com.meizu.net.pedometer
+
+ 7475  1   0% S     4  92256K  18180K  bg u0_a74   /data/app/com.flyme.roamingpay-2/lib/arm/libweexjsb.so
+
+13031  4   0% S    78 1667716K  63868K  bg u0_a38   com.meizu.mstore
+
+13096  0   0% S    32 2190204K  58248K  bg u0_a9    android.process.media
+
+14894  4   0% S    23 1562624K  41324K  bg u0_a61   com.meizu.cloud:mz_tracker
+
+15822  0   0% S   134 2142216K  92364K  bg u0_a98   com.tencent.mm:tools
+
+15903  1   0% S   171 2134924K 163460K  fg u0_a98   com.tencent.mm
+
+16079  0   0% S    92 1892772K  81248K  fg u0_a98   com.tencent.mm:push
+
+16161  0   0% S    18 2141768K  45136K  bg u0_a3    com.android.providers.calendar
+
+16319  0   0% S   128 2139804K 125460K  bg u0_a98   com.tencent.mm:appbrand0
+
+16340  1   0% S   103 1993308K  95132K  bg u0_a98   com.tencent.mm:appbrand1
+
+19300  0   0% S    28 1573232K  46448K  bg u0_a51   com.iflytek.speechsuite
+
+20344  1   0% S     1      0K      0K  fg root     kworker/u16:5
+
+20680  0   0% T     1  10264K    564K  fg u0_a88   sh
+
+20917  0   0% S    63 1670912K  75732K  bg u0_a73   com.meizu.media.reader
+
+21960  0   0% S     1      0K      0K  fg root     kworker/u16:2
+
+22215  0   0% T     1 1651216K  53872K  fg u0_a88   com.houwei.guaishang
+
+22331  1   0% S     1      0K      0K  fg root     fs_suspend_syss
+
+22881  0   0% S    27 1581312K  71736K  fg u0_a150  com.tea7.app:core
+
+22912  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+22927  0   0% S    31 1598696K  78688K  bg u0_a150  com.tea7.app:pushservice
+
+23147  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+23150  0   0% S     1      0K      0K  fg root     kworker/u16:4
+
+23315  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23373  0   0% S    55 1627776K  68992K  bg u0_a21   com.meizu.media.music
+
+    1  0   0% S     1   9044K   1284K  fg root     /init
+
+23516  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23627  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+23673  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23775  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23820  0   0% S    32 2186120K  67012K  bg u0_a40   com.android.calendar:remote
+
+23919  2   0% S     1      0K      0K  fg root     kworker/2:1
+
+23927  0   0% S    25 2167500K  63740K  bg u0_a13   com.meizu.flyme.launcher
+
+23933  1   0% S    23 2148408K  46444K  fg radio    com.flyme.virtual.softsim
+
+23962  0   0% S    17 2139120K  40412K  fg radio    com.android.flyme.bridge.softsim
+
+24019  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24073  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24138  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24200  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24245  0   0% S    49 1632540K  74416K  bg u0_a5    com.meizu.customizecenter
+
+24305  5   0% S     4  92256K  22908K  bg u0_a5    /data/app/com.meizu.customizecenter-2/lib/arm/libweexjsb.so
+
+24410  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24473  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24544  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24630  1   0% S     1      0K      0K  fg root     kworker/1:0
+
+24674  4   0% S     1      0K      0K  fg root     kworker/u17:3
+
+24716  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24850  1   0% S     1      0K      0K  fg root     kworker/1:2
+
+24930  0   0% S     1      0K      0K  fg root     kworker/u16:1
+
+24937  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+25026  2   0% S     1      0K      0K  fg root     kworker/u17:1
+
+25069  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+25099  0   0% S    39 1601864K  59020K  bg u0_a11   com.android.email
+
+25178  0   0% S     1      0K      0K  fg root     kworker/0:3
+
+25217  0   0% S    45 2189728K  66168K  bg system   com.meizu.voiceassistant
+
+25238  0   0% S    24 2198808K  61096K  bg u0_a4    android.process.acore
+
+25320  0   0% S    32 1607016K  84096K  bg u0_a7    com.meizu.netcontactservice
+
+25342  4   0% S     1      0K      0K  fg root     kworker/4:0
+
+25389  1   0% S    16 2158272K  45620K  bg u0_a31   com.android.soundrecorder
+
+25452  3   0% S     1      0K      0K  fg root     kworker/u17:2
+
+25477  0   0% S    36 1613176K  59184K  bg u0_a10   com.meizu.media.ebook:pushservice
+
+25503  3   0% S    59 1629108K  71616K  bg u0_a10   com.meizu.media.ebook
+
+25646  4   0% S    31 1631356K  61096K  bg u0_a29   com.meizu.sceneinfo
+
+25705  0   0% S    33 1588160K  67132K  bg u0_a7    com.android.dialer
+
+25778  0   0% S    32 1576708K  52448K  bg u0_a48   com.meizu.flyme.telecom
+
+25803  0   0% S    25 1566436K  50260K  bg u0_a47   com.meizu.flymecommunication
+
+25885  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+25893  2   0% S     1      0K      0K  fg root     kworker/2:0
+
+25924  0   0% S     1      0K      0K  fg root     kworker/0:0
+
+25943  1   0% S    17 2144640K  42692K  bg system   com.flyme.systemuiplugin
+
+25968  0   0% S    18 2140596K  43592K  bg private_ com.meizu.privacy
+
+26048  3   0% S    21 1589728K  50496K  bg u0_a76   com.meizu.net.search
+
+26430  2   0% Z     1      0K      0K  fg u0_a150  ps
+
+28462  5   0% S     1      0K      0K  fg root     kworker/5:2
+
+31028  1   0% S     1  10372K    656K  fg dhcp     /system/bin/dhcpcd
+
+23445  1   0% S     1      0K      0K  fg root     kworker/1:3
+
+    2  3   0% S     1      0K      0K  fg root     kthreadd
+
+    3  0   0% S     1      0K      0K  fg root     ksoftirqd/0
+
+    5  0   0% S     1      0K      0K  fg root     kworker/0:0H
+
+    7  0   0% S     1      0K      0K  fg root     migration/0
+
+    9  0   0% S     1      0K      0K  fg root     rcu_bh
+
+   10  3   0% S     1      0K      0K  fg root     rcu_sched
+
+   12  1   0% S     1      0K      0K  fg root     ksoftirqd/1
+
+   15  2   0% S     1      0K      0K  fg root     migration/2
+
+   16  2   0% S     1      0K      0K  fg root     ksoftirqd/2
+
+   18  2   0% S     1      0K      0K  fg root     kworker/2:0H
+
+   19  3   0% S     1      0K      0K  fg root     migration/3
+
+   20  3   0% S     1      0K      0K  fg root     ksoftirqd/3
+
+   22  3   0% S     1      0K      0K  fg root     kworker/3:0H
+
+   23  4   0% R     1      0K      0K  fg root     migration/4
+
+   24  4   0% R     1      0K      0K  fg root     ksoftirqd/4
+
+   26  4   0% S     1      0K      0K  fg root     kworker/4:0H
+
+   27  5   0% R     1      0K      0K  fg root     migration/5
+
+   28  5   0% R     1      0K      0K  fg root     ksoftirqd/5
+
+   30  5   0% S     1      0K      0K  fg root     kworker/5:0H
+
+   31  6   0% R     1      0K      0K  fg root     migration/6
+
+   32  6   0% R     1      0K      0K  fg root     ksoftirqd/6
+
+   33  6   0% S     1      0K      0K  fg root     kworker/6:0
+
+
+
+
+
+
+
+User 27%, System 12%, IOW 0%, IRQ 0%
+
+User 125 + Nice 10 + Sys 60 + Idle 294 + IOW 0 + IRQ 0 + SIRQ 1 = 490
+
+
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+
+22826  1  26% S    87 1960632K 235860K  fg u0_a150  com.tea7.app
+
+  327  0   6% S    34 288204K  24532K  fg media    /system/bin/mediaserver
+
+  302  0   2% S    19 144576K   6612K  fg system   /system/bin/surfaceflinger
+
+  819  2   1% S   124 2367272K 148876K  fg system   system_server
+
+26600  2   1% R     1  12748K   1696K  fg shell    top
+
+ 1021  1   0% S     1      0K      0K  fg root     hif_thread
+
+24043  0   0% S     1      0K      0K  fg root     kworker/0:2
+
+ 1022  2   0% S     1      0K      0K  fg root     rx_thread
+
+  339  4   0% S     3  35956K   2012K  fg system   /system/bin/aal
+
+ 1020  1   0% S     1      0K      0K  fg root     tx_thread
+
+23664  1   0% S     1      0K      0K  fg root     kworker/u16:7
+
+  141  0   0% S     1      0K      0K  fg root     present_fence_w
+
+20344  1   0% S     1      0K      0K  fg root     kworker/u16:5
+
+24931  1   0% S     1      0K      0K  fg root     kworker/u16:8
+
+ 9376  2   0% S    41 1651148K  79312K  bg u0_a25   com.meizu.flyme.input
+
+  322  0   0% S     9  25256K   1304K  fg root     /system/bin/netd
+
+   72  1   0% S     1      0K      0K  fg root     cfinteractive
+
+  770  2   0% S     1      0K      0K  fg root     ksdioirqd/mmc1
+
+  105  0   0% S     1      0K      0K  fg root     mt_gpufreq_inpu
+
+15903  1   0% S   171 2134924K 163460K  fg u0_a98   com.tencent.mm
+
+  140  0   0% S     1      0K      0K  fg root     display_check_a
+
+  149  1   0% S     1      0K      0K  fg root     mtk-tpd
+
+24545  2   0% S     1      0K      0K  fg root     kworker/u16:6
+
+   32  6   0% R     1      0K      0K  fg root     ksoftirqd/6
+
+   33  6   0% S     1      0K      0K  fg root     kworker/6:0
+
+   34  6   0% S     1      0K      0K  fg root     kworker/6:0H
+
+   35  7   0% R     1      0K      0K  fg root     migration/7
+
+   36  7   0% R     1      0K      0K  fg root     ksoftirqd/7
+
+   37  0   0% S     1      0K      0K  fg root     kworker/7:0
+
+   38  7   0% S     1      0K      0K  fg root     kworker/7:0H
+
+   39  0   0% S     1      0K      0K  fg root     khelper
+
+   40  0   0% S     1      0K      0K  fg root     fs_sync
+
+   41  0   0% S     1      0K      0K  fg root     suspend
+
+   42  0   0% S     1      0K      0K  fg root     writeback
+
+   43  4   0% S     1      0K      0K  fg root     bioset
+
+   44  4   0% S     1      0K      0K  fg root     crypto
+
+   45  4   0% S     1      0K      0K  fg root     kblockd
+
+   46  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   47  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   48  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   49  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   50  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   51  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   52  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   53  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   54  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   55  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   56  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   57  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   58  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   59  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   60  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   61  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   62  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   63  4   0% S     1      0K      0K  fg root     cmdq_task
+
+   65  4   0% S     1      0K      0K  fg root     pool_reload_wor
+
+   66  4   0% S     1      0K      0K  fg root     mmdvfs_gpumon
+
+   67  4   0% S     1      0K      0K  fg root     khubd
+
+   69  5   0% S     1      0K      0K  fg root     cfg80211
+
+   70  0   0% S     1      0K      0K  fg root     pmic_6331_threa
+
+   71  4   0% S     1      0K      0K  fg root     pmic_6332_threa
+
+   85  0   0% S     1      0K      0K  fg root     input_boost
+
+   86  1   0% S     1      0K      0K  fg root     kswapd0
+
+   87  0   0% S     1      0K      0K  fg root     fsnotify_mark
+
+   88  0   0% S     1      0K      0K  fg root     cifsiod
+
+  104  0   0% S     1      0K      0K  fg root     ion_mm_heap
+
+  106  0   0% S     1      0K      0K  fg root     hps_main
+
+  107  0   0% S     1      0K      0K  fg root     hang_detect
+
+  108  0   0% S     1      0K      0K  fg root     rrc_set_refresh
+
+  109  0   0% S     1      0K      0K  fg root     rrc_set_low_ref
+
+  110  0   0% S     1      0K      0K  fg root     conn-md-thread
+
+  111  0   0% S     1      0K      0K  fg root     md1_cldma_worke
+
+  112  0   0% S     1      0K      0K  fg root     md1_tx0_worker
+
+  113  0   0% S     1      0K      0K  fg root     md1_tx1_worker
+
+  114  0   0% S     1      0K      0K  fg root     md1_tx2_worker
+
+  115  0   0% S     1      0K      0K  fg root     md1_tx3_worker
+
+  116  0   0% S     1      0K      0K  fg root     md1_tx4_worker
+
+  117  0   0% S     1      0K      0K  fg root     md1_tx5_worker
+
+  118  0   0% S     1      0K      0K  fg root     md1_tx6_worker
+
+  119  0   0% S     1      0K      0K  fg root     md1_tx7_worker
+
+  120  0   0% S     1      0K      0K  fg root     md1_rx0_worker
+
+  121  0   0% S     1      0K      0K  fg root     md1_rx1_worker
+
+  122  0   0% S     1      0K      0K  fg root     md1_rx2_worker
+
+  124  0   0% S     1      0K      0K  fg root     md1_rx3_worker
+
+  125  0   0% S     1      0K      0K  fg root     md1_rx4_worker
+
+  126  0   0% S     1      0K      0K  fg root     md1_rx5_worker
+
+  127  0   0% S     1      0K      0K  fg root     md1_rx6_worker
+
+  128  0   0% S     1      0K      0K  fg root     md1_rx7_worker
+
+  129  0   0% S     1      0K      0K  fg root     ccci_ipc_3
+
+  130  0   0% S     1      0K      0K  fg root     ccci_ipc_6
+
+  131  1   0% S     1      0K      0K  fg root     ccci_ctrl
+
+  132  0   0% S     1      0K      0K  fg root     ccci_sys
+
+  133  0   0% S     1      0K      0K  fg root     ccci_poll
+
+  134  0   0% S     1      0K      0K  fg root     mc_fastcall
+
+  137  6   0% S     1      0K      0K  fg root     decouple_update
+
+  139  4   0% S     1      0K      0K  fg root     decouple_trigge
+
+  142  2   0% S     1      0K      0K  fg root     frame_update_wo
+
+  143  2   0% D     1      0K      0K  fg root     disp_idlemgr
+
+  144  0   0% S     1      0K      0K  fg root     accdet
+
+  145  0   0% S     1      0K      0K  fg root     weird_headphone
+
+  146  5   0% S     1      0K      0K  fg root     accdet_disable
+
+  147  0   0% S     1      0K      0K  fg root     accdet_eint
+
+  148  4   0% S     1      0K      0K  fg root     vcm_work
+
+  150  0   0% S     1      0K      0K  fg root     dsx_exp_workque
+
+  151  5   0% S     1      0K      0K  fg root     kworker/5:1
+
+  153  0   0% S     1      0K      0K  fg root     fwu_workqueue
+
+  154  0   0% S     1      0K      0K  fg root     isl29125wq
+
+  155  0   0% S     1      0K      0K  fg root     pa1212wq
+
+  156  0   0% S     1      0K      0K  fg root     kthermp
+
+  158  0   0% S     1      0K      0K  fg root     vcorefs
+
+  159  4   0% S     1      0K      0K  fg root     pvr_timer
+
+  160  3   0% S     1      0K      0K  fg root     pvr_defer_free
+
+  161  3   0% S     1      0K      0K  fg root     pvr_devices_wd_
+
+  162  4   0% S     1      0K      0K  fg root     pvr_sync_defer_
+
+  163  4   0% S     1      0K      0K  fg root     pvr_sync_check_
+
+  164  4   0% S     1      0K      0K  fg root     mwp
+
+  165  4   0% S     1      0K      0K  fg root     emi_mpu
+
+  166  4   0% S     1      0K      0K  fg root     MD32_REBOOT_WQ
+
+  167  4   0% S     1      0K      0K  fg root     MD32_WDT_WQ
+
+  168  4   0% S     1      0K      0K  fg root     MD32_ASSERT_WQ
+
+  169  0   0% S     1      0K      0K  fg root     fpc1020_worker
+
+  170  0   0% S     1      0K      0K  fg root     uether
+
+  171  0   0% S     1      0K      0K  fg root     uether_rx1
+
+  172  1   0% S     1      0K      0K  fg root     bat_thread_kthr
+
+  173  0   0% S     1      0K      0K  fg root     mtk charger_hv_
+
+  174  3   0% S     1      0K      0K  fg root     mmcqd/0
+
+  175  0   0% S     1      0K      0K  fg root     mmcqd/0boot0
+
+  176  0   0% S     1      0K      0K  fg root     mmcqd/0boot1
+
+  177  0   0% S     1      0K      0K  fg root     mmcqd/0rpmb
+
+  178  1   0% S     1      0K      0K  fg root     kworker/1:1H
+
+  179  5   0% S     1      0K      0K  fg root     kworker/5:1H
+
+  180  1   0% S     1      0K      0K  fg root     binder
+
+  181  0   0% S     1      0K      0K  fg root     mtk_vibrator
+
+  183  0   0% S     1      0K      0K  fg root     irq/297-inv_irq
+
+  184  0   0% S     1      0K      0K  fg root     tspdrv_workqueu
+
+  189  0   0% S     1      0K      0K  fg root     kworker/6:1
+
+  190  3   0% S     1      0K      0K  fg root     kworker/3:1
+
+  191  0   0% S     1      0K      0K  fg root     pkt_thread
+
+  192  0   0% S     1      0K      0K  fg root     deferwq
+
+  193  2   0% S     1      0K      0K  fg root     PTP_CTRL_CPU
+
+  194  1   0% S     1      0K      0K  fg root     PTP_CTRL_LTE
+
+  195  0   0% S     1      0K      0K  fg root     PTP_CTRL_GPU
+
+  196  1   0% S     1      0K      0K  fg root     PTP_CTRL_SOC
+
+  199  0   0% S     1      0K      0K  fg root     irq/410-gpio-ke
+
+  200  0   0% S     1      0K      0K  fg root     irq/411-gpio-ke
+
+  201  0   0% S     1      0K      0K  fg root     irq/289-gpio-ke
+
+  202  0   0% S     1      0K      0K  fg root     wdtk-0
+
+  203  1   0% S     1      0K      0K  fg root     wdtk-1
+
+  204  2   0% S     1      0K      0K  fg root     wdtk-2
+
+  205  3   0% S     1      0K      0K  fg root     wdtk-3
+
+  206  4   0% S     1      0K      0K  fg root     wdtk-4
+
+  207  0   0% S     1      0K      0K  fg root     wdtk-5
+
+  208  0   0% S     1      0K      0K  fg root     wdtk-6
+
+  209  0   0% S     1      0K      0K  fg root     wdtk-7
+
+  210  0   0% S     1      0K      0K  fg root     f_mtp
+
+  211  0   0% S     1      0K      0K  fg root     file-storage
+
+  212  7   0% S     1      0K      0K  fg root     kworker/7:1H
+
+  213  6   0% S     1      0K      0K  fg root     kworker/6:1H
+
+  215  0   0% S     1      0K      0K  fg root     kworker/0:1H
+
+  216  4   0% S     1      0K      0K  fg root     kworker/4:1H
+
+  217  3   0% S     1      0K      0K  fg root     kworker/3:1H
+
+  218  2   0% S     1      0K      0K  fg root     kworker/2:1H
+
+  219  3   0% S     1   9036K    860K  fg root     /sbin/ueventd
+
+  221  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p18
+
+  222  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  223  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p14
+
+  224  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  229  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p20
+
+  230  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  234  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p19
+
+  235  1   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  241  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p5-
+
+  242  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  248  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p6-
+
+  249  1   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  265  1   0% S     1      0K      0K  fg root     loop0
+
+  266  0   0% S    10  22328K   1376K  fg system   /system/bin/mcDriverDaemon
+
+  267  2   0% S     1      0K      0K  fg root     mc_log
+
+  296  0   0% S     5  20832K   1432K  fg logd     /system/bin/logd
+
+  297  1   0% S     1  10076K    476K  fg root     /sbin/healthd
+
+  298  0   0% S     1  10264K    604K  fg root     /system/bin/sh
+
+  299  0   0% S     1  14060K    868K  fg root     /system/bin/lmkd
+
+  300  1   0% S     1  10448K    664K  fg system   /system/bin/servicemanager
+
+  301  0   0% S     3  22964K   1412K  fg root     /system/bin/vold
+
+  303  1   0% S     1  11108K    752K  fg system   /system/bin/autokd
+
+  307  1   0% S     1  10160K    576K  fg system   /system/bin/6620_launcher
+
+  308  0   0% S     1  10156K    612K  fg root     /system/bin/stp_dump3
+
+  309  0   0% S     1   9748K    912K  fg radio    /system/bin/ccci_fsd
+
+  310  0   0% S     2  11824K   1140K  fg system   /system/bin/ccci_mdinit
+
+  321  0   0% S     1      0K      0K  fg root     kauditd
+
+  323  0   0% S     2  17900K    932K  fg root     /system/bin/flymed
+
+  324  0   0% S     1  10880K   1160K  fg root     /system/bin/debuggerd
+
+  325  0   0% S     1  12700K    900K  fg root     /system/bin/debuggerd64
+
+  326  3   0% S     6  57672K   4804K  fg drm      /system/bin/drmserver
+
+  328  1   0% S     1  10532K    704K  fg install  /system/bin/installd
+
+  332  2   0% S     1  16428K   1428K  fg keystore /system/bin/keystore
+
+  334  0   0% S     2  15584K    996K  fg shell    /system/bin/mobile_log_d
+
+  336  3   0% S     2  13372K    688K  fg shell    /system/bin/netdiag
+
+  341  1   0% S     2  19816K    904K  fg system   /system/bin/dm_agent_binder
+
+  342  4   0% S     2  19548K    968K  fg system   /system/bin/ppl_agent
+
+  343  0   0% S     2  18968K    784K  fg system   /system/bin/matv
+
+  344  5   0% S    33  50584K   2504K  fg gps      /system/bin/mtk_agpsd
+
+  345  0   0% S     1  10336K    676K  fg wifi     /system/bin/wifi2agps
+
+  350  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  351  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  352  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  390  0   0% S     1  16088K   1332K  fg gps      /system/xbin/mnld
+
+  392  1   0% S     2  19404K   1000K  fg system   /system/bin/nvram_agent_binder
+
+  394  4   0% S     3  11400K    636K  fg system   /system/bin/thermal
+
+  395  0   0% S     1  12836K    824K  fg system   /system/bin/thermald
+
+  396  0   0% S     1  12828K    776K  fg shell    /system/bin/batterywarning
+
+  397  4   0% S     2  17096K   1132K  fg system   /system/bin/MtkCodecService
+
+  398  2   0% S     3  24068K   1456K  fg system   /system/bin/guiext-server
+
+  399  0   0% S     2  11400K    696K  fg system   /system/bin/immvibed
+
+  401  0   0% S     6 2126352K  39748K  fg root     zygote64
+
+  402  5   0% S     6 1535524K  37476K  fg root     zygote
+
+  404  3   0% S     6  34776K   4936K  fg bluetoot /system/bin/mtkbt
+
+  405  3   0% S     3  66848K   4008K  fg system   /system/bin/program_binary_service
+
+  406  0   0% S     2  17208K    800K  fg root     /system/bin/sdcard
+
+  420  2   0% S     1      0K      0K  fg root     pkgld
+
+  590  3   0% S     1  64888K   4104K  fg system   /system/bin/em_svr
+
+  740  1   0% S     1      0K      0K  fg root     mtk_stp_psm
+
+  741  0   0% S     1      0K      0K  fg root     mtk_stp_btm
+
+  742  1   0% S     1      0K      0K  fg root     mtk_wmtd
+
+  771  1   0% S     1      0K      0K  fg root     stp_sdio_tx_rx
+
+  772  0   0% S     1      0K      0K  fg root     test_report_wor
+
+  774  0   0% S     3  14916K   1036K  fg shell    /system/bin/emdlogger1
+
+  775  0   0% S    15  27848K    936K  fg radio    /system/bin/gsm0710muxd
+
+  791  2   0% S    28  47188K   2000K  fg radio    /system/bin/mtkrild
+
+  933  2   0% S     1      0K      0K  fg root     kworker/2:2
+
+ 1032  2   0% S    48 2254228K 184888K  fg u0_a32   com.android.systemui
+
+ 1063  3   0% S     1  17324K   2272K  fg wifi     /system/bin/wpa_supplicant
+
+ 1153  5   0% S    45 2267796K  74224K  fg system   com.meizu.battery
+
+ 1236  0   0% S    21 2143672K  48236K  fg system   com.meizu.experiencedatasync
+
+ 1324  0   0% S    37 2177080K  51720K  bg u0_a18   com.meizu.location
+
+ 1387  3   0% S     1      0K      0K  fg root     kworker/3:2
+
+ 1440  2   0% S    32 2175700K  72428K  fg u0_a4    com.android.incallui
+
+ 1487  0   0% S    18 2140164K  37280K  fg u0_a68   com.mediatek.nlpservice
+
+ 1497  5   0% S    56 2188528K  54156K  fg system   com.meizu.alphame
+
+ 1554  4   0% S    16 2138856K  39428K  fg system   com.fingerprints.service
+
+ 1587  0   0% S    64 2239476K  79412K  fg radio    com.android.phone
+
+ 1726  3   0% S    73 2399976K 116308K  fg system   com.meizu.safe
+
+ 2063  0   0% S    42 2186460K  64624K  fg system   com.meizu.dataservice
+
+ 2476  0   0% S    39 2190808K  65340K  fg u0_a32   com.flyme.systemuitools
+
+ 2545  3   0% S    26 2158488K  43712K  bg u0_a65   com.meizu.share
+
+ 3050  1   0% S     1      0K      0K  fg root     kworker/1:2H
+
+ 3483  0   0% S    27 1562736K  42760K  bg u0_a61   com.meizu.cloud
+
+ 3888  0   0% S    35 1582432K  47944K  bg u0_a64   com.meizu.flyme.service.find
+
+ 4203  0   0% S    22 1557612K  42632K  bg u0_a61   com.meizu.cloud:mzservice_v1
+
+ 4464  4   0% S     1      0K      0K  fg root     kworker/4:2
+
+ 4589  0   0% S    41 2185856K  51380K  bg u0_a60   com.meizu.account
+
+ 5042  1   0% S    28 2167300K  56884K  bg u0_a67   com.meizu.mzsyncservice
+
+ 5874  0   0% S    43 2223636K  73392K  fg system   com.meizu.flyme.update
+
+ 5925  3   0% S    25 2169608K  48964K  fg system   com.app.activate
+
+ 5938  3   0% S    23 2167492K  43764K  bg system   com.app.xcore
+
+ 5959  2   0% S    37 2297316K  60872K  fg system   com.app.meteor
+
+ 5980  0   0% S    39 2297092K  59320K  bg system   com.android.packageinstaller
+
+ 6416  0   0% S    32 1602180K  50452K  fg u0_a74   com.flyme.roamingpay
+
+ 6648  0   0% S    28 1572352K  40972K  bg u0_a85   com.meizu.net.pedometer
+
+ 7475  1   0% S     4  92256K  18180K  bg u0_a74   /data/app/com.flyme.roamingpay-2/lib/arm/libweexjsb.so
+
+13031  4   0% S    78 1667716K  63868K  bg u0_a38   com.meizu.mstore
+
+13096  0   0% S    32 2190204K  58248K  bg u0_a9    android.process.media
+
+14894  4   0% S    23 1562624K  41324K  bg u0_a61   com.meizu.cloud:mz_tracker
+
+15822  2   0% S   134 2142216K  92364K  bg u0_a98   com.tencent.mm:tools
+
+16079  0   0% S    92 1892772K  81248K  fg u0_a98   com.tencent.mm:push
+
+16161  0   0% S    18 2141768K  45136K  bg u0_a3    com.android.providers.calendar
+
+16319  0   0% S   128 2139804K 125460K  bg u0_a98   com.tencent.mm:appbrand0
+
+16340  1   0% S   103 1993308K  95132K  bg u0_a98   com.tencent.mm:appbrand1
+
+19300  0   0% S    28 1573232K  46448K  bg u0_a51   com.iflytek.speechsuite
+
+20680  0   0% T     1  10264K    564K  fg u0_a88   sh
+
+20917  0   0% S    63 1670912K  75732K  bg u0_a73   com.meizu.media.reader
+
+21960  0   0% S     1      0K      0K  fg root     kworker/u16:2
+
+22215  0   0% T     1 1651216K  53872K  fg u0_a88   com.houwei.guaishang
+
+22331  1   0% S     1      0K      0K  fg root     fs_suspend_syss
+
+22881  0   0% S    27 1581312K  71736K  fg u0_a150  com.tea7.app:core
+
+22912  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+22927  0   0% S    31 1598696K  78704K  bg u0_a150  com.tea7.app:pushservice
+
+23147  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+23150  2   0% S     1      0K      0K  fg root     kworker/u16:4
+
+23315  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23373  0   0% S    55 1627776K  68992K  bg u0_a21   com.meizu.media.music
+
+    1  0   0% S     1   9044K   1284K  fg root     /init
+
+23516  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23627  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+23673  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23775  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23820  0   0% S    32 2186120K  67012K  bg u0_a40   com.android.calendar:remote
+
+23919  2   0% S     1      0K      0K  fg root     kworker/2:1
+
+23927  0   0% S    25 2167500K  63740K  bg u0_a13   com.meizu.flyme.launcher
+
+23933  1   0% S    23 2148408K  46444K  fg radio    com.flyme.virtual.softsim
+
+23962  0   0% S    17 2139120K  40412K  fg radio    com.android.flyme.bridge.softsim
+
+24019  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24073  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24138  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24200  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24245  0   0% S    49 1632540K  74416K  bg u0_a5    com.meizu.customizecenter
+
+24305  5   0% S     4  92256K  22908K  bg u0_a5    /data/app/com.meizu.customizecenter-2/lib/arm/libweexjsb.so
+
+24410  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24473  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24544  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24630  1   0% S     1      0K      0K  fg root     kworker/1:0
+
+24674  4   0% S     1      0K      0K  fg root     kworker/u17:3
+
+24716  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24850  1   0% S     1      0K      0K  fg root     kworker/1:2
+
+24930  0   0% S     1      0K      0K  fg root     kworker/u16:1
+
+24937  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+25026  2   0% S     1      0K      0K  fg root     kworker/u17:1
+
+25069  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+25099  0   0% S    39 1601864K  59020K  bg u0_a11   com.android.email
+
+25178  0   0% S     1      0K      0K  fg root     kworker/0:3
+
+25217  0   0% S    45 2189728K  66168K  bg system   com.meizu.voiceassistant
+
+25238  0   0% S    24 2198808K  61096K  bg u0_a4    android.process.acore
+
+25320  0   0% S    32 1607016K  84096K  bg u0_a7    com.meizu.netcontactservice
+
+25342  4   0% S     1      0K      0K  fg root     kworker/4:0
+
+25389  1   0% S    16 2158272K  45620K  bg u0_a31   com.android.soundrecorder
+
+25452  3   0% S     1      0K      0K  fg root     kworker/u17:2
+
+25477  0   0% S    36 1613176K  59184K  bg u0_a10   com.meizu.media.ebook:pushservice
+
+25503  3   0% S    59 1629108K  71616K  bg u0_a10   com.meizu.media.ebook
+
+25646  4   0% S    31 1631356K  61096K  bg u0_a29   com.meizu.sceneinfo
+
+25705  0   0% S    33 1588160K  67132K  bg u0_a7    com.android.dialer
+
+25778  0   0% S    32 1576708K  52448K  bg u0_a48   com.meizu.flyme.telecom
+
+25803  0   0% S    25 1566436K  50260K  bg u0_a47   com.meizu.flymecommunication
+
+25885  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+25893  2   0% S     1      0K      0K  fg root     kworker/2:0
+
+25924  0   0% S     1      0K      0K  fg root     kworker/0:0
+
+25943  1   0% S    17 2144640K  42692K  bg system   com.flyme.systemuiplugin
+
+25968  0   0% S    18 2140596K  43592K  bg private_ com.meizu.privacy
+
+26048  3   0% S    21 1589728K  50496K  bg u0_a76   com.meizu.net.search
+
+26430  2   0% Z     1      0K      0K  fg u0_a150  ps
+
+28462  5   0% S     1      0K      0K  fg root     kworker/5:2
+
+31028  1   0% S     1  10372K    656K  fg dhcp     /system/bin/dhcpcd
+
+32449  0   0% S     8  20344K    400K  fg shell    /sbin/adbd
+
+23445  1   0% S     1      0K      0K  fg root     kworker/1:3
+
+    2  3   0% S     1      0K      0K  fg root     kthreadd
+
+    3  0   0% S     1      0K      0K  fg root     ksoftirqd/0
+
+    5  0   0% S     1      0K      0K  fg root     kworker/0:0H
+
+    7  0   0% S     1      0K      0K  fg root     migration/0
+
+    8  0   0% S     1      0K      0K  fg root     rcu_preempt
+
+    9  0   0% S     1      0K      0K  fg root     rcu_bh
+
+   10  3   0% S     1      0K      0K  fg root     rcu_sched
+
+   11  1   0% S     1      0K      0K  fg root     migration/1
+
+   12  1   0% S     1      0K      0K  fg root     ksoftirqd/1
+
+   15  2   0% S     1      0K      0K  fg root     migration/2
+
+   16  2   0% S     1      0K      0K  fg root     ksoftirqd/2
+
+   18  2   0% S     1      0K      0K  fg root     kworker/2:0H
+
+   19  3   0% S     1      0K      0K  fg root     migration/3
+
+   20  3   0% S     1      0K      0K  fg root     ksoftirqd/3
+
+   22  3   0% S     1      0K      0K  fg root     kworker/3:0H
+
+   23  4   0% R     1      0K      0K  fg root     migration/4
+
+   24  4   0% R     1      0K      0K  fg root     ksoftirqd/4
+
+   26  4   0% S     1      0K      0K  fg root     kworker/4:0H
+
+   27  5   0% R     1      0K      0K  fg root     migration/5
+
+   28  5   0% R     1      0K      0K  fg root     ksoftirqd/5
+
+   30  5   0% S     1      0K      0K  fg root     kworker/5:0H
+
+   31  6   0% R     1      0K      0K  fg root     migration/6
+
+
+
+
+
+
+
+User 41%, System 15%, IOW 0%, IRQ 0%
+
+User 219 + Nice 8 + Sys 84 + Idle 232 + IOW 1 + IRQ 0 + SIRQ 2 = 546
+
+
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+
+22826  0  26% S    88 1963092K 235640K  fg u0_a150  com.tea7.app
+
+  819  0   7% S   124 2367272K 148132K  fg system   system_server
+
+  327  4   6% S    34 288204K  24532K  fg media    /system/bin/mediaserver
+
+26600  2   1% R     1  12748K   1696K  fg shell    top
+
+ 2063  4   1% S    42 2186460K  65308K  fg system   com.meizu.dataservice
+
+  302  3   1% S    19 144576K   6612K  fg system   /system/bin/surfaceflinger
+
+ 1726  3   1% S    77 2404264K 116484K  fg system   com.meizu.safe
+
+ 1021  0   0% S     1      0K      0K  fg root     hif_thread
+
+ 1587  0   0% S    64 2239476K  79412K  fg radio    com.android.phone
+
+24043  0   0% S     1      0K      0K  fg root     kworker/0:2
+
+24545  3   0% S     1      0K      0K  fg root     kworker/u16:6
+
+23150  1   0% S     1      0K      0K  fg root     kworker/u16:4
+
+  770  1   0% S     1      0K      0K  fg root     ksdioirqd/mmc1
+
+ 1324  0   0% S    37 2177080K  52180K  bg u0_a18   com.meizu.location
+
+   72  1   0% S     1      0K      0K  fg root     cfinteractive
+
+  105  0   0% S     1      0K      0K  fg root     mt_gpufreq_inpu
+
+ 9376  1   0% S    41 1651148K  79312K  bg u0_a25   com.meizu.flyme.input
+
+32449  0   0% S     8  20344K    352K  fg shell    /sbin/adbd
+
+24931  2   0% S     1      0K      0K  fg root     kworker/u16:8
+
+13031  4   0% S    78 1667716K  63868K  bg u0_a38   com.meizu.mstore
+
+23664  4   0% S     1      0K      0K  fg root     kworker/u16:7
+
+  140  2   0% S     1      0K      0K  fg root     display_check_a
+
+  933  2   0% S     1      0K      0K  fg root     kworker/2:2
+
+ 1020  3   0% S     1      0K      0K  fg root     tx_thread
+
+ 1022  1   0% S     1      0K      0K  fg root     rx_thread
+
+ 1032  4   0% S    48 2254228K 184856K  fg u0_a32   com.android.systemui
+
+20344  2   0% S     1      0K      0K  fg root     kworker/u16:5
+
+  339  4   0% S     3  35956K   2012K  fg system   /system/bin/aal
+
+  300  4   0% S     1  10448K    664K  fg system   /system/bin/servicemanager
+
+  106  0   0% S     1      0K      0K  fg root     hps_main
+
+   39  0   0% S     1      0K      0K  fg root     khelper
+
+   40  0   0% S     1      0K      0K  fg root     fs_sync
+
+   41  0   0% S     1      0K      0K  fg root     suspend
+
+   42  0   0% S     1      0K      0K  fg root     writeback
+
+   43  4   0% S     1      0K      0K  fg root     bioset
+
+   44  4   0% S     1      0K      0K  fg root     crypto
+
+   45  4   0% S     1      0K      0K  fg root     kblockd
+
+   46  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   47  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   48  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   49  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   50  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   51  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   52  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   53  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   54  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   55  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   56  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   57  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   58  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   59  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   60  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   61  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   62  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   63  4   0% S     1      0K      0K  fg root     cmdq_task
+
+   65  4   0% S     1      0K      0K  fg root     pool_reload_wor
+
+   66  4   0% S     1      0K      0K  fg root     mmdvfs_gpumon
+
+   67  4   0% S     1      0K      0K  fg root     khubd
+
+   69  5   0% S     1      0K      0K  fg root     cfg80211
+
+   70  0   0% S     1      0K      0K  fg root     pmic_6331_threa
+
+   71  4   0% S     1      0K      0K  fg root     pmic_6332_threa
+
+   85  0   0% S     1      0K      0K  fg root     input_boost
+
+   86  1   0% S     1      0K      0K  fg root     kswapd0
+
+   87  0   0% S     1      0K      0K  fg root     fsnotify_mark
+
+   88  0   0% S     1      0K      0K  fg root     cifsiod
+
+  104  0   0% S     1      0K      0K  fg root     ion_mm_heap
+
+  107  0   0% S     1      0K      0K  fg root     hang_detect
+
+  108  0   0% S     1      0K      0K  fg root     rrc_set_refresh
+
+  109  0   0% S     1      0K      0K  fg root     rrc_set_low_ref
+
+  110  0   0% S     1      0K      0K  fg root     conn-md-thread
+
+  111  0   0% S     1      0K      0K  fg root     md1_cldma_worke
+
+  112  0   0% S     1      0K      0K  fg root     md1_tx0_worker
+
+  113  0   0% S     1      0K      0K  fg root     md1_tx1_worker
+
+  114  0   0% S     1      0K      0K  fg root     md1_tx2_worker
+
+  115  0   0% S     1      0K      0K  fg root     md1_tx3_worker
+
+  116  0   0% S     1      0K      0K  fg root     md1_tx4_worker
+
+  117  0   0% S     1      0K      0K  fg root     md1_tx5_worker
+
+  118  0   0% S     1      0K      0K  fg root     md1_tx6_worker
+
+  119  0   0% S     1      0K      0K  fg root     md1_tx7_worker
+
+  120  0   0% S     1      0K      0K  fg root     md1_rx0_worker
+
+  121  0   0% S     1      0K      0K  fg root     md1_rx1_worker
+
+  122  0   0% S     1      0K      0K  fg root     md1_rx2_worker
+
+  124  0   0% S     1      0K      0K  fg root     md1_rx3_worker
+
+  125  0   0% S     1      0K      0K  fg root     md1_rx4_worker
+
+  126  0   0% S     1      0K      0K  fg root     md1_rx5_worker
+
+  127  0   0% S     1      0K      0K  fg root     md1_rx6_worker
+
+  128  0   0% S     1      0K      0K  fg root     md1_rx7_worker
+
+  129  0   0% S     1      0K      0K  fg root     ccci_ipc_3
+
+  130  0   0% S     1      0K      0K  fg root     ccci_ipc_6
+
+  131  1   0% S     1      0K      0K  fg root     ccci_ctrl
+
+  132  0   0% S     1      0K      0K  fg root     ccci_sys
+
+  133  0   0% S     1      0K      0K  fg root     ccci_poll
+
+  134  0   0% S     1      0K      0K  fg root     mc_fastcall
+
+  137  6   0% S     1      0K      0K  fg root     decouple_update
+
+  139  4   0% S     1      0K      0K  fg root     decouple_trigge
+
+  141  1   0% S     1      0K      0K  fg root     present_fence_w
+
+  142  2   0% S     1      0K      0K  fg root     frame_update_wo
+
+  143  1   0% D     1      0K      0K  fg root     disp_idlemgr
+
+  144  0   0% S     1      0K      0K  fg root     accdet
+
+  145  0   0% S     1      0K      0K  fg root     weird_headphone
+
+  146  5   0% S     1      0K      0K  fg root     accdet_disable
+
+  147  0   0% S     1      0K      0K  fg root     accdet_eint
+
+  148  4   0% S     1      0K      0K  fg root     vcm_work
+
+  149  1   0% S     1      0K      0K  fg root     mtk-tpd
+
+  150  0   0% S     1      0K      0K  fg root     dsx_exp_workque
+
+  151  5   0% S     1      0K      0K  fg root     kworker/5:1
+
+  153  0   0% S     1      0K      0K  fg root     fwu_workqueue
+
+  154  0   0% S     1      0K      0K  fg root     isl29125wq
+
+  155  0   0% S     1      0K      0K  fg root     pa1212wq
+
+  156  0   0% S     1      0K      0K  fg root     kthermp
+
+  158  0   0% S     1      0K      0K  fg root     vcorefs
+
+  159  4   0% S     1      0K      0K  fg root     pvr_timer
+
+  160  3   0% S     1      0K      0K  fg root     pvr_defer_free
+
+  161  3   0% S     1      0K      0K  fg root     pvr_devices_wd_
+
+  162  4   0% S     1      0K      0K  fg root     pvr_sync_defer_
+
+  163  4   0% S     1      0K      0K  fg root     pvr_sync_check_
+
+  164  4   0% S     1      0K      0K  fg root     mwp
+
+  165  4   0% S     1      0K      0K  fg root     emi_mpu
+
+  166  4   0% S     1      0K      0K  fg root     MD32_REBOOT_WQ
+
+  167  4   0% S     1      0K      0K  fg root     MD32_WDT_WQ
+
+  168  4   0% S     1      0K      0K  fg root     MD32_ASSERT_WQ
+
+  169  3   0% S     1      0K      0K  fg root     fpc1020_worker
+
+  170  0   0% S     1      0K      0K  fg root     uether
+
+  171  0   0% S     1      0K      0K  fg root     uether_rx1
+
+  172  1   0% S     1      0K      0K  fg root     bat_thread_kthr
+
+  173  1   0% S     1      0K      0K  fg root     mtk charger_hv_
+
+  174  4   0% S     1      0K      0K  fg root     mmcqd/0
+
+  175  0   0% S     1      0K      0K  fg root     mmcqd/0boot0
+
+  176  0   0% S     1      0K      0K  fg root     mmcqd/0boot1
+
+  177  0   0% S     1      0K      0K  fg root     mmcqd/0rpmb
+
+  178  1   0% S     1      0K      0K  fg root     kworker/1:1H
+
+  179  5   0% S     1      0K      0K  fg root     kworker/5:1H
+
+  180  1   0% S     1      0K      0K  fg root     binder
+
+  181  0   0% S     1      0K      0K  fg root     mtk_vibrator
+
+  183  0   0% S     1      0K      0K  fg root     irq/297-inv_irq
+
+  184  0   0% S     1      0K      0K  fg root     tspdrv_workqueu
+
+  189  0   0% S     1      0K      0K  fg root     kworker/6:1
+
+  190  3   0% S     1      0K      0K  fg root     kworker/3:1
+
+  191  0   0% S     1      0K      0K  fg root     pkt_thread
+
+  192  0   0% S     1      0K      0K  fg root     deferwq
+
+  193  2   0% S     1      0K      0K  fg root     PTP_CTRL_CPU
+
+  194  1   0% S     1      0K      0K  fg root     PTP_CTRL_LTE
+
+  195  0   0% S     1      0K      0K  fg root     PTP_CTRL_GPU
+
+  196  1   0% S     1      0K      0K  fg root     PTP_CTRL_SOC
+
+  199  0   0% S     1      0K      0K  fg root     irq/410-gpio-ke
+
+  200  0   0% S     1      0K      0K  fg root     irq/411-gpio-ke
+
+  201  0   0% S     1      0K      0K  fg root     irq/289-gpio-ke
+
+  202  0   0% S     1      0K      0K  fg root     wdtk-0
+
+  203  1   0% S     1      0K      0K  fg root     wdtk-1
+
+  204  2   0% S     1      0K      0K  fg root     wdtk-2
+
+  205  3   0% S     1      0K      0K  fg root     wdtk-3
+
+  206  4   0% S     1      0K      0K  fg root     wdtk-4
+
+  207  5   0% S     1      0K      0K  fg root     wdtk-5
+
+  208  0   0% S     1      0K      0K  fg root     wdtk-6
+
+  209  0   0% S     1      0K      0K  fg root     wdtk-7
+
+  210  0   0% S     1      0K      0K  fg root     f_mtp
+
+  211  0   0% S     1      0K      0K  fg root     file-storage
+
+  212  7   0% S     1      0K      0K  fg root     kworker/7:1H
+
+  213  6   0% S     1      0K      0K  fg root     kworker/6:1H
+
+  215  0   0% S     1      0K      0K  fg root     kworker/0:1H
+
+  216  4   0% S     1      0K      0K  fg root     kworker/4:1H
+
+  217  3   0% S     1      0K      0K  fg root     kworker/3:1H
+
+  218  2   0% S     1      0K      0K  fg root     kworker/2:1H
+
+  219  3   0% S     1   9036K    860K  fg root     /sbin/ueventd
+
+  221  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p18
+
+  222  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  223  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p14
+
+  224  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  229  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p20
+
+  230  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  234  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p19
+
+  235  1   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  241  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p5-
+
+  242  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  248  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p6-
+
+  249  1   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  265  1   0% S     1      0K      0K  fg root     loop0
+
+  266  0   0% S    10  22328K   1376K  fg system   /system/bin/mcDriverDaemon
+
+  267  2   0% S     1      0K      0K  fg root     mc_log
+
+  296  0   0% S     5  20832K   1432K  fg logd     /system/bin/logd
+
+  297  1   0% S     1  10076K    476K  fg root     /sbin/healthd
+
+  298  0   0% S     1  10264K    604K  fg root     /system/bin/sh
+
+  299  0   0% S     1  14060K    868K  fg root     /system/bin/lmkd
+
+  301  0   0% S     3  22964K   1412K  fg root     /system/bin/vold
+
+  303  1   0% S     1  11108K    752K  fg system   /system/bin/autokd
+
+  307  1   0% S     1  10160K    576K  fg system   /system/bin/6620_launcher
+
+  308  0   0% S     1  10156K    612K  fg root     /system/bin/stp_dump3
+
+  309  0   0% S     1   9748K    912K  fg radio    /system/bin/ccci_fsd
+
+  310  0   0% S     2  11824K   1140K  fg system   /system/bin/ccci_mdinit
+
+  321  0   0% S     1      0K      0K  fg root     kauditd
+
+  322  0   0% S     9  25256K   1280K  fg root     /system/bin/netd
+
+  323  0   0% S     2  17900K    932K  fg root     /system/bin/flymed
+
+  324  0   0% S     1  10880K   1160K  fg root     /system/bin/debuggerd
+
+  325  0   0% S     1  12700K    900K  fg root     /system/bin/debuggerd64
+
+  326  3   0% S     6  57672K   4804K  fg drm      /system/bin/drmserver
+
+  328  1   0% S     1  10532K    704K  fg install  /system/bin/installd
+
+  332  2   0% S     1  16428K   1428K  fg keystore /system/bin/keystore
+
+  334  0   0% S     2  15584K    996K  fg shell    /system/bin/mobile_log_d
+
+  336  3   0% S     2  13372K    688K  fg shell    /system/bin/netdiag
+
+  341  1   0% S     2  19816K    904K  fg system   /system/bin/dm_agent_binder
+
+  342  4   0% S     2  19548K    968K  fg system   /system/bin/ppl_agent
+
+  343  0   0% S     2  18968K    784K  fg system   /system/bin/matv
+
+  344  5   0% S    33  50584K   2504K  fg gps      /system/bin/mtk_agpsd
+
+  345  0   0% S     1  10336K    676K  fg wifi     /system/bin/wifi2agps
+
+  350  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  351  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  352  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  390  0   0% S     1  16088K   1332K  fg gps      /system/xbin/mnld
+
+  392  1   0% S     2  19404K   1000K  fg system   /system/bin/nvram_agent_binder
+
+  394  4   0% S     3  11400K    636K  fg system   /system/bin/thermal
+
+  395  0   0% S     1  12836K    824K  fg system   /system/bin/thermald
+
+  396  0   0% S     1  12828K    776K  fg shell    /system/bin/batterywarning
+
+  397  4   0% S     2  17096K   1132K  fg system   /system/bin/MtkCodecService
+
+  398  2   0% S     3  24068K   1456K  fg system   /system/bin/guiext-server
+
+  399  0   0% S     2  11400K    696K  fg system   /system/bin/immvibed
+
+  401  0   0% S     6 2126352K  39748K  fg root     zygote64
+
+  402  5   0% S     6 1535524K  37476K  fg root     zygote
+
+  404  1   0% S     6  34776K   4936K  fg bluetoot /system/bin/mtkbt
+
+  405  3   0% S     3  66848K   4008K  fg system   /system/bin/program_binary_service
+
+  406  0   0% S     2  17208K    800K  fg root     /system/bin/sdcard
+
+  420  2   0% S     1      0K      0K  fg root     pkgld
+
+  590  3   0% S     1  64888K   4104K  fg system   /system/bin/em_svr
+
+  740  1   0% S     1      0K      0K  fg root     mtk_stp_psm
+
+  741  0   0% S     1      0K      0K  fg root     mtk_stp_btm
+
+  742  1   0% S     1      0K      0K  fg root     mtk_wmtd
+
+  771  1   0% S     1      0K      0K  fg root     stp_sdio_tx_rx
+
+  772  0   0% S     1      0K      0K  fg root     test_report_wor
+
+  774  0   0% S     3  14916K   1036K  fg shell    /system/bin/emdlogger1
+
+  775  0   0% S    15  27848K    936K  fg radio    /system/bin/gsm0710muxd
+
+  791  2   0% S    28  47188K   2000K  fg radio    /system/bin/mtkrild
+
+ 1063  2   0% S     1  17324K   2272K  fg wifi     /system/bin/wpa_supplicant
+
+ 1153  5   0% S    45 2267796K  74224K  fg system   com.meizu.battery
+
+ 1236  0   0% S    21 2143672K  48236K  fg system   com.meizu.experiencedatasync
+
+ 1387  3   0% S     1      0K      0K  fg root     kworker/3:2
+
+ 1440  2   0% S    32 2175700K  72428K  fg u0_a4    com.android.incallui
+
+ 1487  0   0% S    18 2140164K  37280K  fg u0_a68   com.mediatek.nlpservice
+
+ 1497  5   0% S    56 2188528K  54156K  fg system   com.meizu.alphame
+
+ 1554  4   0% S    16 2138856K  39428K  fg system   com.fingerprints.service
+
+ 2476  0   0% S    39 2190808K  65340K  fg u0_a32   com.flyme.systemuitools
+
+ 2545  3   0% S    26 2158488K  43712K  bg u0_a65   com.meizu.share
+
+ 3050  1   0% S     1      0K      0K  fg root     kworker/1:2H
+
+ 3483  0   0% S    27 1562736K  42760K  bg u0_a61   com.meizu.cloud
+
+ 3888  0   0% S    35 1582432K  47944K  bg u0_a64   com.meizu.flyme.service.find
+
+ 4203  0   0% S    22 1557612K  42632K  bg u0_a61   com.meizu.cloud:mzservice_v1
+
+ 4464  4   0% S     1      0K      0K  fg root     kworker/4:2
+
+ 4589  0   0% S    41 2185856K  51380K  bg u0_a60   com.meizu.account
+
+ 5042  1   0% S    28 2167300K  56884K  bg u0_a67   com.meizu.mzsyncservice
+
+ 5874  0   0% S    43 2223636K  73392K  fg system   com.meizu.flyme.update
+
+ 5925  3   0% S    25 2169608K  48964K  fg system   com.app.activate
+
+ 5938  3   0% S    23 2167492K  43764K  bg system   com.app.xcore
+
+ 5959  2   0% S    37 2297316K  60872K  fg system   com.app.meteor
+
+ 5980  0   0% S    39 2297092K  59320K  bg system   com.android.packageinstaller
+
+ 6416  0   0% S    32 1602180K  50452K  fg u0_a74   com.flyme.roamingpay
+
+ 6648  0   0% S    28 1572352K  40972K  bg u0_a85   com.meizu.net.pedometer
+
+ 7475  1   0% S     4  92256K  18180K  bg u0_a74   /data/app/com.flyme.roamingpay-2/lib/arm/libweexjsb.so
+
+13096  0   0% S    32 2190204K  58248K  bg u0_a9    android.process.media
+
+14894  4   0% S    23 1562624K  41324K  bg u0_a61   com.meizu.cloud:mz_tracker
+
+15822  2   0% S   134 2142216K  92364K  bg u0_a98   com.tencent.mm:tools
+
+15903  0   0% S   171 2134924K 163532K  fg u0_a98   com.tencent.mm
+
+16079  0   0% S    92 1892772K  81248K  fg u0_a98   com.tencent.mm:push
+
+16161  0   0% S    18 2141768K  45136K  bg u0_a3    com.android.providers.calendar
+
+16319  3   0% S   128 2139804K 125460K  bg u0_a98   com.tencent.mm:appbrand0
+
+16340  1   0% S   103 1993308K  95132K  bg u0_a98   com.tencent.mm:appbrand1
+
+19300  0   0% S    28 1573232K  46448K  bg u0_a51   com.iflytek.speechsuite
+
+20680  0   0% T     1  10264K    564K  fg u0_a88   sh
+
+20917  0   0% S    63 1670912K  75732K  bg u0_a73   com.meizu.media.reader
+
+21960  0   0% S     1      0K      0K  fg root     kworker/u16:2
+
+22215  0   0% T     1 1651216K  53872K  fg u0_a88   com.houwei.guaishang
+
+22331  1   0% S     1      0K      0K  fg root     fs_suspend_syss
+
+22881  0   0% S    27 1581312K  71736K  fg u0_a150  com.tea7.app:core
+
+22912  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+22927  0   0% S    31 1598696K  78704K  bg u0_a150  com.tea7.app:pushservice
+
+23147  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+23315  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23373  0   0% S    55 1627776K  68992K  bg u0_a21   com.meizu.media.music
+
+    1  0   0% S     1   9044K   1284K  fg root     /init
+
+23516  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23627  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+23673  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23775  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23820  0   0% S    32 2186120K  67012K  bg u0_a40   com.android.calendar:remote
+
+23919  2   0% S     1      0K      0K  fg root     kworker/2:1
+
+23927  0   0% S    25 2167500K  63740K  bg u0_a13   com.meizu.flyme.launcher
+
+23933  1   0% S    23 2148408K  46444K  fg radio    com.flyme.virtual.softsim
+
+23962  0   0% S    17 2139120K  40412K  fg radio    com.android.flyme.bridge.softsim
+
+24019  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24073  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24138  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24200  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24245  0   0% S    49 1632540K  74416K  bg u0_a5    com.meizu.customizecenter
+
+24305  5   0% S     4  92256K  22908K  bg u0_a5    /data/app/com.meizu.customizecenter-2/lib/arm/libweexjsb.so
+
+24410  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24473  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24544  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24630  1   0% S     1      0K      0K  fg root     kworker/1:0
+
+24674  4   0% S     1      0K      0K  fg root     kworker/u17:3
+
+24716  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24850  1   0% S     1      0K      0K  fg root     kworker/1:2
+
+24930  0   0% S     1      0K      0K  fg root     kworker/u16:1
+
+24937  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+25026  2   0% S     1      0K      0K  fg root     kworker/u17:1
+
+25069  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+25099  0   0% S    39 1601864K  59020K  bg u0_a11   com.android.email
+
+25178  0   0% S     1      0K      0K  fg root     kworker/0:3
+
+25217  0   0% S    45 2189728K  66168K  bg system   com.meizu.voiceassistant
+
+25238  0   0% S    24 2198808K  61096K  bg u0_a4    android.process.acore
+
+25320  0   0% S    32 1607016K  84096K  bg u0_a7    com.meizu.netcontactservice
+
+25342  4   0% S     1      0K      0K  fg root     kworker/4:0
+
+25389  1   0% S    16 2158272K  45620K  bg u0_a31   com.android.soundrecorder
+
+25452  3   0% S     1      0K      0K  fg root     kworker/u17:2
+
+25477  0   0% S    36 1613176K  59184K  bg u0_a10   com.meizu.media.ebook:pushservice
+
+25503  3   0% S    59 1629108K  71616K  bg u0_a10   com.meizu.media.ebook
+
+25646  4   0% S    31 1631356K  61096K  bg u0_a29   com.meizu.sceneinfo
+
+25705  0   0% S    33 1588160K  67132K  bg u0_a7    com.android.dialer
+
+25778  0   0% S    32 1576708K  52448K  bg u0_a48   com.meizu.flyme.telecom
+
+25803  0   0% S    25 1566436K  50260K  bg u0_a47   com.meizu.flymecommunication
+
+25885  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+25893  2   0% S     1      0K      0K  fg root     kworker/2:0
+
+25924  0   0% S     1      0K      0K  fg root     kworker/0:0
+
+25943  1   0% S    17 2144640K  42692K  bg system   com.flyme.systemuiplugin
+
+25968  0   0% S    18 2140596K  43592K  bg private_ com.meizu.privacy
+
+26048  3   0% S    21 1589728K  50496K  bg u0_a76   com.meizu.net.search
+
+26430  2   0% Z     1      0K      0K  fg u0_a150  ps
+
+28462  5   0% S     1      0K      0K  fg root     kworker/5:2
+
+31028  1   0% S     1  10372K    656K  fg dhcp     /system/bin/dhcpcd
+
+23445  1   0% S     1      0K      0K  fg root     kworker/1:3
+
+    2  3   0% S     1      0K      0K  fg root     kthreadd
+
+    3  0   0% S     1      0K      0K  fg root     ksoftirqd/0
+
+    5  0   0% S     1      0K      0K  fg root     kworker/0:0H
+
+    7  0   0% S     1      0K      0K  fg root     migration/0
+
+    8  1   0% S     1      0K      0K  fg root     rcu_preempt
+
+    9  0   0% S     1      0K      0K  fg root     rcu_bh
+
+   10  3   0% S     1      0K      0K  fg root     rcu_sched
+
+   11  1   0% S     1      0K      0K  fg root     migration/1
+
+   12  1   0% S     1      0K      0K  fg root     ksoftirqd/1
+
+   15  2   0% S     1      0K      0K  fg root     migration/2
+
+   16  2   0% S     1      0K      0K  fg root     ksoftirqd/2
+
+   18  2   0% S     1      0K      0K  fg root     kworker/2:0H
+
+   19  3   0% S     1      0K      0K  fg root     migration/3
+
+   20  3   0% S     1      0K      0K  fg root     ksoftirqd/3
+
+   22  3   0% S     1      0K      0K  fg root     kworker/3:0H
+
+   23  4   0% R     1      0K      0K  fg root     migration/4
+
+   24  4   0% R     1      0K      0K  fg root     ksoftirqd/4
+
+   26  4   0% S     1      0K      0K  fg root     kworker/4:0H
+
+   27  5   0% R     1      0K      0K  fg root     migration/5
+
+   28  5   0% R     1      0K      0K  fg root     ksoftirqd/5
+
+   30  5   0% S     1      0K      0K  fg root     kworker/5:0H
+
+   31  6   0% R     1      0K      0K  fg root     migration/6
+
+   32  6   0% R     1      0K      0K  fg root     ksoftirqd/6
+
+   33  6   0% S     1      0K      0K  fg root     kworker/6:0
+
+   34  6   0% S     1      0K      0K  fg root     kworker/6:0H
+
+   35  7   0% R     1      0K      0K  fg root     migration/7
+
+   36  7   0% R     1      0K      0K  fg root     ksoftirqd/7
+
+   37  0   0% S     1      0K      0K  fg root     kworker/7:0
+
+   38  7   0% S     1      0K      0K  fg root     kworker/7:0H
+
+
+
+
+
+
+
+User 0%, System 0%, IOW 0%, IRQ 0%
+
+User 132 + Nice 28 + Sys 51 + Idle -16894830 + IOW 2093 + IRQ 0 + SIRQ 2 = -16892524
+
+
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+
+22826  0   0% S    87 1961544K 237168K  fg u0_a150  com.tea7.app
+
+26600  1   0% R     1  12748K   1696K  fg shell    top
+
+  819  0   0% S   124 2367272K 148140K  fg system   system_server
+
+  302  0   0% S    19 144576K   6612K  fg system   /system/bin/surfaceflinger
+
+ 1021  0   0% S     1      0K      0K  fg root     hif_thread
+
+  327  0   0% S    34 288204K  24532K  fg media    /system/bin/mediaserver
+
+  300  1   0% S     1  10448K    664K  fg system   /system/bin/servicemanager
+
+  339  4   0% S     3  35956K   2012K  fg system   /system/bin/aal
+
+ 1587  1   0% S    64 2239476K  79412K  fg radio    com.android.phone
+
+ 1022  0   0% S     1      0K      0K  fg root     rx_thread
+
+  770  1   0% S     1      0K      0K  fg root     ksdioirqd/mmc1
+
+24545  1   0% S     1      0K      0K  fg root     kworker/u16:6
+
+ 1020  0   0% S     1      0K      0K  fg root     tx_thread
+
+16319  0   0% S   128 2139804K 125460K  bg u0_a98   com.tencent.mm:appbrand0
+
+23664  1   0% S     1      0K      0K  fg root     kworker/u16:7
+
+ 1032  1   0% S    48 2254228K 184792K  fg u0_a32   com.android.systemui
+
+   19  3   0% R     1      0K      0K  fg root     migration/3
+
+20344  0   0% S     1      0K      0K  fg root     kworker/u16:5
+
+  140  1   0% S     1      0K      0K  fg root     display_check_a
+
+24043  0   0% S     1      0K      0K  fg root     kworker/0:2
+
+15822  2   0% S   134 2142216K  92364K  bg u0_a98   com.tencent.mm:tools
+
+15903  0   0% S   171 2134924K 163532K  fg u0_a98   com.tencent.mm
+
+23150  2   0% S     1      0K      0K  fg root     kworker/u16:4
+
+   33  6   0% S     1      0K      0K  fg root     kworker/6:0
+
+   34  6   0% S     1      0K      0K  fg root     kworker/6:0H
+
+   35  7   0% R     1      0K      0K  fg root     migration/7
+
+   36  7   0% R     1      0K      0K  fg root     ksoftirqd/7
+
+   37  0   0% S     1      0K      0K  fg root     kworker/7:0
+
+   38  7   0% S     1      0K      0K  fg root     kworker/7:0H
+
+   39  0   0% S     1      0K      0K  fg root     khelper
+
+   40  0   0% S     1      0K      0K  fg root     fs_sync
+
+   41  0   0% S     1      0K      0K  fg root     suspend
+
+   42  0   0% S     1      0K      0K  fg root     writeback
+
+   43  4   0% S     1      0K      0K  fg root     bioset
+
+   44  4   0% S     1      0K      0K  fg root     crypto
+
+   45  4   0% S     1      0K      0K  fg root     kblockd
+
+   46  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   47  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   48  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   49  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   50  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   51  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   52  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   53  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   54  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   55  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   56  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   57  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   58  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   59  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   60  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   61  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   62  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   63  4   0% S     1      0K      0K  fg root     cmdq_task
+
+   65  4   0% S     1      0K      0K  fg root     pool_reload_wor
+
+   66  4   0% S     1      0K      0K  fg root     mmdvfs_gpumon
+
+   67  4   0% S     1      0K      0K  fg root     khubd
+
+   69  5   0% S     1      0K      0K  fg root     cfg80211
+
+   70  0   0% S     1      0K      0K  fg root     pmic_6331_threa
+
+   71  4   0% S     1      0K      0K  fg root     pmic_6332_threa
+
+   72  1   0% S     1      0K      0K  fg root     cfinteractive
+
+   85  0   0% S     1      0K      0K  fg root     input_boost
+
+   86  1   0% S     1      0K      0K  fg root     kswapd0
+
+   87  0   0% S     1      0K      0K  fg root     fsnotify_mark
+
+   88  0   0% S     1      0K      0K  fg root     cifsiod
+
+  104  0   0% S     1      0K      0K  fg root     ion_mm_heap
+
+  105  0   0% S     1      0K      0K  fg root     mt_gpufreq_inpu
+
+  106  0   0% S     1      0K      0K  fg root     hps_main
+
+  107  0   0% S     1      0K      0K  fg root     hang_detect
+
+  108  0   0% S     1      0K      0K  fg root     rrc_set_refresh
+
+  109  0   0% S     1      0K      0K  fg root     rrc_set_low_ref
+
+  110  0   0% S     1      0K      0K  fg root     conn-md-thread
+
+  111  0   0% S     1      0K      0K  fg root     md1_cldma_worke
+
+  112  0   0% S     1      0K      0K  fg root     md1_tx0_worker
+
+  113  0   0% S     1      0K      0K  fg root     md1_tx1_worker
+
+  114  0   0% S     1      0K      0K  fg root     md1_tx2_worker
+
+  115  0   0% S     1      0K      0K  fg root     md1_tx3_worker
+
+  116  0   0% S     1      0K      0K  fg root     md1_tx4_worker
+
+  117  0   0% S     1      0K      0K  fg root     md1_tx5_worker
+
+  118  0   0% S     1      0K      0K  fg root     md1_tx6_worker
+
+  119  0   0% S     1      0K      0K  fg root     md1_tx7_worker
+
+  120  0   0% S     1      0K      0K  fg root     md1_rx0_worker
+
+  121  0   0% S     1      0K      0K  fg root     md1_rx1_worker
+
+  122  0   0% S     1      0K      0K  fg root     md1_rx2_worker
+
+  124  0   0% S     1      0K      0K  fg root     md1_rx3_worker
+
+  125  0   0% S     1      0K      0K  fg root     md1_rx4_worker
+
+  126  0   0% S     1      0K      0K  fg root     md1_rx5_worker
+
+  127  0   0% S     1      0K      0K  fg root     md1_rx6_worker
+
+  128  0   0% S     1      0K      0K  fg root     md1_rx7_worker
+
+  129  0   0% S     1      0K      0K  fg root     ccci_ipc_3
+
+  130  0   0% S     1      0K      0K  fg root     ccci_ipc_6
+
+  131  1   0% S     1      0K      0K  fg root     ccci_ctrl
+
+  132  0   0% S     1      0K      0K  fg root     ccci_sys
+
+  133  0   0% S     1      0K      0K  fg root     ccci_poll
+
+  134  0   0% S     1      0K      0K  fg root     mc_fastcall
+
+  137  6   0% S     1      0K      0K  fg root     decouple_update
+
+  139  4   0% S     1      0K      0K  fg root     decouple_trigge
+
+  141  1   0% S     1      0K      0K  fg root     present_fence_w
+
+  142  0   0% S     1      0K      0K  fg root     frame_update_wo
+
+  143  2   0% D     1      0K      0K  fg root     disp_idlemgr
+
+  144  0   0% S     1      0K      0K  fg root     accdet
+
+  145  0   0% S     1      0K      0K  fg root     weird_headphone
+
+  146  5   0% S     1      0K      0K  fg root     accdet_disable
+
+  147  0   0% S     1      0K      0K  fg root     accdet_eint
+
+  148  4   0% S     1      0K      0K  fg root     vcm_work
+
+  149  1   0% S     1      0K      0K  fg root     mtk-tpd
+
+  150  0   0% S     1      0K      0K  fg root     dsx_exp_workque
+
+  151  5   0% S     1      0K      0K  fg root     kworker/5:1
+
+  153  0   0% S     1      0K      0K  fg root     fwu_workqueue
+
+  154  0   0% S     1      0K      0K  fg root     isl29125wq
+
+  155  0   0% S     1      0K      0K  fg root     pa1212wq
+
+  156  0   0% S     1      0K      0K  fg root     kthermp
+
+  158  0   0% S     1      0K      0K  fg root     vcorefs
+
+  159  4   0% S     1      0K      0K  fg root     pvr_timer
+
+  160  3   0% S     1      0K      0K  fg root     pvr_defer_free
+
+  161  3   0% S     1      0K      0K  fg root     pvr_devices_wd_
+
+  162  4   0% S     1      0K      0K  fg root     pvr_sync_defer_
+
+  163  4   0% S     1      0K      0K  fg root     pvr_sync_check_
+
+  164  4   0% S     1      0K      0K  fg root     mwp
+
+  165  4   0% S     1      0K      0K  fg root     emi_mpu
+
+  166  4   0% S     1      0K      0K  fg root     MD32_REBOOT_WQ
+
+  167  4   0% S     1      0K      0K  fg root     MD32_WDT_WQ
+
+  168  4   0% S     1      0K      0K  fg root     MD32_ASSERT_WQ
+
+  169  1   0% S     1      0K      0K  fg root     fpc1020_worker
+
+  170  0   0% S     1      0K      0K  fg root     uether
+
+  171  0   0% S     1      0K      0K  fg root     uether_rx1
+
+  172  1   0% S     1      0K      0K  fg root     bat_thread_kthr
+
+  173  1   0% S     1      0K      0K  fg root     mtk charger_hv_
+
+  174  1   0% S     1      0K      0K  fg root     mmcqd/0
+
+  175  0   0% S     1      0K      0K  fg root     mmcqd/0boot0
+
+  176  0   0% S     1      0K      0K  fg root     mmcqd/0boot1
+
+  177  0   0% S     1      0K      0K  fg root     mmcqd/0rpmb
+
+  178  1   0% S     1      0K      0K  fg root     kworker/1:1H
+
+  179  5   0% S     1      0K      0K  fg root     kworker/5:1H
+
+  180  1   0% S     1      0K      0K  fg root     binder
+
+  181  0   0% S     1      0K      0K  fg root     mtk_vibrator
+
+  183  0   0% S     1      0K      0K  fg root     irq/297-inv_irq
+
+  184  0   0% S     1      0K      0K  fg root     tspdrv_workqueu
+
+  189  0   0% S     1      0K      0K  fg root     kworker/6:1
+
+  190  3   0% S     1      0K      0K  fg root     kworker/3:1
+
+  191  0   0% S     1      0K      0K  fg root     pkt_thread
+
+  192  0   0% S     1      0K      0K  fg root     deferwq
+
+  193  2   0% S     1      0K      0K  fg root     PTP_CTRL_CPU
+
+  194  1   0% S     1      0K      0K  fg root     PTP_CTRL_LTE
+
+  195  0   0% S     1      0K      0K  fg root     PTP_CTRL_GPU
+
+  196  1   0% S     1      0K      0K  fg root     PTP_CTRL_SOC
+
+  199  0   0% S     1      0K      0K  fg root     irq/410-gpio-ke
+
+  200  0   0% S     1      0K      0K  fg root     irq/411-gpio-ke
+
+  201  0   0% S     1      0K      0K  fg root     irq/289-gpio-ke
+
+  202  0   0% S     1      0K      0K  fg root     wdtk-0
+
+  203  1   0% S     1      0K      0K  fg root     wdtk-1
+
+  204  2   0% S     1      0K      0K  fg root     wdtk-2
+
+  205  3   0% S     1      0K      0K  fg root     wdtk-3
+
+  206  4   0% S     1      0K      0K  fg root     wdtk-4
+
+  207  5   0% S     1      0K      0K  fg root     wdtk-5
+
+  208  0   0% S     1      0K      0K  fg root     wdtk-6
+
+  209  0   0% S     1      0K      0K  fg root     wdtk-7
+
+  210  0   0% S     1      0K      0K  fg root     f_mtp
+
+  211  0   0% S     1      0K      0K  fg root     file-storage
+
+  212  7   0% S     1      0K      0K  fg root     kworker/7:1H
+
+  213  6   0% S     1      0K      0K  fg root     kworker/6:1H
+
+  215  0   0% S     1      0K      0K  fg root     kworker/0:1H
+
+  216  4   0% S     1      0K      0K  fg root     kworker/4:1H
+
+  217  3   0% S     1      0K      0K  fg root     kworker/3:1H
+
+  218  2   0% S     1      0K      0K  fg root     kworker/2:1H
+
+  219  3   0% S     1   9036K    860K  fg root     /sbin/ueventd
+
+  221  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p18
+
+  222  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  223  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p14
+
+  224  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  229  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p20
+
+  230  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  234  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p19
+
+  235  1   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  241  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p5-
+
+  242  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  248  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p6-
+
+  249  1   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  265  1   0% S     1      0K      0K  fg root     loop0
+
+  266  0   0% S    10  22328K   1376K  fg system   /system/bin/mcDriverDaemon
+
+  267  2   0% S     1      0K      0K  fg root     mc_log
+
+  296  0   0% S     5  20832K   1432K  fg logd     /system/bin/logd
+
+  297  1   0% S     1  10076K    476K  fg root     /sbin/healthd
+
+  298  0   0% S     1  10264K    604K  fg root     /system/bin/sh
+
+  299  0   0% S     1  14060K    868K  fg root     /system/bin/lmkd
+
+  301  0   0% S     3  22964K   1412K  fg root     /system/bin/vold
+
+  303  1   0% S     1  11108K    752K  fg system   /system/bin/autokd
+
+  307  0   0% S     1  10160K    576K  fg system   /system/bin/6620_launcher
+
+  308  0   0% S     1  10156K    612K  fg root     /system/bin/stp_dump3
+
+  309  0   0% S     1   9748K    912K  fg radio    /system/bin/ccci_fsd
+
+  310  0   0% S     2  11824K   1140K  fg system   /system/bin/ccci_mdinit
+
+  321  0   0% S     1      0K      0K  fg root     kauditd
+
+  322  0   0% S     9  25256K   1272K  fg root     /system/bin/netd
+
+  323  0   0% S     2  17900K    932K  fg root     /system/bin/flymed
+
+  324  0   0% S     1  10880K   1160K  fg root     /system/bin/debuggerd
+
+  325  0   0% S     1  12700K    900K  fg root     /system/bin/debuggerd64
+
+  326  3   0% S     6  57672K   4804K  fg drm      /system/bin/drmserver
+
+  328  1   0% S     1  10532K    704K  fg install  /system/bin/installd
+
+  332  2   0% S     1  16428K   1428K  fg keystore /system/bin/keystore
+
+  334  0   0% S     2  15584K    996K  fg shell    /system/bin/mobile_log_d
+
+  336  3   0% S     2  13372K    688K  fg shell    /system/bin/netdiag
+
+  341  1   0% S     2  19816K    904K  fg system   /system/bin/dm_agent_binder
+
+  342  4   0% S     2  19548K    968K  fg system   /system/bin/ppl_agent
+
+  343  0   0% S     2  18968K    784K  fg system   /system/bin/matv
+
+  344  5   0% S    33  50584K   2504K  fg gps      /system/bin/mtk_agpsd
+
+  345  0   0% S     1  10336K    676K  fg wifi     /system/bin/wifi2agps
+
+  350  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  351  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  352  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  390  0   0% S     1  16088K   1332K  fg gps      /system/xbin/mnld
+
+  392  1   0% S     2  19404K   1000K  fg system   /system/bin/nvram_agent_binder
+
+  394  4   0% S     3  11400K    636K  fg system   /system/bin/thermal
+
+  395  0   0% S     1  12836K    824K  fg system   /system/bin/thermald
+
+  396  0   0% S     1  12828K    776K  fg shell    /system/bin/batterywarning
+
+  397  4   0% S     2  17096K   1132K  fg system   /system/bin/MtkCodecService
+
+  398  2   0% S     3  24068K   1456K  fg system   /system/bin/guiext-server
+
+  399  0   0% S     2  11400K    696K  fg system   /system/bin/immvibed
+
+  401  0   0% S     6 2126352K  39748K  fg root     zygote64
+
+  402  5   0% S     6 1535524K  37476K  fg root     zygote
+
+  404  1   0% S     6  34776K   4936K  fg bluetoot /system/bin/mtkbt
+
+  405  3   0% S     3  66848K   4008K  fg system   /system/bin/program_binary_service
+
+  406  0   0% S     2  17208K    800K  fg root     /system/bin/sdcard
+
+  420  2   0% S     1      0K      0K  fg root     pkgld
+
+  590  3   0% S     1  64888K   4104K  fg system   /system/bin/em_svr
+
+  740  1   0% S     1      0K      0K  fg root     mtk_stp_psm
+
+  741  0   0% S     1      0K      0K  fg root     mtk_stp_btm
+
+  742  1   0% S     1      0K      0K  fg root     mtk_wmtd
+
+  771  1   0% S     1      0K      0K  fg root     stp_sdio_tx_rx
+
+  772  0   0% S     1      0K      0K  fg root     test_report_wor
+
+  774  0   0% S     3  14916K   1036K  fg shell    /system/bin/emdlogger1
+
+  775  1   0% S    15  27848K    936K  fg radio    /system/bin/gsm0710muxd
+
+  791  2   0% S    28  47188K   2000K  fg radio    /system/bin/mtkrild
+
+  933  2   0% S     1      0K      0K  fg root     kworker/2:2
+
+ 1063  2   0% S     1  17324K   2272K  fg wifi     /system/bin/wpa_supplicant
+
+ 1153  5   0% S    45 2267796K  74224K  fg system   com.meizu.battery
+
+ 1236  0   0% S    21 2143672K  48236K  fg system   com.meizu.experiencedatasync
+
+ 1324  0   0% S    37 2177080K  52180K  bg u0_a18   com.meizu.location
+
+ 1387  3   0% S     1      0K      0K  fg root     kworker/3:2
+
+ 1440  2   0% S    32 2175700K  72428K  fg u0_a4    com.android.incallui
+
+ 1487  0   0% S    18 2140164K  37280K  fg u0_a68   com.mediatek.nlpservice
+
+ 1497  5   0% S    56 2188528K  54156K  fg system   com.meizu.alphame
+
+ 1554  4   0% S    16 2138856K  39428K  fg system   com.fingerprints.service
+
+ 1726  3   0% S    77 2404264K 116484K  fg system   com.meizu.safe
+
+ 2063  0   0% S    42 2186460K  65308K  fg system   com.meizu.dataservice
+
+ 2476  0   0% S    39 2190808K  65340K  fg u0_a32   com.flyme.systemuitools
+
+ 2545  3   0% S    26 2158488K  43712K  bg u0_a65   com.meizu.share
+
+ 3050  1   0% S     1      0K      0K  fg root     kworker/1:2H
+
+ 3483  0   0% S    27 1562736K  42760K  bg u0_a61   com.meizu.cloud
+
+ 3888  0   0% S    35 1582432K  47944K  bg u0_a64   com.meizu.flyme.service.find
+
+ 4203  0   0% S    22 1557612K  42632K  bg u0_a61   com.meizu.cloud:mzservice_v1
+
+ 4464  4   0% S     1      0K      0K  fg root     kworker/4:2
+
+ 4589  0   0% S    41 2185856K  51380K  bg u0_a60   com.meizu.account
+
+ 5042  1   0% S    28 2167300K  56884K  bg u0_a67   com.meizu.mzsyncservice
+
+ 5874  0   0% S    43 2223636K  73392K  fg system   com.meizu.flyme.update
+
+ 5925  3   0% S    25 2169608K  48964K  fg system   com.app.activate
+
+ 5938  3   0% S    23 2167492K  43764K  bg system   com.app.xcore
+
+ 5959  2   0% S    37 2297316K  60872K  fg system   com.app.meteor
+
+ 5980  0   0% S    39 2297092K  59320K  bg system   com.android.packageinstaller
+
+ 6416  0   0% S    32 1602180K  50452K  fg u0_a74   com.flyme.roamingpay
+
+ 6648  0   0% S    28 1572352K  40972K  bg u0_a85   com.meizu.net.pedometer
+
+ 7475  1   0% S     4  92256K  18180K  bg u0_a74   /data/app/com.flyme.roamingpay-2/lib/arm/libweexjsb.so
+
+ 9376  1   0% S    41 1651148K  79312K  bg u0_a25   com.meizu.flyme.input
+
+13031  4   0% S    78 1667716K  63868K  bg u0_a38   com.meizu.mstore
+
+13096  0   0% S    32 2190204K  58248K  bg u0_a9    android.process.media
+
+14894  4   0% S    23 1562624K  41324K  bg u0_a61   com.meizu.cloud:mz_tracker
+
+16079  0   0% S    92 1892772K  81248K  fg u0_a98   com.tencent.mm:push
+
+16161  0   0% S    18 2141768K  45136K  bg u0_a3    com.android.providers.calendar
+
+16340  1   0% S   103 1993308K  95132K  bg u0_a98   com.tencent.mm:appbrand1
+
+19300  0   0% S    28 1573232K  46448K  bg u0_a51   com.iflytek.speechsuite
+
+20680  0   0% T     1  10264K    564K  fg u0_a88   sh
+
+20917  0   0% S    63 1670912K  75732K  bg u0_a73   com.meizu.media.reader
+
+21960  0   0% S     1      0K      0K  fg root     kworker/u16:2
+
+22215  0   0% T     1 1651216K  53872K  fg u0_a88   com.houwei.guaishang
+
+22331  1   0% S     1      0K      0K  fg root     fs_suspend_syss
+
+22881  0   0% S    27 1581312K  71736K  fg u0_a150  com.tea7.app:core
+
+22912  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+22927  0   0% S    31 1598696K  78704K  bg u0_a150  com.tea7.app:pushservice
+
+23147  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+23315  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23373  0   0% S    55 1627776K  68992K  bg u0_a21   com.meizu.media.music
+
+    1  0   0% S     1   9044K   1284K  fg root     /init
+
+23516  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23627  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+23673  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23775  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23820  0   0% S    32 2186120K  67012K  bg u0_a40   com.android.calendar:remote
+
+23919  2   0% S     1      0K      0K  fg root     kworker/2:1
+
+23927  0   0% S    25 2167500K  63740K  bg u0_a13   com.meizu.flyme.launcher
+
+23933  1   0% S    23 2148408K  46444K  fg radio    com.flyme.virtual.softsim
+
+23962  0   0% S    17 2139120K  40412K  fg radio    com.android.flyme.bridge.softsim
+
+24019  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24073  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24138  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24200  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24245  0   0% S    49 1632540K  74416K  bg u0_a5    com.meizu.customizecenter
+
+24305  5   0% S     4  92256K  22908K  bg u0_a5    /data/app/com.meizu.customizecenter-2/lib/arm/libweexjsb.so
+
+24410  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24473  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24544  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24630  1   0% S     1      0K      0K  fg root     kworker/1:0
+
+24674  2   0% S     1      0K      0K  fg root     kworker/u17:3
+
+24716  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24850  1   0% S     1      0K      0K  fg root     kworker/1:2
+
+24930  0   0% S     1      0K      0K  fg root     kworker/u16:1
+
+24931  2   0% S     1      0K      0K  fg root     kworker/u16:8
+
+24937  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+25026  2   0% S     1      0K      0K  fg root     kworker/u17:1
+
+25069  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+25099  0   0% S    39 1601864K  59020K  bg u0_a11   com.android.email
+
+25178  0   0% S     1      0K      0K  fg root     kworker/0:3
+
+25217  0   0% S    45 2189728K  66168K  bg system   com.meizu.voiceassistant
+
+25238  0   0% S    24 2198808K  61096K  bg u0_a4    android.process.acore
+
+25320  0   0% S    32 1607016K  84096K  bg u0_a7    com.meizu.netcontactservice
+
+25342  4   0% S     1      0K      0K  fg root     kworker/4:0
+
+25389  1   0% S    16 2158272K  45620K  bg u0_a31   com.android.soundrecorder
+
+25452  0   0% S     1      0K      0K  fg root     kworker/u17:2
+
+25477  0   0% S    36 1613176K  59184K  bg u0_a10   com.meizu.media.ebook:pushservice
+
+25503  3   0% S    59 1629108K  71616K  bg u0_a10   com.meizu.media.ebook
+
+25646  4   0% S    31 1631356K  61096K  bg u0_a29   com.meizu.sceneinfo
+
+25705  0   0% S    33 1588160K  67132K  bg u0_a7    com.android.dialer
+
+25778  0   0% S    32 1576708K  52448K  bg u0_a48   com.meizu.flyme.telecom
+
+25803  0   0% S    25 1566436K  50260K  bg u0_a47   com.meizu.flymecommunication
+
+25885  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+25893  2   0% S     1      0K      0K  fg root     kworker/2:0
+
+25924  0   0% S     1      0K      0K  fg root     kworker/0:0
+
+25943  1   0% S    17 2144640K  42692K  bg system   com.flyme.systemuiplugin
+
+25968  0   0% S    18 2140596K  43592K  bg private_ com.meizu.privacy
+
+26048  3   0% S    21 1589728K  50496K  bg u0_a76   com.meizu.net.search
+
+26430  2   0% Z     1      0K      0K  fg u0_a150  ps
+
+28462  5   0% S     1      0K      0K  fg root     kworker/5:2
+
+31028  1   0% S     1  10372K    656K  fg dhcp     /system/bin/dhcpcd
+
+32449  1   0% S     8  20344K    352K  fg shell    /sbin/adbd
+
+23445  1   0% S     1      0K      0K  fg root     kworker/1:3
+
+    2  3   0% S     1      0K      0K  fg root     kthreadd
+
+    3  0   0% S     1      0K      0K  fg root     ksoftirqd/0
+
+    5  0   0% S     1      0K      0K  fg root     kworker/0:0H
+
+    7  0   0% S     1      0K      0K  fg root     migration/0
+
+    8  1   0% S     1      0K      0K  fg root     rcu_preempt
+
+    9  0   0% S     1      0K      0K  fg root     rcu_bh
+
+   10  1   0% S     1      0K      0K  fg root     rcu_sched
+
+   11  1   0% S     1      0K      0K  fg root     migration/1
+
+   12  1   0% S     1      0K      0K  fg root     ksoftirqd/1
+
+   15  2   0% R     1      0K      0K  fg root     migration/2
+
+   16  2   0% R     1      0K      0K  fg root     ksoftirqd/2
+
+   18  2   0% S     1      0K      0K  fg root     kworker/2:0H
+
+   20  3   0% R     1      0K      0K  fg root     ksoftirqd/3
+
+   22  3   0% S     1      0K      0K  fg root     kworker/3:0H
+
+   23  4   0% R     1      0K      0K  fg root     migration/4
+
+   24  4   0% R     1      0K      0K  fg root     ksoftirqd/4
+
+   26  4   0% S     1      0K      0K  fg root     kworker/4:0H
+
+   27  5   0% R     1      0K      0K  fg root     migration/5
+
+   28  5   0% R     1      0K      0K  fg root     ksoftirqd/5
+
+   30  5   0% S     1      0K      0K  fg root     kworker/5:0H
+
+   31  6   0% R     1      0K      0K  fg root     migration/6
+
+   32  6   0% R     1      0K      0K  fg root     ksoftirqd/6
+
+
+
+
+
+
+
+User 5%, System 11%, IOW 0%, IRQ 0%
+
+User 11 + Nice 1 + Sys 25 + Idle 187 + IOW 0 + IRQ 0 + SIRQ 0 = 224
+
+
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+
+22826  0   9% S    88 1964300K 237004K  fg u0_a150  com.tea7.app
+
+26600  1   4% R     1  12748K   1696K  fg shell    top
+
+  327  0   2% S    34 288204K  24532K  fg media    /system/bin/mediaserver
+
+  302  1   0% S    19 144576K   6612K  fg system   /system/bin/surfaceflinger
+
+  775  1   0% S    15  27848K    936K  fg radio    /system/bin/gsm0710muxd
+
+  174  1   0% S     1      0K      0K  fg root     mmcqd/0
+
+25452  0   0% S     1      0K      0K  fg root     kworker/u17:2
+
+  169  0   0% S     1      0K      0K  fg root     fpc1020_worker
+
+ 1032  0   0% S    48 2254228K 184792K  fg u0_a32   com.android.systemui
+
+   72  0   0% S     1      0K      0K  fg root     cfinteractive
+
+   15  2   0% R     1      0K      0K  fg root     migration/2
+
+   16  2   0% R     1      0K      0K  fg root     ksoftirqd/2
+
+   18  2   0% S     1      0K      0K  fg root     kworker/2:0H
+
+   19  3   0% R     1      0K      0K  fg root     migration/3
+
+   20  3   0% R     1      0K      0K  fg root     ksoftirqd/3
+
+   22  3   0% S     1      0K      0K  fg root     kworker/3:0H
+
+   23  4   0% R     1      0K      0K  fg root     migration/4
+
+   24  4   0% R     1      0K      0K  fg root     ksoftirqd/4
+
+   26  4   0% S     1      0K      0K  fg root     kworker/4:0H
+
+   27  5   0% R     1      0K      0K  fg root     migration/5
+
+   28  5   0% R     1      0K      0K  fg root     ksoftirqd/5
+
+   30  5   0% S     1      0K      0K  fg root     kworker/5:0H
+
+   31  6   0% R     1      0K      0K  fg root     migration/6
+
+   32  6   0% R     1      0K      0K  fg root     ksoftirqd/6
+
+   33  6   0% S     1      0K      0K  fg root     kworker/6:0
+
+   34  6   0% S     1      0K      0K  fg root     kworker/6:0H
+
+   35  7   0% R     1      0K      0K  fg root     migration/7
+
+   36  7   0% R     1      0K      0K  fg root     ksoftirqd/7
+
+   37  0   0% S     1      0K      0K  fg root     kworker/7:0
+
+   38  7   0% S     1      0K      0K  fg root     kworker/7:0H
+
+   39  0   0% S     1      0K      0K  fg root     khelper
+
+   40  0   0% S     1      0K      0K  fg root     fs_sync
+
+   41  0   0% S     1      0K      0K  fg root     suspend
+
+   42  0   0% S     1      0K      0K  fg root     writeback
+
+   43  4   0% S     1      0K      0K  fg root     bioset
+
+   44  4   0% S     1      0K      0K  fg root     crypto
+
+   45  4   0% S     1      0K      0K  fg root     kblockd
+
+   46  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   47  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   48  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   49  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   50  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   51  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   52  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   53  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   54  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   55  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   56  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   57  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   58  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   59  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   60  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   61  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   62  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   63  4   0% S     1      0K      0K  fg root     cmdq_task
+
+   65  4   0% S     1      0K      0K  fg root     pool_reload_wor
+
+   66  4   0% S     1      0K      0K  fg root     mmdvfs_gpumon
+
+   67  4   0% S     1      0K      0K  fg root     khubd
+
+   69  5   0% S     1      0K      0K  fg root     cfg80211
+
+   70  0   0% S     1      0K      0K  fg root     pmic_6331_threa
+
+   71  4   0% S     1      0K      0K  fg root     pmic_6332_threa
+
+   85  0   0% S     1      0K      0K  fg root     input_boost
+
+   86  1   0% S     1      0K      0K  fg root     kswapd0
+
+   87  0   0% S     1      0K      0K  fg root     fsnotify_mark
+
+   88  0   0% S     1      0K      0K  fg root     cifsiod
+
+  104  0   0% S     1      0K      0K  fg root     ion_mm_heap
+
+  105  0   0% S     1      0K      0K  fg root     mt_gpufreq_inpu
+
+  106  0   0% S     1      0K      0K  fg root     hps_main
+
+  107  0   0% S     1      0K      0K  fg root     hang_detect
+
+  108  0   0% S     1      0K      0K  fg root     rrc_set_refresh
+
+  109  0   0% S     1      0K      0K  fg root     rrc_set_low_ref
+
+  110  0   0% S     1      0K      0K  fg root     conn-md-thread
+
+  111  0   0% S     1      0K      0K  fg root     md1_cldma_worke
+
+  112  0   0% S     1      0K      0K  fg root     md1_tx0_worker
+
+  113  0   0% S     1      0K      0K  fg root     md1_tx1_worker
+
+  114  0   0% S     1      0K      0K  fg root     md1_tx2_worker
+
+  115  0   0% S     1      0K      0K  fg root     md1_tx3_worker
+
+  116  0   0% S     1      0K      0K  fg root     md1_tx4_worker
+
+  117  0   0% S     1      0K      0K  fg root     md1_tx5_worker
+
+  118  0   0% S     1      0K      0K  fg root     md1_tx6_worker
+
+  119  0   0% S     1      0K      0K  fg root     md1_tx7_worker
+
+  120  0   0% S     1      0K      0K  fg root     md1_rx0_worker
+
+  121  0   0% S     1      0K      0K  fg root     md1_rx1_worker
+
+  122  0   0% S     1      0K      0K  fg root     md1_rx2_worker
+
+  124  0   0% S     1      0K      0K  fg root     md1_rx3_worker
+
+  125  0   0% S     1      0K      0K  fg root     md1_rx4_worker
+
+  126  0   0% S     1      0K      0K  fg root     md1_rx5_worker
+
+  127  0   0% S     1      0K      0K  fg root     md1_rx6_worker
+
+  128  0   0% S     1      0K      0K  fg root     md1_rx7_worker
+
+  129  0   0% S     1      0K      0K  fg root     ccci_ipc_3
+
+  130  0   0% S     1      0K      0K  fg root     ccci_ipc_6
+
+  131  1   0% S     1      0K      0K  fg root     ccci_ctrl
+
+  132  0   0% S     1      0K      0K  fg root     ccci_sys
+
+  133  0   0% S     1      0K      0K  fg root     ccci_poll
+
+  134  0   0% S     1      0K      0K  fg root     mc_fastcall
+
+  137  6   0% S     1      0K      0K  fg root     decouple_update
+
+  139  4   0% S     1      0K      0K  fg root     decouple_trigge
+
+  140  1   0% S     1      0K      0K  fg root     display_check_a
+
+  141  0   0% S     1      0K      0K  fg root     present_fence_w
+
+  142  0   0% S     1      0K      0K  fg root     frame_update_wo
+
+  143  0   0% D     1      0K      0K  fg root     disp_idlemgr
+
+  144  0   0% S     1      0K      0K  fg root     accdet
+
+  145  0   0% S     1      0K      0K  fg root     weird_headphone
+
+  146  5   0% S     1      0K      0K  fg root     accdet_disable
+
+  147  0   0% S     1      0K      0K  fg root     accdet_eint
+
+  148  4   0% S     1      0K      0K  fg root     vcm_work
+
+  149  1   0% S     1      0K      0K  fg root     mtk-tpd
+
+  150  0   0% S     1      0K      0K  fg root     dsx_exp_workque
+
+  151  5   0% S     1      0K      0K  fg root     kworker/5:1
+
+  153  0   0% S     1      0K      0K  fg root     fwu_workqueue
+
+  154  0   0% S     1      0K      0K  fg root     isl29125wq
+
+  155  0   0% S     1      0K      0K  fg root     pa1212wq
+
+  156  0   0% S     1      0K      0K  fg root     kthermp
+
+  158  0   0% S     1      0K      0K  fg root     vcorefs
+
+  159  4   0% S     1      0K      0K  fg root     pvr_timer
+
+  160  3   0% S     1      0K      0K  fg root     pvr_defer_free
+
+  161  3   0% S     1      0K      0K  fg root     pvr_devices_wd_
+
+  162  4   0% S     1      0K      0K  fg root     pvr_sync_defer_
+
+  163  4   0% S     1      0K      0K  fg root     pvr_sync_check_
+
+  164  4   0% S     1      0K      0K  fg root     mwp
+
+  165  4   0% S     1      0K      0K  fg root     emi_mpu
+
+  166  4   0% S     1      0K      0K  fg root     MD32_REBOOT_WQ
+
+  167  4   0% S     1      0K      0K  fg root     MD32_WDT_WQ
+
+  168  4   0% S     1      0K      0K  fg root     MD32_ASSERT_WQ
+
+  170  0   0% S     1      0K      0K  fg root     uether
+
+  171  0   0% S     1      0K      0K  fg root     uether_rx1
+
+  172  1   0% S     1      0K      0K  fg root     bat_thread_kthr
+
+  173  0   0% S     1      0K      0K  fg root     mtk charger_hv_
+
+  175  0   0% S     1      0K      0K  fg root     mmcqd/0boot0
+
+  176  0   0% S     1      0K      0K  fg root     mmcqd/0boot1
+
+  177  0   0% S     1      0K      0K  fg root     mmcqd/0rpmb
+
+  178  1   0% S     1      0K      0K  fg root     kworker/1:1H
+
+  179  5   0% S     1      0K      0K  fg root     kworker/5:1H
+
+  180  1   0% S     1      0K      0K  fg root     binder
+
+  181  0   0% S     1      0K      0K  fg root     mtk_vibrator
+
+  183  0   0% S     1      0K      0K  fg root     irq/297-inv_irq
+
+  184  0   0% S     1      0K      0K  fg root     tspdrv_workqueu
+
+  189  0   0% S     1      0K      0K  fg root     kworker/6:1
+
+  190  3   0% S     1      0K      0K  fg root     kworker/3:1
+
+  191  0   0% S     1      0K      0K  fg root     pkt_thread
+
+  192  0   0% S     1      0K      0K  fg root     deferwq
+
+  193  2   0% S     1      0K      0K  fg root     PTP_CTRL_CPU
+
+  194  1   0% S     1      0K      0K  fg root     PTP_CTRL_LTE
+
+  195  0   0% S     1      0K      0K  fg root     PTP_CTRL_GPU
+
+  196  1   0% S     1      0K      0K  fg root     PTP_CTRL_SOC
+
+  199  0   0% S     1      0K      0K  fg root     irq/410-gpio-ke
+
+  200  0   0% S     1      0K      0K  fg root     irq/411-gpio-ke
+
+  201  0   0% S     1      0K      0K  fg root     irq/289-gpio-ke
+
+  202  0   0% S     1      0K      0K  fg root     wdtk-0
+
+  203  1   0% S     1      0K      0K  fg root     wdtk-1
+
+  204  2   0% S     1      0K      0K  fg root     wdtk-2
+
+  205  3   0% S     1      0K      0K  fg root     wdtk-3
+
+  206  4   0% S     1      0K      0K  fg root     wdtk-4
+
+  207  5   0% S     1      0K      0K  fg root     wdtk-5
+
+  208  0   0% S     1      0K      0K  fg root     wdtk-6
+
+  209  0   0% S     1      0K      0K  fg root     wdtk-7
+
+  210  0   0% S     1      0K      0K  fg root     f_mtp
+
+  211  0   0% S     1      0K      0K  fg root     file-storage
+
+  212  7   0% S     1      0K      0K  fg root     kworker/7:1H
+
+  213  6   0% S     1      0K      0K  fg root     kworker/6:1H
+
+  215  0   0% S     1      0K      0K  fg root     kworker/0:1H
+
+  216  4   0% S     1      0K      0K  fg root     kworker/4:1H
+
+  217  3   0% S     1      0K      0K  fg root     kworker/3:1H
+
+  218  2   0% S     1      0K      0K  fg root     kworker/2:1H
+
+  219  3   0% S     1   9036K    860K  fg root     /sbin/ueventd
+
+  221  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p18
+
+  222  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  223  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p14
+
+  224  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  229  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p20
+
+  230  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  234  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p19
+
+  235  1   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  241  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p5-
+
+  242  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  248  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p6-
+
+  249  1   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  265  1   0% S     1      0K      0K  fg root     loop0
+
+  266  0   0% S    10  22328K   1376K  fg system   /system/bin/mcDriverDaemon
+
+  267  2   0% S     1      0K      0K  fg root     mc_log
+
+  296  0   0% S     5  20832K   1432K  fg logd     /system/bin/logd
+
+  297  1   0% S     1  10076K    476K  fg root     /sbin/healthd
+
+  298  0   0% S     1  10264K    604K  fg root     /system/bin/sh
+
+  299  0   0% S     1  14060K    868K  fg root     /system/bin/lmkd
+
+  300  1   0% S     1  10448K    664K  fg system   /system/bin/servicemanager
+
+  301  0   0% S     3  22964K   1412K  fg root     /system/bin/vold
+
+  303  1   0% S     1  11108K    752K  fg system   /system/bin/autokd
+
+  307  0   0% S     1  10160K    576K  fg system   /system/bin/6620_launcher
+
+  308  0   0% S     1  10156K    612K  fg root     /system/bin/stp_dump3
+
+  309  0   0% S     1   9748K    912K  fg radio    /system/bin/ccci_fsd
+
+  310  0   0% S     2  11824K   1140K  fg system   /system/bin/ccci_mdinit
+
+  321  0   0% S     1      0K      0K  fg root     kauditd
+
+  322  0   0% S     9  25256K   1272K  fg root     /system/bin/netd
+
+  323  0   0% S     2  17900K    932K  fg root     /system/bin/flymed
+
+  324  0   0% S     1  10880K   1160K  fg root     /system/bin/debuggerd
+
+  325  0   0% S     1  12700K    900K  fg root     /system/bin/debuggerd64
+
+  326  3   0% S     6  57672K   4804K  fg drm      /system/bin/drmserver
+
+  328  1   0% S     1  10532K    704K  fg install  /system/bin/installd
+
+  332  2   0% S     1  16428K   1428K  fg keystore /system/bin/keystore
+
+  334  0   0% S     2  15584K    996K  fg shell    /system/bin/mobile_log_d
+
+  336  3   0% S     2  13372K    688K  fg shell    /system/bin/netdiag
+
+  339  4   0% S     3  35956K   2012K  fg system   /system/bin/aal
+
+  341  1   0% S     2  19816K    904K  fg system   /system/bin/dm_agent_binder
+
+  342  4   0% S     2  19548K    968K  fg system   /system/bin/ppl_agent
+
+  343  0   0% S     2  18968K    784K  fg system   /system/bin/matv
+
+  344  5   0% S    33  50584K   2504K  fg gps      /system/bin/mtk_agpsd
+
+  345  0   0% S     1  10336K    676K  fg wifi     /system/bin/wifi2agps
+
+  350  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  351  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  352  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  390  0   0% S     1  16088K   1332K  fg gps      /system/xbin/mnld
+
+  392  1   0% S     2  19404K   1000K  fg system   /system/bin/nvram_agent_binder
+
+  394  0   0% S     3  11400K    636K  fg system   /system/bin/thermal
+
+  395  0   0% S     1  12836K    824K  fg system   /system/bin/thermald
+
+  396  0   0% S     1  12828K    776K  fg shell    /system/bin/batterywarning
+
+  397  4   0% S     2  17096K   1132K  fg system   /system/bin/MtkCodecService
+
+  398  2   0% S     3  24068K   1456K  fg system   /system/bin/guiext-server
+
+  399  0   0% S     2  11400K    696K  fg system   /system/bin/immvibed
+
+  401  0   0% S     6 2126352K  39748K  fg root     zygote64
+
+  402  5   0% S     6 1535524K  37476K  fg root     zygote
+
+  404  1   0% S     6  34776K   4936K  fg bluetoot /system/bin/mtkbt
+
+  405  3   0% S     3  66848K   4008K  fg system   /system/bin/program_binary_service
+
+  406  0   0% S     2  17208K    800K  fg root     /system/bin/sdcard
+
+  420  2   0% S     1      0K      0K  fg root     pkgld
+
+  590  3   0% S     1  64888K   4104K  fg system   /system/bin/em_svr
+
+  740  1   0% S     1      0K      0K  fg root     mtk_stp_psm
+
+  741  0   0% S     1      0K      0K  fg root     mtk_stp_btm
+
+  742  1   0% S     1      0K      0K  fg root     mtk_wmtd
+
+  770  0   0% S     1      0K      0K  fg root     ksdioirqd/mmc1
+
+  771  1   0% S     1      0K      0K  fg root     stp_sdio_tx_rx
+
+  772  0   0% S     1      0K      0K  fg root     test_report_wor
+
+  774  0   0% S     3  14916K   1036K  fg shell    /system/bin/emdlogger1
+
+  791  2   0% S    28  47188K   2000K  fg radio    /system/bin/mtkrild
+
+  819  0   0% S   124 2367272K 148140K  fg system   system_server
+
+  933  2   0% S     1      0K      0K  fg root     kworker/2:2
+
+ 1020  0   0% S     1      0K      0K  fg root     tx_thread
+
+ 1021  1   0% S     1      0K      0K  fg root     hif_thread
+
+ 1022  1   0% S     1      0K      0K  fg root     rx_thread
+
+ 1063  2   0% S     1  17324K   2272K  fg wifi     /system/bin/wpa_supplicant
+
+ 1153  5   0% S    45 2267796K  74224K  fg system   com.meizu.battery
+
+ 1236  0   0% S    21 2143672K  48236K  fg system   com.meizu.experiencedatasync
+
+ 1324  0   0% S    37 2177080K  52180K  bg u0_a18   com.meizu.location
+
+ 1387  3   0% S     1      0K      0K  fg root     kworker/3:2
+
+ 1440  2   0% S    32 2175700K  72428K  fg u0_a4    com.android.incallui
+
+ 1487  0   0% S    18 2140164K  37280K  fg u0_a68   com.mediatek.nlpservice
+
+ 1497  5   0% S    56 2188528K  54156K  fg system   com.meizu.alphame
+
+ 1554  4   0% S    16 2138856K  39428K  fg system   com.fingerprints.service
+
+ 1587  1   0% S    64 2239476K  79412K  fg radio    com.android.phone
+
+ 1726  3   0% S    73 2399976K 116464K  fg system   com.meizu.safe
+
+ 2063  0   0% S    42 2186460K  65308K  fg system   com.meizu.dataservice
+
+ 2476  0   0% S    39 2190808K  65340K  fg u0_a32   com.flyme.systemuitools
+
+ 2545  3   0% S    26 2158488K  43712K  bg u0_a65   com.meizu.share
+
+ 3050  1   0% S     1      0K      0K  fg root     kworker/1:2H
+
+ 3483  0   0% S    27 1562736K  42760K  bg u0_a61   com.meizu.cloud
+
+ 3888  0   0% S    35 1582432K  47944K  bg u0_a64   com.meizu.flyme.service.find
+
+ 4203  0   0% S    22 1557612K  42632K  bg u0_a61   com.meizu.cloud:mzservice_v1
+
+ 4464  4   0% S     1      0K      0K  fg root     kworker/4:2
+
+ 4589  0   0% S    41 2185856K  51380K  bg u0_a60   com.meizu.account
+
+ 5042  1   0% S    28 2167300K  56884K  bg u0_a67   com.meizu.mzsyncservice
+
+ 5874  0   0% S    43 2223636K  73392K  fg system   com.meizu.flyme.update
+
+ 5925  3   0% S    25 2169608K  48964K  fg system   com.app.activate
+
+ 5938  3   0% S    23 2167492K  43764K  bg system   com.app.xcore
+
+ 5959  2   0% S    37 2297316K  60872K  fg system   com.app.meteor
+
+ 5980  0   0% S    39 2297092K  59320K  bg system   com.android.packageinstaller
+
+ 6416  0   0% S    32 1602180K  50452K  fg u0_a74   com.flyme.roamingpay
+
+ 6648  0   0% S    28 1572352K  40972K  bg u0_a85   com.meizu.net.pedometer
+
+ 7475  1   0% S     4  92256K  18180K  bg u0_a74   /data/app/com.flyme.roamingpay-2/lib/arm/libweexjsb.so
+
+ 9376  1   0% S    41 1651148K  79312K  bg u0_a25   com.meizu.flyme.input
+
+13031  4   0% S    78 1667716K  63868K  bg u0_a38   com.meizu.mstore
+
+13096  0   0% S    32 2190204K  58248K  bg u0_a9    android.process.media
+
+14894  4   0% S    23 1562624K  41324K  bg u0_a61   com.meizu.cloud:mz_tracker
+
+15822  2   0% S   134 2142216K  92364K  bg u0_a98   com.tencent.mm:tools
+
+15903  0   0% S   171 2134924K 163532K  fg u0_a98   com.tencent.mm
+
+16079  0   0% S    92 1892772K  81248K  fg u0_a98   com.tencent.mm:push
+
+16161  0   0% S    18 2141768K  45136K  bg u0_a3    com.android.providers.calendar
+
+16319  0   0% S   128 2139804K 125464K  bg u0_a98   com.tencent.mm:appbrand0
+
+16340  1   0% S   103 1993308K  95132K  bg u0_a98   com.tencent.mm:appbrand1
+
+19300  0   0% S    28 1573232K  46448K  bg u0_a51   com.iflytek.speechsuite
+
+20344  1   0% S     1      0K      0K  fg root     kworker/u16:5
+
+20680  0   0% T     1  10264K    564K  fg u0_a88   sh
+
+20917  0   0% S    63 1670912K  75732K  bg u0_a73   com.meizu.media.reader
+
+21960  0   0% S     1      0K      0K  fg root     kworker/u16:2
+
+22215  0   0% T     1 1651216K  53872K  fg u0_a88   com.houwei.guaishang
+
+22331  1   0% S     1      0K      0K  fg root     fs_suspend_syss
+
+22881  0   0% S    27 1581312K  71736K  fg u0_a150  com.tea7.app:core
+
+22912  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+22927  0   0% S    31 1598696K  78704K  bg u0_a150  com.tea7.app:pushservice
+
+23147  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+23150  1   0% S     1      0K      0K  fg root     kworker/u16:4
+
+23315  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23373  0   0% S    55 1627776K  68992K  bg u0_a21   com.meizu.media.music
+
+    1  0   0% S     1   9044K   1284K  fg root     /init
+
+23516  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23627  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+23664  0   0% S     1      0K      0K  fg root     kworker/u16:7
+
+23673  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23775  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23820  0   0% S    32 2186120K  67012K  bg u0_a40   com.android.calendar:remote
+
+23919  2   0% S     1      0K      0K  fg root     kworker/2:1
+
+23927  0   0% S    25 2167500K  63740K  bg u0_a13   com.meizu.flyme.launcher
+
+23933  1   0% S    23 2148408K  46444K  fg radio    com.flyme.virtual.softsim
+
+23962  0   0% S    17 2139120K  40412K  fg radio    com.android.flyme.bridge.softsim
+
+24019  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24043  0   0% S     1      0K      0K  fg root     kworker/0:2
+
+24073  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24138  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24200  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24245  0   0% S    49 1632540K  74416K  bg u0_a5    com.meizu.customizecenter
+
+24305  5   0% S     4  92256K  22908K  bg u0_a5    /data/app/com.meizu.customizecenter-2/lib/arm/libweexjsb.so
+
+24410  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24473  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24544  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24545  1   0% S     1      0K      0K  fg root     kworker/u16:6
+
+24630  1   0% S     1      0K      0K  fg root     kworker/1:0
+
+24674  0   0% S     1      0K      0K  fg root     kworker/u17:3
+
+24716  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24850  1   0% S     1      0K      0K  fg root     kworker/1:2
+
+24930  0   0% S     1      0K      0K  fg root     kworker/u16:1
+
+24931  2   0% S     1      0K      0K  fg root     kworker/u16:8
+
+24937  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+25026  2   0% S     1      0K      0K  fg root     kworker/u17:1
+
+25069  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+25099  0   0% S    39 1601864K  59020K  bg u0_a11   com.android.email
+
+25178  0   0% S     1      0K      0K  fg root     kworker/0:3
+
+25217  0   0% S    45 2189728K  66168K  bg system   com.meizu.voiceassistant
+
+25238  0   0% S    24 2198808K  61096K  bg u0_a4    android.process.acore
+
+25320  0   0% S    32 1607016K  84096K  bg u0_a7    com.meizu.netcontactservice
+
+25342  4   0% S     1      0K      0K  fg root     kworker/4:0
+
+25389  1   0% S    16 2158272K  45620K  bg u0_a31   com.android.soundrecorder
+
+25477  0   0% S    36 1613176K  59184K  bg u0_a10   com.meizu.media.ebook:pushservice
+
+25503  3   0% S    59 1629108K  71616K  bg u0_a10   com.meizu.media.ebook
+
+25646  4   0% S    31 1631356K  61096K  bg u0_a29   com.meizu.sceneinfo
+
+25705  0   0% S    33 1588160K  67132K  bg u0_a7    com.android.dialer
+
+25778  0   0% S    32 1576708K  52448K  bg u0_a48   com.meizu.flyme.telecom
+
+25803  0   0% S    25 1566436K  50260K  bg u0_a47   com.meizu.flymecommunication
+
+25885  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+25893  2   0% S     1      0K      0K  fg root     kworker/2:0
+
+25924  0   0% S     1      0K      0K  fg root     kworker/0:0
+
+25943  1   0% S    17 2144640K  42692K  bg system   com.flyme.systemuiplugin
+
+25968  0   0% S    18 2140596K  43592K  bg private_ com.meizu.privacy
+
+26048  3   0% S    21 1589728K  50496K  bg u0_a76   com.meizu.net.search
+
+26430  2   0% Z     1      0K      0K  fg u0_a150  ps
+
+28462  5   0% S     1      0K      0K  fg root     kworker/5:2
+
+31028  1   0% S     1  10372K    656K  fg dhcp     /system/bin/dhcpcd
+
+32449  0   0% S     8  20344K    424K  fg shell    /sbin/adbd
+
+23445  1   0% S     1      0K      0K  fg root     kworker/1:3
+
+    2  3   0% S     1      0K      0K  fg root     kthreadd
+
+    3  0   0% S     1      0K      0K  fg root     ksoftirqd/0
+
+    5  0   0% S     1      0K      0K  fg root     kworker/0:0H
+
+    7  0   0% S     1      0K      0K  fg root     migration/0
+
+    8  0   0% S     1      0K      0K  fg root     rcu_preempt
+
+    9  0   0% S     1      0K      0K  fg root     rcu_bh
+
+   10  0   0% S     1      0K      0K  fg root     rcu_sched
+
+   11  1   0% S     1      0K      0K  fg root     migration/1
+
+   12  1   0% S     1      0K      0K  fg root     ksoftirqd/1
+
+
+
+
+
+
+
+User 0%, System 0%, IOW 0%, IRQ 0%
+
+User 32 + Nice 2 + Sys 27 + Idle -8212583 + IOW 1762 + IRQ 0 + SIRQ 0 = -8210760
+
+
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+
+22826  1   0% S    87 1961544K 237700K  fg u0_a150  com.tea7.app
+
+26600  0   0% R     1  12748K   1696K  fg shell    top
+
+  302  0   0% S    19 144576K   6612K  fg system   /system/bin/surfaceflinger
+
+  327  0   0% S    34 288204K  24540K  fg media    /system/bin/mediaserver
+
+15903  1   0% S   171 2134924K 163532K  fg u0_a98   com.tencent.mm
+
+  819  0   0% S   124 2367272K 147836K  fg system   system_server
+
+ 1021  1   0% S     1      0K      0K  fg root     hif_thread
+
+24043  0   0% S     1      0K      0K  fg root     kworker/0:2
+
+    7  0   0% S     1      0K      0K  fg root     migration/0
+
+23150  1   0% S     1      0K      0K  fg root     kworker/u16:4
+
+  339  4   0% S     3  35956K   2012K  fg system   /system/bin/aal
+
+23445  1   0% S     1      0K      0K  fg root     kworker/1:3
+
+32449  0   0% S     8  20344K    376K  fg shell    /sbin/adbd
+
+20344  0   0% S     1      0K      0K  fg root     kworker/u16:5
+
+23664  0   0% S     1      0K      0K  fg root     kworker/u16:7
+
+ 1020  1   0% S     1      0K      0K  fg root     tx_thread
+
+  770  1   0% S     1      0K      0K  fg root     ksdioirqd/mmc1
+
+ 1032  0   0% S    48 2254228K 184792K  fg u0_a32   com.android.systemui
+
+  299  0   0% S     1  14060K    868K  fg root     /system/bin/lmkd
+
+  106  0   0% S     1      0K      0K  fg root     hps_main
+
+   30  5   0% S     1      0K      0K  fg root     kworker/5:0H
+
+   31  6   0% R     1      0K      0K  fg root     migration/6
+
+   32  6   0% R     1      0K      0K  fg root     ksoftirqd/6
+
+   33  6   0% S     1      0K      0K  fg root     kworker/6:0
+
+   34  6   0% S     1      0K      0K  fg root     kworker/6:0H
+
+   35  7   0% R     1      0K      0K  fg root     migration/7
+
+   36  7   0% R     1      0K      0K  fg root     ksoftirqd/7
+
+   37  0   0% S     1      0K      0K  fg root     kworker/7:0
+
+   38  7   0% S     1      0K      0K  fg root     kworker/7:0H
+
+   39  0   0% S     1      0K      0K  fg root     khelper
+
+   40  0   0% S     1      0K      0K  fg root     fs_sync
+
+   41  0   0% S     1      0K      0K  fg root     suspend
+
+   42  0   0% S     1      0K      0K  fg root     writeback
+
+   43  4   0% S     1      0K      0K  fg root     bioset
+
+   44  4   0% S     1      0K      0K  fg root     crypto
+
+   45  4   0% S     1      0K      0K  fg root     kblockd
+
+   46  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   47  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   48  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   49  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   50  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   51  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   52  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   53  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   54  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   55  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   56  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   57  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   58  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   59  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   60  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   61  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   62  4   0% S     1      0K      0K  fg root     cmdq_auto_relea
+
+   63  4   0% S     1      0K      0K  fg root     cmdq_task
+
+   65  4   0% S     1      0K      0K  fg root     pool_reload_wor
+
+   66  4   0% S     1      0K      0K  fg root     mmdvfs_gpumon
+
+   67  4   0% S     1      0K      0K  fg root     khubd
+
+   69  5   0% S     1      0K      0K  fg root     cfg80211
+
+   70  0   0% S     1      0K      0K  fg root     pmic_6331_threa
+
+   71  4   0% S     1      0K      0K  fg root     pmic_6332_threa
+
+   72  0   0% S     1      0K      0K  fg root     cfinteractive
+
+   85  0   0% S     1      0K      0K  fg root     input_boost
+
+   86  1   0% S     1      0K      0K  fg root     kswapd0
+
+   87  0   0% S     1      0K      0K  fg root     fsnotify_mark
+
+   88  0   0% S     1      0K      0K  fg root     cifsiod
+
+  104  0   0% S     1      0K      0K  fg root     ion_mm_heap
+
+  105  0   0% S     1      0K      0K  fg root     mt_gpufreq_inpu
+
+  107  0   0% S     1      0K      0K  fg root     hang_detect
+
+  108  0   0% S     1      0K      0K  fg root     rrc_set_refresh
+
+  109  0   0% S     1      0K      0K  fg root     rrc_set_low_ref
+
+  110  0   0% S     1      0K      0K  fg root     conn-md-thread
+
+  111  0   0% S     1      0K      0K  fg root     md1_cldma_worke
+
+  112  0   0% S     1      0K      0K  fg root     md1_tx0_worker
+
+  113  0   0% S     1      0K      0K  fg root     md1_tx1_worker
+
+  114  0   0% S     1      0K      0K  fg root     md1_tx2_worker
+
+  115  0   0% S     1      0K      0K  fg root     md1_tx3_worker
+
+  116  0   0% S     1      0K      0K  fg root     md1_tx4_worker
+
+  117  0   0% S     1      0K      0K  fg root     md1_tx5_worker
+
+  118  0   0% S     1      0K      0K  fg root     md1_tx6_worker
+
+  119  0   0% S     1      0K      0K  fg root     md1_tx7_worker
+
+  120  0   0% S     1      0K      0K  fg root     md1_rx0_worker
+
+  121  0   0% S     1      0K      0K  fg root     md1_rx1_worker
+
+  122  0   0% S     1      0K      0K  fg root     md1_rx2_worker
+
+  124  0   0% S     1      0K      0K  fg root     md1_rx3_worker
+
+  125  0   0% S     1      0K      0K  fg root     md1_rx4_worker
+
+  126  0   0% S     1      0K      0K  fg root     md1_rx5_worker
+
+  127  0   0% S     1      0K      0K  fg root     md1_rx6_worker
+
+  128  0   0% S     1      0K      0K  fg root     md1_rx7_worker
+
+  129  0   0% S     1      0K      0K  fg root     ccci_ipc_3
+
+  130  0   0% S     1      0K      0K  fg root     ccci_ipc_6
+
+  131  1   0% S     1      0K      0K  fg root     ccci_ctrl
+
+  132  0   0% S     1      0K      0K  fg root     ccci_sys
+
+  133  0   0% S     1      0K      0K  fg root     ccci_poll
+
+  134  0   0% S     1      0K      0K  fg root     mc_fastcall
+
+  137  6   0% S     1      0K      0K  fg root     decouple_update
+
+  139  4   0% S     1      0K      0K  fg root     decouple_trigge
+
+  140  0   0% S     1      0K      0K  fg root     display_check_a
+
+  141  0   0% S     1      0K      0K  fg root     present_fence_w
+
+  142  1   0% S     1      0K      0K  fg root     frame_update_wo
+
+  143  0   0% D     1      0K      0K  fg root     disp_idlemgr
+
+  144  0   0% S     1      0K      0K  fg root     accdet
+
+  145  0   0% S     1      0K      0K  fg root     weird_headphone
+
+  146  5   0% S     1      0K      0K  fg root     accdet_disable
+
+  147  0   0% S     1      0K      0K  fg root     accdet_eint
+
+  148  4   0% S     1      0K      0K  fg root     vcm_work
+
+  149  1   0% S     1      0K      0K  fg root     mtk-tpd
+
+  150  0   0% S     1      0K      0K  fg root     dsx_exp_workque
+
+  151  5   0% S     1      0K      0K  fg root     kworker/5:1
+
+  153  0   0% S     1      0K      0K  fg root     fwu_workqueue
+
+  154  0   0% S     1      0K      0K  fg root     isl29125wq
+
+  155  0   0% S     1      0K      0K  fg root     pa1212wq
+
+  156  0   0% S     1      0K      0K  fg root     kthermp
+
+  158  0   0% S     1      0K      0K  fg root     vcorefs
+
+  159  4   0% S     1      0K      0K  fg root     pvr_timer
+
+  160  3   0% S     1      0K      0K  fg root     pvr_defer_free
+
+  161  3   0% S     1      0K      0K  fg root     pvr_devices_wd_
+
+  162  4   0% S     1      0K      0K  fg root     pvr_sync_defer_
+
+  163  4   0% S     1      0K      0K  fg root     pvr_sync_check_
+
+  164  4   0% S     1      0K      0K  fg root     mwp
+
+  165  4   0% S     1      0K      0K  fg root     emi_mpu
+
+  166  4   0% S     1      0K      0K  fg root     MD32_REBOOT_WQ
+
+  167  4   0% S     1      0K      0K  fg root     MD32_WDT_WQ
+
+  168  4   0% S     1      0K      0K  fg root     MD32_ASSERT_WQ
+
+  169  0   0% S     1      0K      0K  fg root     fpc1020_worker
+
+  170  0   0% S     1      0K      0K  fg root     uether
+
+  171  0   0% S     1      0K      0K  fg root     uether_rx1
+
+  172  1   0% S     1      0K      0K  fg root     bat_thread_kthr
+
+  173  0   0% S     1      0K      0K  fg root     mtk charger_hv_
+
+  174  1   0% S     1      0K      0K  fg root     mmcqd/0
+
+  175  0   0% S     1      0K      0K  fg root     mmcqd/0boot0
+
+  176  0   0% S     1      0K      0K  fg root     mmcqd/0boot1
+
+  177  0   0% S     1      0K      0K  fg root     mmcqd/0rpmb
+
+  178  1   0% S     1      0K      0K  fg root     kworker/1:1H
+
+  179  5   0% S     1      0K      0K  fg root     kworker/5:1H
+
+  180  1   0% S     1      0K      0K  fg root     binder
+
+  181  0   0% S     1      0K      0K  fg root     mtk_vibrator
+
+  183  0   0% S     1      0K      0K  fg root     irq/297-inv_irq
+
+  184  0   0% S     1      0K      0K  fg root     tspdrv_workqueu
+
+  189  0   0% S     1      0K      0K  fg root     kworker/6:1
+
+  190  3   0% S     1      0K      0K  fg root     kworker/3:1
+
+  191  0   0% S     1      0K      0K  fg root     pkt_thread
+
+  192  0   0% S     1      0K      0K  fg root     deferwq
+
+  193  2   0% S     1      0K      0K  fg root     PTP_CTRL_CPU
+
+  194  1   0% S     1      0K      0K  fg root     PTP_CTRL_LTE
+
+  195  0   0% S     1      0K      0K  fg root     PTP_CTRL_GPU
+
+  196  1   0% S     1      0K      0K  fg root     PTP_CTRL_SOC
+
+  199  0   0% S     1      0K      0K  fg root     irq/410-gpio-ke
+
+  200  0   0% S     1      0K      0K  fg root     irq/411-gpio-ke
+
+  201  0   0% S     1      0K      0K  fg root     irq/289-gpio-ke
+
+  202  0   0% S     1      0K      0K  fg root     wdtk-0
+
+  203  1   0% S     1      0K      0K  fg root     wdtk-1
+
+  204  2   0% S     1      0K      0K  fg root     wdtk-2
+
+  205  3   0% S     1      0K      0K  fg root     wdtk-3
+
+  206  4   0% S     1      0K      0K  fg root     wdtk-4
+
+  207  5   0% S     1      0K      0K  fg root     wdtk-5
+
+  208  0   0% S     1      0K      0K  fg root     wdtk-6
+
+  209  0   0% S     1      0K      0K  fg root     wdtk-7
+
+  210  0   0% S     1      0K      0K  fg root     f_mtp
+
+  211  0   0% S     1      0K      0K  fg root     file-storage
+
+  212  7   0% S     1      0K      0K  fg root     kworker/7:1H
+
+  213  6   0% S     1      0K      0K  fg root     kworker/6:1H
+
+  215  0   0% S     1      0K      0K  fg root     kworker/0:1H
+
+  216  4   0% S     1      0K      0K  fg root     kworker/4:1H
+
+  217  3   0% S     1      0K      0K  fg root     kworker/3:1H
+
+  218  2   0% S     1      0K      0K  fg root     kworker/2:1H
+
+  219  3   0% S     1   9036K    860K  fg root     /sbin/ueventd
+
+  221  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p18
+
+  222  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  223  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p14
+
+  224  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  229  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p20
+
+  230  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  234  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p19
+
+  235  1   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  241  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p5-
+
+  242  0   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  248  0   0% S     1      0K      0K  fg root     jbd2/mmcblk0p6-
+
+  249  1   0% S     1      0K      0K  fg root     ext4-dio-unwrit
+
+  265  1   0% S     1      0K      0K  fg root     loop0
+
+  266  0   0% S    10  22328K   1376K  fg system   /system/bin/mcDriverDaemon
+
+  267  2   0% S     1      0K      0K  fg root     mc_log
+
+  296  0   0% S     5  20832K   1432K  fg logd     /system/bin/logd
+
+  297  1   0% S     1  10076K    476K  fg root     /sbin/healthd
+
+  298  0   0% S     1  10264K    604K  fg root     /system/bin/sh
+
+  300  0   0% S     1  10448K    664K  fg system   /system/bin/servicemanager
+
+  301  0   0% S     3  22964K   1412K  fg root     /system/bin/vold
+
+  303  1   0% S     1  11108K    752K  fg system   /system/bin/autokd
+
+  307  0   0% S     1  10160K    576K  fg system   /system/bin/6620_launcher
+
+  308  0   0% S     1  10156K    612K  fg root     /system/bin/stp_dump3
+
+  309  0   0% S     1   9748K    912K  fg radio    /system/bin/ccci_fsd
+
+  310  0   0% S     2  11824K   1140K  fg system   /system/bin/ccci_mdinit
+
+  321  0   0% S     1      0K      0K  fg root     kauditd
+
+  322  0   0% S     9  25256K   1272K  fg root     /system/bin/netd
+
+  323  0   0% S     2  17900K    932K  fg root     /system/bin/flymed
+
+  324  0   0% S     1  10880K   1160K  fg root     /system/bin/debuggerd
+
+  325  0   0% S     1  12700K    900K  fg root     /system/bin/debuggerd64
+
+  326  3   0% S     6  57672K   4804K  fg drm      /system/bin/drmserver
+
+  328  1   0% S     1  10532K    704K  fg install  /system/bin/installd
+
+  332  2   0% S     1  16428K   1428K  fg keystore /system/bin/keystore
+
+  334  0   0% S     2  15584K    996K  fg shell    /system/bin/mobile_log_d
+
+  336  3   0% S     2  13372K    688K  fg shell    /system/bin/netdiag
+
+  341  1   0% S     2  19816K    904K  fg system   /system/bin/dm_agent_binder
+
+  342  4   0% S     2  19548K    968K  fg system   /system/bin/ppl_agent
+
+  343  0   0% S     2  18968K    784K  fg system   /system/bin/matv
+
+  344  5   0% S    33  50584K   2504K  fg gps      /system/bin/mtk_agpsd
+
+  345  0   0% S     1  10336K    676K  fg wifi     /system/bin/wifi2agps
+
+  350  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  351  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  352  0   0% S     1      0K      0K  fg root     pvr_workqueue
+
+  390  0   0% S     1  16088K   1332K  fg gps      /system/xbin/mnld
+
+  392  1   0% S     2  19404K   1000K  fg system   /system/bin/nvram_agent_binder
+
+  394  0   0% S     3  11400K    636K  fg system   /system/bin/thermal
+
+  395  0   0% S     1  12836K    824K  fg system   /system/bin/thermald
+
+  396  0   0% S     1  12828K    776K  fg shell    /system/bin/batterywarning
+
+  397  4   0% S     2  17096K   1132K  fg system   /system/bin/MtkCodecService
+
+  398  2   0% S     3  24068K   1456K  fg system   /system/bin/guiext-server
+
+  399  0   0% S     2  11400K    696K  fg system   /system/bin/immvibed
+
+  401  0   0% S     6 2126352K  39748K  fg root     zygote64
+
+  402  5   0% S     6 1535524K  37476K  fg root     zygote
+
+  404  1   0% S     6  34776K   4936K  fg bluetoot /system/bin/mtkbt
+
+  405  3   0% S     3  66848K   4008K  fg system   /system/bin/program_binary_service
+
+  406  0   0% S     2  17208K    800K  fg root     /system/bin/sdcard
+
+  420  2   0% S     1      0K      0K  fg root     pkgld
+
+  590  3   0% S     1  64888K   4104K  fg system   /system/bin/em_svr
+
+  740  1   0% S     1      0K      0K  fg root     mtk_stp_psm
+
+  741  0   0% S     1      0K      0K  fg root     mtk_stp_btm
+
+  742  1   0% S     1      0K      0K  fg root     mtk_wmtd
+
+  771  1   0% S     1      0K      0K  fg root     stp_sdio_tx_rx
+
+  772  0   0% S     1      0K      0K  fg root     test_report_wor
+
+  774  0   0% S     3  14916K   1036K  fg shell    /system/bin/emdlogger1
+
+  775  1   0% S    15  27848K    936K  fg radio    /system/bin/gsm0710muxd
+
+  791  2   0% S    28  47188K   2000K  fg radio    /system/bin/mtkrild
+
+  933  2   0% S     1      0K      0K  fg root     kworker/2:2
+
+ 1022  0   0% S     1      0K      0K  fg root     rx_thread
+
+ 1063  2   0% S     1  17324K   2272K  fg wifi     /system/bin/wpa_supplicant
+
+ 1153  5   0% S    45 2267796K  74224K  fg system   com.meizu.battery
+
+ 1236  0   0% S    21 2143672K  48236K  fg system   com.meizu.experiencedatasync
+
+ 1324  0   0% S    37 2177080K  52180K  bg u0_a18   com.meizu.location
+
+ 1387  3   0% S     1      0K      0K  fg root     kworker/3:2
+
+ 1440  2   0% S    32 2175700K  72428K  fg u0_a4    com.android.incallui
+
+ 1487  0   0% S    18 2140164K  37280K  fg u0_a68   com.mediatek.nlpservice
+
+ 1497  5   0% S    56 2188528K  54156K  fg system   com.meizu.alphame
+
+ 1554  4   0% S    16 2138856K  39428K  fg system   com.fingerprints.service
+
+ 1587  1   0% S    64 2239476K  79412K  fg radio    com.android.phone
+
+ 1726  3   0% S    73 2399976K 116464K  fg system   com.meizu.safe
+
+ 2063  0   0% S    42 2186460K  65308K  fg system   com.meizu.dataservice
+
+ 2476  0   0% S    39 2190808K  65340K  fg u0_a32   com.flyme.systemuitools
+
+ 2545  3   0% S    26 2158488K  43712K  bg u0_a65   com.meizu.share
+
+ 3050  1   0% S     1      0K      0K  fg root     kworker/1:2H
+
+ 3483  0   0% S    27 1562736K  42760K  bg u0_a61   com.meizu.cloud
+
+ 3888  0   0% S    35 1582432K  47944K  bg u0_a64   com.meizu.flyme.service.find
+
+ 4203  0   0% S    22 1557612K  42632K  bg u0_a61   com.meizu.cloud:mzservice_v1
+
+ 4464  4   0% S     1      0K      0K  fg root     kworker/4:2
+
+ 4589  0   0% S    41 2185856K  51380K  bg u0_a60   com.meizu.account
+
+ 5042  1   0% S    28 2167300K  56884K  bg u0_a67   com.meizu.mzsyncservice
+
+ 5874  0   0% S    43 2223636K  73392K  fg system   com.meizu.flyme.update
+
+ 5925  3   0% S    25 2169608K  48964K  fg system   com.app.activate
+
+ 5938  3   0% S    23 2167492K  43764K  bg system   com.app.xcore
+
+ 5959  2   0% S    37 2297316K  60872K  fg system   com.app.meteor
+
+ 5980  0   0% S    39 2297092K  59320K  bg system   com.android.packageinstaller
+
+ 6416  0   0% S    32 1602180K  50452K  fg u0_a74   com.flyme.roamingpay
+
+ 6648  0   0% S    28 1572352K  40972K  bg u0_a85   com.meizu.net.pedometer
+
+ 7475  1   0% S     4  92256K  18180K  bg u0_a74   /data/app/com.flyme.roamingpay-2/lib/arm/libweexjsb.so
+
+ 9376  1   0% S    41 1651148K  79312K  bg u0_a25   com.meizu.flyme.input
+
+13031  4   0% S    78 1667716K  63868K  bg u0_a38   com.meizu.mstore
+
+13096  0   0% S    32 2190204K  58248K  bg u0_a9    android.process.media
+
+14894  4   0% S    23 1562624K  41324K  bg u0_a61   com.meizu.cloud:mz_tracker
+
+15822  0   0% S   134 2142216K  92364K  bg u0_a98   com.tencent.mm:tools
+
+16079  0   0% S    92 1892772K  81248K  fg u0_a98   com.tencent.mm:push
+
+16161  0   0% S    18 2141768K  45136K  bg u0_a3    com.android.providers.calendar
+
+16319  0   0% S   128 2139804K 125464K  bg u0_a98   com.tencent.mm:appbrand0
+
+16340  1   0% S   103 1993308K  95132K  bg u0_a98   com.tencent.mm:appbrand1
+
+19300  0   0% S    28 1573232K  46448K  bg u0_a51   com.iflytek.speechsuite
+
+20680  0   0% T     1  10264K    564K  fg u0_a88   sh
+
+20917  0   0% S    63 1670912K  75732K  bg u0_a73   com.meizu.media.reader
+
+21960  0   0% S     1      0K      0K  fg root     kworker/u16:2
+
+22215  0   0% T     1 1651216K  53872K  fg u0_a88   com.houwei.guaishang
+
+22331  1   0% S     1      0K      0K  fg root     fs_suspend_syss
+
+22881  0   0% S    27 1581312K  71736K  fg u0_a150  com.tea7.app:core
+
+22912  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+22927  0   0% S    31 1598696K  78704K  bg u0_a150  com.tea7.app:pushservice
+
+23147  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+23315  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23373  0   0% S    55 1627776K  68992K  bg u0_a21   com.meizu.media.music
+
+23516  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23627  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+23673  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23775  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+23820  0   0% S    32 2186120K  67012K  bg u0_a40   com.android.calendar:remote
+
+23919  2   0% S     1      0K      0K  fg root     kworker/2:1
+
+23927  0   0% S    25 2167500K  63740K  bg u0_a13   com.meizu.flyme.launcher
+
+23933  1   0% S    23 2148408K  46444K  fg radio    com.flyme.virtual.softsim
+
+23962  0   0% S    17 2139120K  40412K  fg radio    com.android.flyme.bridge.softsim
+
+24019  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24073  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24138  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24200  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24245  0   0% S    49 1632540K  74416K  bg u0_a5    com.meizu.customizecenter
+
+24305  5   0% S     4  92256K  22908K  bg u0_a5    /data/app/com.meizu.customizecenter-2/lib/arm/libweexjsb.so
+
+24410  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24473  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24544  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+24545  1   0% S     1      0K      0K  fg root     kworker/u16:6
+
+24630  1   0% S     1      0K      0K  fg root     kworker/1:0
+
+24674  0   0% S     1      0K      0K  fg root     kworker/u17:3
+
+24716  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+24850  1   0% S     1      0K      0K  fg root     kworker/1:2
+
+24930  0   0% S     1      0K      0K  fg root     kworker/u16:1
+
+24931  2   0% S     1      0K      0K  fg root     kworker/u16:8
+
+24937  1   0% Z     1      0K      0K  fg u0_a150  ps
+
+25026  2   0% S     1      0K      0K  fg root     kworker/u17:1
+
+25069  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+25099  0   0% S    39 1601864K  59020K  bg u0_a11   com.android.email
+
+25178  0   0% S     1      0K      0K  fg root     kworker/0:3
+
+25217  0   0% S    45 2189728K  66168K  bg system   com.meizu.voiceassistant
+
+25238  0   0% S    24 2198808K  61096K  bg u0_a4    android.process.acore
+
+25320  0   0% S    32 1607016K  84096K  bg u0_a7    com.meizu.netcontactservice
+
+25342  4   0% S     1      0K      0K  fg root     kworker/4:0
+
+25389  1   0% S    16 2158272K  45620K  bg u0_a31   com.android.soundrecorder
+
+25452  0   0% S     1      0K      0K  fg root     kworker/u17:2
+
+25477  0   0% S    36 1613176K  59184K  bg u0_a10   com.meizu.media.ebook:pushservice
+
+25503  3   0% S    59 1629108K  71616K  bg u0_a10   com.meizu.media.ebook
+
+25646  4   0% S    31 1631356K  61096K  bg u0_a29   com.meizu.sceneinfo
+
+25705  0   0% S    33 1588160K  67132K  bg u0_a7    com.android.dialer
+
+25778  0   0% S    32 1576708K  52448K  bg u0_a48   com.meizu.flyme.telecom
+
+25803  0   0% S    25 1566436K  50260K  bg u0_a47   com.meizu.flymecommunication
+
+25885  0   0% Z     1      0K      0K  fg u0_a150  ps
+
+25893  2   0% S     1      0K      0K  fg root     kworker/2:0
+
+25924  0   0% S     1      0K      0K  fg root     kworker/0:0
+
+25943  1   0% S    17 2144640K  42692K  bg system   com.flyme.systemuiplugin
+
+25968  0   0% S    18 2140596K  43592K  bg private_ com.meizu.privacy
+
+    1  0   0% S     1   9044K   1284K  fg root     /init
+
+26430  2   0% Z     1      0K      0K  fg u0_a150  ps
+
+28462  5   0% S     1      0K      0K  fg root     kworker/5:2
+
+31028  1   0% S     1  10372K    656K  fg dhcp     /system/bin/dhcpcd
+
+26048  3   0% S    21 1589728K  50496K  bg u0_a76   com.meizu.net.search
+
+    2  0   0% S     1      0K      0K  fg root     kthreadd
+
+    3  0   0% S     1      0K      0K  fg root     ksoftirqd/0
+
+    5  0   0% S     1      0K      0K  fg root     kworker/0:0H
+
+    8  0   0% S     1      0K      0K  fg root     rcu_preempt
+
+    9  0   0% S     1      0K      0K  fg root     rcu_bh
+
+   10  0   0% S     1      0K      0K  fg root     rcu_sched
+
+   11  1   0% R     1      0K      0K  fg root     migration/1
+
+   12  1   0% R     1      0K      0K  fg root     ksoftirqd/1
+
+   15  2   0% R     1      0K      0K  fg root     migration/2
+
+   16  2   0% R     1      0K      0K  fg root     ksoftirqd/2
+
+   18  2   0% S     1      0K      0K  fg root     kworker/2:0H
+
+   19  3   0% R     1      0K      0K  fg root     migration/3
+
+   20  3   0% R     1      0K      0K  fg root     ksoftirqd/3
+
+   22  3   0% S     1      0K      0K  fg root     kworker/3:0H
+
+   23  4   0% R     1      0K      0K  fg root     migration/4
+
+   24  4   0% R     1      0K      0K  fg root     ksoftirqd/4
+
+   26  4   0% S     1      0K      0K  fg root     kworker/4:0H
+
+   27  5   0% R     1      0K      0K  fg root     migration/5
+
+   28  5   0% R     1      0K      0K  fg root     ksoftirqd/5
+

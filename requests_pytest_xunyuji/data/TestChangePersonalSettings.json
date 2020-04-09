@@ -1,0 +1,18 @@
+{
+	
+	"test_change_personal_settings":
+		{
+		"url":"https://www.rzmwzc.com/member/Memberinfo/savexixi",
+		"header":
+			{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0",
+	        "Accept-Language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
+	        "Accept-Encoding": "gzip, deflate, br",
+	        "Connection": "keep-alive"},
+        "data":
+			[{"user_name": "chidiedashi", "real_name": "炽蝶大师", "idcard": "441801197608160016",
+               "sex": "%E7%94%B7", "user_type": 1, "riskint": 3, "company_name": "", "company_idcard": "",
+               "token": "cd4b82d53a41f1c9416d2379ce515bc5_08a1adacd458aa78732b005f52935873"}
+                              ]
+		}
+
+}

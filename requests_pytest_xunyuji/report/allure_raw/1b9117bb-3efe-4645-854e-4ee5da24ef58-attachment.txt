@@ -1,0 +1,6 @@
+INFO     root:test_login.py:53 开始测试：登录失败用例
+INFO     root:test_login.py:25 获取cookies
+INFO     root:method.py:13 发起get请求
+INFO     root:test_login.py:55 登录
+INFO     root:method.py:18 发起post请求
+INFO     root:test_login.py:58 判断登录失败，失败状态码为0，当前状态码的值为：0

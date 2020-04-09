@@ -1,0 +1,17 @@
+{
+	
+	"login001":{"sUserName":"16533907260","sPassword":"xunyuji123"},
+	"login002":{"sUserName":"13590323744","sPassword":"xycarlos1230"},
+	"login003":{"sUserName":"13590323747","sPassword":"xxcarlos1230"},
+
+	"goods001":{"num":1,"gid":29,"__hash__":"c02956293e06ac1a95b9ac8166c78ece_37fa934135bd53636c03e547ed214bb4"},
+	"goods002":{"num":1,"gid":20,"__hash__":"6ce7f4a783b644c1a33a1725f0e08539_9ccfacb73bd8f9ec4d960494c18d346d"},
+	"goods003":{"num":1,"gid":14,"__hash__":"e69a1ff15e43aa74dd9f564d66c10868_be92ff3ff4160057c5083977318a64e9"},
+
+	"buy001":{"carids":"0%2C1982","__hash__":"fb014887c9a0d9513c4d1943dfa47360_2ff026e3bdfd8b7e751a3a66b44f8a8b"},
+
+	"commit001":{"address":471,"carids":1988,"pay_way":1,"jifen":0,"jine":40,"liuyan":"%E6%B5%8B%E8%AF%95"},
+
+	"address001":{"name":"sanshangyouya","province":"%E5%B9%BF%E4%B8%9C","city":"%E4%BD%9B%E5%B1%B1","district":"%E7%A6%85%E5%9F%8E%E5%8C%BA","address":"nuoweileinayucun13hao","main_phone":"13596969696","default":0}
+
+}
