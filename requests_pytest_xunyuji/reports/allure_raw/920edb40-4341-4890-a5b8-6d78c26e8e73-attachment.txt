@@ -1,0 +1,2 @@
+INFO     root:conftest.py:22 获取cookies
+INFO     root:method.py:13 发起get请求

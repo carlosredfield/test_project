@@ -1,0 +1,4 @@
+2020-04-17 18:22:45,818 test_shopping_car.py[line:35] INFO 开始测试：添加商品至购物车失败用例
+2020-04-17 18:22:45,818 test_shopping_car.py[line:40] INFO 添加商品至购物车
+2020-04-17 18:22:45,818 method.py[line:18] INFO 发起post请求
+2020-04-17 18:22:46,162 test_shopping_car.py[line:44] INFO 添加消息为：添加成功

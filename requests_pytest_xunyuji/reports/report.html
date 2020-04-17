@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Test Report</title>
+    <style>body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	/* do not increase min-width as some may use split screens */
+	min-width: 800px;
+	color: #999;
+}
+
+h1 {
+	font-size: 24px;
+	color: black;
+}
+
+h2 {
+	font-size: 16px;
+	color: black;
+}
+
+p {
+    color: black;
+}
+
+a {
+	color: #999;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+/******************************
+ * SUMMARY INFORMATION
+ ******************************/
+
+#environment td {
+	padding: 5px;
+	border: 1px solid #E6E6E6;
+}
+
+#environment tr:nth-child(odd) {
+	background-color: #f6f6f6;
+}
+
+/******************************
+ * TEST RESULT COLORS
+ ******************************/
+span.passed, .passed .col-result {
+	color: green;
+}
+span.skipped, span.xfailed, span.rerun, .skipped .col-result, .xfailed .col-result, .rerun .col-result {
+	color: orange;
+}
+span.error, span.failed, span.xpassed, .error .col-result, .failed .col-result, .xpassed .col-result  {
+	color: red;
+}
+
+
+/******************************
+ * RESULTS TABLE
+ *
+ * 1. Table Layout
+ * 2. Extra
+ * 3. Sorting items
+ *
+ ******************************/
+
+/*------------------
+ * 1. Table Layout
+ *------------------*/
+
+#results-table {
+	border: 1px solid #e6e6e6;
+	color: #999;
+	font-size: 12px;
+	width: 100%
+}
+
+#results-table th, #results-table td {
+	padding: 5px;
+	border: 1px solid #E6E6E6;
+	text-align: left
+}
+#results-table th {
+	font-weight: bold
+}
+
+/*------------------
+ * 2. Extra
+ *------------------*/
+
+.log:only-child {
+	height: inherit
+}
+.log {
+	background-color: #e6e6e6;
+	border: 1px solid #e6e6e6;
+	color: black;
+	display: block;
+	font-family: "Courier New", Courier, monospace;
+	height: 230px;
+	overflow-y: scroll;
+	padding: 5px;
+	white-space: pre-wrap
+}
+div.image {
+	border: 1px solid #e6e6e6;
+	float: right;
+	height: 240px;
+	margin-left: 5px;
+	overflow: hidden;
+	width: 320px
+}
+div.image img {
+	width: 320px
+}
+.collapsed {
+	display: none;
+}
+.expander::after {
+	content: " (show details)";
+	color: #BBB;
+	font-style: italic;
+	cursor: pointer;
+}
+.collapser::after {
+	content: " (hide details)";
+	color: #BBB;
+	font-style: italic;
+	cursor: pointer;
+}
+
+/*------------------
+ * 3. Sorting items
+ *------------------*/
+.sortable {
+	cursor: pointer;
+}
+
+.sort-icon {
+	font-size: 0px;
+	float: left;
+	margin-right: 5px;
+	margin-top: 5px;
+	/*triangle*/
+	width: 0;
+	height: 0;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+}
+
+.inactive .sort-icon {
+	/*finish triangle*/
+	border-top: 8px solid #E6E6E6;
+}
+
+.asc.active .sort-icon {
+	/*finish triangle*/
+	border-bottom: 8px solid #999;
+}
+
+.desc.active .sort-icon {
+	/*finish triangle*/
+	border-top: 8px solid #999;
+}
+</style></head>
+  <body onLoad="init()">
+    <script>/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+function toArray(iter) {
+    if (iter === null) {
+        return null;
+    }
+    return Array.prototype.slice.call(iter);
+}
+
+function find(selector, elem) {
+    if (!elem) {
+        elem = document;
+    }
+    return elem.querySelector(selector);
+}
+
+function find_all(selector, elem) {
+    if (!elem) {
+        elem = document;
+    }
+    return toArray(elem.querySelectorAll(selector));
+}
+
+function sort_column(elem) {
+    toggle_sort_states(elem);
+    var colIndex = toArray(elem.parentNode.childNodes).indexOf(elem);
+    var key;
+    if (elem.classList.contains('numeric')) {
+        key = key_num;
+    } else if (elem.classList.contains('result')) {
+        key = key_result;
+    } else {
+        key = key_alpha;
+    }
+    sort_table(elem, key(colIndex));
+}
+
+function show_all_extras() {
+    find_all('.col-result').forEach(show_extras);
+}
+
+function hide_all_extras() {
+    find_all('.col-result').forEach(hide_extras);
+}
+
+function show_extras(colresult_elem) {
+    var extras = colresult_elem.parentNode.nextElementSibling;
+    var expandcollapse = colresult_elem.firstElementChild;
+    extras.classList.remove("collapsed");
+    expandcollapse.classList.remove("expander");
+    expandcollapse.classList.add("collapser");
+}
+
+function hide_extras(colresult_elem) {
+    var extras = colresult_elem.parentNode.nextElementSibling;
+    var expandcollapse = colresult_elem.firstElementChild;
+    extras.classList.add("collapsed");
+    expandcollapse.classList.remove("collapser");
+    expandcollapse.classList.add("expander");
+}
+
+function show_filters() {
+    var filter_items = document.getElementsByClassName('filter');
+    for (var i = 0; i < filter_items.length; i++)
+        filter_items[i].hidden = false;
+}
+
+function add_collapse() {
+    // Add links for show/hide all
+    var resulttable = find('table#results-table');
+    var showhideall = document.createElement("p");
+    showhideall.innerHTML = '<a href="javascript:show_all_extras()">Show all details</a> / ' +
+                            '<a href="javascript:hide_all_extras()">Hide all details</a>';
+    resulttable.parentElement.insertBefore(showhideall, resulttable);
+
+    // Add show/hide link to each result
+    find_all('.col-result').forEach(function(elem) {
+        var collapsed = get_query_parameter('collapsed') || 'Passed';
+        var extras = elem.parentNode.nextElementSibling;
+        var expandcollapse = document.createElement("span");
+        if (collapsed.includes(elem.innerHTML)) {
+            extras.classList.add("collapsed");
+            expandcollapse.classList.add("expander");
+        } else {
+            expandcollapse.classList.add("collapser");
+        }
+        elem.appendChild(expandcollapse);
+
+        elem.addEventListener("click", function(event) {
+            if (event.currentTarget.parentNode.nextElementSibling.classList.contains("collapsed")) {
+                show_extras(event.currentTarget);
+            } else {
+                hide_extras(event.currentTarget);
+            }
+        });
+    })
+}
+
+function get_query_parameter(name) {
+    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+
+function init () {
+    reset_sort_headers();
+
+    add_collapse();
+
+    show_filters();
+
+    sort_column(find('.initial-sort'));
+
+    find_all('.sortable').forEach(function(elem) {
+        elem.addEventListener("click",
+                              function(event) {
+                                  sort_column(elem);
+                              }, false)
+    });
+
+};
+
+function sort_table(clicked, key_func) {
+    var rows = find_all('.results-table-row');
+    var reversed = !clicked.classList.contains('asc');
+    var sorted_rows = sort(rows, key_func, reversed);
+    /* Whole table is removed here because browsers acts much slower
+     * when appending existing elements.
+     */
+    var thead = document.getElementById("results-table-head");
+    document.getElementById('results-table').remove();
+    var parent = document.createElement("table");
+    parent.id = "results-table";
+    parent.appendChild(thead);
+    sorted_rows.forEach(function(elem) {
+        parent.appendChild(elem);
+    });
+    document.getElementsByTagName("BODY")[0].appendChild(parent);
+}
+
+function sort(items, key_func, reversed) {
+    var sort_array = items.map(function(item, i) {
+        return [key_func(item), i];
+    });
+
+    sort_array.sort(function(a, b) {
+        var key_a = a[0];
+        var key_b = b[0];
+
+        if (key_a == key_b) return 0;
+
+        if (reversed) {
+            return (key_a < key_b ? 1 : -1);
+        } else {
+            return (key_a > key_b ? 1 : -1);
+        }
+    });
+
+    return sort_array.map(function(item) {
+        var index = item[1];
+        return items[index];
+    });
+}
+
+function key_alpha(col_index) {
+    return function(elem) {
+        return elem.childNodes[1].childNodes[col_index].firstChild.data.toLowerCase();
+    };
+}
+
+function key_num(col_index) {
+    return function(elem) {
+        return parseFloat(elem.childNodes[1].childNodes[col_index].firstChild.data);
+    };
+}
+
+function key_result(col_index) {
+    return function(elem) {
+        var strings = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed',
+                       'Skipped', 'Passed'];
+        return strings.indexOf(elem.childNodes[1].childNodes[col_index].firstChild.data);
+    };
+}
+
+function reset_sort_headers() {
+    find_all('.sort-icon').forEach(function(elem) {
+        elem.parentNode.removeChild(elem);
+    });
+    find_all('.sortable').forEach(function(elem) {
+        var icon = document.createElement("div");
+        icon.className = "sort-icon";
+        icon.textContent = "vvv";
+        elem.insertBefore(icon, elem.firstChild);
+        elem.classList.remove("desc", "active");
+        elem.classList.add("asc", "inactive");
+    });
+}
+
+function toggle_sort_states(elem) {
+    //if active, toggle between asc and desc
+    if (elem.classList.contains('active')) {
+        elem.classList.toggle('asc');
+        elem.classList.toggle('desc');
+    }
+
+    //if inactive, reset all other functions and add ascending active
+    if (elem.classList.contains('inactive')) {
+        reset_sort_headers();
+        elem.classList.remove('inactive');
+        elem.classList.add('active');
+    }
+}
+
+function is_all_rows_hidden(value) {
+  return value.hidden == false;
+}
+
+function filter_table(elem) {
+    var outcome_att = "data-test-result";
+    var outcome = elem.getAttribute(outcome_att);
+    class_outcome = outcome + " results-table-row";
+    var outcome_rows = document.getElementsByClassName(class_outcome);
+
+    for(var i = 0; i < outcome_rows.length; i++){
+        outcome_rows[i].hidden = !elem.checked;
+    }
+
+    var rows = find_all('.results-table-row').filter(is_all_rows_hidden);
+    var all_rows_hidden = rows.length == 0 ? true : false;
+    var not_found_message = document.getElementById("not-found-message");
+    not_found_message.hidden = !all_rows_hidden;
+}
+</script>
+    <h1>report.html</h1>
+    <p>Report generated on 17-Apr-2020 at 18:39:28 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.0.1</p>
+    <h2>Environment</h2>
+    <table id="environment">
+      <tr>
+        <td>BUILD_ID</td>
+        <td>1</td></tr>
+      <tr>
+        <td>BUILD_NUMBER</td>
+        <td>1</td></tr>
+      <tr>
+        <td>BUILD_TAG</td>
+        <td>jenkins-寻渔记接口自动化测试-1</td></tr>
+      <tr>
+        <td>BUILD_URL</td>
+        <td><a href="http://localhost:8080/job/%E5%AF%BB%E6%B8%94%E8%AE%B0%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/1/" target="_blank">http://localhost:8080/job/%E5%AF%BB%E6%B8%94%E8%AE%B0%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/1/</a></td></tr>
+      <tr>
+        <td>EXECUTOR_NUMBER</td>
+        <td>0</td></tr>
+      <tr>
+        <td>JAVA_HOME</td>
+        <td>D:\Java\jdk1.8.0_211</td></tr>
+      <tr>
+        <td>JENKINS_URL</td>
+        <td><a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a></td></tr>
+      <tr>
+        <td>JOB_NAME</td>
+        <td>寻渔记接口自动化测试</td></tr>
+      <tr>
+        <td>NODE_NAME</td>
+        <td>master</td></tr>
+      <tr>
+        <td>Packages</td>
+        <td>{&apos;pytest&apos;: &apos;5.3.5&apos;, &apos;py&apos;: &apos;1.8.1&apos;, &apos;pluggy&apos;: &apos;0.13.1&apos;}</td></tr>
+      <tr>
+        <td>Platform</td>
+        <td>Windows-10-10.0.16299-SP0</td></tr>
+      <tr>
+        <td>Plugins</td>
+        <td>{&apos;allure-pytest&apos;: &apos;2.8.11&apos;, &apos;html&apos;: &apos;2.0.1&apos;, &apos;metadata&apos;: &apos;1.8.0&apos;, &apos;rerunfailures&apos;: &apos;8.0&apos;}</td></tr>
+      <tr>
+        <td>Python</td>
+        <td>3.7.6</td></tr>
+      <tr>
+        <td>WORKSPACE</td>
+        <td>C:\Users\acer\.jenkins\workspace\寻渔记接口自动化测试</td></tr></table>
+    <h2>Summary</h2>
+    <p>19 tests ran in 13.95 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">11 passed</span>, <input checked="true" class="filter" data-test-result="skipped" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">1 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">8 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>, <input checked="true" class="filter" data-test-result="rerun" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="rerun">0 rerun</span>
+    <h2>Results</h2>
+    <table id="results-table">
+      <thead id="results-table-head">
+        <tr>
+          <th class="sortable result initial-sort" col="result">Result</th>
+          <th class="sortable" col="name">Test</th>
+          <th class="sortable numeric" col="duration">Duration</th>
+          <th>Links</th></tr>
+        <tr hidden="true" id="not-found-message">
+          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_case/test_add_address.py::TestAddAddress::test_add_address_fail[address_data0]</td>
+          <td class="col-duration">0.33</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_case.test_add_address.TestAddAddress object at 0x000002265FB27EC8&gt;<br/>login = &lt;RequestsCookieJar[Cookie(version=0, name=&#x27;PHPSESSID&#x27;, value=&#x27;jpu3ac9bv2sqmrl3l6h271umj5&#x27;, port=None, port_specified=F...ified=False, secure=False, expires=1587983956, discard=False, comment=None, comment_url=None, rest={}, rfc2109=False)]&gt;<br/>address_data = {&#x27;address&#x27;: &#x27;&#x27;, &#x27;city&#x27;: &#x27;&#x27;, &#x27;default&#x27;: 0, &#x27;district&#x27;: &#x27;&#x27;, ...}<br/><br/>    @allure.story(&#x27;添加收货地址失败用例&#x27;)<br/>    @pytest.mark.parametrize(&quot;address_data&quot;, fail_data[&#x27;data&#x27;])<br/>    def test_add_address_fail(self, login, address_data):<br/>      logging.info(&#x27;开始测试：添加收货地址失败用例&#x27;)<br/>      cookies = login<br/>      header = self.fail_data[&#x27;header&#x27;]<br/>      url_add_address = self.fail_data[&#x27;url&#x27;]<br/>    <br/>      logging.info(&#x27;添加购物车&#x27;)<br/>      r = self.method.main_way(&#x27;post&#x27;, url=url_add_address, headers=header,<br/>                               cookies=cookies, data=address_data)<br/>      res = r.json()[&#x27;status&#x27;]<br/>&gt;     assert res == 0, &quot;判断添加收货地址失败，失败状态码为0，当前状态码的值为：%d&quot; % res<br/><span class="error">E     AssertionError: 判断添加收货地址失败，失败状态码为0，当前状态码的值为：1</span><br/><span class="error">E     assert 1 == 0</span><br/><span class="error">E       -1</span><br/><span class="error">E       +0</span><br/><br/>test_add_address.py:44: AssertionError<br/> ------------------------------Captured stderr call------------------------------ <br/>2020-04-17 18:39:17,685 test_add_address.py[line:35] INFO 开始测试：添加收货地址失败用例
+2020-04-17 18:39:17,685 test_add_address.py[line:40] INFO 添加购物车
+2020-04-17 18:39:17,685 method.py[line:18] INFO 发起post请求
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_add_address.py:35 开始测试：添加收货地址失败用例
+INFO     root:test_add_address.py:40 添加购物车
+INFO     root:method.py:18 发起post请求<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_case/test_change_personal_settings.py::TestChangePersonalSettings::test_change_personal_settings[personal_data0]</td>
+          <td class="col-duration">0.38</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_case.test_change_personal_settings.TestChangePersonalSettings object at 0x000002265FAD56C8&gt;<br/>login = &lt;RequestsCookieJar[Cookie(version=0, name=&#x27;PHPSESSID&#x27;, value=&#x27;31qjfcddtn0rqp64i1k4rudpo0&#x27;, port=None, port_specified=F...ified=False, secure=False, expires=1587983958, discard=False, comment=None, comment_url=None, rest={}, rfc2109=False)]&gt;<br/>personal_data = {&#x27;company_idcard&#x27;: &#x27;&#x27;, &#x27;company_name&#x27;: &#x27;&#x27;, &#x27;idcard&#x27;: &#x27;441801197608160016&#x27;, &#x27;real_name&#x27;: &#x27;炽蝶大师&#x27;, ...}<br/><br/>    @allure.story(&#x27;更改个人信息&#x27;)<br/>    @pytest.mark.parametrize(&quot;personal_data&quot;, chg_data[&#x27;data&#x27;])<br/>    def test_change_personal_settings(self, login, personal_data):<br/>        logging.info(&#x27;开始测试：修改个人信息用例&#x27;)<br/>        cookies = login<br/>        header = self.chg_data[&#x27;header&#x27;]<br/>        url_add_address = self.chg_data[&#x27;url&#x27;]<br/>    <br/>        logging.info(&#x27;修改个人信息&#x27;)<br/>        r = self.method.main_way(&#x27;post&#x27;, url=url_add_address, headers=header,<br/>                                 cookies=cookies, data=personal_data)<br/>        res = r.text<br/>&gt;       assert &#x27;修改成功&#x27; not in res, &quot;判断修改失败，如果显示修改成功则用例失败&quot;<br/><span class="error">E       AssertionError: 判断修改失败，如果显示修改成功则用例失败</span><br/><span class="error">E       assert &#x27;修改成功&#x27; not in &#x27;&lt;!DOCTYPE h...dy&gt;\n&lt;/html&gt;&#x27;</span><br/><span class="error">E         &#x27;修改成功&#x27; is contained here:</span><br/><span class="error">E           &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span><br/><span class="error">E           &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</span><br/><span class="error">E           &lt;head&gt;</span><br/><span class="error">E           &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</span><br/><span class="error">E           &lt;title&gt;提示信息&lt;/title&gt;</span><br/><span class="error">E           &lt;style type=&quot;text/css&quot;&gt;</span><br/><span class="error">E           	*{margin:0; padding:0;}</span><br/><span class="error">E           	body{font-size:12px; color:#000; background:#fff; font-style:normal !important;}</span><br/><span class="error">E           	img{border:none;}</span><br/><span class="error">E           	a{text-decoration:none; color:#000;}</span><br/><span class="error">E           	a:hover{text-decoration:none; color:#000;}</span><br/><span class="error">E           	li{list-style:none;}</span><br/><span class="error">E           	.sucess{width:604px; height:221px; background:url(/Style/tip/images/bg1.png) no-repeat; margin:0 auto; position:absolute; left:50%; top:100px; margin-left:-302px;}</span><br/><span class="error">E           	.spec1{ text-align:right; padding-right:19px; padding-top:17px; position:relative;}</span><br/><span class="error">E           	.spec1 a{ position:absolute; top:15px; right:20px; height:22px; width:22px; display:block;}</span><br/><span class="error">E           	.spec2{font-size:20px; font-family:微软雅黑; color:#4d824d; text-align:center; padding-top:20px; padding-bottom:20px; font-weight:bold;}</span><br/><span class="error">E           	.spec3{font-size:14px; color:#4d4a4a; text-align:center; font-family:微软雅黑;}</span><br/><span class="error">E           	.spec3 a{color:#a6292c;}</span><br/><span class="error">E           	.spec3 span{color:#a6292c;}</span><br/><span class="error">E           	.shibai{width:604px; height:221px; background:url(/Style/tip/images/bg2.png) no-repeat; margin:0 auto;position:absolute; left:50%; top:50%; margin-top:-110px; margin-left:-302px;}</span><br/><span class="error">E           	.spec4{font-size:24px; font-family:微软雅黑; color:#a2292b; text-align:center; padding-top:20px; padding-bottom:20px;font-weight:bold;}</span><br/><span class="error">E           &lt;/style&gt;</span><br/><span class="error">E           &lt;script&gt;</span><br/><span class="error">E           function Jump(){</span><br/><span class="error">E               window.location.href = &#x27;&#x27;;</span><br/><span class="error">E           }</span><br/><span class="error">E           document.onload = setTimeout(&quot;Jump()&quot; , 1* 1000);</span><br/><span class="error">E           &lt;/script&gt;</span><br/><span class="error">E           &lt;base target=&quot;_self&quot; /&gt;</span><br/><span class="error">E           &lt;/head&gt;</span><br/><span class="error">E           &lt;body&gt;</span><br/><span class="error">E           &lt;div class=&quot;sucess png&quot;&gt;</span><br/><span class="error">E                 &lt;p class=&quot;spec1&quot;&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;img src=&quot;/Style/tip/images/gb.png&quot; class=&quot;png&quot; /&gt;&lt;/p&gt;</span><br/><span class="error">E                 &lt;p class=&quot;spec2&quot;&gt;修改成功&lt;/p&gt;</span><br/><span class="error">E         ?                        ++++</span><br/><span class="error">E                 &lt;p class=&quot;spec3&quot;&gt;系统将在&lt;span&gt;1&lt;/span&gt;秒后自动跳转，如果不想等待，直接点击&lt;a href=&quot;&quot;&gt;这里&lt;/a&gt;跳转&lt;/p&gt;</span><br/><span class="error">E             &lt;/div&gt;&lt;/body&gt;</span><br/><span class="error">E           &lt;/html&gt;</span><br/><br/>test_change_personal_settings.py:28: AssertionError<br/> -----------------------------Captured stderr setup------------------------------ <br/>2020-04-17 18:39:18,294 conftest.py[line:22] INFO 获取cookies
+2020-04-17 18:39:18,294 method.py[line:13] INFO 发起get请求
+2020-04-17 18:39:18,654 conftest.py[line:25] INFO 返回cookies
+2020-04-17 18:39:18,654 conftest.py[line:29] INFO 登录
+2020-04-17 18:39:18,669 method.py[line:18] INFO 发起post请求
+2020-04-17 18:39:18,998 conftest.py[line:33] INFO 登录成功
+<br/> -------------------------------Captured log setup------------------------------- <br/>INFO     root:conftest.py:22 获取cookies
+INFO     root:method.py:13 发起get请求
+INFO     root:conftest.py:25 返回cookies
+INFO     root:conftest.py:29 登录
+INFO     root:method.py:18 发起post请求
+INFO     root:conftest.py:33 登录成功<br/> ------------------------------Captured stderr call------------------------------ <br/>2020-04-17 18:39:18,998 test_change_personal_settings.py[line:19] INFO 开始测试：修改个人信息用例
+2020-04-17 18:39:18,998 test_change_personal_settings.py[line:24] INFO 修改个人信息
+2020-04-17 18:39:18,998 method.py[line:18] INFO 发起post请求
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_change_personal_settings.py:19 开始测试：修改个人信息用例
+INFO     root:test_change_personal_settings.py:24 修改个人信息
+INFO     root:method.py:18 发起post请求<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_case/test_login.py::TestLogin::test_login_success[success_data1]</td>
+          <td class="col-duration">0.67</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_case.test_login.TestLogin object at 0x000002265FBED288&gt;<br/>success_data = {&#x27;sPassword&#x27;: &#x27;xunyuji1234&#x27;, &#x27;sUserName&#x27;: &#x27;16533907260&#x27;}<br/><br/>    @pytest.mark.parametrize(&quot;success_data&quot;, suc_data[&#x27;data&#x27;])<br/>    # 登录成功用例<br/>    @allure.story(&#x27;登录成功用例&#x27;)<br/>    def test_login_success(self, success_data):<br/>        &quot;&quot;&quot;<br/>        用例描述：测试登录成功用例<br/>        &quot;&quot;&quot;<br/>        logging.info(&#x27;开始测试：登录成功用例&#x27;)<br/>        cookies = self.get_cookies()<br/>        logging.info(&#x27;登录&#x27;)<br/>        r = self.method.main_way(&#x27;post&#x27;, url=self.url_login, headers=self.header,<br/>                                 cookies=cookies, data=success_data)<br/>        res = r.json()[&#x27;status&#x27;]<br/>        logging.info(&quot;判断登录成功，成功状态码为1，当前状态码的值为：%d&quot; % res)<br/>    <br/>&gt;       assert res == 1, &quot;判断登录成功，成功状态码为1，当前状态码的值为：%d&quot; % res<br/><span class="error">E       AssertionError: 判断登录成功，成功状态码为1，当前状态码的值为：0</span><br/><span class="error">E       assert 0 == 1</span><br/><span class="error">E         -0</span><br/><span class="error">E         +1</span><br/><br/>test_login.py:44: AssertionError<br/> ------------------------------Captured stderr call------------------------------ <br/>2020-04-17 18:39:20,248 test_login.py[line:36] INFO 开始测试：登录成功用例
+2020-04-17 18:39:20,248 test_login.py[line:25] INFO 获取cookies
+2020-04-17 18:39:20,248 method.py[line:13] INFO 发起get请求
+2020-04-17 18:39:20,623 test_login.py[line:38] INFO 登录
+2020-04-17 18:39:20,623 method.py[line:18] INFO 发起post请求
+2020-04-17 18:39:20,919 test_login.py[line:42] INFO 判断登录成功，成功状态码为1，当前状态码的值为：0
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_login.py:36 开始测试：登录成功用例
+INFO     root:test_login.py:25 获取cookies
+INFO     root:method.py:13 发起get请求
+INFO     root:test_login.py:38 登录
+INFO     root:method.py:18 发起post请求
+INFO     root:test_login.py:42 判断登录成功，成功状态码为1，当前状态码的值为：0<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_case/test_shopping_car.py::TestShoppingCar::test_shopping_fail[goods_id0]</td>
+          <td class="col-duration">0.33</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_case.test_shopping_car.TestShoppingCar object at 0x000002265FC1FF48&gt;<br/>login = &lt;RequestsCookieJar[Cookie(version=0, name=&#x27;PHPSESSID&#x27;, value=&#x27;g36n4duqnocau9nl0tjd0p31h6&#x27;, port=None, port_specified=F...ified=False, secure=False, expires=1587983964, discard=False, comment=None, comment_url=None, rest={}, rfc2109=False)]&gt;<br/>goods_id = {&#x27;gid&#x27;: 5}<br/><br/>    @allure.story(&#x27;添加商品至购物车失败用例&#x27;)<br/>    @pytest.mark.parametrize(&quot;goods_id&quot;, fail_data[&#x27;data&#x27;])<br/>    def test_shopping_fail(self, login, goods_id):<br/>        logging.info(&#x27;开始测试：添加商品至购物车失败用例&#x27;)<br/>        cookies = login<br/>        header = self.fail_data[&#x27;header&#x27;]<br/>        url_add_address = self.fail_data[&#x27;url&#x27;]<br/>    <br/>        logging.info(&#x27;添加商品至购物车&#x27;)<br/>        r = self.method.main_way(&#x27;post&#x27;, url=url_add_address, headers=header,<br/>                                 cookies=cookies, data=goods_id)<br/>        res = r.json()[&#x27;msg&#x27;]<br/>        logging.info(&#x27;添加消息为：%s&#x27; % res)<br/>&gt;       assert res == &#x27;添加失败&#x27;, &quot;判断添加商品至购物车失败，失败消息为&#x27;添加失败&#x27;，当前消息为：%s&quot; % res<br/><span class="error">E       AssertionError: 判断添加商品至购物车失败，失败消息为&#x27;添加失败&#x27;，当前消息为：添加成功</span><br/><span class="error">E       assert &#x27;添加成功&#x27; == &#x27;添加失败&#x27;</span><br/><span class="error">E         - 添加成功</span><br/><span class="error">E         + 添加失败</span><br/><br/>test_shopping_car.py:45: AssertionError<br/> ------------------------------Captured stderr call------------------------------ <br/>2020-04-17 18:39:26,513 test_shopping_car.py[line:35] INFO 开始测试：添加商品至购物车失败用例
+2020-04-17 18:39:26,513 test_shopping_car.py[line:40] INFO 添加商品至购物车
+2020-04-17 18:39:26,513 method.py[line:18] INFO 发起post请求
+2020-04-17 18:39:26,826 test_shopping_car.py[line:44] INFO 添加消息为：添加成功
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_shopping_car.py:35 开始测试：添加商品至购物车失败用例
+INFO     root:test_shopping_car.py:40 添加商品至购物车
+INFO     root:method.py:18 发起post请求
+INFO     root:test_shopping_car.py:44 添加消息为：添加成功<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_case/test_shopping_car.py::TestShoppingCar::test_shopping_fail[goods_id1]</td>
+          <td class="col-duration">0.33</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_case.test_shopping_car.TestShoppingCar object at 0x000002265FC2CC48&gt;<br/>login = &lt;RequestsCookieJar[Cookie(version=0, name=&#x27;PHPSESSID&#x27;, value=&#x27;g36n4duqnocau9nl0tjd0p31h6&#x27;, port=None, port_specified=F...ified=False, secure=False, expires=1587983964, discard=False, comment=None, comment_url=None, rest={}, rfc2109=False)]&gt;<br/>goods_id = {&#x27;gid&#x27;: 8}<br/><br/>    @allure.story(&#x27;添加商品至购物车失败用例&#x27;)<br/>    @pytest.mark.parametrize(&quot;goods_id&quot;, fail_data[&#x27;data&#x27;])<br/>    def test_shopping_fail(self, login, goods_id):<br/>        logging.info(&#x27;开始测试：添加商品至购物车失败用例&#x27;)<br/>        cookies = login<br/>        header = self.fail_data[&#x27;header&#x27;]<br/>        url_add_address = self.fail_data[&#x27;url&#x27;]<br/>    <br/>        logging.info(&#x27;添加商品至购物车&#x27;)<br/>        r = self.method.main_way(&#x27;post&#x27;, url=url_add_address, headers=header,<br/>                                 cookies=cookies, data=goods_id)<br/>        res = r.json()[&#x27;msg&#x27;]<br/>        logging.info(&#x27;添加消息为：%s&#x27; % res)<br/>&gt;       assert res == &#x27;添加失败&#x27;, &quot;判断添加商品至购物车失败，失败消息为&#x27;添加失败&#x27;，当前消息为：%s&quot; % res<br/><span class="error">E       AssertionError: 判断添加商品至购物车失败，失败消息为&#x27;添加失败&#x27;，当前消息为：添加成功</span><br/><span class="error">E       assert &#x27;添加成功&#x27; == &#x27;添加失败&#x27;</span><br/><span class="error">E         - 添加成功</span><br/><span class="error">E         + 添加失败</span><br/><br/>test_shopping_car.py:45: AssertionError<br/> ------------------------------Captured stderr call------------------------------ <br/>2020-04-17 18:39:26,904 test_shopping_car.py[line:35] INFO 开始测试：添加商品至购物车失败用例
+2020-04-17 18:39:26,904 test_shopping_car.py[line:40] INFO 添加商品至购物车
+2020-04-17 18:39:26,904 method.py[line:18] INFO 发起post请求
+2020-04-17 18:39:27,232 test_shopping_car.py[line:44] INFO 添加消息为：添加成功
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_shopping_car.py:35 开始测试：添加商品至购物车失败用例
+INFO     root:test_shopping_car.py:40 添加商品至购物车
+INFO     root:method.py:18 发起post请求
+INFO     root:test_shopping_car.py:44 添加消息为：添加成功<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_case/test_shopping_car.py::TestShoppingCar::test_shopping_fail[goods_id2]</td>
+          <td class="col-duration">0.34</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_case.test_shopping_car.TestShoppingCar object at 0x000002265FC27988&gt;<br/>login = &lt;RequestsCookieJar[Cookie(version=0, name=&#x27;PHPSESSID&#x27;, value=&#x27;g36n4duqnocau9nl0tjd0p31h6&#x27;, port=None, port_specified=F...ified=False, secure=False, expires=1587983964, discard=False, comment=None, comment_url=None, rest={}, rfc2109=False)]&gt;<br/>goods_id = {&#x27;gid&#x27;: 20}<br/><br/>    @allure.story(&#x27;添加商品至购物车失败用例&#x27;)<br/>    @pytest.mark.parametrize(&quot;goods_id&quot;, fail_data[&#x27;data&#x27;])<br/>    def test_shopping_fail(self, login, goods_id):<br/>        logging.info(&#x27;开始测试：添加商品至购物车失败用例&#x27;)<br/>        cookies = login<br/>        header = self.fail_data[&#x27;header&#x27;]<br/>        url_add_address = self.fail_data[&#x27;url&#x27;]<br/>    <br/>        logging.info(&#x27;添加商品至购物车&#x27;)<br/>        r = self.method.main_way(&#x27;post&#x27;, url=url_add_address, headers=header,<br/>                                 cookies=cookies, data=goods_id)<br/>        res = r.json()[&#x27;msg&#x27;]<br/>        logging.info(&#x27;添加消息为：%s&#x27; % res)<br/>&gt;       assert res == &#x27;添加失败&#x27;, &quot;判断添加商品至购物车失败，失败消息为&#x27;添加失败&#x27;，当前消息为：%s&quot; % res<br/><span class="error">E       AssertionError: 判断添加商品至购物车失败，失败消息为&#x27;添加失败&#x27;，当前消息为：添加成功</span><br/><span class="error">E       assert &#x27;添加成功&#x27; == &#x27;添加失败&#x27;</span><br/><span class="error">E         - 添加成功</span><br/><span class="error">E         + 添加失败</span><br/><br/>test_shopping_car.py:45: AssertionError<br/> ------------------------------Captured stderr call------------------------------ <br/>2020-04-17 18:39:27,341 test_shopping_car.py[line:35] INFO 开始测试：添加商品至购物车失败用例
+2020-04-17 18:39:27,341 test_shopping_car.py[line:40] INFO 添加商品至购物车
+2020-04-17 18:39:27,341 method.py[line:18] INFO 发起post请求
+2020-04-17 18:39:27,685 test_shopping_car.py[line:44] INFO 添加消息为：添加成功
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_shopping_car.py:35 开始测试：添加商品至购物车失败用例
+INFO     root:test_shopping_car.py:40 添加商品至购物车
+INFO     root:method.py:18 发起post请求
+INFO     root:test_shopping_car.py:44 添加消息为：添加成功<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_case/test_shopping_car.py::TestShoppingCar::test_shopping_fail[goods_id3]</td>
+          <td class="col-duration">0.33</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_case.test_shopping_car.TestShoppingCar object at 0x000002265FC31408&gt;<br/>login = &lt;RequestsCookieJar[Cookie(version=0, name=&#x27;PHPSESSID&#x27;, value=&#x27;g36n4duqnocau9nl0tjd0p31h6&#x27;, port=None, port_specified=F...ified=False, secure=False, expires=1587983964, discard=False, comment=None, comment_url=None, rest={}, rfc2109=False)]&gt;<br/>goods_id = {&#x27;gid&#x27;: 38}<br/><br/>    @allure.story(&#x27;添加商品至购物车失败用例&#x27;)<br/>    @pytest.mark.parametrize(&quot;goods_id&quot;, fail_data[&#x27;data&#x27;])<br/>    def test_shopping_fail(self, login, goods_id):<br/>        logging.info(&#x27;开始测试：添加商品至购物车失败用例&#x27;)<br/>        cookies = login<br/>        header = self.fail_data[&#x27;header&#x27;]<br/>        url_add_address = self.fail_data[&#x27;url&#x27;]<br/>    <br/>        logging.info(&#x27;添加商品至购物车&#x27;)<br/>        r = self.method.main_way(&#x27;post&#x27;, url=url_add_address, headers=header,<br/>                                 cookies=cookies, data=goods_id)<br/>        res = r.json()[&#x27;msg&#x27;]<br/>        logging.info(&#x27;添加消息为：%s&#x27; % res)<br/>&gt;       assert res == &#x27;添加失败&#x27;, &quot;判断添加商品至购物车失败，失败消息为&#x27;添加失败&#x27;，当前消息为：%s&quot; % res<br/><span class="error">E       AssertionError: 判断添加商品至购物车失败，失败消息为&#x27;添加失败&#x27;，当前消息为：添加成功</span><br/><span class="error">E       assert &#x27;添加成功&#x27; == &#x27;添加失败&#x27;</span><br/><span class="error">E         - 添加成功</span><br/><span class="error">E         + 添加失败</span><br/><br/>test_shopping_car.py:45: AssertionError<br/> ------------------------------Captured stderr call------------------------------ <br/>2020-04-17 18:39:27,748 test_shopping_car.py[line:35] INFO 开始测试：添加商品至购物车失败用例
+2020-04-17 18:39:27,748 test_shopping_car.py[line:40] INFO 添加商品至购物车
+2020-04-17 18:39:27,748 method.py[line:18] INFO 发起post请求
+2020-04-17 18:39:28,076 test_shopping_car.py[line:44] INFO 添加消息为：添加成功
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_shopping_car.py:35 开始测试：添加商品至购物车失败用例
+INFO     root:test_shopping_car.py:40 添加商品至购物车
+INFO     root:method.py:18 发起post请求
+INFO     root:test_shopping_car.py:44 添加消息为：添加成功<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_case/test_shopping_car.py::TestShoppingCar::test_shopping_fail[goods_id4]</td>
+          <td class="col-duration">0.34</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_case.test_shopping_car.TestShoppingCar object at 0x000002265FC2B908&gt;<br/>login = &lt;RequestsCookieJar[Cookie(version=0, name=&#x27;PHPSESSID&#x27;, value=&#x27;g36n4duqnocau9nl0tjd0p31h6&#x27;, port=None, port_specified=F...ified=False, secure=False, expires=1587983964, discard=False, comment=None, comment_url=None, rest={}, rfc2109=False)]&gt;<br/>goods_id = {&#x27;gid&#x27;: 49}<br/><br/>    @allure.story(&#x27;添加商品至购物车失败用例&#x27;)<br/>    @pytest.mark.parametrize(&quot;goods_id&quot;, fail_data[&#x27;data&#x27;])<br/>    def test_shopping_fail(self, login, goods_id):<br/>        logging.info(&#x27;开始测试：添加商品至购物车失败用例&#x27;)<br/>        cookies = login<br/>        header = self.fail_data[&#x27;header&#x27;]<br/>        url_add_address = self.fail_data[&#x27;url&#x27;]<br/>    <br/>        logging.info(&#x27;添加商品至购物车&#x27;)<br/>        r = self.method.main_way(&#x27;post&#x27;, url=url_add_address, headers=header,<br/>                                 cookies=cookies, data=goods_id)<br/>        res = r.json()[&#x27;msg&#x27;]<br/>        logging.info(&#x27;添加消息为：%s&#x27; % res)<br/>&gt;       assert res == &#x27;添加失败&#x27;, &quot;判断添加商品至购物车失败，失败消息为&#x27;添加失败&#x27;，当前消息为：%s&quot; % res<br/><span class="error">E       AssertionError: 判断添加商品至购物车失败，失败消息为&#x27;添加失败&#x27;，当前消息为：添加成功</span><br/><span class="error">E       assert &#x27;添加成功&#x27; == &#x27;添加失败&#x27;</span><br/><span class="error">E         - 添加成功</span><br/><span class="error">E         + 添加失败</span><br/><br/>test_shopping_car.py:45: AssertionError<br/> ------------------------------Captured stderr call------------------------------ <br/>2020-04-17 18:39:28,154 test_shopping_car.py[line:35] INFO 开始测试：添加商品至购物车失败用例
+2020-04-17 18:39:28,154 test_shopping_car.py[line:40] INFO 添加商品至购物车
+2020-04-17 18:39:28,154 method.py[line:18] INFO 发起post请求
+2020-04-17 18:39:28,498 test_shopping_car.py[line:44] INFO 添加消息为：添加成功
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_shopping_car.py:35 开始测试：添加商品至购物车失败用例
+INFO     root:test_shopping_car.py:40 添加商品至购物车
+INFO     root:method.py:18 发起post请求
+INFO     root:test_shopping_car.py:44 添加消息为：添加成功<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">test_case/test_goods_order.py::TestGoodsOrder::test_goods_order[pay_data0]::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">(&#x27;test_case\\test_goods_order.py&#x27;, 17, &#x27;Skipped: 修改订单金额有风险，谨慎&#x27;)<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_add_address.py::TestAddAddress::test_add_address_scuess[address_data0]</td>
+          <td class="col-duration">0.31</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stderr setup------------------------------ <br/>2020-04-17 18:39:15,685 conftest.py[line:22] INFO 获取cookies
+2020-04-17 18:39:15,685 method.py[line:13] INFO 发起get请求
+2020-04-17 18:39:16,919 conftest.py[line:25] INFO 返回cookies
+2020-04-17 18:39:16,919 conftest.py[line:29] INFO 登录
+2020-04-17 18:39:16,919 method.py[line:18] INFO 发起post请求
+2020-04-17 18:39:17,248 conftest.py[line:33] INFO 登录成功
+<br/> -------------------------------Captured log setup------------------------------- <br/>INFO     root:conftest.py:22 获取cookies
+INFO     root:method.py:13 发起get请求
+INFO     root:conftest.py:25 返回cookies
+INFO     root:conftest.py:29 登录
+INFO     root:method.py:18 发起post请求
+INFO     root:conftest.py:33 登录成功<br/> ------------------------------Captured stderr call------------------------------ <br/>2020-04-17 18:39:17,310 test_add_address.py[line:21] INFO 开始测试：添加收货地址成功用例
+2020-04-17 18:39:17,310 test_add_address.py[line:26] INFO 添加收货地址
+2020-04-17 18:39:17,310 method.py[line:18] INFO 发起post请求
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_add_address.py:21 开始测试：添加收货地址成功用例
+INFO     root:test_add_address.py:26 添加收货地址
+INFO     root:method.py:18 发起post请求<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_login.py::TestLogin::test_login_success[success_data0]</td>
+          <td class="col-duration">0.69</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2020-04-17 18:39:19,482 test_login.py[line:36] INFO 开始测试：登录成功用例
+2020-04-17 18:39:19,482 test_login.py[line:25] INFO 获取cookies
+2020-04-17 18:39:19,482 method.py[line:13] INFO 发起get请求
+2020-04-17 18:39:19,841 test_login.py[line:38] INFO 登录
+2020-04-17 18:39:19,841 method.py[line:18] INFO 发起post请求
+2020-04-17 18:39:20,169 test_login.py[line:42] INFO 判断登录成功，成功状态码为1，当前状态码的值为：1
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_login.py:36 开始测试：登录成功用例
+INFO     root:test_login.py:25 获取cookies
+INFO     root:method.py:13 发起get请求
+INFO     root:test_login.py:38 登录
+INFO     root:method.py:18 发起post请求
+INFO     root:test_login.py:42 判断登录成功，成功状态码为1，当前状态码的值为：1<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_login.py::TestLogin::test_login_fail[fail_data0]</td>
+          <td class="col-duration">0.66</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2020-04-17 18:39:20,982 test_login.py[line:53] INFO 开始测试：登录失败用例
+2020-04-17 18:39:20,982 test_login.py[line:25] INFO 获取cookies
+2020-04-17 18:39:20,982 method.py[line:13] INFO 发起get请求
+2020-04-17 18:39:21,326 test_login.py[line:55] INFO 登录
+2020-04-17 18:39:21,326 method.py[line:18] INFO 发起post请求
+2020-04-17 18:39:21,638 test_login.py[line:58] INFO 判断登录失败，失败状态码为0，当前状态码的值为：0
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_login.py:53 开始测试：登录失败用例
+INFO     root:test_login.py:25 获取cookies
+INFO     root:method.py:13 发起get请求
+INFO     root:test_login.py:55 登录
+INFO     root:method.py:18 发起post请求
+INFO     root:test_login.py:58 判断登录失败，失败状态码为0，当前状态码的值为：0<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_login.py::TestLogin::test_login_fail[fail_data1]</td>
+          <td class="col-duration">0.70</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2020-04-17 18:39:21,685 test_login.py[line:53] INFO 开始测试：登录失败用例
+2020-04-17 18:39:21,685 test_login.py[line:25] INFO 获取cookies
+2020-04-17 18:39:21,685 method.py[line:13] INFO 发起get请求
+2020-04-17 18:39:22,044 test_login.py[line:55] INFO 登录
+2020-04-17 18:39:22,044 method.py[line:18] INFO 发起post请求
+2020-04-17 18:39:22,388 test_login.py[line:58] INFO 判断登录失败，失败状态码为0，当前状态码的值为：0
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_login.py:53 开始测试：登录失败用例
+INFO     root:test_login.py:25 获取cookies
+INFO     root:method.py:13 发起get请求
+INFO     root:test_login.py:55 登录
+INFO     root:method.py:18 发起post请求
+INFO     root:test_login.py:58 判断登录失败，失败状态码为0，当前状态码的值为：0<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_login.py::TestLogin::test_login_fail[fail_data2]</td>
+          <td class="col-duration">0.70</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2020-04-17 18:39:22,420 test_login.py[line:53] INFO 开始测试：登录失败用例
+2020-04-17 18:39:22,420 test_login.py[line:25] INFO 获取cookies
+2020-04-17 18:39:22,420 method.py[line:13] INFO 发起get请求
+2020-04-17 18:39:22,810 test_login.py[line:55] INFO 登录
+2020-04-17 18:39:22,810 method.py[line:18] INFO 发起post请求
+2020-04-17 18:39:23,123 test_login.py[line:58] INFO 判断登录失败，失败状态码为0，当前状态码的值为：0
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_login.py:53 开始测试：登录失败用例
+INFO     root:test_login.py:25 获取cookies
+INFO     root:method.py:13 发起get请求
+INFO     root:test_login.py:55 登录
+INFO     root:method.py:18 发起post请求
+INFO     root:test_login.py:58 判断登录失败，失败状态码为0，当前状态码的值为：0<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_login.py::TestLogin::test_login_fail[fail_data3]</td>
+          <td class="col-duration">0.72</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2020-04-17 18:39:23,170 test_login.py[line:53] INFO 开始测试：登录失败用例
+2020-04-17 18:39:23,170 test_login.py[line:25] INFO 获取cookies
+2020-04-17 18:39:23,170 method.py[line:13] INFO 发起get请求
+2020-04-17 18:39:23,545 test_login.py[line:55] INFO 登录
+2020-04-17 18:39:23,545 method.py[line:18] INFO 发起post请求
+2020-04-17 18:39:23,873 test_login.py[line:58] INFO 判断登录失败，失败状态码为0，当前状态码的值为：0
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_login.py:53 开始测试：登录失败用例
+INFO     root:test_login.py:25 获取cookies
+INFO     root:method.py:13 发起get请求
+INFO     root:test_login.py:55 登录
+INFO     root:method.py:18 发起post请求
+INFO     root:test_login.py:58 判断登录失败，失败状态码为0，当前状态码的值为：0<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_shopping_car.py::TestShoppingCar::test_shopping_car_success[goods_id0]</td>
+          <td class="col-duration">0.37</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stderr setup------------------------------ <br/>2020-04-17 18:39:23,888 conftest.py[line:22] INFO 获取cookies
+2020-04-17 18:39:23,888 method.py[line:13] INFO 发起get请求
+2020-04-17 18:39:24,263 conftest.py[line:25] INFO 返回cookies
+2020-04-17 18:39:24,263 conftest.py[line:29] INFO 登录
+2020-04-17 18:39:24,263 method.py[line:18] INFO 发起post请求
+2020-04-17 18:39:24,591 conftest.py[line:33] INFO 登录成功
+<br/> -------------------------------Captured log setup------------------------------- <br/>INFO     root:conftest.py:22 获取cookies
+INFO     root:method.py:13 发起get请求
+INFO     root:conftest.py:25 返回cookies
+INFO     root:conftest.py:29 登录
+INFO     root:method.py:18 发起post请求
+INFO     root:conftest.py:33 登录成功<br/> ------------------------------Captured stderr call------------------------------ <br/>2020-04-17 18:39:24,591 test_shopping_car.py[line:20] INFO 开始测试：添加商品至购物车成功用例
+2020-04-17 18:39:24,591 test_shopping_car.py[line:25] INFO 添加商品至购物车
+2020-04-17 18:39:24,591 method.py[line:18] INFO 发起post请求
+2020-04-17 18:39:24,966 test_shopping_car.py[line:29] INFO 添加消息为：添加成功
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_shopping_car.py:20 开始测试：添加商品至购物车成功用例
+INFO     root:test_shopping_car.py:25 添加商品至购物车
+INFO     root:method.py:18 发起post请求
+INFO     root:test_shopping_car.py:29 添加消息为：添加成功<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_shopping_car.py::TestShoppingCar::test_shopping_car_success[goods_id1]</td>
+          <td class="col-duration">0.33</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2020-04-17 18:39:25,029 test_shopping_car.py[line:20] INFO 开始测试：添加商品至购物车成功用例
+2020-04-17 18:39:25,029 test_shopping_car.py[line:25] INFO 添加商品至购物车
+2020-04-17 18:39:25,029 method.py[line:18] INFO 发起post请求
+2020-04-17 18:39:25,357 test_shopping_car.py[line:29] INFO 添加消息为：添加成功
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_shopping_car.py:20 开始测试：添加商品至购物车成功用例
+INFO     root:test_shopping_car.py:25 添加商品至购物车
+INFO     root:method.py:18 发起post请求
+INFO     root:test_shopping_car.py:29 添加消息为：添加成功<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_shopping_car.py::TestShoppingCar::test_shopping_car_success[goods_id2]</td>
+          <td class="col-duration">0.34</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2020-04-17 18:39:25,388 test_shopping_car.py[line:20] INFO 开始测试：添加商品至购物车成功用例
+2020-04-17 18:39:25,388 test_shopping_car.py[line:25] INFO 添加商品至购物车
+2020-04-17 18:39:25,388 method.py[line:18] INFO 发起post请求
+2020-04-17 18:39:25,716 test_shopping_car.py[line:29] INFO 添加消息为：添加成功
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_shopping_car.py:20 开始测试：添加商品至购物车成功用例
+INFO     root:test_shopping_car.py:25 添加商品至购物车
+INFO     root:method.py:18 发起post请求
+INFO     root:test_shopping_car.py:29 添加消息为：添加成功<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_shopping_car.py::TestShoppingCar::test_shopping_car_success[goods_id3]</td>
+          <td class="col-duration">0.33</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2020-04-17 18:39:25,779 test_shopping_car.py[line:20] INFO 开始测试：添加商品至购物车成功用例
+2020-04-17 18:39:25,779 test_shopping_car.py[line:25] INFO 添加商品至购物车
+2020-04-17 18:39:25,779 method.py[line:18] INFO 发起post请求
+2020-04-17 18:39:26,107 test_shopping_car.py[line:29] INFO 添加消息为：添加成功
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_shopping_car.py:20 开始测试：添加商品至购物车成功用例
+INFO     root:test_shopping_car.py:25 添加商品至购物车
+INFO     root:method.py:18 发起post请求
+INFO     root:test_shopping_car.py:29 添加消息为：添加成功<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_shopping_car.py::TestShoppingCar::test_shopping_car_success[goods_id4]</td>
+          <td class="col-duration">0.31</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2020-04-17 18:39:26,154 test_shopping_car.py[line:20] INFO 开始测试：添加商品至购物车成功用例
+2020-04-17 18:39:26,154 test_shopping_car.py[line:25] INFO 添加商品至购物车
+2020-04-17 18:39:26,154 method.py[line:18] INFO 发起post请求
+2020-04-17 18:39:26,466 test_shopping_car.py[line:29] INFO 添加消息为：添加成功
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_shopping_car.py:20 开始测试：添加商品至购物车成功用例
+INFO     root:test_shopping_car.py:25 添加商品至购物车
+INFO     root:method.py:18 发起post请求
+INFO     root:test_shopping_car.py:29 添加消息为：添加成功<br/></div></td></tr></tbody></table></body></html>

@@ -1,3 +1,0 @@
-2020-04-09 13:32:23,618 test_add_address.py[line:35] INFO 开始测试：添加收货地址失败用例
-2020-04-09 13:32:23,618 test_add_address.py[line:40] INFO 添加购物车
-2020-04-09 13:32:23,618 method.py[line:18] INFO 发起post请求

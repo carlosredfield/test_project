@@ -1,0 +1,2 @@
+2020-04-17 18:22:35,428 conftest.py[line:22] INFO 获取cookies
+2020-04-17 18:22:35,428 method.py[line:13] INFO 发起get请求

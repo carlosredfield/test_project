@@ -1,3 +1,0 @@
-INFO     root:test_add_address.py:32 开始测试：添加收货地址失败用例
-INFO     root:test_add_address.py:37 添加购物车
-INFO     root:method.py:18 发起post请求

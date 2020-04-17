@@ -1,0 +1,10 @@
+2020-04-17 18:22:43,240 conftest.py[line:22] INFO 获取cookies
+2020-04-17 18:22:43,240 method.py[line:13] INFO 发起get请求
+2020-04-17 18:22:43,600 conftest.py[line:25] INFO 返回cookies
+2020-04-17 18:22:43,615 conftest.py[line:29] INFO 登录
+2020-04-17 18:22:43,615 method.py[line:18] INFO 发起post请求
+2020-04-17 18:22:43,959 conftest.py[line:33] INFO 登录成功
+2020-04-17 18:22:43,959 test_shopping_car.py[line:20] INFO 开始测试：添加商品至购物车成功用例
+2020-04-17 18:22:43,959 test_shopping_car.py[line:25] INFO 添加商品至购物车
+2020-04-17 18:22:43,959 method.py[line:18] INFO 发起post请求
+2020-04-17 18:22:44,334 test_shopping_car.py[line:29] INFO 添加消息为：添加成功
