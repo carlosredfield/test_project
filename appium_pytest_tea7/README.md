@@ -15,13 +15,13 @@
 
 单条用例测试示例
 
-![购物车模块测试]()
+![购物车模块测试](https://github.com/carlosredfield/test_project/blob/master/zPicture_Explain/appium_pytest_tea7/1.png)
 
-![实际运行效果]()
+![实际运行效果](https://github.com/carlosredfield/test_project/blob/master/zPicture_Explain/appium_pytest_tea7/2.JPG)
 
-![测试报告]()
+![测试报告](https://github.com/carlosredfield/test_project/blob/master/zPicture_Explain/appium_pytest_tea7/2.png)
 
-![自动发邮件]()
+![自动发邮件](https://github.com/carlosredfield/test_project/blob/master/zPicture_Explain/appium_pytest_tea7/3.png)
 
-![Jenkins控制台]()
+![Jenkins控制台](https://github.com/carlosredfield/test_project/blob/master/zPicture_Explain/appium_pytest_tea7/4.png)
 
