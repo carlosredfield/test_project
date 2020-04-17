@@ -5,6 +5,7 @@ testsuites存放测试用例集，用作测试用例管理和数据驱动，data
 debugtalk用于编写用例所需辅助函数。
 
 单条用例测试示例
+
 ![添加商品用例](https://github.com/carlosredfield/test_project/blob/master/zPicture_Explain/httprunner/1.png)
 
 ![所依赖的登录用例](https://github.com/carlosredfield/test_project/blob/master/zPicture_Explain/httprunner/2.png)
@@ -13,6 +14,6 @@ debugtalk用于编写用例所需辅助函数。
 
 ![测试报告](https://github.com/carlosredfield/test_project/blob/master/zPicture_Explain/httprunner/4.png)
 
-![locust性能测试](https://github.com/carlosredfield/test_project/blob/master/zPicture_Explain/httprunner/4.png)
+![locust性能测试](https://github.com/carlosredfield/test_project/blob/master/zPicture_Explain/httprunner/5.png)
 
 
