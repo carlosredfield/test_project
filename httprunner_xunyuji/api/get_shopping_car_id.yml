@@ -1,0 +1,15 @@
+#  获取购物车的商品id和hash_code
+name: get_shopping_car_id
+base_url: https://www.rzmwzc.com
+request:
+  headers:
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0
+    Connection: keep-alive
+  url: /shop/car_list
+  method: GET
+  verify: False
+extract:
+    - carids: 'id="shuliang(.*?)"'
+    - hash_code: 'name="__hash__" value="(.*?)" />'
+validate:
+    - eq: ["status_code", 200]

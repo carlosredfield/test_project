@@ -1,0 +1,2197 @@
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> - TestReport</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0 auto;
+      width: 960px;
+    }
+    #summary {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    #summary th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    #summary td {
+      background-color: lightblue;
+      text-align: center;
+      padding: 4px 8px;
+    }
+    .details {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    .details th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    .details tr .passed {
+      background-color: lightgreen;
+    }
+    .details tr .failed {
+      background-color: red;
+    }
+    .details tr .unchecked {
+      background-color: gray;
+    }
+    .details td {
+      background-color: lightblue;
+      padding: 5px 12px;
+    }
+    .details .detail {
+      background-color: lightgrey;
+      font-size: smaller;
+      padding: 5px 10px;
+      line-height: 20px;
+      text-align: left;
+    }
+    .details .success {
+      background-color: greenyellow;
+    }
+    .details .error {
+      background-color: red;
+    }
+    .details .failure {
+      background-color: salmon;
+    }
+    .details .skipped {
+      background-color: gray;
+    }
+
+    .button {
+      font-size: 1em;
+      padding: 6px;
+      width: 4em;
+      text-align: center;
+      background-color: #06d85f;
+      border-radius: 20px/50px;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+    }
+    a.button{
+      color: gray;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .button:hover {
+      background: #2cffbd;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      transition: opacity 500ms;
+      visibility: hidden;
+      opacity: 0;
+      line-height: 25px;
+    }
+    .overlay:target {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup {
+      margin: 70px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      width: 50%;
+      position: relative;
+      transition: all 3s ease-in-out;
+    }
+
+    .popup h2 {
+      margin-top: 0;
+      color: #333;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+    .popup .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      transition: all 200ms;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+    }
+    .popup .close:hover {
+      color: #06d85f;
+    }
+    .popup .content {
+      max-height: 80%;
+      overflow: auto;
+      text-align: left;
+    }
+    .popup .separator {
+      color:royalblue
+    }
+
+    @media screen and (max-width: 700px) {
+      .box {
+        width: 70%;
+      }
+      .popup {
+        width: 70%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Test Report: </h1>
+
+  <h2>Summary</h2>
+  <table id="summary">
+    <tr>
+      <th>START AT</th>
+      <td colspan="4">2020-04-16T05:52:09.869561</td>
+    </tr>
+    <tr>
+      <th>DURATION</th>
+      <td colspan="4">0.891 seconds</td>
+    </tr>
+    <tr>
+      <th>PLATFORM</th>
+      <td>HttpRunner 3.0.1 </td>
+      <td>CPython 3.7.6 </td>
+      <td colspan="2">Windows-10-10.0.16299-SP0</td>
+    </tr>
+    <tr>
+      <th>STAT</th>
+      <th colspan="2">TESTCASES (success/fail)</th>
+      <th colspan="2">TESTSTEPS (success/fail/error/skip)</th>
+    </tr>
+    <tr>
+      <td>total (details) =></td>
+      <td colspan="2">1 (0/1)</td>
+      <td colspan="2">2 (1/1/0/0)</td>
+    </tr>
+  </table>
+
+  <h2>Details</h2>
+
+  
+  
+  <h3>TestPersonalSetting</h3>
+  <table id="suite_1" class="details">
+    <tr>
+      <td>TOTAL: 2</td>
+      <td>SUCCESS: 1</td>
+      <td>FAILED: 1</td>
+      <td>ERROR: 0</td>
+      <td>SKIPPED: 0</td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <th colspan="2">Name</th>
+      <th>Response Time</th>
+      <th>Detail</th>
+    </tr>
+
+    
+    
+    
+    <tr id="record_1_1">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">login_success</td>
+      <td style="text-align:center;width:6em;">515.65 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_1_1">log-1</a>
+        <div id="popup_log_1_1_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_1_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: get_cookies</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://www.rzmwzc.com/
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            GET
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;HRUN-Request-ID&#34;: &#34;8ff0a229-85d2-475c-9af2-3b54458546ea&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://www.rzmwzc.com/
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {'PHPSESSID': 'g8aap3jsu4rtntos7v54l9bls0', 'fz_area': '1'}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;nginx/1.8.1&#34;,
+  &#34;Date&#34;: &#34;Thu, 16 Apr 2020 05:52:09 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;text/html; charset=utf-8&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Vary&#34;: &#34;Accept-Encoding&#34;,
+  &#34;X-Powered-By&#34;: &#34;ZihaiFx&#34;,
+  &#34;Set-Cookie&#34;: &#34;lzh_think_template=default; expires=Thu, 16-Apr-2020 06:52:09 GMT; Max-Age=3600; path=/; domain=tiannongtuan.com, PHPSESSID=g8aap3jsu4rtntos7v54l9bls0; path=/, fz_area=1; expires=Sun, 26-Apr-2020 05:52:09 GMT; Max-Age=864000&#34;,
+  &#34;Expires&#34;: &#34;Thu, 19 Nov 1981 08:52:00 GMT&#34;,
+  &#34;Cache-Control&#34;: &#34;private&#34;,
+  &#34;Pragma&#34;: &#34;no-cache&#34;,
+  &#34;Content-Encoding&#34;: &#34;gzip&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            text/html; charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta charset=&#34;utf-8&#34; /&gt; 
+	&lt;title&gt;寻渔记首页丨把海洋放进生活&lt;/title&gt;
+	&lt;meta name=&#34;keywords&#34; content=&#34;寻渔记官网，铭万平台，铭万网，日照铭万网络科技有限公司，铭万科技，海洋，蓝海，龙利鱼，黑头鱼，绿茶&#34; /&gt;
+	&lt;meta name=&#34;description&#34; content=&#34;寻渔记是日照铭万网络科技有限公司旗下品牌，专注海洋产业的一站式购物平台，主要定位于海洋产业+政府政策扶持+优质产品方式，平台结合线上线下互联网认购模式，为用户带来绿色无污染的海洋美味以及游玩体验。为海洋产业发展以及新旧动能转换提供助力，打造山东领先的海洋综合产业平台。&#34; /&gt;
+    	&lt;link rel=&#34;shortcut icon&#34; href=&#34;/Public/images/favicon.ico&#34; /&gt;
+    	&lt;link rel=&#34;bookmark&#34;href=&#34;/Public/images/favicon.ico&#34; /&gt;
+
+&lt;link rel=&#34;stylesheet&#34; type=&#34;text/ ... OMITTED 14092 CHARACTORS ...</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>LazyString($expected_status_code)</td>
+                      <td>200</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>16134</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>390.64</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>368.347</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+        
+        <a class="button" href="#popup_log_1_1_2">log-2</a>
+        <div id="popup_log_1_1_2" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_1_2">&times;</a>
+
+            <div class="content">
+              <h3>Name: login_success</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://www.rzmwzc.com/member/common/actlogin
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;HRUN-Request-ID&#34;: &#34;8ff0a229-85d2-475c-9af2-3b54458546ea&#34;,
+  &#34;Cookie&#34;: &#34;PHPSESSID=g8aap3jsu4rtntos7v54l9bls0; fz_area=1&#34;,
+  &#34;Content-Length&#34;: &#34;42&#34;,
+  &#34;Content-Type&#34;: &#34;application/x-www-form-urlencoded&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>sUserName=16533907260&amp;sPassword=xunyuji123</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://www.rzmwzc.com/member/common/actlogin
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;nginx/1.8.1&#34;,
+  &#34;Date&#34;: &#34;Thu, 16 Apr 2020 05:52:09 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;text/html;charset=utf-8&#34;,
+  &#34;Content-Length&#34;: &#34;12&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;X-Powered-By&#34;: &#34;PHP/5.5.38&#34;,
+  &#34;Set-Cookie&#34;: &#34;lzh_think_template=default; expires=Thu, 16-Apr-2020 06:52:09 GMT; Max-Age=3600; path=/; domain=tiannongtuan.com, LoginCookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0; path=/&#34;,
+  &#34;Expires&#34;: &#34;Thu, 19 Nov 1981 08:52:00 GMT&#34;,
+  &#34;Cache-Control&#34;: &#34;no-store, no-cache, must-revalidate, post-check=0, pre-check=0&#34;,
+  &#34;Pragma&#34;: &#34;no-cache&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            text/html;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;status&#34;: 1
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.status
+                      </td>
+                      <td>equals</td>
+                      <td>1</td>
+                      <td>1</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>12</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>125.01</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>102.115</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_2">
+      <th class="failure" style="width:5em;">failure</th>
+      <td colspan="2">get_token</td>
+      <td style="text-align:center;width:6em;">125.05 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_2_1">log-1</a>
+        <div id="popup_log_1_2_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_2_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: get_token</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://www.rzmwzc.com/Member/memberinfo/index.html
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            GET
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;HRUN-Request-ID&#34;: &#34;8ff0a229-85d2-475c-9af2-3b54458546ea&#34;,
+  &#34;Cookie&#34;: &#34;PHPSESSID=g8aap3jsu4rtntos7v54l9bls0; fz_area=1&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://www.rzmwzc.com/Member/memberinfo/index.html
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;nginx/1.8.1&#34;,
+  &#34;Date&#34;: &#34;Thu, 16 Apr 2020 05:52:09 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;text/html; charset=utf-8&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Vary&#34;: &#34;Accept-Encoding&#34;,
+  &#34;X-Powered-By&#34;: &#34;ZihaiFx&#34;,
+  &#34;Set-Cookie&#34;: &#34;lzh_think_template=default; expires=Thu, 16-Apr-2020 06:52:09 GMT; Max-Age=3600; path=/; domain=tiannongtuan.com&#34;,
+  &#34;Expires&#34;: &#34;Thu, 19 Nov 1981 08:52:00 GMT&#34;,
+  &#34;Cache-Control&#34;: &#34;private&#34;,
+  &#34;Pragma&#34;: &#34;no-cache&#34;,
+  &#34;Content-Encoding&#34;: &#34;gzip&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            text/html; charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta charset=&#34;utf-8&#34; /&gt; 
+	&lt;title&gt;寻渔记 - 把海洋放进生活&lt;/title&gt;
+	&lt;meta name=&#34;keywords&#34; content=&#34;寻渔记官网，铭万平台，铭万网，日照铭万网络科技有限公司，铭万科技，海洋，蓝海，龙利鱼，黑头鱼，绿茶&#34; /&gt;
+	&lt;meta name=&#34;description&#34; content=&#34;寻渔记是日照铭万网络科技有限公司旗下品牌，专注海洋产业的一站式购物平台，主要定位于海洋产业+政府政策扶持+优质产品方式，平台结合线上线下互联网认购模式，为用户带来绿色无污染的海洋美味以及游玩体验。为海洋产业发展以及新旧动能转换提供助力，打造山东领先的海洋综合产业平台。&#34; /&gt;
+    	&lt;link rel=&#34;shortcut icon&#34; href=&#34;/Public/images/favicon.ico&#34; /&gt;
+    	&lt;link rel=&#34;bookmark&#34;href=&#34;/Public/images/favicon.ico&#34; /&gt;	
+	&lt;link rel=&#34;stylesheet&#34; href=&#34;/Pub ... OMITTED 23611 CHARACTORS ...</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>25995</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>125.05</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>110.299</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+          <a class="button" href="#popup_attachment_1_2">traceback</a>
+          <div id="popup_attachment_1_2" class="overlay">
+            <div class="popup">
+              <h2>Traceback Message</h2>
+              <a class="close" href="#record_1_2">&times;</a>
+              <div class="content"><pre>Traceback (most recent call last):
+  File &#34;d:\python37\lib\site-packages\httprunner\api.py&#34;, line 69, in test
+    test_runner.run_test(test_dict)
+httprunner.exceptions.ExtractFailure: Failed to extract data with regex! =&gt; &lt;input type=&#34;hidden&#34; name=&#34;token&#34; value=&#34;(.*?)&#34;&gt;
+response body: &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta charset=&#34;utf-8&#34; /&gt; 
+	&lt;title&gt;寻渔记 - 把海洋放进生活&lt;/title&gt;
+	&lt;meta name=&#34;keywords&#34; content=&#34;寻渔记官网，铭万平台，铭万网，日照铭万网络科技有限公司，铭万科技，海洋，蓝海，龙利鱼，黑头鱼，绿茶&#34; /&gt;
+	&lt;meta name=&#34;description&#34; content=&#34;寻渔记是日照铭万网络科技有限公司旗下品牌，专注海洋产业的一站式购物平台，主要定位于海洋产业+政府政策扶持+优质产品方式，平台结合线上线下互联网认购模式，为用户带来绿色无污染的海洋美味以及游玩体验。为海洋产业发展以及新旧动能转换提供助力，打造山东领先的海洋综合产业平台。&#34; /&gt;
+    	&lt;link rel=&#34;shortcut icon&#34; href=&#34;/Public/images/favicon.ico&#34; /&gt;
+    	&lt;link rel=&#34;bookmark&#34;href=&#34;/Public/images/favicon.ico&#34; /&gt;	
+	&lt;link rel=&#34;stylesheet&#34; href=&#34;/Public/web/css/jquery.fullPage.css&#34;&gt;
+	&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;/Public/web/css/swiper-4.3.3.min.css&#34; /&gt;
+	&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;/Public/web/css/all.css&#34; /&gt;
+	&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;/Public/web/css/ldy.css&#34; /&gt;
+	&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;/Public/web/css/ltt.css&#34; /&gt;
+	&lt;script src=&#34;/Public/web/js/jquery-1.8.3.min.js&#34;&gt;&lt;/script&gt;
+	&lt;script type=&#34;text/javascript&#34; src=&#34;/Public/web/js/swiper-4.3.3.min.js&#34;&gt;&lt;/script&gt;
+	&lt;script src=&#34;/Public/web/js/jquery-ui-1.10.3.min.js&#34;&gt;&lt;/script&gt;
+	&lt;script src=&#34;/Public/web/js/jquery.fullPage.min.js&#34;&gt;&lt;/script&gt;
+	&lt;script type=&#34;text/javascript&#34; src=&#34;/Public/web/js/ldy.js&#34;&gt;&lt;/script&gt;
+	&lt;script src=&#34;/Style/file/layer/layer.min.js&#34;&gt;&lt;/script&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;/Public/web/js/layer.js&#34;&gt;&lt;/script&gt;
+
+	&lt;meta http-equiv=&#34;Content-Security-Policy&#34; content=&#34;upgrade-insecure-requests&#34;&gt;
+
+&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;/Public/new/css/style.css&#34;/&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;/Public/new/js/index.js&#34;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;!--header--&gt;
+
+ &lt;div class=&#34;head&#34;&gt;
+	&lt;div class=&#34;h_ym&#34;&gt;
+     &lt;div class=&#34;h_ymz&#34;&gt;
+    	&lt;div class=&#34;hym_l&#34;&gt;
+        	&lt;span&gt;客服热线：400-110-0216   &amp;nbsp;&amp;nbsp; &lt;!-- 关注我们： --&gt;&lt;/span&gt;
+            &lt;span&gt;微信
+            	&lt;div class=&#34;hym_ewm wx&#34;&gt;
+                	&lt;img src=&#34;/Public/web/img/shouye/erwei-w.png&#34; /&gt;
+                    &lt;p&gt;微信公众号&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/span&gt;
+            &lt;span&gt;app下载
+            &lt;div class=&#34;hym_ewm app&#34;&gt;
+                	&lt;img src=&#34;/Public/web/img/shouye/erwei-app.png&#34; /&gt;
+                    &lt;p&gt;app下载&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+        
+         &lt;div class=&#34;hym_r&#34;&gt;
+
+       
+
+        &lt;a href=&#34;/member/index.html&#34; &gt;
+
+                            &lt;img src=&#34;/Public/wap/img/l-touxinag.png&#34; alt=&#34;&#34;&gt; chidiedashi/
+
+                        &lt;/a&gt; 
+
+                    &lt;a href=&#34;/member/common/actlogout.html&#34;&gt;退出&lt;/a&gt;
+
+                    
+
+
+        &lt;/div&gt;
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&#34;h_dh&#34;&gt;
+     &lt;div class=&#34;h_dhz&#34;&gt;
+    	&lt;div class=&#34;dh_l&#34;&gt;
+        	&lt;img src=&#34;/Public/new/images/xyj_07.png&#34; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;dh_r&#34;&gt;
+       		&lt;ul&gt;
+            	&lt;li   &gt;&lt;a href=&#34;/index/index&#34;&gt;首页&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/invest/index.html&#34;&gt;渔业养殖&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/zhongzhi/index.html&#34;&gt;联合种植&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/shop&#34;&gt;海产商城&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/article/video.html&#34;&gt;视频直播&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/article/active.html&#34;&gt;活动公告&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/article/about.html&#34;&gt;关于我们&lt;/a&gt;&lt;/li&gt;
+                &lt;li class=&#34;hover&#34;&gt;&lt;a href=&#34;/member/index/index.html&#34;&gt;会员中心&lt;/a&gt;&lt;/li&gt;
+
+       
+                
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+
+&lt;/div&gt;
+&lt;style type=&#34;text/css&#34;&gt;
+	body{
+		background: #f8f8f8;
+	}
+&lt;/style&gt;
+&lt;!--内容部分--&gt;
+&lt;div class=&#34;box navls&#34;&gt;
+	&lt;span&gt;&lt;a href=&#34;/member.html&#34;&gt;会员中心&lt;/a&gt;&lt;/span&gt;
+	&lt;span&gt;&amp;gt;&lt;/span&gt;
+	&lt;span&gt;&lt;a&gt;个人资料&lt;/a&gt;&lt;/span&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&#34;box clearfix&#34;&gt;
+	&lt;style type=&#34;text/css&#34;&gt;
+.lst2 .p1 img{
+    display: inline;
+}
+&lt;/style&gt;
+&lt;div class=&#34;Lxlbox&#34;&gt;
+    &lt;div class=&#34;lst1&#34;&gt;
+        &lt;p class=&#34;p1&#34;&gt;
+            &lt;span&gt;账户安全级别&lt;/span&gt;
+            &lt;span class=&#34;bfb&#34;&gt;100%&lt;/span&gt;
+        &lt;/p&gt;
+        &lt;div class=&#34;p2&#34;&gt;
+            &lt;p class=&#34;p3&#34; style=&#34;width: 100%&#34;&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;list2box&#34;&gt;
+        &lt;div class=&#34;lst2 left-top-zhanghu&#34;&gt;
+            &lt;div class=&#34;p1&#34; data-a=&#34;1&#34;&gt;
+                &lt;img src=&#34;/Public/web/img/huiyuan/zhanghu.png&#34; /&gt;
+                &lt;span&gt;账户中心&lt;/span&gt;
+                &lt;span class=&#34;smp1&#34;&gt;&amp;gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;p2&#34;&gt;
+                &lt;ul&gt;
+                    &lt;a href=&#34;/member.html&#34;&gt;
+						&lt;li class=&#34;left-left-index-index&#34;&gt;账户信息&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/Member/charge/index.html&#34;&gt;
+						&lt;li class=&#34;left-left-charge-index&#34;&gt;购买鱼币&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/Member/withdraw/withdraw.html&#34;&gt;
+						&lt;li class=&#34;left-left-withdraw-withdraw&#34;&gt;我的提现&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/member/bonus/youhuijun&#34;&gt;
+						&lt;li class=&#34;left-left-bonus-youhuijun&#34;&gt;我的红包&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/member/capital/detail&#34;&gt;
+						&lt;li class=&#34;left-left-capital-detail&#34;&gt;收支明细&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/member/credit/index&#34;&gt;
+						&lt;li class=&#34;left-left-credit-index&#34;&gt;积分明细&lt;/li&gt;
+					&lt;/a&gt; 
+                    &lt;a href=&#34;/member/experience/index&#34;&gt;
+						&lt;li class=&#34;left-left-experience-index&#34;&gt;体验金&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/Member/agreement/index.html&#34;&gt;
+                        &lt;li class=&#34;left-left-agreement-index&#34;&gt;合同管理&lt;/li&gt;
+                    &lt;/a&gt; 
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;lst2 left-top-xiangmu&#34;&gt;
+            &lt;div class=&#34;p1&#34; data-a=&#34;1&#34;&gt;
+                &lt;img src=&#34;/Public/web/img/huiyuan/wode.png&#34; /&gt;
+                &lt;span&gt;产品订单&lt;/span&gt;
+                &lt;span class=&#34;smp1&#34;&gt;&amp;gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;p2&#34;&gt;
+                &lt;ul&gt;
+                    &lt;a href=&#34;/Member/tendout/index/type/1.html&#34;&gt;
+						&lt;li class=&#34;left-tendout-1&#34;&gt;养殖订单&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/Member/tendout/index/type/2.html&#34;&gt;
+						&lt;li class=&#34;left-tendout-2&#34;&gt;销售订单&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/Member/tendout/index/type/3.html&#34;&gt;
+						&lt;li class=&#34;left-tendout-3&#34;&gt;共建订单&lt;/li&gt;
+					&lt;/a&gt;
+					 
+                    &lt;a href=&#34;/Member/tendout/zhongzhi/type/4.html&#34;&gt;
+                        &lt;li class=&#34;left-tendout-4&#34;&gt;种植订单&lt;/li&gt;
+                    &lt;/a&gt;
+
+                     &lt;a href=&#34;/Member/guanzhu/zdlist/type/5.html&#34;&gt;
+                        &lt;li class=&#34;left-tendout-5&#34;&gt;快捷购买&lt;/li&gt;
+                    &lt;/a&gt;
+
+			      &lt;!--   &lt;a href=&#34;/Member/guanzhu/bespeak/type/6.html&#34;&gt;
+                        &lt;li class=&#34;left-tendout-6&#34;&gt;我的预约&lt;/li&gt;
+                    &lt;/a&gt; --&gt;
+
+                      &lt;a href=&#34;/Member/guanzhu/index/type/6.html&#34;&gt;
+                        &lt;li class=&#34;left-tendout-6&#34;&gt;我的关注&lt;/li&gt;
+                    &lt;/a&gt;
+
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;lst2 left-top-fqguanli&#34;&gt;
+            &lt;div class=&#34;p1&#34; data-a=&#34;1&#34;&gt;
+                &lt;img src=&#34;/Public/web/img/huiyuan/faqi.png&#34; /&gt;
+                &lt;span&gt;发起管理&lt;/span&gt;
+                &lt;span class=&#34;smp1&#34;&gt;&amp;gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;p2&#34;&gt;
+                &lt;ul&gt;
+                    &lt;a href=&#34;/Member/borrowin/index.html&#34;&gt;
+						&lt;li class=&#34;left-borrowin-index&#34;&gt;发起项目&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/Member/borrowin/borrowpaying.html&#34;&gt;
+						&lt;li class=&#34;left-borrowin-borrowpaying&#34;&gt;项目收益&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/Member/borrowin/borrowlog.html&#34;&gt;
+                        &lt;li class=&#34;left-borrowin-borrowlog&#34;&gt;放款记录&lt;/li&gt;
+                    &lt;/a&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;lst2 left-top-gerensz&#34;&gt;
+            &lt;div class=&#34;p1&#34; data-a=&#34;1&#34;&gt;
+                &lt;img src=&#34;/Public/web/img/huiyuan/Settings.png&#34; /&gt;
+                &lt;span&gt;个人设置&lt;/span&gt;
+                &lt;span class=&#34;smp1&#34;&gt;&amp;gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;p2&#34;&gt;
+                &lt;ul&gt;
+                    &lt;a href=&#34;/Member/memberinfo/index.html&#34;&gt;
+						&lt;li class=&#34;left-memberinfo&#34;&gt;个人资料&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/member/safe/&#34;&gt;
+						&lt;li class=&#34;left-safe&#34;&gt;安全信息&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/member/memberaddress&#34;&gt;
+						&lt;li class=&#34;left-memberaddress&#34;&gt;收货地址&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/member/bank/index&#34;&gt;
+						&lt;li class=&#34;left-bank&#34;&gt;银行卡&lt;/li&gt;
+					&lt;/a&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;lst2 left-top-xiaoxi&#34;&gt;
+			&lt;div class=&#34;p1&#34; data-a=&#34;1&#34;&gt;
+				&lt;img src=&#34;/Public/web/img/huiyuan/xiaoxi.png&#34; /&gt;
+				&lt;span&gt;消息中心&lt;/span&gt;
+				&lt;span class=&#34;smp1&#34;&gt;&amp;gt;&lt;/span&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;p2&#34;&gt;
+				&lt;ul&gt;
+					&lt;a href=&#34;/Member/msg/sysmsg.html&#34;&gt;
+						&lt;li class=&#34;left-sysmsg left-viewmsg&#34;&gt;站内通知&lt;/li&gt;
+					&lt;/a&gt;
+					&lt;a href=&#34;/Member/msg/projectmsg.html&#34;&gt;
+						&lt;li class=&#34;left-projectmsg&#34;&gt;项目动态&lt;/li&gt;
+					&lt;/a&gt;
+
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+        &lt;div class=&#34;lst2 left-top-yaoqing&#34;&gt;
+            &lt;div class=&#34;p1&#34; data-a=&#34;1&#34;&gt;
+                &lt;img src=&#34;/Public/web/img/huiyuan/yaoqing.png&#34; /&gt;
+                &lt;span&gt;我的邀请&lt;/span&gt;
+                &lt;span class=&#34;smp1&#34;&gt;&amp;gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;p2&#34;&gt;
+                &lt;ul&gt;
+                    &lt;a href=&#34;/Member/promotion/index.html&#34;&gt;
+						&lt;li class=&#34;left-yaoqing&#34;&gt;邀请记录&lt;/li&gt;
+					&lt;/a&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;lst2 left-top-duihuan&#34;&gt;
+            &lt;div class=&#34;p1&#34; data-a=&#34;1&#34;&gt;
+                &lt;img src=&#34;/Public/web/img/huiyuan/jifen.png&#34; /&gt;
+                &lt;span&gt;商城订单&lt;/span&gt;
+                &lt;span class=&#34;smp1&#34;&gt;&amp;gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;p2&#34;&gt;
+                &lt;ul&gt;
+                    &lt;a href=&#34;/member/shoporder&#34;&gt;
+						&lt;li class=&#34;left-duihuan&#34;&gt;商城订单&lt;/li&gt;
+					&lt;/a&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script type=&#34;text/javascript&#34;&gt;
+    if (&#39;memberinfo&#39; == &#39;shoporder&#39;) {
+        $(&#39;.left-top-duihuan&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-duihuan .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-duihuan&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else if(&#39;memberinfo&#39; == &#39;promotion&#39;){
+        $(&#39;.left-top-yaoqing&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-yaoqing .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-yaoqing&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else if(&#39;memberinfo&#39; == &#39;msg&#39;){
+        $(&#39;.left-top-xiaoxi&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-xiaoxi .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-index&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else if(&#39;memberinfo&#39; == &#39;memberinfo&#39;){
+        $(&#39;.left-top-gerensz&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-gerensz .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-memberinfo&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else if(&#39;memberinfo&#39; == &#39;safe&#39;){
+        $(&#39;.left-top-gerensz&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-gerensz .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-safe&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else if(&#39;memberinfo&#39; == &#39;memberaddress&#39;){
+        $(&#39;.left-top-gerensz&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-gerensz .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-memberaddress&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else if(&#39;memberinfo&#39; == &#39;bank&#39;){
+        $(&#39;.left-top-gerensz&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-gerensz .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-bank&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else if(&#39;memberinfo&#39; == &#39;borrowin&#39;){
+        $(&#39;.left-top-fqguanli&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-fqguanli .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-borrowin-index&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else if(&#39;memberinfo&#39; == &#39;tendout&#39;){
+        $(&#39;.left-top-xiangmu&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-xiangmu .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-tendout-&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else if(&#39;memberinfo&#39; == &#39;guanzhu&#39;){
+        $(&#39;.left-top-xiangmu&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-xiangmu .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-tendout-&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else{
+        $(&#39;.left-top-zhanghu&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-zhanghu .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-left-memberinfo-index&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }
+&lt;/script&gt;
+	&lt;div class=&#34;tabvbox&#34;&gt;
+		&lt;div class=&#34;tabv clearfix&#34;&gt;
+			&lt;div class=&#34;on&#34;&gt;&lt;span&gt;个人资料&lt;/span&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&#34;tabv2box&#34;&gt;
+			&lt;div class=&#34;tabv2 show&#34;&gt;
+			   	&lt;div class=&#34;myzil&#34;&gt;
+			   		&lt;form action=&#34;/member/Memberinfo/savexixi&#34; method=&#34;post&#34; id=&#34;l-shiminglc&#34; class=&#34;clearfix&#34;&gt;
+				   	&lt;ul&gt;
+				   		&lt;li&gt;
+				   			&lt;span&gt;会员名称： &lt;/span&gt;
+
+				   			&lt;input type=&#34;text&#34; name=&#34;user_name&#34; id=&#34;user_name&#34; value=&#34;chidiedashi&#34;    /&gt;
+
+				   			&lt;br&gt;&lt;span&gt;&amp;nbsp; &lt;/span&gt;
+
+							&lt;span style=&#34;color:#D2D2D2; width:160px;&#34;&gt;会员名称只可修改一次&lt;/span&gt;				   			
+				   		&lt;/li&gt;
+
+				   &lt;!-- 		&lt;li&gt;
+				   			&lt;span&gt;会员昵称： &lt;/span&gt;&lt;input type=&#34;text&#34; name=&#34;nick_name&#34; id=&#34;nick_name&#34; value=&#34;&#34; /&gt;
+				   		&lt;/li&gt;
+ --&gt;
+				   		&lt;li&gt;
+				   			&lt;span&gt;真实姓名： &lt;/span&gt;&lt;input type=&#34;text&#34; name=&#34;real_name&#34; id=&#34;real_name&#34; value=&#34;炽蝶大师&#34; readonly=&#34;readonly&#34;/&gt;
+				   		&lt;/li&gt;
+				   		&lt;li&gt;
+				   			&lt;span&gt;身份证号： &lt;/span&gt;&lt;input type=&#34;text&#34; name=&#34;idcard&#34; id=&#34;idcard&#34; value=&#34;441801197608160016&#34; readonly=&#34;readonly&#34; /&gt; 
+						&lt;/li&gt;
+				   		&lt;li&gt;
+				   			&lt;span&gt;性别： &lt;/span&gt;
+				   			&lt;label&gt;&lt;input name=&#34;sex&#34;  type=&#34;radio&#34; value=&#34;男&#34; /&gt;男 &lt;/label&gt; 
+              				&lt;label&gt; &lt;input name=&#34;sex&#34;  type=&#34;radio&#34; value=&#34;女&#34; /&gt;女 &lt;/label&gt; 
+				   		&lt;/li&gt;
+				   		&lt;li&gt;
+				   			&lt;span&gt;类型： &lt;/span&gt;
+				   			&lt;label&gt;&lt;input name=&#34;user_type&#34; type=&#34;radio&#34; onclick=&#34;comp(1)&#34; checked=&#34;checked&#34; value=&#34;1&#34; /&gt;投资者 &lt;/label&gt; 
+                			&lt;label&gt;&lt;input name=&#34;user_type&#34; type=&#34;radio&#34; onclick=&#34;comp(2)&#34;  value=&#34;2&#34; /&gt;创业者&lt;/label&gt; 
+				   		&lt;/li&gt;
+						&lt;!--投资类型--&gt;
+						&lt;div class=&#34;touzilei oz clearfix person&#34; &gt;
+							&lt;p&gt;符合下列条件之一的自然人投资者&lt;/p&gt;
+							&lt;div&gt;
+								&lt;label&gt;&lt;input name=&#34;riskint&#34; type=&#34;radio&#34;  value=&#34;1&#34; /&gt;我的金融资产超过100万元 &lt;/label&gt;
+				                &lt;label&gt;&lt;input name=&#34;riskint&#34; type=&#34;radio&#34;  value=&#34;2&#34; /&gt;我的年收入超过30万元&lt;/label&gt; 
+				                &lt;label&gt;&lt;input name=&#34;riskint&#34; type=&#34;radio&#34; checked=&#34;checked&#34; value=&#34;3&#34; /&gt;我是专业的风险投资人 &lt;/label&gt; 
+				                &lt;label&gt;&lt;input name=&#34;riskint&#34; type=&#34;radio&#34;  value=&#34;4&#34; /&gt;我不符合上述任一条件&lt;/label&gt; 
+							&lt;/div&gt;
+						&lt;/div&gt;
+					    
+						&lt;div class=&#34;touzilei clearfix company&#34;  style=&#34;display: none;&#34;&gt;
+							&lt;p&gt;创业者公司信息&lt;/p&gt;
+							&lt;div&gt;
+								&lt;label&gt;&lt;span&gt;公司名称:&lt;/span&gt;&lt;input type=&#34;text&#34; name=&#34;company_name&#34; id=&#34;company_name&#34; value=&#34;&#34; /&gt; &lt;/label&gt;
+				                &lt;label&gt;&lt;span&gt;公司证件号:&lt;/span&gt;&lt;input type=&#34;text&#34; name=&#34;company_idcard&#34; id=&#34;company_idcard&#34; value=&#34;&#34; /&gt;&lt;/label&gt; 
+							&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;div class=&#34;touzilei oz clearfix&#34;&gt; 
+						&lt;button class=&#34;bcxsz&#34; type=&#34;button&#34; id=&#34;save_userinfo&#34;&gt;保存新设置&lt;/button&gt;
+						&lt;/div&gt;
+				   	&lt;/ul&gt;
+				   	&lt;input type=&#34;hidden&#34; name=&#34;token&#34; value=&#34;cd4b82d53a41f1c9416d2379ce515bc5_6d9454505ff099447400faa6f16ecbd1&#34; /&gt;&lt;/form&gt;
+				&lt;/div&gt;
+				&lt;script type=&#34;text/javascript&#34;&gt;
+					$(&#39;#save_userinfo&#39;).click(function() {
+						var real_name = $(&#39;#real_name&#39;).val();
+						var user_name = $(&#39;#user_name&#39;).val();
+						var idcard =  $.trim($(&#39;#idcard&#39;).val());
+						if(user_name == &#39;&#39;) {
+							alert(&#39;用户名不能为空&#39;);
+							return false;
+						}
+
+						if(real_name == &#39;&#39;) {
+							alert(&#39;请填写您的真实姓名&#39;);
+							return false;
+						}
+						if(idcard == &#39;&#39;) {
+							alert(&#39;请填写您的身份证号&#39;);
+							return false;
+						}
+						if(testIdcard(idcard).indexOf(&#39;通过&#39;) == -1) {
+							alert(&#39;请填写正确的身份证号&#39;);
+							return false;
+						}
+						$(&#39;#l-shiminglc&#39;).submit();
+					})
+					function comp(cid){
+						if(cid == 1){
+							$(&#34;.person&#34;).show();
+							$(&#34;.company&#34;).hide();
+						}else if(cid == 2){
+							$(&#34;.person&#34;).hide();
+							$(&#34;.company&#34;).show();
+						}
+					}
+				&lt;/script&gt;
+			   	&lt;!--头像上传--&gt;
+			   	&lt;form action=&#34;&#34; method=&#34;post&#34;  enctype=&#39;multipart/form-data&#39;id=&#34;form0&#34;&gt;
+			   	&lt;div class=&#34;myziltou&#34;&gt;
+			   		&lt;h3&gt;个人头像&lt;/h3&gt;
+				   	&lt;p&gt;
+	                	&lt;div id=&#34;localImag&#34;&gt;&lt;img id=&#34;previewa&#34; src=&#39;/Public/wap/img/l-touxinag.png&#39;   /&gt;&lt;/div&gt;
+	                &lt;/p&gt;
+                	&lt;p class=&#34;p2&#34;&gt;&lt;input type=file  name=&#34;doc&#34; id=&#34;doc&#34; onchange=&#34;javascript:imgChange1();&#34;&gt;&lt;button class=&#34;bcxsz&#34;&gt;选择图片&lt;/button&gt; &lt;/p&gt;
+
+				   	&lt;p class=&#34;p1&#34;&gt;
+				   		支持jpg，jpeg，png，gif格式，&lt;br /&gt;
+						大小不超过20.00MB。&lt;br /&gt;
+						推荐尺寸：760*530px
+				   	&lt;/p&gt;	   
+			   	&lt;/div&gt;
+				&lt;input type=&#34;hidden&#34; name=&#34;token&#34; value=&#34;cd4b82d53a41f1c9416d2379ce515bc5_6d9454505ff099447400faa6f16ecbd1&#34; /&gt;&lt;/form&gt;
+			&lt;/div&gt;
+              
+              	
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;script type=&#34;text/javascript&#34;&gt;
+var testIdcard = function(idcard) {
+var Errors = new Array(&#34;验证通过!&#34;, &#34;身份证号码位数不对!&#34;, &#34;身份证号码出生日期超出范围!&#34;, &#34;身份证号码校验错误!&#34;, &#34;身份证地区非法!&#34;);
+var area = { 11: &#34;北京&#34;, 12: &#34;天津&#34;, 13: &#34;河北&#34;, 14: &#34;山西&#34;, 15: &#34;内蒙古&#34;, 21: &#34;辽宁&#34;, 22: &#34;吉林&#34;, 23: &#34;黑龙江&#34;, 31: &#34;上海&#34;, 32: &#34;江苏&#34;, 33: &#34;浙江&#34;, 34: &#34;安徽&#34;, 35: &#34;福建&#34;, 36: &#34;江西&#34;, 37: &#34;山东&#34;, 41: &#34;河南&#34;, 42: &#34;湖北&#34;, 43: &#34;湖南&#34;, 44: &#34;广东&#34;, 45: &#34;广西&#34;, 46: &#34;海南&#34;, 50: &#34;重庆&#34;, 51: &#34;四川&#34;, 52: &#34;贵州&#34;, 53: &#34;云南&#34;, 54: &#34;西藏&#34;, 61: &#34;陕西&#34;, 62: &#34;甘肃&#34;, 63: &#34;青海&#34;, 64: &#34;宁夏&#34;, 65: &#34;xinjiang&#34;, 71: &#34;台湾&#34;, 81: &#34;香港&#34;, 82: &#34;澳门&#34;, 91: &#34;国外&#34; }
+var idcard, Y, JYM;
+var S, M;
+var idcard_array = new Array();
+idcard_array = idcard.split(&#34;&#34;);
+if (area[parseInt(idcard.substr(0, 2))] == null) return Errors[4];
+switch (idcard.length) {
+	case 15:
+		if ((parseInt(idcard.substr(6, 2)) + 1900) % 4 == 0 || ((parseInt(idcard.substr(6, 2)) + 1900) % 100 == 0 &amp;&amp; (parseInt(idcard.substr(6, 2)) + 1900) % 4 == 0)) {
+			ereg = /^[1-9][0-9]{5}[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|[1-2][0-9]))[0-9]{3}$/; //测试出生日期的合法性 
+		}
+		else {
+			ereg = /^[1-9][0-9]{5}[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|1[0-9]|2[0-8]))[0-9]{3}$/; //测试出生日期的合法性 
+		}
+		if (ereg.test(idcard))
+			return Errors[0];
+		else
+			return Errors[2];
+		break;
+	case 18:
+		if (parseInt(idcard.substr(6, 4)) % 4 == 0 || (parseInt(idcard.substr(6, 4)) % 100 == 0 &amp;&amp; parseInt(idcard.substr(6, 4)) % 4 == 0)) {
+			ereg = /^[1-9][0-9]{5}(19|20)[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|[1-2][0-9]))[0-9]{3}[0-9Xx]$/; //闰年出生日期的合法性正则表达式 
+		}
+		else {
+			ereg = /^[1-9][0-9]{5}(19|20)[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|1[0-9]|2[0-8]))[0-9]{3}[0-9Xx]$/; //平年出生日期的合法性正则表达式 
+		}
+		if (ereg.test(idcard)) {
+			S = (parseInt(idcard_array[0]) + parseInt(idcard_array[10])) * 7 + (parseInt(idcard_array[1]) + parseInt(idcard_array[11])) * 9 + (parseInt(idcard_array[2]) + parseInt(idcard_array[12])) * 10 + (parseInt(idcard_array[3]) + parseInt(idcard_array[13])) * 5 + (parseInt(idcard_array[4]) + parseInt(idcard_array[14])) * 8 + (parseInt(idcard_array[5]) + parseInt(idcard_array[15])) * 4 + (parseInt(idcard_array[6]) + parseInt(idcard_array[16])) * 2 + parseInt(idcard_array[7]) * 1 + parseInt(idcard_array[8]) * 6 + parseInt(idcard_array[9]) * 3;
+			Y = S % 11;
+			M = &#34;F&#34;;
+			JYM = &#34;10X98765432&#34;;
+			M = JYM.substr(Y, 1);
+			if (M == idcard_array[17])
+				return Errors[0];
+			else
+				return Errors[3];
+		}
+		else
+			return Errors[2];
+		break;
+	default:
+		return Errors[1];
+		break;
+}
+}
+&lt;/script&gt;
+&lt;script&gt;
+function imgChange1() {
+	var form = new FormData(document.getElementById(&#34;form0&#34;));  
+  	$.ajax({ 
+  		url:&#34;/Wapmember/memberinfo/addimg&#34;,  
+		type:&#34;post&#34;,  
+		data:form,  
+  		cache: false,  
+  		processData: false,  
+  		contentType: false,  
+		success:function(data){ 
+			$(&#34;#previewa&#34;).attr(&#34;src&#34;,JSON.parse(data).message);	 
+		},  
+  		error:function(e){  
+   			alert(&#34;网络错误，请重试！！&#34;);  
+		}  
+	});		
+} 
+&lt;/script&gt;
+&lt;!--底部--&gt;
+&lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+
+&lt;div class=&#34;footer&#34;&gt;
+&lt;div class=&#34;foot_con&#34;&gt;
+  &lt;img  class=&#34;foot_l&#34; src=&#34;/Public/new/images/xyj_21.jpg&#34; /&gt;
+    &lt;div class=&#34;foot_r&#34;&gt;
+    &lt;div class=&#34;foot_zz&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;foot_r_l&#34; style=&#34;width:200px;&#34;&gt;
+          &lt;li&gt;&lt;a href=&#34;/article/cateshow/cid/523.html&#34;&gt;服务条款&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&#34;/article/cateshow/cid/533.html&#34;&gt;隐私策略&lt;/a&gt;&lt;/li&gt;
+        &lt;!--     &lt;li&gt;&lt;a href=&#34;/article/cateshow/cid/523.html&#34;&gt;服务介绍&lt;/a&gt;&lt;/li&gt; --&gt;
+          &lt;!--  
+            &lt;li&gt;&lt;a href=&#34;/article/cateshow/cid/523.html&#34;&gt;撰写指南&lt;/a&gt;&lt;/li&gt; --&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;foot_r_l&#34; style=&#34;width:400px; margin-left:40px;&#34;&gt;
+            &lt;li&gt;&lt;a href=&#34;/invest/index.html&#34;&gt;渔业养殖&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/zhongzhi/index.html&#34;&gt;联合种植&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/shop&#34;&gt;海产商城&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/article/news_list.html&#34;&gt;最新资讯&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/article/video.html&#34;&gt;视频直播&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/article/active.html&#34;&gt;活动公告&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/article/about.html&#34;&gt;关于我们&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/member/index/index.html&#34;&gt;会员中心&lt;/a&gt;&lt;/li&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;foot_r_r&#34;&gt;
+        
+        &lt;div class=&#34;ftm_ewm&#34;&gt;
+                  &lt;img src=&#34;/Public/web/img/shouye/erwei-w.png&#34; /&gt;
+        &lt;/div&gt;     
+          微信公众号
+        &lt;/div&gt;
+       &lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+       &lt;div class=&#34;foot_ry&#34;&gt;
+       &lt;a target=&#34;_blank&#34; &gt;&lt;img src=&#34;/Public/new/images/xyj_28.jpg&#34; /&gt;&lt;/a&gt;
+
+       &lt;a target=&#34;_blank&#34; &gt;&lt;img src=&#34;/Public/new/images/gg_07.png&#34; /&gt;&lt;/a&gt;
+
+       &lt;a target=&#34;_blank&#34; &gt;&lt;img src=&#34;/Public/new/images/gg_09.png&#34; /&gt;&lt;/a&gt;
+
+       
+       &lt;/div&gt;
+       &lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+       &lt;div class=&#34;foot_bq&#34;&gt;
+        寻渔记-日照铭万网络科技有限公司版权所有       &lt;a href=&#34;http://www.beian.miit.gov.cn&#34; style=&#34;color:#fff;&#34;  target=&#34;_blank&#34;&gt;鲁公网安备 37110302000118号       鲁ICP备17003630号-1&lt;/a&gt;
+       &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;scroll&#34; style=&#34;display: none; &#34;&gt; 
+  &lt;a class=&#34;top&#34; href=&#34;javascript:void(0)&#34;&gt;&lt;img src=&#34;images/top.jpg&#34;&gt;&lt;span&gt;返回顶部&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;script&gt;
+
+window.onload = function () {
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement(&#34;script&#34;);
+  hm.src = &#34;https://hm.baidu.com/hm.js?55018a7c810a0920c9997b042f7da876&#34;;
+  var s = document.getElementsByTagName(&#34;script&#34;)[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+
+var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement(&#34;script&#34;);
+        hm.src = &#34;https://hm.baidu.com/hm.js?9bf93af51e6ba9068b243c8dd28870b3&#34;;
+        var s = document.getElementsByTagName(&#34;script&#34;)[0];
+        s.parentNode.insertBefore(hm, s);
+})();
+
+
+}
+
+
+&lt;/script&gt;
+&lt;script&gt;
+ function setImagePreview() {
+        var docObj=document.getElementById(&#34;doc&#34;);
+
+        var imgObjPreview=document.getElementById(&#34;preview&#34;);
+                if(docObj.files &amp;&amp;    docObj.files[0]){
+                        //火狐下，直接设img属性
+                        imgObjPreview.style.display = &#39;block&#39;;
+                        imgObjPreview.style.width = &#39;100px&#39;;
+                        imgObjPreview.style.height = &#39;100px&#39;;                    
+                        //imgObjPreview.src = docObj.files[0].getAsDataURL();
+ 
+      //火狐7以上版本不能用上面的getAsDataURL()方式获取，需要一下方式  
+      imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+ 
+                }else{
+                        //IE下，使用滤镜
+                        docObj.select();
+                        var imgSrc = document.selection.createRange().text;
+                        var localImagId = document.getElementById(&#34;localImag&#34;);
+                        //必须设置初始大小
+                        localImagId.style.width = &#34;300px&#34;;
+                        localImagId.style.height = &#34;120px&#34;;
+                        //图片异常的捕捉，防止用户修改后缀来伪造图片
+try{
+                                localImagId.style.filter=&#34;progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)&#34;;
+                                localImagId.filters.item(&#34;DXImageTransform.Microsoft.AlphaImageLoader&#34;).src = imgSrc;
+                        }catch(e){
+                                alert(&#34;您上传的图片格式不正确，请重新选择!&#34;);
+                                return false;
+                        }
+                        imgObjPreview.style.display = &#39;none&#39;;
+                        document.selection.empty();
+                }
+                return true;
+        }
+&lt;/script&gt;
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &#34;d:\python37\lib\site-packages\httprunner\api.py&#34;, line 71, in test
+    self.fail(str(ex))
+AssertionError: Failed to extract data with regex! =&gt; &lt;input type=&#34;hidden&#34; name=&#34;token&#34; value=&#34;(.*?)&#34;&gt;
+response body: &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta charset=&#34;utf-8&#34; /&gt; 
+	&lt;title&gt;寻渔记 - 把海洋放进生活&lt;/title&gt;
+	&lt;meta name=&#34;keywords&#34; content=&#34;寻渔记官网，铭万平台，铭万网，日照铭万网络科技有限公司，铭万科技，海洋，蓝海，龙利鱼，黑头鱼，绿茶&#34; /&gt;
+	&lt;meta name=&#34;description&#34; content=&#34;寻渔记是日照铭万网络科技有限公司旗下品牌，专注海洋产业的一站式购物平台，主要定位于海洋产业+政府政策扶持+优质产品方式，平台结合线上线下互联网认购模式，为用户带来绿色无污染的海洋美味以及游玩体验。为海洋产业发展以及新旧动能转换提供助力，打造山东领先的海洋综合产业平台。&#34; /&gt;
+    	&lt;link rel=&#34;shortcut icon&#34; href=&#34;/Public/images/favicon.ico&#34; /&gt;
+    	&lt;link rel=&#34;bookmark&#34;href=&#34;/Public/images/favicon.ico&#34; /&gt;	
+	&lt;link rel=&#34;stylesheet&#34; href=&#34;/Public/web/css/jquery.fullPage.css&#34;&gt;
+	&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;/Public/web/css/swiper-4.3.3.min.css&#34; /&gt;
+	&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;/Public/web/css/all.css&#34; /&gt;
+	&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;/Public/web/css/ldy.css&#34; /&gt;
+	&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;/Public/web/css/ltt.css&#34; /&gt;
+	&lt;script src=&#34;/Public/web/js/jquery-1.8.3.min.js&#34;&gt;&lt;/script&gt;
+	&lt;script type=&#34;text/javascript&#34; src=&#34;/Public/web/js/swiper-4.3.3.min.js&#34;&gt;&lt;/script&gt;
+	&lt;script src=&#34;/Public/web/js/jquery-ui-1.10.3.min.js&#34;&gt;&lt;/script&gt;
+	&lt;script src=&#34;/Public/web/js/jquery.fullPage.min.js&#34;&gt;&lt;/script&gt;
+	&lt;script type=&#34;text/javascript&#34; src=&#34;/Public/web/js/ldy.js&#34;&gt;&lt;/script&gt;
+	&lt;script src=&#34;/Style/file/layer/layer.min.js&#34;&gt;&lt;/script&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;/Public/web/js/layer.js&#34;&gt;&lt;/script&gt;
+
+	&lt;meta http-equiv=&#34;Content-Security-Policy&#34; content=&#34;upgrade-insecure-requests&#34;&gt;
+
+&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;/Public/new/css/style.css&#34;/&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;/Public/new/js/index.js&#34;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;!--header--&gt;
+
+ &lt;div class=&#34;head&#34;&gt;
+	&lt;div class=&#34;h_ym&#34;&gt;
+     &lt;div class=&#34;h_ymz&#34;&gt;
+    	&lt;div class=&#34;hym_l&#34;&gt;
+        	&lt;span&gt;客服热线：400-110-0216   &amp;nbsp;&amp;nbsp; &lt;!-- 关注我们： --&gt;&lt;/span&gt;
+            &lt;span&gt;微信
+            	&lt;div class=&#34;hym_ewm wx&#34;&gt;
+                	&lt;img src=&#34;/Public/web/img/shouye/erwei-w.png&#34; /&gt;
+                    &lt;p&gt;微信公众号&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/span&gt;
+            &lt;span&gt;app下载
+            &lt;div class=&#34;hym_ewm app&#34;&gt;
+                	&lt;img src=&#34;/Public/web/img/shouye/erwei-app.png&#34; /&gt;
+                    &lt;p&gt;app下载&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+        
+         &lt;div class=&#34;hym_r&#34;&gt;
+
+       
+
+        &lt;a href=&#34;/member/index.html&#34; &gt;
+
+                            &lt;img src=&#34;/Public/wap/img/l-touxinag.png&#34; alt=&#34;&#34;&gt; chidiedashi/
+
+                        &lt;/a&gt; 
+
+                    &lt;a href=&#34;/member/common/actlogout.html&#34;&gt;退出&lt;/a&gt;
+
+                    
+
+
+        &lt;/div&gt;
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&#34;h_dh&#34;&gt;
+     &lt;div class=&#34;h_dhz&#34;&gt;
+    	&lt;div class=&#34;dh_l&#34;&gt;
+        	&lt;img src=&#34;/Public/new/images/xyj_07.png&#34; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;dh_r&#34;&gt;
+       		&lt;ul&gt;
+            	&lt;li   &gt;&lt;a href=&#34;/index/index&#34;&gt;首页&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/invest/index.html&#34;&gt;渔业养殖&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/zhongzhi/index.html&#34;&gt;联合种植&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/shop&#34;&gt;海产商城&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/article/video.html&#34;&gt;视频直播&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/article/active.html&#34;&gt;活动公告&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/article/about.html&#34;&gt;关于我们&lt;/a&gt;&lt;/li&gt;
+                &lt;li class=&#34;hover&#34;&gt;&lt;a href=&#34;/member/index/index.html&#34;&gt;会员中心&lt;/a&gt;&lt;/li&gt;
+
+       
+                
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+
+&lt;/div&gt;
+&lt;style type=&#34;text/css&#34;&gt;
+	body{
+		background: #f8f8f8;
+	}
+&lt;/style&gt;
+&lt;!--内容部分--&gt;
+&lt;div class=&#34;box navls&#34;&gt;
+	&lt;span&gt;&lt;a href=&#34;/member.html&#34;&gt;会员中心&lt;/a&gt;&lt;/span&gt;
+	&lt;span&gt;&amp;gt;&lt;/span&gt;
+	&lt;span&gt;&lt;a&gt;个人资料&lt;/a&gt;&lt;/span&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&#34;box clearfix&#34;&gt;
+	&lt;style type=&#34;text/css&#34;&gt;
+.lst2 .p1 img{
+    display: inline;
+}
+&lt;/style&gt;
+&lt;div class=&#34;Lxlbox&#34;&gt;
+    &lt;div class=&#34;lst1&#34;&gt;
+        &lt;p class=&#34;p1&#34;&gt;
+            &lt;span&gt;账户安全级别&lt;/span&gt;
+            &lt;span class=&#34;bfb&#34;&gt;100%&lt;/span&gt;
+        &lt;/p&gt;
+        &lt;div class=&#34;p2&#34;&gt;
+            &lt;p class=&#34;p3&#34; style=&#34;width: 100%&#34;&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;list2box&#34;&gt;
+        &lt;div class=&#34;lst2 left-top-zhanghu&#34;&gt;
+            &lt;div class=&#34;p1&#34; data-a=&#34;1&#34;&gt;
+                &lt;img src=&#34;/Public/web/img/huiyuan/zhanghu.png&#34; /&gt;
+                &lt;span&gt;账户中心&lt;/span&gt;
+                &lt;span class=&#34;smp1&#34;&gt;&amp;gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;p2&#34;&gt;
+                &lt;ul&gt;
+                    &lt;a href=&#34;/member.html&#34;&gt;
+						&lt;li class=&#34;left-left-index-index&#34;&gt;账户信息&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/Member/charge/index.html&#34;&gt;
+						&lt;li class=&#34;left-left-charge-index&#34;&gt;购买鱼币&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/Member/withdraw/withdraw.html&#34;&gt;
+						&lt;li class=&#34;left-left-withdraw-withdraw&#34;&gt;我的提现&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/member/bonus/youhuijun&#34;&gt;
+						&lt;li class=&#34;left-left-bonus-youhuijun&#34;&gt;我的红包&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/member/capital/detail&#34;&gt;
+						&lt;li class=&#34;left-left-capital-detail&#34;&gt;收支明细&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/member/credit/index&#34;&gt;
+						&lt;li class=&#34;left-left-credit-index&#34;&gt;积分明细&lt;/li&gt;
+					&lt;/a&gt; 
+                    &lt;a href=&#34;/member/experience/index&#34;&gt;
+						&lt;li class=&#34;left-left-experience-index&#34;&gt;体验金&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/Member/agreement/index.html&#34;&gt;
+                        &lt;li class=&#34;left-left-agreement-index&#34;&gt;合同管理&lt;/li&gt;
+                    &lt;/a&gt; 
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;lst2 left-top-xiangmu&#34;&gt;
+            &lt;div class=&#34;p1&#34; data-a=&#34;1&#34;&gt;
+                &lt;img src=&#34;/Public/web/img/huiyuan/wode.png&#34; /&gt;
+                &lt;span&gt;产品订单&lt;/span&gt;
+                &lt;span class=&#34;smp1&#34;&gt;&amp;gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;p2&#34;&gt;
+                &lt;ul&gt;
+                    &lt;a href=&#34;/Member/tendout/index/type/1.html&#34;&gt;
+						&lt;li class=&#34;left-tendout-1&#34;&gt;养殖订单&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/Member/tendout/index/type/2.html&#34;&gt;
+						&lt;li class=&#34;left-tendout-2&#34;&gt;销售订单&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/Member/tendout/index/type/3.html&#34;&gt;
+						&lt;li class=&#34;left-tendout-3&#34;&gt;共建订单&lt;/li&gt;
+					&lt;/a&gt;
+					 
+                    &lt;a href=&#34;/Member/tendout/zhongzhi/type/4.html&#34;&gt;
+                        &lt;li class=&#34;left-tendout-4&#34;&gt;种植订单&lt;/li&gt;
+                    &lt;/a&gt;
+
+                     &lt;a href=&#34;/Member/guanzhu/zdlist/type/5.html&#34;&gt;
+                        &lt;li class=&#34;left-tendout-5&#34;&gt;快捷购买&lt;/li&gt;
+                    &lt;/a&gt;
+
+			      &lt;!--   &lt;a href=&#34;/Member/guanzhu/bespeak/type/6.html&#34;&gt;
+                        &lt;li class=&#34;left-tendout-6&#34;&gt;我的预约&lt;/li&gt;
+                    &lt;/a&gt; --&gt;
+
+                      &lt;a href=&#34;/Member/guanzhu/index/type/6.html&#34;&gt;
+                        &lt;li class=&#34;left-tendout-6&#34;&gt;我的关注&lt;/li&gt;
+                    &lt;/a&gt;
+
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;lst2 left-top-fqguanli&#34;&gt;
+            &lt;div class=&#34;p1&#34; data-a=&#34;1&#34;&gt;
+                &lt;img src=&#34;/Public/web/img/huiyuan/faqi.png&#34; /&gt;
+                &lt;span&gt;发起管理&lt;/span&gt;
+                &lt;span class=&#34;smp1&#34;&gt;&amp;gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;p2&#34;&gt;
+                &lt;ul&gt;
+                    &lt;a href=&#34;/Member/borrowin/index.html&#34;&gt;
+						&lt;li class=&#34;left-borrowin-index&#34;&gt;发起项目&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/Member/borrowin/borrowpaying.html&#34;&gt;
+						&lt;li class=&#34;left-borrowin-borrowpaying&#34;&gt;项目收益&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/Member/borrowin/borrowlog.html&#34;&gt;
+                        &lt;li class=&#34;left-borrowin-borrowlog&#34;&gt;放款记录&lt;/li&gt;
+                    &lt;/a&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;lst2 left-top-gerensz&#34;&gt;
+            &lt;div class=&#34;p1&#34; data-a=&#34;1&#34;&gt;
+                &lt;img src=&#34;/Public/web/img/huiyuan/Settings.png&#34; /&gt;
+                &lt;span&gt;个人设置&lt;/span&gt;
+                &lt;span class=&#34;smp1&#34;&gt;&amp;gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;p2&#34;&gt;
+                &lt;ul&gt;
+                    &lt;a href=&#34;/Member/memberinfo/index.html&#34;&gt;
+						&lt;li class=&#34;left-memberinfo&#34;&gt;个人资料&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/member/safe/&#34;&gt;
+						&lt;li class=&#34;left-safe&#34;&gt;安全信息&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/member/memberaddress&#34;&gt;
+						&lt;li class=&#34;left-memberaddress&#34;&gt;收货地址&lt;/li&gt;
+					&lt;/a&gt;
+                    &lt;a href=&#34;/member/bank/index&#34;&gt;
+						&lt;li class=&#34;left-bank&#34;&gt;银行卡&lt;/li&gt;
+					&lt;/a&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;lst2 left-top-xiaoxi&#34;&gt;
+			&lt;div class=&#34;p1&#34; data-a=&#34;1&#34;&gt;
+				&lt;img src=&#34;/Public/web/img/huiyuan/xiaoxi.png&#34; /&gt;
+				&lt;span&gt;消息中心&lt;/span&gt;
+				&lt;span class=&#34;smp1&#34;&gt;&amp;gt;&lt;/span&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;p2&#34;&gt;
+				&lt;ul&gt;
+					&lt;a href=&#34;/Member/msg/sysmsg.html&#34;&gt;
+						&lt;li class=&#34;left-sysmsg left-viewmsg&#34;&gt;站内通知&lt;/li&gt;
+					&lt;/a&gt;
+					&lt;a href=&#34;/Member/msg/projectmsg.html&#34;&gt;
+						&lt;li class=&#34;left-projectmsg&#34;&gt;项目动态&lt;/li&gt;
+					&lt;/a&gt;
+
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+        &lt;div class=&#34;lst2 left-top-yaoqing&#34;&gt;
+            &lt;div class=&#34;p1&#34; data-a=&#34;1&#34;&gt;
+                &lt;img src=&#34;/Public/web/img/huiyuan/yaoqing.png&#34; /&gt;
+                &lt;span&gt;我的邀请&lt;/span&gt;
+                &lt;span class=&#34;smp1&#34;&gt;&amp;gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;p2&#34;&gt;
+                &lt;ul&gt;
+                    &lt;a href=&#34;/Member/promotion/index.html&#34;&gt;
+						&lt;li class=&#34;left-yaoqing&#34;&gt;邀请记录&lt;/li&gt;
+					&lt;/a&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;lst2 left-top-duihuan&#34;&gt;
+            &lt;div class=&#34;p1&#34; data-a=&#34;1&#34;&gt;
+                &lt;img src=&#34;/Public/web/img/huiyuan/jifen.png&#34; /&gt;
+                &lt;span&gt;商城订单&lt;/span&gt;
+                &lt;span class=&#34;smp1&#34;&gt;&amp;gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;p2&#34;&gt;
+                &lt;ul&gt;
+                    &lt;a href=&#34;/member/shoporder&#34;&gt;
+						&lt;li class=&#34;left-duihuan&#34;&gt;商城订单&lt;/li&gt;
+					&lt;/a&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script type=&#34;text/javascript&#34;&gt;
+    if (&#39;memberinfo&#39; == &#39;shoporder&#39;) {
+        $(&#39;.left-top-duihuan&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-duihuan .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-duihuan&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else if(&#39;memberinfo&#39; == &#39;promotion&#39;){
+        $(&#39;.left-top-yaoqing&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-yaoqing .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-yaoqing&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else if(&#39;memberinfo&#39; == &#39;msg&#39;){
+        $(&#39;.left-top-xiaoxi&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-xiaoxi .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-index&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else if(&#39;memberinfo&#39; == &#39;memberinfo&#39;){
+        $(&#39;.left-top-gerensz&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-gerensz .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-memberinfo&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else if(&#39;memberinfo&#39; == &#39;safe&#39;){
+        $(&#39;.left-top-gerensz&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-gerensz .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-safe&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else if(&#39;memberinfo&#39; == &#39;memberaddress&#39;){
+        $(&#39;.left-top-gerensz&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-gerensz .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-memberaddress&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else if(&#39;memberinfo&#39; == &#39;bank&#39;){
+        $(&#39;.left-top-gerensz&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-gerensz .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-bank&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else if(&#39;memberinfo&#39; == &#39;borrowin&#39;){
+        $(&#39;.left-top-fqguanli&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-fqguanli .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-borrowin-index&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else if(&#39;memberinfo&#39; == &#39;tendout&#39;){
+        $(&#39;.left-top-xiangmu&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-xiangmu .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-tendout-&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else if(&#39;memberinfo&#39; == &#39;guanzhu&#39;){
+        $(&#39;.left-top-xiangmu&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-xiangmu .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-tendout-&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }else{
+        $(&#39;.left-top-zhanghu&#39;).addClass(&#39;on&#39;).siblings().removeClass(&#39;on&#39;);
+        $(&#39;.left-top-zhanghu .smp1&#39;).html(&#39;v&#39;);
+        $(&#39;.left-left-memberinfo-index&#39;).css({&#34;background&#34;:&#34;#e1f5ff&#34;,&#34;border-left&#34;:&#34;10px solid #00a0ea&#34;});
+    }
+&lt;/script&gt;
+	&lt;div class=&#34;tabvbox&#34;&gt;
+		&lt;div class=&#34;tabv clearfix&#34;&gt;
+			&lt;div class=&#34;on&#34;&gt;&lt;span&gt;个人资料&lt;/span&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&#34;tabv2box&#34;&gt;
+			&lt;div class=&#34;tabv2 show&#34;&gt;
+			   	&lt;div class=&#34;myzil&#34;&gt;
+			   		&lt;form action=&#34;/member/Memberinfo/savexixi&#34; method=&#34;post&#34; id=&#34;l-shiminglc&#34; class=&#34;clearfix&#34;&gt;
+				   	&lt;ul&gt;
+				   		&lt;li&gt;
+				   			&lt;span&gt;会员名称： &lt;/span&gt;
+
+				   			&lt;input type=&#34;text&#34; name=&#34;user_name&#34; id=&#34;user_name&#34; value=&#34;chidiedashi&#34;    /&gt;
+
+				   			&lt;br&gt;&lt;span&gt;&amp;nbsp; &lt;/span&gt;
+
+							&lt;span style=&#34;color:#D2D2D2; width:160px;&#34;&gt;会员名称只可修改一次&lt;/span&gt;				   			
+				   		&lt;/li&gt;
+
+				   &lt;!-- 		&lt;li&gt;
+				   			&lt;span&gt;会员昵称： &lt;/span&gt;&lt;input type=&#34;text&#34; name=&#34;nick_name&#34; id=&#34;nick_name&#34; value=&#34;&#34; /&gt;
+				   		&lt;/li&gt;
+ --&gt;
+				   		&lt;li&gt;
+				   			&lt;span&gt;真实姓名： &lt;/span&gt;&lt;input type=&#34;text&#34; name=&#34;real_name&#34; id=&#34;real_name&#34; value=&#34;炽蝶大师&#34; readonly=&#34;readonly&#34;/&gt;
+				   		&lt;/li&gt;
+				   		&lt;li&gt;
+				   			&lt;span&gt;身份证号： &lt;/span&gt;&lt;input type=&#34;text&#34; name=&#34;idcard&#34; id=&#34;idcard&#34; value=&#34;441801197608160016&#34; readonly=&#34;readonly&#34; /&gt; 
+						&lt;/li&gt;
+				   		&lt;li&gt;
+				   			&lt;span&gt;性别： &lt;/span&gt;
+				   			&lt;label&gt;&lt;input name=&#34;sex&#34;  type=&#34;radio&#34; value=&#34;男&#34; /&gt;男 &lt;/label&gt; 
+              				&lt;label&gt; &lt;input name=&#34;sex&#34;  type=&#34;radio&#34; value=&#34;女&#34; /&gt;女 &lt;/label&gt; 
+				   		&lt;/li&gt;
+				   		&lt;li&gt;
+				   			&lt;span&gt;类型： &lt;/span&gt;
+				   			&lt;label&gt;&lt;input name=&#34;user_type&#34; type=&#34;radio&#34; onclick=&#34;comp(1)&#34; checked=&#34;checked&#34; value=&#34;1&#34; /&gt;投资者 &lt;/label&gt; 
+                			&lt;label&gt;&lt;input name=&#34;user_type&#34; type=&#34;radio&#34; onclick=&#34;comp(2)&#34;  value=&#34;2&#34; /&gt;创业者&lt;/label&gt; 
+				   		&lt;/li&gt;
+						&lt;!--投资类型--&gt;
+						&lt;div class=&#34;touzilei oz clearfix person&#34; &gt;
+							&lt;p&gt;符合下列条件之一的自然人投资者&lt;/p&gt;
+							&lt;div&gt;
+								&lt;label&gt;&lt;input name=&#34;riskint&#34; type=&#34;radio&#34;  value=&#34;1&#34; /&gt;我的金融资产超过100万元 &lt;/label&gt;
+				                &lt;label&gt;&lt;input name=&#34;riskint&#34; type=&#34;radio&#34;  value=&#34;2&#34; /&gt;我的年收入超过30万元&lt;/label&gt; 
+				                &lt;label&gt;&lt;input name=&#34;riskint&#34; type=&#34;radio&#34; checked=&#34;checked&#34; value=&#34;3&#34; /&gt;我是专业的风险投资人 &lt;/label&gt; 
+				                &lt;label&gt;&lt;input name=&#34;riskint&#34; type=&#34;radio&#34;  value=&#34;4&#34; /&gt;我不符合上述任一条件&lt;/label&gt; 
+							&lt;/div&gt;
+						&lt;/div&gt;
+					    
+						&lt;div class=&#34;touzilei clearfix company&#34;  style=&#34;display: none;&#34;&gt;
+							&lt;p&gt;创业者公司信息&lt;/p&gt;
+							&lt;div&gt;
+								&lt;label&gt;&lt;span&gt;公司名称:&lt;/span&gt;&lt;input type=&#34;text&#34; name=&#34;company_name&#34; id=&#34;company_name&#34; value=&#34;&#34; /&gt; &lt;/label&gt;
+				                &lt;label&gt;&lt;span&gt;公司证件号:&lt;/span&gt;&lt;input type=&#34;text&#34; name=&#34;company_idcard&#34; id=&#34;company_idcard&#34; value=&#34;&#34; /&gt;&lt;/label&gt; 
+							&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;div class=&#34;touzilei oz clearfix&#34;&gt; 
+						&lt;button class=&#34;bcxsz&#34; type=&#34;button&#34; id=&#34;save_userinfo&#34;&gt;保存新设置&lt;/button&gt;
+						&lt;/div&gt;
+				   	&lt;/ul&gt;
+				   	&lt;input type=&#34;hidden&#34; name=&#34;token&#34; value=&#34;cd4b82d53a41f1c9416d2379ce515bc5_6d9454505ff099447400faa6f16ecbd1&#34; /&gt;&lt;/form&gt;
+				&lt;/div&gt;
+				&lt;script type=&#34;text/javascript&#34;&gt;
+					$(&#39;#save_userinfo&#39;).click(function() {
+						var real_name = $(&#39;#real_name&#39;).val();
+						var user_name = $(&#39;#user_name&#39;).val();
+						var idcard =  $.trim($(&#39;#idcard&#39;).val());
+						if(user_name == &#39;&#39;) {
+							alert(&#39;用户名不能为空&#39;);
+							return false;
+						}
+
+						if(real_name == &#39;&#39;) {
+							alert(&#39;请填写您的真实姓名&#39;);
+							return false;
+						}
+						if(idcard == &#39;&#39;) {
+							alert(&#39;请填写您的身份证号&#39;);
+							return false;
+						}
+						if(testIdcard(idcard).indexOf(&#39;通过&#39;) == -1) {
+							alert(&#39;请填写正确的身份证号&#39;);
+							return false;
+						}
+						$(&#39;#l-shiminglc&#39;).submit();
+					})
+					function comp(cid){
+						if(cid == 1){
+							$(&#34;.person&#34;).show();
+							$(&#34;.company&#34;).hide();
+						}else if(cid == 2){
+							$(&#34;.person&#34;).hide();
+							$(&#34;.company&#34;).show();
+						}
+					}
+				&lt;/script&gt;
+			   	&lt;!--头像上传--&gt;
+			   	&lt;form action=&#34;&#34; method=&#34;post&#34;  enctype=&#39;multipart/form-data&#39;id=&#34;form0&#34;&gt;
+			   	&lt;div class=&#34;myziltou&#34;&gt;
+			   		&lt;h3&gt;个人头像&lt;/h3&gt;
+				   	&lt;p&gt;
+	                	&lt;div id=&#34;localImag&#34;&gt;&lt;img id=&#34;previewa&#34; src=&#39;/Public/wap/img/l-touxinag.png&#39;   /&gt;&lt;/div&gt;
+	                &lt;/p&gt;
+                	&lt;p class=&#34;p2&#34;&gt;&lt;input type=file  name=&#34;doc&#34; id=&#34;doc&#34; onchange=&#34;javascript:imgChange1();&#34;&gt;&lt;button class=&#34;bcxsz&#34;&gt;选择图片&lt;/button&gt; &lt;/p&gt;
+
+				   	&lt;p class=&#34;p1&#34;&gt;
+				   		支持jpg，jpeg，png，gif格式，&lt;br /&gt;
+						大小不超过20.00MB。&lt;br /&gt;
+						推荐尺寸：760*530px
+				   	&lt;/p&gt;	   
+			   	&lt;/div&gt;
+				&lt;input type=&#34;hidden&#34; name=&#34;token&#34; value=&#34;cd4b82d53a41f1c9416d2379ce515bc5_6d9454505ff099447400faa6f16ecbd1&#34; /&gt;&lt;/form&gt;
+			&lt;/div&gt;
+              
+              	
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;script type=&#34;text/javascript&#34;&gt;
+var testIdcard = function(idcard) {
+var Errors = new Array(&#34;验证通过!&#34;, &#34;身份证号码位数不对!&#34;, &#34;身份证号码出生日期超出范围!&#34;, &#34;身份证号码校验错误!&#34;, &#34;身份证地区非法!&#34;);
+var area = { 11: &#34;北京&#34;, 12: &#34;天津&#34;, 13: &#34;河北&#34;, 14: &#34;山西&#34;, 15: &#34;内蒙古&#34;, 21: &#34;辽宁&#34;, 22: &#34;吉林&#34;, 23: &#34;黑龙江&#34;, 31: &#34;上海&#34;, 32: &#34;江苏&#34;, 33: &#34;浙江&#34;, 34: &#34;安徽&#34;, 35: &#34;福建&#34;, 36: &#34;江西&#34;, 37: &#34;山东&#34;, 41: &#34;河南&#34;, 42: &#34;湖北&#34;, 43: &#34;湖南&#34;, 44: &#34;广东&#34;, 45: &#34;广西&#34;, 46: &#34;海南&#34;, 50: &#34;重庆&#34;, 51: &#34;四川&#34;, 52: &#34;贵州&#34;, 53: &#34;云南&#34;, 54: &#34;西藏&#34;, 61: &#34;陕西&#34;, 62: &#34;甘肃&#34;, 63: &#34;青海&#34;, 64: &#34;宁夏&#34;, 65: &#34;xinjiang&#34;, 71: &#34;台湾&#34;, 81: &#34;香港&#34;, 82: &#34;澳门&#34;, 91: &#34;国外&#34; }
+var idcard, Y, JYM;
+var S, M;
+var idcard_array = new Array();
+idcard_array = idcard.split(&#34;&#34;);
+if (area[parseInt(idcard.substr(0, 2))] == null) return Errors[4];
+switch (idcard.length) {
+	case 15:
+		if ((parseInt(idcard.substr(6, 2)) + 1900) % 4 == 0 || ((parseInt(idcard.substr(6, 2)) + 1900) % 100 == 0 &amp;&amp; (parseInt(idcard.substr(6, 2)) + 1900) % 4 == 0)) {
+			ereg = /^[1-9][0-9]{5}[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|[1-2][0-9]))[0-9]{3}$/; //测试出生日期的合法性 
+		}
+		else {
+			ereg = /^[1-9][0-9]{5}[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|1[0-9]|2[0-8]))[0-9]{3}$/; //测试出生日期的合法性 
+		}
+		if (ereg.test(idcard))
+			return Errors[0];
+		else
+			return Errors[2];
+		break;
+	case 18:
+		if (parseInt(idcard.substr(6, 4)) % 4 == 0 || (parseInt(idcard.substr(6, 4)) % 100 == 0 &amp;&amp; parseInt(idcard.substr(6, 4)) % 4 == 0)) {
+			ereg = /^[1-9][0-9]{5}(19|20)[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|[1-2][0-9]))[0-9]{3}[0-9Xx]$/; //闰年出生日期的合法性正则表达式 
+		}
+		else {
+			ereg = /^[1-9][0-9]{5}(19|20)[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|1[0-9]|2[0-8]))[0-9]{3}[0-9Xx]$/; //平年出生日期的合法性正则表达式 
+		}
+		if (ereg.test(idcard)) {
+			S = (parseInt(idcard_array[0]) + parseInt(idcard_array[10])) * 7 + (parseInt(idcard_array[1]) + parseInt(idcard_array[11])) * 9 + (parseInt(idcard_array[2]) + parseInt(idcard_array[12])) * 10 + (parseInt(idcard_array[3]) + parseInt(idcard_array[13])) * 5 + (parseInt(idcard_array[4]) + parseInt(idcard_array[14])) * 8 + (parseInt(idcard_array[5]) + parseInt(idcard_array[15])) * 4 + (parseInt(idcard_array[6]) + parseInt(idcard_array[16])) * 2 + parseInt(idcard_array[7]) * 1 + parseInt(idcard_array[8]) * 6 + parseInt(idcard_array[9]) * 3;
+			Y = S % 11;
+			M = &#34;F&#34;;
+			JYM = &#34;10X98765432&#34;;
+			M = JYM.substr(Y, 1);
+			if (M == idcard_array[17])
+				return Errors[0];
+			else
+				return Errors[3];
+		}
+		else
+			return Errors[2];
+		break;
+	default:
+		return Errors[1];
+		break;
+}
+}
+&lt;/script&gt;
+&lt;script&gt;
+function imgChange1() {
+	var form = new FormData(document.getElementById(&#34;form0&#34;));  
+  	$.ajax({ 
+  		url:&#34;/Wapmember/memberinfo/addimg&#34;,  
+		type:&#34;post&#34;,  
+		data:form,  
+  		cache: false,  
+  		processData: false,  
+  		contentType: false,  
+		success:function(data){ 
+			$(&#34;#previewa&#34;).attr(&#34;src&#34;,JSON.parse(data).message);	 
+		},  
+  		error:function(e){  
+   			alert(&#34;网络错误，请重试！！&#34;);  
+		}  
+	});		
+} 
+&lt;/script&gt;
+&lt;!--底部--&gt;
+&lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+
+&lt;div class=&#34;footer&#34;&gt;
+&lt;div class=&#34;foot_con&#34;&gt;
+  &lt;img  class=&#34;foot_l&#34; src=&#34;/Public/new/images/xyj_21.jpg&#34; /&gt;
+    &lt;div class=&#34;foot_r&#34;&gt;
+    &lt;div class=&#34;foot_zz&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;foot_r_l&#34; style=&#34;width:200px;&#34;&gt;
+          &lt;li&gt;&lt;a href=&#34;/article/cateshow/cid/523.html&#34;&gt;服务条款&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&#34;/article/cateshow/cid/533.html&#34;&gt;隐私策略&lt;/a&gt;&lt;/li&gt;
+        &lt;!--     &lt;li&gt;&lt;a href=&#34;/article/cateshow/cid/523.html&#34;&gt;服务介绍&lt;/a&gt;&lt;/li&gt; --&gt;
+          &lt;!--  
+            &lt;li&gt;&lt;a href=&#34;/article/cateshow/cid/523.html&#34;&gt;撰写指南&lt;/a&gt;&lt;/li&gt; --&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;foot_r_l&#34; style=&#34;width:400px; margin-left:40px;&#34;&gt;
+            &lt;li&gt;&lt;a href=&#34;/invest/index.html&#34;&gt;渔业养殖&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/zhongzhi/index.html&#34;&gt;联合种植&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/shop&#34;&gt;海产商城&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/article/news_list.html&#34;&gt;最新资讯&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/article/video.html&#34;&gt;视频直播&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/article/active.html&#34;&gt;活动公告&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/article/about.html&#34;&gt;关于我们&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/member/index/index.html&#34;&gt;会员中心&lt;/a&gt;&lt;/li&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;foot_r_r&#34;&gt;
+        
+        &lt;div class=&#34;ftm_ewm&#34;&gt;
+                  &lt;img src=&#34;/Public/web/img/shouye/erwei-w.png&#34; /&gt;
+        &lt;/div&gt;     
+          微信公众号
+        &lt;/div&gt;
+       &lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+       &lt;div class=&#34;foot_ry&#34;&gt;
+       &lt;a target=&#34;_blank&#34; &gt;&lt;img src=&#34;/Public/new/images/xyj_28.jpg&#34; /&gt;&lt;/a&gt;
+
+       &lt;a target=&#34;_blank&#34; &gt;&lt;img src=&#34;/Public/new/images/gg_07.png&#34; /&gt;&lt;/a&gt;
+
+       &lt;a target=&#34;_blank&#34; &gt;&lt;img src=&#34;/Public/new/images/gg_09.png&#34; /&gt;&lt;/a&gt;
+
+       
+       &lt;/div&gt;
+       &lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+       &lt;div class=&#34;foot_bq&#34;&gt;
+        寻渔记-日照铭万网络科技有限公司版权所有       &lt;a href=&#34;http://www.beian.miit.gov.cn&#34; style=&#34;color:#fff;&#34;  target=&#34;_blank&#34;&gt;鲁公网安备 37110302000118号       鲁ICP备17003630号-1&lt;/a&gt;
+       &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;scroll&#34; style=&#34;display: none; &#34;&gt; 
+  &lt;a class=&#34;top&#34; href=&#34;javascript:void(0)&#34;&gt;&lt;img src=&#34;images/top.jpg&#34;&gt;&lt;span&gt;返回顶部&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;script&gt;
+
+window.onload = function () {
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement(&#34;script&#34;);
+  hm.src = &#34;https://hm.baidu.com/hm.js?55018a7c810a0920c9997b042f7da876&#34;;
+  var s = document.getElementsByTagName(&#34;script&#34;)[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+
+var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement(&#34;script&#34;);
+        hm.src = &#34;https://hm.baidu.com/hm.js?9bf93af51e6ba9068b243c8dd28870b3&#34;;
+        var s = document.getElementsByTagName(&#34;script&#34;)[0];
+        s.parentNode.insertBefore(hm, s);
+})();
+
+
+}
+
+
+&lt;/script&gt;
+&lt;script&gt;
+ function setImagePreview() {
+        var docObj=document.getElementById(&#34;doc&#34;);
+
+        var imgObjPreview=document.getElementById(&#34;preview&#34;);
+                if(docObj.files &amp;&amp;    docObj.files[0]){
+                        //火狐下，直接设img属性
+                        imgObjPreview.style.display = &#39;block&#39;;
+                        imgObjPreview.style.width = &#39;100px&#39;;
+                        imgObjPreview.style.height = &#39;100px&#39;;                    
+                        //imgObjPreview.src = docObj.files[0].getAsDataURL();
+ 
+      //火狐7以上版本不能用上面的getAsDataURL()方式获取，需要一下方式  
+      imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+ 
+                }else{
+                        //IE下，使用滤镜
+                        docObj.select();
+                        var imgSrc = document.selection.createRange().text;
+                        var localImagId = document.getElementById(&#34;localImag&#34;);
+                        //必须设置初始大小
+                        localImagId.style.width = &#34;300px&#34;;
+                        localImagId.style.height = &#34;120px&#34;;
+                        //图片异常的捕捉，防止用户修改后缀来伪造图片
+try{
+                                localImagId.style.filter=&#34;progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)&#34;;
+                                localImagId.filters.item(&#34;DXImageTransform.Microsoft.AlphaImageLoader&#34;).src = imgSrc;
+                        }catch(e){
+                                alert(&#34;您上传的图片格式不正确，请重新选择!&#34;);
+                                return false;
+                        }
+                        imgObjPreview.style.display = &#39;none&#39;;
+                        document.selection.empty();
+                }
+                return true;
+        }
+&lt;/script&gt;
+
+</pre></div>
+            </div>
+          </div>
+        
+
+      </td>
+    </tr>
+  
+  </table>
+  
+</body>

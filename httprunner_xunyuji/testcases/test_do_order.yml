@@ -1,0 +1,37 @@
+# 测试购物车结算用例
+- config:
+    name: TestDoOrder
+    variables:
+        carids: xxx
+        hash_code: xxx
+    output:  # 输出捕获到的参数以供下个用例调用
+        - jifen
+        - jine
+        - carids
+        - hash_code
+
+# 引用添加商品用例              
+- test:  
+    name: login_and_add_goods 
+    testcase: testcases/test_add_goods.yml
+
+# 引用获取carids和hash_code的接口
+- test:  
+    name: catsh:carids and hash_code  # 捕获carids和hash_code
+    api: api/get_shopping_car_id.yml
+
+# 引用购物车结算接口
+- test:  
+    name: do_order
+    api: api/do_order.yml
+    variables:
+        carids: ${change_carids($carids)}
+        __hash__: $hash_code
+    extract:  # 获取订单的积分和金额
+        - jifen: 'id="jifen" value="(.*?)" />'
+        - jine: 'id="jine" value="(.*?)"/>'
+        - assert_carids: 'name="carids" value="(.*?)" />'
+
+    validate:
+    - eq: ["status_code", 200]
+    - eq: [$assert_carids, $carids]

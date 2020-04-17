@@ -1,0 +1,16 @@
+# 添加商品至购物车接口
+name: add_cars
+base_url: https://www.rzmwzc.com
+variables:
+    gid: 5
+request:
+    headers:
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: keep-alive
+    url: /shop/add_cars
+    method: POST
+    data: 
+        gid: $gid
+    verify: False
+validate:
+    - eq: ["status_code", 200]

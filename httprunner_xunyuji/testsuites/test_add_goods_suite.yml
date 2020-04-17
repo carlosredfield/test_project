@@ -1,0 +1,9 @@
+# 添加商品测试用例集
+config:
+  name: TestAddGoodsSuite
+
+testcases:
+  case1:
+    testcase: /testcases/test_add_goods.yml
+    parameters:  # 参数化
+      gid: ${P(data/test_add_goods.csv)}

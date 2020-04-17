@@ -1,0 +1,2597 @@
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> - TestReport</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0 auto;
+      width: 960px;
+    }
+    #summary {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    #summary th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    #summary td {
+      background-color: lightblue;
+      text-align: center;
+      padding: 4px 8px;
+    }
+    .details {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    .details th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    .details tr .passed {
+      background-color: lightgreen;
+    }
+    .details tr .failed {
+      background-color: red;
+    }
+    .details tr .unchecked {
+      background-color: gray;
+    }
+    .details td {
+      background-color: lightblue;
+      padding: 5px 12px;
+    }
+    .details .detail {
+      background-color: lightgrey;
+      font-size: smaller;
+      padding: 5px 10px;
+      line-height: 20px;
+      text-align: left;
+    }
+    .details .success {
+      background-color: greenyellow;
+    }
+    .details .error {
+      background-color: red;
+    }
+    .details .failure {
+      background-color: salmon;
+    }
+    .details .skipped {
+      background-color: gray;
+    }
+
+    .button {
+      font-size: 1em;
+      padding: 6px;
+      width: 4em;
+      text-align: center;
+      background-color: #06d85f;
+      border-radius: 20px/50px;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+    }
+    a.button{
+      color: gray;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .button:hover {
+      background: #2cffbd;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      transition: opacity 500ms;
+      visibility: hidden;
+      opacity: 0;
+      line-height: 25px;
+    }
+    .overlay:target {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup {
+      margin: 70px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      width: 50%;
+      position: relative;
+      transition: all 3s ease-in-out;
+    }
+
+    .popup h2 {
+      margin-top: 0;
+      color: #333;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+    .popup .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      transition: all 200ms;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+    }
+    .popup .close:hover {
+      color: #06d85f;
+    }
+    .popup .content {
+      max-height: 80%;
+      overflow: auto;
+      text-align: left;
+    }
+    .popup .separator {
+      color:royalblue
+    }
+
+    @media screen and (max-width: 700px) {
+      .box {
+        width: 70%;
+      }
+      .popup {
+        width: 70%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Test Report: </h1>
+
+  <h2>Summary</h2>
+  <table id="summary">
+    <tr>
+      <th>START AT</th>
+      <td colspan="4">2020-04-16T08:22:12.469585</td>
+    </tr>
+    <tr>
+      <th>DURATION</th>
+      <td colspan="4">1.141 seconds</td>
+    </tr>
+    <tr>
+      <th>PLATFORM</th>
+      <td>HttpRunner 3.0.1 </td>
+      <td>CPython 3.7.6 </td>
+      <td colspan="2">Windows-10-10.0.16299-SP0</td>
+    </tr>
+    <tr>
+      <th>STAT</th>
+      <th colspan="2">TESTCASES (success/fail)</th>
+      <th colspan="2">TESTSTEPS (success/fail/error/skip)</th>
+    </tr>
+    <tr>
+      <td>total (details) =></td>
+      <td colspan="2">1 (0/1)</td>
+      <td colspan="2">3 (1/2/0/0)</td>
+    </tr>
+  </table>
+
+  <h2>Details</h2>
+
+  
+  
+  <h3>TestDoOrder</h3>
+  <table id="suite_1" class="details">
+    <tr>
+      <td>TOTAL: 3</td>
+      <td>SUCCESS: 1</td>
+      <td>FAILED: 2</td>
+      <td>ERROR: 0</td>
+      <td>SKIPPED: 0</td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <th colspan="2">Name</th>
+      <th>Response Time</th>
+      <th>Detail</th>
+    </tr>
+
+    
+    
+    
+    <tr id="record_1_1">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">login_and_add_goods</td>
+      <td style="text-align:center;width:6em;">750.03 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_1_1">log-1</a>
+        <div id="popup_log_1_1_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_1_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: get_cookies</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://www.rzmwzc.com/
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            GET
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;HRUN-Request-ID&#34;: &#34;423ff644-8fa3-4f1d-8d7f-73da3446778a&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://www.rzmwzc.com/
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {'PHPSESSID': '52mh7neif7hijrhec1mt7actn6', 'fz_area': '1'}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;nginx/1.8.1&#34;,
+  &#34;Date&#34;: &#34;Thu, 16 Apr 2020 08:22:11 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;text/html; charset=utf-8&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Vary&#34;: &#34;Accept-Encoding&#34;,
+  &#34;X-Powered-By&#34;: &#34;ZihaiFx&#34;,
+  &#34;Set-Cookie&#34;: &#34;lzh_think_template=default; expires=Thu, 16-Apr-2020 09:22:11 GMT; Max-Age=3600; path=/; domain=tiannongtuan.com, PHPSESSID=52mh7neif7hijrhec1mt7actn6; path=/, fz_area=1; expires=Sun, 26-Apr-2020 08:22:11 GMT; Max-Age=864000&#34;,
+  &#34;Expires&#34;: &#34;Thu, 19 Nov 1981 08:52:00 GMT&#34;,
+  &#34;Cache-Control&#34;: &#34;private&#34;,
+  &#34;Pragma&#34;: &#34;no-cache&#34;,
+  &#34;Content-Encoding&#34;: &#34;gzip&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            text/html; charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta charset=&#34;utf-8&#34; /&gt; 
+	&lt;title&gt;寻渔记首页丨把海洋放进生活&lt;/title&gt;
+	&lt;meta name=&#34;keywords&#34; content=&#34;寻渔记官网，铭万平台，铭万网，日照铭万网络科技有限公司，铭万科技，海洋，蓝海，龙利鱼，黑头鱼，绿茶&#34; /&gt;
+	&lt;meta name=&#34;description&#34; content=&#34;寻渔记是日照铭万网络科技有限公司旗下品牌，专注海洋产业的一站式购物平台，主要定位于海洋产业+政府政策扶持+优质产品方式，平台结合线上线下互联网认购模式，为用户带来绿色无污染的海洋美味以及游玩体验。为海洋产业发展以及新旧动能转换提供助力，打造山东领先的海洋综合产业平台。&#34; /&gt;
+    	&lt;link rel=&#34;shortcut icon&#34; href=&#34;/Public/images/favicon.ico&#34; /&gt;
+    	&lt;link rel=&#34;bookmark&#34;href=&#34;/Public/images/favicon.ico&#34; /&gt;
+
+&lt;link rel=&#34;stylesheet&#34; type=&#34;text/ ... OMITTED 14089 CHARACTORS ...</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>LazyString($expected_status_code)</td>
+                      <td>200</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>16127</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>359.44</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>356.011</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+        
+        <a class="button" href="#popup_log_1_1_2">log-2</a>
+        <div id="popup_log_1_1_2" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_1_2">&times;</a>
+
+            <div class="content">
+              <h3>Name: login_success</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://www.rzmwzc.com/member/common/actlogin
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;HRUN-Request-ID&#34;: &#34;423ff644-8fa3-4f1d-8d7f-73da3446778a&#34;,
+  &#34;Cookie&#34;: &#34;PHPSESSID=52mh7neif7hijrhec1mt7actn6; fz_area=1&#34;,
+  &#34;Content-Length&#34;: &#34;42&#34;,
+  &#34;Content-Type&#34;: &#34;application/x-www-form-urlencoded&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>sUserName=16533907260&amp;sPassword=xunyuji123</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://www.rzmwzc.com/member/common/actlogin
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;nginx/1.8.1&#34;,
+  &#34;Date&#34;: &#34;Thu, 16 Apr 2020 08:22:11 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;text/html;charset=utf-8&#34;,
+  &#34;Content-Length&#34;: &#34;12&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;X-Powered-By&#34;: &#34;PHP/5.5.38&#34;,
+  &#34;Set-Cookie&#34;: &#34;lzh_think_template=default; expires=Thu, 16-Apr-2020 09:22:11 GMT; Max-Age=3600; path=/; domain=tiannongtuan.com, LoginCookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0; path=/&#34;,
+  &#34;Expires&#34;: &#34;Thu, 19 Nov 1981 08:52:00 GMT&#34;,
+  &#34;Cache-Control&#34;: &#34;no-store, no-cache, must-revalidate, post-check=0, pre-check=0&#34;,
+  &#34;Pragma&#34;: &#34;no-cache&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            text/html;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;status&#34;: 1
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.status
+                      </td>
+                      <td>equals</td>
+                      <td>1</td>
+                      <td>1</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>12</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>109.34</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>97.17</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+        
+        <a class="button" href="#popup_log_1_1_3">log-3</a>
+        <div id="popup_log_1_1_3" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_1_3">&times;</a>
+
+            <div class="content">
+              <h3>Name: broswe_shop</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://www.rzmwzc.com/shop
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            GET
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;python-requests/2.22.0&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;HRUN-Request-ID&#34;: &#34;423ff644-8fa3-4f1d-8d7f-73da3446778a&#34;,
+  &#34;Cookie&#34;: &#34;PHPSESSID=52mh7neif7hijrhec1mt7actn6; fz_area=1&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://www.rzmwzc.com/shop
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;nginx/1.8.1&#34;,
+  &#34;Date&#34;: &#34;Thu, 16 Apr 2020 08:22:12 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;text/html; charset=utf-8&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Vary&#34;: &#34;Accept-Encoding&#34;,
+  &#34;X-Powered-By&#34;: &#34;ZihaiFx&#34;,
+  &#34;Set-Cookie&#34;: &#34;lzh_think_template=default; expires=Thu, 16-Apr-2020 09:22:12 GMT; Max-Age=3600; path=/; domain=tiannongtuan.com&#34;,
+  &#34;Expires&#34;: &#34;Thu, 19 Nov 1981 08:52:00 GMT&#34;,
+  &#34;Cache-Control&#34;: &#34;private&#34;,
+  &#34;Pragma&#34;: &#34;no-cache&#34;,
+  &#34;Content-Encoding&#34;: &#34;gzip&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            text/html; charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta charset=&#34;utf-8&#34; /&gt; 
+	&lt;title&gt;寻渔记 - 把海洋放进生活&lt;/title&gt;
+	&lt;meta name=&#34;keywords&#34; content=&#34;寻渔记官网，铭万平台，铭万网，日照铭万网络科技有限公司，铭万科技，海洋，蓝海，龙利鱼，黑头鱼，绿茶&#34; /&gt;
+	&lt;meta name=&#34;description&#34; content=&#34;寻渔记是日照铭万网络科技有限公司旗下品牌，专注海洋产业的一站式购物平台，主要定位于海洋产业+政府政策扶持+优质产品方式，平台结合线上线下互联网认购模式，为用户带来绿色无污染的海洋美味以及游玩体验。为海洋产业发展以及新旧动能转换提供助力，打造山东领先的海洋综合产业平台。&#34; /&gt;
+    	&lt;link rel=&#34;shortcut icon&#34; href=&#34;/Public/images/favicon.ico&#34; /&gt;
+    	&lt;link rel=&#34;bookmark&#34;href=&#34;/Public/images/favicon.ico&#34; /&gt;
+
+&lt;link rel=&#34;stylesheet&#34; type=&#34;text/ ... OMITTED 14593 CHARACTORS ...</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>LazyString($expected_status_code)</td>
+                      <td>200</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>16413</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>125.03</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>115.747</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+        
+        <a class="button" href="#popup_log_1_1_4">log-4</a>
+        <div id="popup_log_1_1_4" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_1_4">&times;</a>
+
+            <div class="content">
+              <h3>Name: add_goods</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://www.rzmwzc.com/shop/add_cars
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;python-requests/2.22.0&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;HRUN-Request-ID&#34;: &#34;423ff644-8fa3-4f1d-8d7f-73da3446778a&#34;,
+  &#34;Cookie&#34;: &#34;PHPSESSID=52mh7neif7hijrhec1mt7actn6; fz_area=1&#34;,
+  &#34;Content-Length&#34;: &#34;6&#34;,
+  &#34;Content-Type&#34;: &#34;application/x-www-form-urlencoded&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>gid=38</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://www.rzmwzc.com/shop/add_cars
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;nginx/1.8.1&#34;,
+  &#34;Date&#34;: &#34;Thu, 16 Apr 2020 08:22:12 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;application/json;charset=utf-8&#34;,
+  &#34;Content-Length&#34;: &#34;65&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;X-Powered-By&#34;: &#34;PHP/5.5.38&#34;,
+  &#34;Set-Cookie&#34;: &#34;lzh_think_template=default; expires=Thu, 16-Apr-2020 09:22:12 GMT; Max-Age=3600; path=/; domain=tiannongtuan.com&#34;,
+  &#34;Expires&#34;: &#34;Thu, 19 Nov 1981 08:52:00 GMT&#34;,
+  &#34;Cache-Control&#34;: &#34;no-store, no-cache, must-revalidate, post-check=0, pre-check=0&#34;,
+  &#34;Pragma&#34;: &#34;no-cache&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;status&#34;: &#34;1&#34;,
+  &#34;msg&#34;: &#34;添加成功&#34;,
+  &#34;carnum&#34;: 5
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.msg
+                      </td>
+                      <td>equals</td>
+                      <td>添加成功</td>
+                      <td>添加成功</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>65</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>156.22</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>146.934</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_2">
+      <th class="failure" style="width:5em;">failure</th>
+      <td colspan="2">get_shopping_car_id</td>
+      <td style="text-align:center;width:6em;">125.03 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_2_1">log-1</a>
+        <div id="popup_log_1_2_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_2_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: get_shopping_car_id</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://www.rzmwzc.com/shop/car_list
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            GET
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;python-requests/2.22.0&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;HRUN-Request-ID&#34;: &#34;423ff644-8fa3-4f1d-8d7f-73da3446778a&#34;,
+  &#34;Cookie&#34;: &#34;PHPSESSID=52mh7neif7hijrhec1mt7actn6; fz_area=1&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://www.rzmwzc.com/shop/car_list
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;nginx/1.8.1&#34;,
+  &#34;Date&#34;: &#34;Thu, 16 Apr 2020 08:22:12 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;text/html; charset=utf-8&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Vary&#34;: &#34;Accept-Encoding&#34;,
+  &#34;X-Powered-By&#34;: &#34;ZihaiFx&#34;,
+  &#34;Set-Cookie&#34;: &#34;lzh_think_template=default; expires=Thu, 16-Apr-2020 09:22:12 GMT; Max-Age=3600; path=/; domain=tiannongtuan.com&#34;,
+  &#34;Expires&#34;: &#34;Thu, 19 Nov 1981 08:52:00 GMT&#34;,
+  &#34;Cache-Control&#34;: &#34;private&#34;,
+  &#34;Pragma&#34;: &#34;no-cache&#34;,
+  &#34;Content-Encoding&#34;: &#34;gzip&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            text/html; charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta charset=&#34;utf-8&#34; /&gt; 
+	&lt;title&gt;寻渔记 - 把海洋放进生活&lt;/title&gt;
+	&lt;meta name=&#34;keywords&#34; content=&#34;寻渔记官网，铭万平台，铭万网，日照铭万网络科技有限公司，铭万科技，海洋，蓝海，龙利鱼，黑头鱼，绿茶&#34; /&gt;
+	&lt;meta name=&#34;description&#34; content=&#34;寻渔记是日照铭万网络科技有限公司旗下品牌，专注海洋产业的一站式购物平台，主要定位于海洋产业+政府政策扶持+优质产品方式，平台结合线上线下互联网认购模式，为用户带来绿色无污染的海洋美味以及游玩体验。为海洋产业发展以及新旧动能转换提供助力，打造山东领先的海洋综合产业平台。&#34; /&gt;
+    	&lt;link rel=&#34;shortcut icon&#34; href=&#34;/Public/images/favicon.ico&#34; /&gt;
+    	&lt;link rel=&#34;bookmark&#34;href=&#34;/Public/images/favicon.ico&#34; /&gt;
+
+&lt;link rel=&#34;stylesheet&#34; type=&#34;text/ ... OMITTED 14110 CHARACTORS ...</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>15572</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>125.03</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>113.57</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+          <a class="button" href="#popup_attachment_1_2">traceback</a>
+          <div id="popup_attachment_1_2" class="overlay">
+            <div class="popup">
+              <h2>Traceback Message</h2>
+              <a class="close" href="#record_1_2">&times;</a>
+              <div class="content"><pre>Traceback (most recent call last):
+  File &#34;d:\python37\lib\site-packages\httprunner\api.py&#34;, line 69, in test
+    test_runner.run_test(test_dict)
+httprunner.exceptions.ExtractFailure: Failed to extract data with regex! =&gt; onclick=&#34;checkon(this)&#34; value=&#34;(.*?)&#34; class=&#34;gwc_qx&#34;
+response body: &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta charset=&#34;utf-8&#34; /&gt; 
+	&lt;title&gt;寻渔记 - 把海洋放进生活&lt;/title&gt;
+	&lt;meta name=&#34;keywords&#34; content=&#34;寻渔记官网，铭万平台，铭万网，日照铭万网络科技有限公司，铭万科技，海洋，蓝海，龙利鱼，黑头鱼，绿茶&#34; /&gt;
+	&lt;meta name=&#34;description&#34; content=&#34;寻渔记是日照铭万网络科技有限公司旗下品牌，专注海洋产业的一站式购物平台，主要定位于海洋产业+政府政策扶持+优质产品方式，平台结合线上线下互联网认购模式，为用户带来绿色无污染的海洋美味以及游玩体验。为海洋产业发展以及新旧动能转换提供助力，打造山东领先的海洋综合产业平台。&#34; /&gt;
+    	&lt;link rel=&#34;shortcut icon&#34; href=&#34;/Public/images/favicon.ico&#34; /&gt;
+    	&lt;link rel=&#34;bookmark&#34;href=&#34;/Public/images/favicon.ico&#34; /&gt;
+
+&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;/Public/new/css/style.css&#34;/&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;/Public/new/js/jquery-1.7.2.min.js&#34;&gt;&lt;/script&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;/Public/new/js/index.js&#34;&gt;&lt;/script&gt;
+
+&lt;meta http-equiv=&#34;Content-Security-Policy&#34; content=&#34;upgrade-insecure-requests&#34;&gt; 
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;!--header--&gt;
+
+ &lt;div class=&#34;head&#34;&gt;
+	&lt;div class=&#34;h_ym&#34;&gt;
+     &lt;div class=&#34;h_ymz&#34;&gt;
+    	&lt;div class=&#34;hym_l&#34;&gt;
+        	&lt;span&gt;客服热线：400-110-0216   &amp;nbsp;&amp;nbsp; &lt;!-- 关注我们： --&gt;&lt;/span&gt;
+            &lt;span&gt;微信
+            	&lt;div class=&#34;hym_ewm wx&#34;&gt;
+                	&lt;img src=&#34;/Public/web/img/shouye/erwei-w.png&#34; /&gt;
+                    &lt;p&gt;微信公众号&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/span&gt;
+            &lt;span&gt;app下载
+            &lt;div class=&#34;hym_ewm app&#34;&gt;
+                	&lt;img src=&#34;/Public/web/img/shouye/erwei-app.png&#34; /&gt;
+                    &lt;p&gt;app下载&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;hym_r&#34;&gt;
+
+       
+
+        &lt;a href=&#34;/member/index.html&#34; &gt;
+
+                            &lt;img src=&#34;/Public/wap/img/l-touxinag.png&#34; alt=&#34;&#34;&gt; taishici/
+
+                        &lt;/a&gt; 
+
+                    &lt;a href=&#34;/member/common/actlogout.html&#34;&gt;退出&lt;/a&gt;
+
+                    
+
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&#34;h_dh&#34;&gt;
+     &lt;div class=&#34;h_dhz&#34;&gt;
+    	&lt;div class=&#34;dh_l&#34;&gt;
+        	&lt;img src=&#34;/Public/new/images/xyj_07.png&#34; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;dh_r&#34;&gt;
+       		&lt;ul&gt;
+            	&lt;li   &gt;&lt;a href=&#34;/index/index&#34;&gt;首页&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/invest/index.html&#34;&gt;渔业养殖&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/zhongzhi/index.html&#34;&gt;联合种植&lt;/a&gt;&lt;/li&gt;
+                &lt;li class=&#34;hover&#34;&gt;&lt;a href=&#34;/shop&#34;&gt;海产商城&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/article/video.html&#34;&gt;视频直播&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/article/active.html&#34;&gt;活动公告&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/article/about.html&#34;&gt;关于我们&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/member/index/index.html&#34;&gt;会员中心&lt;/a&gt;&lt;/li&gt;
+
+       
+                
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+
+&lt;/div&gt;
+
+&lt;div class=&#34;gwc&#34;&gt;
+	&lt;p class=&#34;gwc_1&#34;&gt;购物车&lt;/p&gt;
+    &lt;div class=&#34;gwc_list&#34;&gt;
+
+    	&lt;div class=&#34;gwc_top&#34;&gt;
+        	&lt;span class=&#34;gwc_top1&#34;&gt;全部商品(4)&lt;/span&gt;
+            &lt;p&gt;已选商品&lt;span id=&#34;yxsp1&#34;&gt;0.00&lt;/span&gt;&lt;/p&gt;
+            &lt;a href=&#34;##&#34;  id=&#34;jiesuan1&#34;&gt;结算&lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+
+        	&lt;div class=&#34;gwc_tops&#34;&gt;
+                &lt;span&gt;
+
+
+                &lt;input type=&#34;checkbox&#34; name=&#34;quanxuang&#34;  onclick=&#34;checkAll(this)&#34; value=&#34;0&#34; class=&#34;gwc_qx&#34; /&gt;全选&lt;/span&gt;
+                &lt;label for=&#34;checkbox&#34;&gt;&lt;/label&gt;
+
+                &lt;span style=&#34;width:270px;&#34;&gt;商品&lt;/span&gt;
+                &lt;span&gt;单价&lt;/span&gt;
+                &lt;span&gt;数量&lt;/span&gt;
+                &lt;span  style=&#34;width:150px;&#34;&gt;金额&lt;/span&gt;
+           		&lt;span  style=&#34;width:150px;&#34;&gt;操作&lt;/span&gt; 
+            &lt;/div&gt;
+ 
+&lt;div class=&#34;gwc_lists&#34;&gt;
+     
+                &lt;span&gt;
+
+                &lt;input type=&#34;checkbox&#34;  name=&#34;checkbox&#34; onclick=&#34;checkon(this)&#34; value=&#34;3765&#34; class=&#34;gwc_qx&#34; /&gt;
+               &lt;a href=&#34;/Shop/shop_show?id=49&#34; target=_balnk&gt; &lt;img src=&#34;/Public/attachment/201810/12/16/5bc0575820c65.jpg&#34; /&gt;&lt;/a&gt; &lt;/span&gt;
+                &lt;span&gt;&lt;a href=&#34;/Shop/shop_show?id=49&#34; target=_balnk&gt;鱿鱼条炭烤香辣鱿鱼丝250g&lt;/a&gt;&lt;/span&gt;
+                &lt;span style=&#34;width:150px;&#34;&gt;￥30.00&lt;/span&gt;
+&lt;span class=&#34;zz_sl&#34;  style=&#34;padding-top: 7px;width:150px;&#34;&gt;
+		&lt;div class=&#34;kucun&#34; style=&#34;    margin-left: 25px&#34;&gt;
+		    	&lt;span id=&#34;jian&#34; data=&#39;3765&#39;&gt;-&lt;/span&gt;
+		        &lt;span&gt;&lt;input type=&#34;text&#34; name=&#34;shuliang&#34; id=&#34;shuliang3765&#34; value=&#34;1&#34; readonly /&gt; &lt;/span&gt;
+		        &lt;span id=&#34;jia&#34; data=&#39;3765&#39;&gt;+&lt;/span&gt;
+		&lt;/div&gt;
+
+	&lt;/span&gt;
+                &lt;span id=&#34;zong3765&#34;&gt;￥30&lt;/span&gt;
+           		&lt;span  style=&#34;width:150px;&#34;&gt; &lt;a href=&#34;/shop/car_del/id/3765&#34;&gt;删除&lt;/a&gt;&lt;/span&gt; 
+    	&lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+        &lt;/div&gt;&lt;div class=&#34;gwc_lists&#34;&gt;
+     
+                &lt;span&gt;
+
+                &lt;input type=&#34;checkbox&#34;  name=&#34;checkbox&#34; onclick=&#34;checkon(this)&#34; value=&#34;3766&#34; class=&#34;gwc_qx&#34; /&gt;
+               &lt;a href=&#34;/Shop/shop_show?id=43&#34; target=_balnk&gt; &lt;img src=&#34;/Public/attachment/201810/11/16/5bbf0f936e2a3.jpg&#34; /&gt;&lt;/a&gt; &lt;/span&gt;
+                &lt;span&gt;&lt;a href=&#34;/Shop/shop_show?id=43&#34; target=_balnk&gt;淡干海米250g小虾米干货干虾仁虾干即食&lt;/a&gt;&lt;/span&gt;
+                &lt;span style=&#34;width:150px;&#34;&gt;￥50.00&lt;/span&gt;
+&lt;span class=&#34;zz_sl&#34;  style=&#34;padding-top: 7px;width:150px;&#34;&gt;
+		&lt;div class=&#34;kucun&#34; style=&#34;    margin-left: 25px&#34;&gt;
+		    	&lt;span id=&#34;jian&#34; data=&#39;3766&#39;&gt;-&lt;/span&gt;
+		        &lt;span&gt;&lt;input type=&#34;text&#34; name=&#34;shuliang&#34; id=&#34;shuliang3766&#34; value=&#34;1&#34; readonly /&gt; &lt;/span&gt;
+		        &lt;span id=&#34;jia&#34; data=&#39;3766&#39;&gt;+&lt;/span&gt;
+		&lt;/div&gt;
+
+	&lt;/span&gt;
+                &lt;span id=&#34;zong3766&#34;&gt;￥50&lt;/span&gt;
+           		&lt;span  style=&#34;width:150px;&#34;&gt; &lt;a href=&#34;/shop/car_del/id/3766&#34;&gt;删除&lt;/a&gt;&lt;/span&gt; 
+    	&lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+        &lt;/div&gt;&lt;div class=&#34;gwc_lists&#34;&gt;
+     
+                &lt;span&gt;
+
+                &lt;input type=&#34;checkbox&#34;  name=&#34;checkbox&#34; onclick=&#34;checkon(this)&#34; value=&#34;3767&#34; class=&#34;gwc_qx&#34; /&gt;
+               &lt;a href=&#34;/Shop/shop_show?id=48&#34; target=_balnk&gt; &lt;img src=&#34;/Public/attachment/201810/12/15/5bc053097e0cd.jpg&#34; /&gt;&lt;/a&gt; &lt;/span&gt;
+                &lt;span&gt;&lt;a href=&#34;/Shop/shop_show?id=48&#34; target=_balnk&gt;野生淡干小银鱼干250g银鱼干货&lt;/a&gt;&lt;/span&gt;
+                &lt;span style=&#34;width:150px;&#34;&gt;￥50.00&lt;/span&gt;
+&lt;span class=&#34;zz_sl&#34;  style=&#34;padding-top: 7px;width:150px;&#34;&gt;
+		&lt;div class=&#34;kucun&#34; style=&#34;    margin-left: 25px&#34;&gt;
+		    	&lt;span id=&#34;jian&#34; data=&#39;3767&#39;&gt;-&lt;/span&gt;
+		        &lt;span&gt;&lt;input type=&#34;text&#34; name=&#34;shuliang&#34; id=&#34;shuliang3767&#34; value=&#34;1&#34; readonly /&gt; &lt;/span&gt;
+		        &lt;span id=&#34;jia&#34; data=&#39;3767&#39;&gt;+&lt;/span&gt;
+		&lt;/div&gt;
+
+	&lt;/span&gt;
+                &lt;span id=&#34;zong3767&#34;&gt;￥50&lt;/span&gt;
+           		&lt;span  style=&#34;width:150px;&#34;&gt; &lt;a href=&#34;/shop/car_del/id/3767&#34;&gt;删除&lt;/a&gt;&lt;/span&gt; 
+    	&lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+        &lt;/div&gt;&lt;div class=&#34;gwc_lists&#34;&gt;
+     
+                &lt;span&gt;
+
+                &lt;input type=&#34;checkbox&#34;  name=&#34;checkbox&#34; onclick=&#34;checkon(this)&#34; value=&#34;3768&#34; class=&#34;gwc_qx&#34; /&gt;
+               &lt;a href=&#34;/Shop/shop_show?id=38&#34; target=_balnk&gt; &lt;img src=&#34;/Public/attachment/201810/11/16/5bbf0422e43db.jpg&#34; /&gt;&lt;/a&gt; &lt;/span&gt;
+                &lt;span&gt;&lt;a href=&#34;/Shop/shop_show?id=38&#34; target=_balnk&gt;即食海参野生刺参天然新鲜海参即食野生10头&lt;/a&gt;&lt;/span&gt;
+                &lt;span style=&#34;width:150px;&#34;&gt;￥350.00&lt;/span&gt;
+&lt;span class=&#34;zz_sl&#34;  style=&#34;padding-top: 7px;width:150px;&#34;&gt;
+		&lt;div class=&#34;kucun&#34; style=&#34;    margin-left: 25px&#34;&gt;
+		    	&lt;span id=&#34;jian&#34; data=&#39;3768&#39;&gt;-&lt;/span&gt;
+		        &lt;span&gt;&lt;input type=&#34;text&#34; name=&#34;shuliang&#34; id=&#34;shuliang3768&#34; value=&#34;2&#34; readonly /&gt; &lt;/span&gt;
+		        &lt;span id=&#34;jia&#34; data=&#39;3768&#39;&gt;+&lt;/span&gt;
+		&lt;/div&gt;
+
+	&lt;/span&gt;
+                &lt;span id=&#34;zong3768&#34;&gt;￥700&lt;/span&gt;
+           		&lt;span  style=&#34;width:150px;&#34;&gt; &lt;a href=&#34;/shop/car_del/id/3768&#34;&gt;删除&lt;/a&gt;&lt;/span&gt; 
+    	&lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+        &lt;/div&gt;        
+    &lt;/div&gt;
+&lt;form method=&#34;post&#34;  name=&#34;do_order&#34; id=&#34;do_order&#34; action=&#34;/shop/do_order&#34;&gt;
+    &lt;input type=&#34;hidden&#34; name=&#34;carids&#34; id=&#34;carids&#34;&gt; 
+&lt;input type=&#34;hidden&#34; name=&#34;__hash__&#34; value=&#34;fb014887c9a0d9513c4d1943dfa47360_bb62fe2b3e3099ebbfd2149b4e8f449b&#34; /&gt;&lt;/form&gt;    
+     &lt;div class=&#34;gwc_bot&#34;&gt;
+        	 &lt;p&gt;&lt;input type=&#34;checkbox&#34; name=&#34;quanxuang&#34;  onclick=&#34;checkAll(this)&#34; value=&#34;0&#34; class=&#34;gwc_qx&#34; /&gt;全选 &lt;/p&gt;
+        	 &lt;p class=&#34;gwc_js&#34;&gt;已选商品&lt;span id=&#34;yxsl2&#34;&gt;0&lt;/span&gt;件  &lt;span&gt;合计（含运费）&lt;/span&gt; &lt;span id=&#34;yxsp2&#34;&gt; ￥0.00&lt;/span&gt;&lt;/p&gt;
+             &lt;a href=&#34;##&#34; id=&#34;jiesuan2&#34;&gt;结算&lt;/a&gt;		
+        &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+
+function checkon(o){
+	var fal=true;
+	$(&#39;input[name=&#34;checkbox&#34;]&#39;).each(function(){
+		if($(this).prop(&#34;checked&#34;)==false){
+			fal=false;
+		}
+	});
+	if(fal==false){
+		$(&#39;input[name=&#34;quanxuang&#34;]&#39;).removeAttr(&#39;checked&#39;);
+	}else{
+		$(&#39;input[name=&#34;quanxuang&#34;]&#39;).attr(&#39;checked&#39;,&#39;true&#39;);
+	}
+	doprice();
+}
+function checkAll(o){
+        if(o.checked == true ){
+            $(&#39;input[name=&#34;checkbox&#34;]&#39;).attr(&#39;checked&#39;,&#39;true&#39;);
+            $(&#39;input[name=&#34;quanxuang&#34;]&#39;).attr(&#39;checked&#39;,&#39;true&#39;);
+                  
+        }else{
+            $(&#39;input[name=&#34;checkbox&#34;]&#39;).removeAttr(&#39;checked&#39;);
+            $(&#39;input[name=&#34;quanxuang&#34;]&#39;).removeAttr(&#39;checked&#39;);
+
+        }
+        doprice();
+}
+function doprice(){
+	let carids=0;
+	let xz=0;
+    $(&#39;input[name=&#34;checkbox&#34;]&#39;).each(function(){
+		if($(this).prop(&#34;checked&#34;)==true){
+		    carids +=&#34;,&#34;+$(this).val();
+			xz++;
+		}
+	});
+    car_price(carids,xz);
+}
+
+function carnum(){
+	   var address=$(&#34;#address&#34;).val();
+        var id=$(&#34;#id&#34;).val();
+        var pay_way=$(&#34;#pay_way&#34;).val();
+        $.ajax({
+            url: &#34;/shop/post_order&#34;,
+            type: &#34;post&#34;,
+            dataType: &#34;json&#34;,
+            data: {&#34;address&#34;:address,&#34;id&#34;:id,&#34;pay_way&#34;:pay_way},
+            success: function(d) {
+
+               if(d.stats==1){
+                    if(d.pay_way==1){
+                        window.location.href=&#34;/shop/zhifubao/id/&#34;+d.ordernums;
+                    }else if(d.pay_way==2){
+                        window.location.href=&#34;/shop/weixin/id/&#34;+d.ordernums;
+                    }
+               }else{
+                    alert(d.msg);
+               } 
+            }
+        }); 
+
+}
+
+function donum(carid,num){
+     if(num&gt;99){
+        alert(&#34;单次下单数量不能超过99&#34;);
+    }else{
+        var id=$(&#34;#id&#34;).val();
+        $.ajax({
+            url: &#34;/shop/do_car_num&#34;,
+            type: &#34;post&#34;,
+            dataType: &#34;json&#34;,
+            async: false,
+            data: {&#34;num&#34;:num,&#34;id&#34;:carid},
+            success: function(d) {
+               $(&#34;#zong&#34;+carid).html(&#34;￥&#34;+d);
+                doprice(); 
+            }
+      });
+
+    }
+}
+
+function car_price(carids,xz){
+    $.ajax({
+        url: &#34;/shop/car_price&#34;,
+        type: &#34;post&#34;,
+        dataType: &#34;json&#34;,
+        data: {&#34;carids&#34;:carids},
+        success: function(d) {
+           $(&#34;#yxsp1&#34;).html(&#34;￥&#34;+d);
+           $(&#34;#yxsp2&#34;).html(&#34;￥&#34;+d);
+           $(&#34;#yxsl2&#34;).html(xz);
+        }
+  }); 
+}
+
+$(function(){
+	var carid;
+    /*订单数量*/
+    $(&#34;.kucun #jia&#34;).click(function(){
+    	carid=($(this).attr(&#34;data&#34;));
+        var b=Number($(&#34;.kucun #shuliang&#34;+carid).val());
+        donum(carid,Number(b)+1);
+        if(b!=99){
+            $(&#34;.kucun #shuliang&#34;+carid).val(Number(b)+1);
+        }     
+    }) 
+    $(&#34;.kucun #jian&#34;).click(function(){
+    	carid=($(this).attr(&#34;data&#34;));
+        var b=Number($(&#34;.kucun #shuliang&#34;+carid).val());
+        if(b&gt;1){
+            $(&#34;.kucun #shuliang&#34;+carid).val(Number(b)-1);
+            donum(carid,Number(b)-1);
+        }
+    })
+    
+
+    $(&#34;#jiesuan1&#34;).click(function(){
+        let carids=0;
+        let xz=0;
+        $(&#39;input[name=&#34;checkbox&#34;]&#39;).each(function(){
+            if($(this).prop(&#34;checked&#34;)==true){
+                carids +=&#34;,&#34;+$(this).val();
+                xz++;
+            }
+        });
+        if(xz==0){
+            alert(&#34;请选择商品！&#34;);
+        }else{
+            $(&#34;#carids&#34;).val(carids);
+            $(&#34;#do_order&#34;).submit();
+           // window.location.reload()
+        }
+    })
+
+    $(&#34;#jiesuan2&#34;).click(function(){
+        let carids=0;
+        let xz=0;
+        $(&#39;input[name=&#34;checkbox&#34;]&#39;).each(function(){
+            if($(this).prop(&#34;checked&#34;)==true){
+                carids +=&#34;,&#34;+$(this).val();
+                xz++;
+            }
+        });
+        if(xz==0){
+            alert(&#34;请选择商品！&#34;);
+        }else{
+            $(&#34;#carids&#34;).val(carids);
+            $(&#34;#do_order&#34;).submit();
+           // window.location.reload()
+        }
+    })
+
+    // $(&#34;.sc_gwc&#34;).click(function(){
+	   //  $(&#34;.sc_gwc&#34;).attr(&#39;disabled&#39;,&#39;disabled&#39;);
+	   //  $(&#34;#add_car&#34;).submit();
+    // })
+    // $(&#34;.sc_btn&#34;).click(function(){
+	   //  $(&#34;.sc_btn&#34;).attr(&#39;disabled&#39;,&#39;disabled&#39;);
+	   //  $(&#34;#add_car&#34;).attr(&#34;action&#34;,&#34;Shop/goumai&#34;);;
+	   //  $(&#34;#add_car&#34;).submit();
+    // })
+
+})
+&lt;/script&gt;
+&lt;!--底部--&gt;
+&lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+
+&lt;div class=&#34;footer&#34;&gt;
+&lt;div class=&#34;foot_con&#34;&gt;
+	&lt;img  class=&#34;foot_l&#34; src=&#34;/Public/new/images/xyj_21.jpg&#34; /&gt;
+    &lt;div class=&#34;foot_r&#34;&gt;
+    &lt;div class=&#34;foot_zz&#34;&gt;&lt;/div&gt;
+    	&lt;div class=&#34;foot_r_l&#34; style=&#34;width:200px;&#34;&gt;
+        	&lt;li&gt;&lt;a href=&#34;/article/cateshow/cid/523.html&#34;&gt;服务条款&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&#34;/article/cateshow/cid/533.html&#34;&gt;隐私策略&lt;/a&gt;&lt;/li&gt;
+        &lt;!--     &lt;li&gt;&lt;a href=&#34;/article/cateshow/cid/523.html&#34;&gt;服务介绍&lt;/a&gt;&lt;/li&gt; --&gt;
+          &lt;!--  
+            &lt;li&gt;&lt;a href=&#34;/article/cateshow/cid/523.html&#34;&gt;撰写指南&lt;/a&gt;&lt;/li&gt; --&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;foot_r_l&#34; style=&#34;width:400px; margin-left:40px;&#34;&gt;
+        	  &lt;li&gt;&lt;a href=&#34;/invest/index.html&#34;&gt;渔业养殖&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/zhongzhi/index.html&#34;&gt;联合种植&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/shop&#34;&gt;海产商城&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/article/news_list.html&#34;&gt;最新资讯&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/article/video.html&#34;&gt;视频直播&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/article/active.html&#34;&gt;活动公告&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/article/about.html&#34;&gt;关于我们&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/member/index/index.html&#34;&gt;会员中心&lt;/a&gt;&lt;/li&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;foot_r_r&#34;&gt;
+        
+        &lt;div class=&#34;ftm_ewm&#34;&gt;
+                	&lt;img src=&#34;/Public/web/img/shouye/erwei-w.png&#34; /&gt;
+        &lt;/div&gt;     
+        	微信公众号
+        &lt;/div&gt;
+       &lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+       &lt;div class=&#34;foot_ry&#34;&gt;
+       &lt;a target=&#34;_blank&#34; &gt;&lt;img src=&#34;/Public/new/images/xyj_28.jpg&#34; /&gt;&lt;/a&gt;
+
+       &lt;a target=&#34;_blank&#34; &gt;&lt;img src=&#34;/Public/new/images/gg_07.png&#34; /&gt;&lt;/a&gt;
+
+       &lt;a target=&#34;_blank&#34; &gt;&lt;img src=&#34;/Public/new/images/gg_09.png&#34; /&gt;&lt;/a&gt;
+
+
+        
+       &lt;/div&gt;
+       &lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+       &lt;div class=&#34;foot_bq&#34;&gt;
+       	寻渔记-日照铭万网络科技有限公司版权所有       &lt;a href=&#34;http://www.beian.miit.gov.cn&#34; style=&#34;color:#fff;&#34;  target=&#34;_blank&#34;&gt;鲁公网安备 37110302000118号       鲁ICP备17003630号-1&lt;/a&gt;
+       &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;scroll&#34; style=&#34;display: none; &#34;&gt; 
+  &lt;a class=&#34;top&#34; href=&#34;javascript:void(0)&#34;&gt;&lt;img src=&#34;images/top.jpg&#34;&gt;&lt;span&gt;返回顶部&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;script&gt;
+
+window.onload = function () {
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement(&#34;script&#34;);
+  hm.src = &#34;https://hm.baidu.com/hm.js?55018a7c810a0920c9997b042f7da876&#34;;
+  var s = document.getElementsByTagName(&#34;script&#34;)[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+
+var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement(&#34;script&#34;);
+        hm.src = &#34;https://hm.baidu.com/hm.js?9bf93af51e6ba9068b243c8dd28870b3&#34;;
+        var s = document.getElementsByTagName(&#34;script&#34;)[0];
+        s.parentNode.insertBefore(hm, s);
+})();
+
+
+}
+
+
+&lt;/script&gt;
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &#34;d:\python37\lib\site-packages\httprunner\api.py&#34;, line 71, in test
+    self.fail(str(ex))
+AssertionError: Failed to extract data with regex! =&gt; onclick=&#34;checkon(this)&#34; value=&#34;(.*?)&#34; class=&#34;gwc_qx&#34;
+response body: &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta charset=&#34;utf-8&#34; /&gt; 
+	&lt;title&gt;寻渔记 - 把海洋放进生活&lt;/title&gt;
+	&lt;meta name=&#34;keywords&#34; content=&#34;寻渔记官网，铭万平台，铭万网，日照铭万网络科技有限公司，铭万科技，海洋，蓝海，龙利鱼，黑头鱼，绿茶&#34; /&gt;
+	&lt;meta name=&#34;description&#34; content=&#34;寻渔记是日照铭万网络科技有限公司旗下品牌，专注海洋产业的一站式购物平台，主要定位于海洋产业+政府政策扶持+优质产品方式，平台结合线上线下互联网认购模式，为用户带来绿色无污染的海洋美味以及游玩体验。为海洋产业发展以及新旧动能转换提供助力，打造山东领先的海洋综合产业平台。&#34; /&gt;
+    	&lt;link rel=&#34;shortcut icon&#34; href=&#34;/Public/images/favicon.ico&#34; /&gt;
+    	&lt;link rel=&#34;bookmark&#34;href=&#34;/Public/images/favicon.ico&#34; /&gt;
+
+&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;/Public/new/css/style.css&#34;/&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;/Public/new/js/jquery-1.7.2.min.js&#34;&gt;&lt;/script&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;/Public/new/js/index.js&#34;&gt;&lt;/script&gt;
+
+&lt;meta http-equiv=&#34;Content-Security-Policy&#34; content=&#34;upgrade-insecure-requests&#34;&gt; 
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;!--header--&gt;
+
+ &lt;div class=&#34;head&#34;&gt;
+	&lt;div class=&#34;h_ym&#34;&gt;
+     &lt;div class=&#34;h_ymz&#34;&gt;
+    	&lt;div class=&#34;hym_l&#34;&gt;
+        	&lt;span&gt;客服热线：400-110-0216   &amp;nbsp;&amp;nbsp; &lt;!-- 关注我们： --&gt;&lt;/span&gt;
+            &lt;span&gt;微信
+            	&lt;div class=&#34;hym_ewm wx&#34;&gt;
+                	&lt;img src=&#34;/Public/web/img/shouye/erwei-w.png&#34; /&gt;
+                    &lt;p&gt;微信公众号&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/span&gt;
+            &lt;span&gt;app下载
+            &lt;div class=&#34;hym_ewm app&#34;&gt;
+                	&lt;img src=&#34;/Public/web/img/shouye/erwei-app.png&#34; /&gt;
+                    &lt;p&gt;app下载&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;hym_r&#34;&gt;
+
+       
+
+        &lt;a href=&#34;/member/index.html&#34; &gt;
+
+                            &lt;img src=&#34;/Public/wap/img/l-touxinag.png&#34; alt=&#34;&#34;&gt; taishici/
+
+                        &lt;/a&gt; 
+
+                    &lt;a href=&#34;/member/common/actlogout.html&#34;&gt;退出&lt;/a&gt;
+
+                    
+
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&#34;h_dh&#34;&gt;
+     &lt;div class=&#34;h_dhz&#34;&gt;
+    	&lt;div class=&#34;dh_l&#34;&gt;
+        	&lt;img src=&#34;/Public/new/images/xyj_07.png&#34; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;dh_r&#34;&gt;
+       		&lt;ul&gt;
+            	&lt;li   &gt;&lt;a href=&#34;/index/index&#34;&gt;首页&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/invest/index.html&#34;&gt;渔业养殖&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/zhongzhi/index.html&#34;&gt;联合种植&lt;/a&gt;&lt;/li&gt;
+                &lt;li class=&#34;hover&#34;&gt;&lt;a href=&#34;/shop&#34;&gt;海产商城&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/article/video.html&#34;&gt;视频直播&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/article/active.html&#34;&gt;活动公告&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/article/about.html&#34;&gt;关于我们&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href=&#34;/member/index/index.html&#34;&gt;会员中心&lt;/a&gt;&lt;/li&gt;
+
+       
+                
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+
+&lt;/div&gt;
+
+&lt;div class=&#34;gwc&#34;&gt;
+	&lt;p class=&#34;gwc_1&#34;&gt;购物车&lt;/p&gt;
+    &lt;div class=&#34;gwc_list&#34;&gt;
+
+    	&lt;div class=&#34;gwc_top&#34;&gt;
+        	&lt;span class=&#34;gwc_top1&#34;&gt;全部商品(4)&lt;/span&gt;
+            &lt;p&gt;已选商品&lt;span id=&#34;yxsp1&#34;&gt;0.00&lt;/span&gt;&lt;/p&gt;
+            &lt;a href=&#34;##&#34;  id=&#34;jiesuan1&#34;&gt;结算&lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+
+        	&lt;div class=&#34;gwc_tops&#34;&gt;
+                &lt;span&gt;
+
+
+                &lt;input type=&#34;checkbox&#34; name=&#34;quanxuang&#34;  onclick=&#34;checkAll(this)&#34; value=&#34;0&#34; class=&#34;gwc_qx&#34; /&gt;全选&lt;/span&gt;
+                &lt;label for=&#34;checkbox&#34;&gt;&lt;/label&gt;
+
+                &lt;span style=&#34;width:270px;&#34;&gt;商品&lt;/span&gt;
+                &lt;span&gt;单价&lt;/span&gt;
+                &lt;span&gt;数量&lt;/span&gt;
+                &lt;span  style=&#34;width:150px;&#34;&gt;金额&lt;/span&gt;
+           		&lt;span  style=&#34;width:150px;&#34;&gt;操作&lt;/span&gt; 
+            &lt;/div&gt;
+ 
+&lt;div class=&#34;gwc_lists&#34;&gt;
+     
+                &lt;span&gt;
+
+                &lt;input type=&#34;checkbox&#34;  name=&#34;checkbox&#34; onclick=&#34;checkon(this)&#34; value=&#34;3765&#34; class=&#34;gwc_qx&#34; /&gt;
+               &lt;a href=&#34;/Shop/shop_show?id=49&#34; target=_balnk&gt; &lt;img src=&#34;/Public/attachment/201810/12/16/5bc0575820c65.jpg&#34; /&gt;&lt;/a&gt; &lt;/span&gt;
+                &lt;span&gt;&lt;a href=&#34;/Shop/shop_show?id=49&#34; target=_balnk&gt;鱿鱼条炭烤香辣鱿鱼丝250g&lt;/a&gt;&lt;/span&gt;
+                &lt;span style=&#34;width:150px;&#34;&gt;￥30.00&lt;/span&gt;
+&lt;span class=&#34;zz_sl&#34;  style=&#34;padding-top: 7px;width:150px;&#34;&gt;
+		&lt;div class=&#34;kucun&#34; style=&#34;    margin-left: 25px&#34;&gt;
+		    	&lt;span id=&#34;jian&#34; data=&#39;3765&#39;&gt;-&lt;/span&gt;
+		        &lt;span&gt;&lt;input type=&#34;text&#34; name=&#34;shuliang&#34; id=&#34;shuliang3765&#34; value=&#34;1&#34; readonly /&gt; &lt;/span&gt;
+		        &lt;span id=&#34;jia&#34; data=&#39;3765&#39;&gt;+&lt;/span&gt;
+		&lt;/div&gt;
+
+	&lt;/span&gt;
+                &lt;span id=&#34;zong3765&#34;&gt;￥30&lt;/span&gt;
+           		&lt;span  style=&#34;width:150px;&#34;&gt; &lt;a href=&#34;/shop/car_del/id/3765&#34;&gt;删除&lt;/a&gt;&lt;/span&gt; 
+    	&lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+        &lt;/div&gt;&lt;div class=&#34;gwc_lists&#34;&gt;
+     
+                &lt;span&gt;
+
+                &lt;input type=&#34;checkbox&#34;  name=&#34;checkbox&#34; onclick=&#34;checkon(this)&#34; value=&#34;3766&#34; class=&#34;gwc_qx&#34; /&gt;
+               &lt;a href=&#34;/Shop/shop_show?id=43&#34; target=_balnk&gt; &lt;img src=&#34;/Public/attachment/201810/11/16/5bbf0f936e2a3.jpg&#34; /&gt;&lt;/a&gt; &lt;/span&gt;
+                &lt;span&gt;&lt;a href=&#34;/Shop/shop_show?id=43&#34; target=_balnk&gt;淡干海米250g小虾米干货干虾仁虾干即食&lt;/a&gt;&lt;/span&gt;
+                &lt;span style=&#34;width:150px;&#34;&gt;￥50.00&lt;/span&gt;
+&lt;span class=&#34;zz_sl&#34;  style=&#34;padding-top: 7px;width:150px;&#34;&gt;
+		&lt;div class=&#34;kucun&#34; style=&#34;    margin-left: 25px&#34;&gt;
+		    	&lt;span id=&#34;jian&#34; data=&#39;3766&#39;&gt;-&lt;/span&gt;
+		        &lt;span&gt;&lt;input type=&#34;text&#34; name=&#34;shuliang&#34; id=&#34;shuliang3766&#34; value=&#34;1&#34; readonly /&gt; &lt;/span&gt;
+		        &lt;span id=&#34;jia&#34; data=&#39;3766&#39;&gt;+&lt;/span&gt;
+		&lt;/div&gt;
+
+	&lt;/span&gt;
+                &lt;span id=&#34;zong3766&#34;&gt;￥50&lt;/span&gt;
+           		&lt;span  style=&#34;width:150px;&#34;&gt; &lt;a href=&#34;/shop/car_del/id/3766&#34;&gt;删除&lt;/a&gt;&lt;/span&gt; 
+    	&lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+        &lt;/div&gt;&lt;div class=&#34;gwc_lists&#34;&gt;
+     
+                &lt;span&gt;
+
+                &lt;input type=&#34;checkbox&#34;  name=&#34;checkbox&#34; onclick=&#34;checkon(this)&#34; value=&#34;3767&#34; class=&#34;gwc_qx&#34; /&gt;
+               &lt;a href=&#34;/Shop/shop_show?id=48&#34; target=_balnk&gt; &lt;img src=&#34;/Public/attachment/201810/12/15/5bc053097e0cd.jpg&#34; /&gt;&lt;/a&gt; &lt;/span&gt;
+                &lt;span&gt;&lt;a href=&#34;/Shop/shop_show?id=48&#34; target=_balnk&gt;野生淡干小银鱼干250g银鱼干货&lt;/a&gt;&lt;/span&gt;
+                &lt;span style=&#34;width:150px;&#34;&gt;￥50.00&lt;/span&gt;
+&lt;span class=&#34;zz_sl&#34;  style=&#34;padding-top: 7px;width:150px;&#34;&gt;
+		&lt;div class=&#34;kucun&#34; style=&#34;    margin-left: 25px&#34;&gt;
+		    	&lt;span id=&#34;jian&#34; data=&#39;3767&#39;&gt;-&lt;/span&gt;
+		        &lt;span&gt;&lt;input type=&#34;text&#34; name=&#34;shuliang&#34; id=&#34;shuliang3767&#34; value=&#34;1&#34; readonly /&gt; &lt;/span&gt;
+		        &lt;span id=&#34;jia&#34; data=&#39;3767&#39;&gt;+&lt;/span&gt;
+		&lt;/div&gt;
+
+	&lt;/span&gt;
+                &lt;span id=&#34;zong3767&#34;&gt;￥50&lt;/span&gt;
+           		&lt;span  style=&#34;width:150px;&#34;&gt; &lt;a href=&#34;/shop/car_del/id/3767&#34;&gt;删除&lt;/a&gt;&lt;/span&gt; 
+    	&lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+        &lt;/div&gt;&lt;div class=&#34;gwc_lists&#34;&gt;
+     
+                &lt;span&gt;
+
+                &lt;input type=&#34;checkbox&#34;  name=&#34;checkbox&#34; onclick=&#34;checkon(this)&#34; value=&#34;3768&#34; class=&#34;gwc_qx&#34; /&gt;
+               &lt;a href=&#34;/Shop/shop_show?id=38&#34; target=_balnk&gt; &lt;img src=&#34;/Public/attachment/201810/11/16/5bbf0422e43db.jpg&#34; /&gt;&lt;/a&gt; &lt;/span&gt;
+                &lt;span&gt;&lt;a href=&#34;/Shop/shop_show?id=38&#34; target=_balnk&gt;即食海参野生刺参天然新鲜海参即食野生10头&lt;/a&gt;&lt;/span&gt;
+                &lt;span style=&#34;width:150px;&#34;&gt;￥350.00&lt;/span&gt;
+&lt;span class=&#34;zz_sl&#34;  style=&#34;padding-top: 7px;width:150px;&#34;&gt;
+		&lt;div class=&#34;kucun&#34; style=&#34;    margin-left: 25px&#34;&gt;
+		    	&lt;span id=&#34;jian&#34; data=&#39;3768&#39;&gt;-&lt;/span&gt;
+		        &lt;span&gt;&lt;input type=&#34;text&#34; name=&#34;shuliang&#34; id=&#34;shuliang3768&#34; value=&#34;2&#34; readonly /&gt; &lt;/span&gt;
+		        &lt;span id=&#34;jia&#34; data=&#39;3768&#39;&gt;+&lt;/span&gt;
+		&lt;/div&gt;
+
+	&lt;/span&gt;
+                &lt;span id=&#34;zong3768&#34;&gt;￥700&lt;/span&gt;
+           		&lt;span  style=&#34;width:150px;&#34;&gt; &lt;a href=&#34;/shop/car_del/id/3768&#34;&gt;删除&lt;/a&gt;&lt;/span&gt; 
+    	&lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+        &lt;/div&gt;        
+    &lt;/div&gt;
+&lt;form method=&#34;post&#34;  name=&#34;do_order&#34; id=&#34;do_order&#34; action=&#34;/shop/do_order&#34;&gt;
+    &lt;input type=&#34;hidden&#34; name=&#34;carids&#34; id=&#34;carids&#34;&gt; 
+&lt;input type=&#34;hidden&#34; name=&#34;__hash__&#34; value=&#34;fb014887c9a0d9513c4d1943dfa47360_bb62fe2b3e3099ebbfd2149b4e8f449b&#34; /&gt;&lt;/form&gt;    
+     &lt;div class=&#34;gwc_bot&#34;&gt;
+        	 &lt;p&gt;&lt;input type=&#34;checkbox&#34; name=&#34;quanxuang&#34;  onclick=&#34;checkAll(this)&#34; value=&#34;0&#34; class=&#34;gwc_qx&#34; /&gt;全选 &lt;/p&gt;
+        	 &lt;p class=&#34;gwc_js&#34;&gt;已选商品&lt;span id=&#34;yxsl2&#34;&gt;0&lt;/span&gt;件  &lt;span&gt;合计（含运费）&lt;/span&gt; &lt;span id=&#34;yxsp2&#34;&gt; ￥0.00&lt;/span&gt;&lt;/p&gt;
+             &lt;a href=&#34;##&#34; id=&#34;jiesuan2&#34;&gt;结算&lt;/a&gt;		
+        &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+
+function checkon(o){
+	var fal=true;
+	$(&#39;input[name=&#34;checkbox&#34;]&#39;).each(function(){
+		if($(this).prop(&#34;checked&#34;)==false){
+			fal=false;
+		}
+	});
+	if(fal==false){
+		$(&#39;input[name=&#34;quanxuang&#34;]&#39;).removeAttr(&#39;checked&#39;);
+	}else{
+		$(&#39;input[name=&#34;quanxuang&#34;]&#39;).attr(&#39;checked&#39;,&#39;true&#39;);
+	}
+	doprice();
+}
+function checkAll(o){
+        if(o.checked == true ){
+            $(&#39;input[name=&#34;checkbox&#34;]&#39;).attr(&#39;checked&#39;,&#39;true&#39;);
+            $(&#39;input[name=&#34;quanxuang&#34;]&#39;).attr(&#39;checked&#39;,&#39;true&#39;);
+                  
+        }else{
+            $(&#39;input[name=&#34;checkbox&#34;]&#39;).removeAttr(&#39;checked&#39;);
+            $(&#39;input[name=&#34;quanxuang&#34;]&#39;).removeAttr(&#39;checked&#39;);
+
+        }
+        doprice();
+}
+function doprice(){
+	let carids=0;
+	let xz=0;
+    $(&#39;input[name=&#34;checkbox&#34;]&#39;).each(function(){
+		if($(this).prop(&#34;checked&#34;)==true){
+		    carids +=&#34;,&#34;+$(this).val();
+			xz++;
+		}
+	});
+    car_price(carids,xz);
+}
+
+function carnum(){
+	   var address=$(&#34;#address&#34;).val();
+        var id=$(&#34;#id&#34;).val();
+        var pay_way=$(&#34;#pay_way&#34;).val();
+        $.ajax({
+            url: &#34;/shop/post_order&#34;,
+            type: &#34;post&#34;,
+            dataType: &#34;json&#34;,
+            data: {&#34;address&#34;:address,&#34;id&#34;:id,&#34;pay_way&#34;:pay_way},
+            success: function(d) {
+
+               if(d.stats==1){
+                    if(d.pay_way==1){
+                        window.location.href=&#34;/shop/zhifubao/id/&#34;+d.ordernums;
+                    }else if(d.pay_way==2){
+                        window.location.href=&#34;/shop/weixin/id/&#34;+d.ordernums;
+                    }
+               }else{
+                    alert(d.msg);
+               } 
+            }
+        }); 
+
+}
+
+function donum(carid,num){
+     if(num&gt;99){
+        alert(&#34;单次下单数量不能超过99&#34;);
+    }else{
+        var id=$(&#34;#id&#34;).val();
+        $.ajax({
+            url: &#34;/shop/do_car_num&#34;,
+            type: &#34;post&#34;,
+            dataType: &#34;json&#34;,
+            async: false,
+            data: {&#34;num&#34;:num,&#34;id&#34;:carid},
+            success: function(d) {
+               $(&#34;#zong&#34;+carid).html(&#34;￥&#34;+d);
+                doprice(); 
+            }
+      });
+
+    }
+}
+
+function car_price(carids,xz){
+    $.ajax({
+        url: &#34;/shop/car_price&#34;,
+        type: &#34;post&#34;,
+        dataType: &#34;json&#34;,
+        data: {&#34;carids&#34;:carids},
+        success: function(d) {
+           $(&#34;#yxsp1&#34;).html(&#34;￥&#34;+d);
+           $(&#34;#yxsp2&#34;).html(&#34;￥&#34;+d);
+           $(&#34;#yxsl2&#34;).html(xz);
+        }
+  }); 
+}
+
+$(function(){
+	var carid;
+    /*订单数量*/
+    $(&#34;.kucun #jia&#34;).click(function(){
+    	carid=($(this).attr(&#34;data&#34;));
+        var b=Number($(&#34;.kucun #shuliang&#34;+carid).val());
+        donum(carid,Number(b)+1);
+        if(b!=99){
+            $(&#34;.kucun #shuliang&#34;+carid).val(Number(b)+1);
+        }     
+    }) 
+    $(&#34;.kucun #jian&#34;).click(function(){
+    	carid=($(this).attr(&#34;data&#34;));
+        var b=Number($(&#34;.kucun #shuliang&#34;+carid).val());
+        if(b&gt;1){
+            $(&#34;.kucun #shuliang&#34;+carid).val(Number(b)-1);
+            donum(carid,Number(b)-1);
+        }
+    })
+    
+
+    $(&#34;#jiesuan1&#34;).click(function(){
+        let carids=0;
+        let xz=0;
+        $(&#39;input[name=&#34;checkbox&#34;]&#39;).each(function(){
+            if($(this).prop(&#34;checked&#34;)==true){
+                carids +=&#34;,&#34;+$(this).val();
+                xz++;
+            }
+        });
+        if(xz==0){
+            alert(&#34;请选择商品！&#34;);
+        }else{
+            $(&#34;#carids&#34;).val(carids);
+            $(&#34;#do_order&#34;).submit();
+           // window.location.reload()
+        }
+    })
+
+    $(&#34;#jiesuan2&#34;).click(function(){
+        let carids=0;
+        let xz=0;
+        $(&#39;input[name=&#34;checkbox&#34;]&#39;).each(function(){
+            if($(this).prop(&#34;checked&#34;)==true){
+                carids +=&#34;,&#34;+$(this).val();
+                xz++;
+            }
+        });
+        if(xz==0){
+            alert(&#34;请选择商品！&#34;);
+        }else{
+            $(&#34;#carids&#34;).val(carids);
+            $(&#34;#do_order&#34;).submit();
+           // window.location.reload()
+        }
+    })
+
+    // $(&#34;.sc_gwc&#34;).click(function(){
+	   //  $(&#34;.sc_gwc&#34;).attr(&#39;disabled&#39;,&#39;disabled&#39;);
+	   //  $(&#34;#add_car&#34;).submit();
+    // })
+    // $(&#34;.sc_btn&#34;).click(function(){
+	   //  $(&#34;.sc_btn&#34;).attr(&#39;disabled&#39;,&#39;disabled&#39;);
+	   //  $(&#34;#add_car&#34;).attr(&#34;action&#34;,&#34;Shop/goumai&#34;);;
+	   //  $(&#34;#add_car&#34;).submit();
+    // })
+
+})
+&lt;/script&gt;
+&lt;!--底部--&gt;
+&lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+
+&lt;div class=&#34;footer&#34;&gt;
+&lt;div class=&#34;foot_con&#34;&gt;
+	&lt;img  class=&#34;foot_l&#34; src=&#34;/Public/new/images/xyj_21.jpg&#34; /&gt;
+    &lt;div class=&#34;foot_r&#34;&gt;
+    &lt;div class=&#34;foot_zz&#34;&gt;&lt;/div&gt;
+    	&lt;div class=&#34;foot_r_l&#34; style=&#34;width:200px;&#34;&gt;
+        	&lt;li&gt;&lt;a href=&#34;/article/cateshow/cid/523.html&#34;&gt;服务条款&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&#34;/article/cateshow/cid/533.html&#34;&gt;隐私策略&lt;/a&gt;&lt;/li&gt;
+        &lt;!--     &lt;li&gt;&lt;a href=&#34;/article/cateshow/cid/523.html&#34;&gt;服务介绍&lt;/a&gt;&lt;/li&gt; --&gt;
+          &lt;!--  
+            &lt;li&gt;&lt;a href=&#34;/article/cateshow/cid/523.html&#34;&gt;撰写指南&lt;/a&gt;&lt;/li&gt; --&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;foot_r_l&#34; style=&#34;width:400px; margin-left:40px;&#34;&gt;
+        	  &lt;li&gt;&lt;a href=&#34;/invest/index.html&#34;&gt;渔业养殖&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/zhongzhi/index.html&#34;&gt;联合种植&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/shop&#34;&gt;海产商城&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/article/news_list.html&#34;&gt;最新资讯&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/article/video.html&#34;&gt;视频直播&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/article/active.html&#34;&gt;活动公告&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/article/about.html&#34;&gt;关于我们&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;/member/index/index.html&#34;&gt;会员中心&lt;/a&gt;&lt;/li&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;foot_r_r&#34;&gt;
+        
+        &lt;div class=&#34;ftm_ewm&#34;&gt;
+                	&lt;img src=&#34;/Public/web/img/shouye/erwei-w.png&#34; /&gt;
+        &lt;/div&gt;     
+        	微信公众号
+        &lt;/div&gt;
+       &lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+       &lt;div class=&#34;foot_ry&#34;&gt;
+       &lt;a target=&#34;_blank&#34; &gt;&lt;img src=&#34;/Public/new/images/xyj_28.jpg&#34; /&gt;&lt;/a&gt;
+
+       &lt;a target=&#34;_blank&#34; &gt;&lt;img src=&#34;/Public/new/images/gg_07.png&#34; /&gt;&lt;/a&gt;
+
+       &lt;a target=&#34;_blank&#34; &gt;&lt;img src=&#34;/Public/new/images/gg_09.png&#34; /&gt;&lt;/a&gt;
+
+
+        
+       &lt;/div&gt;
+       &lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+       &lt;div class=&#34;foot_bq&#34;&gt;
+       	寻渔记-日照铭万网络科技有限公司版权所有       &lt;a href=&#34;http://www.beian.miit.gov.cn&#34; style=&#34;color:#fff;&#34;  target=&#34;_blank&#34;&gt;鲁公网安备 37110302000118号       鲁ICP备17003630号-1&lt;/a&gt;
+       &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;scroll&#34; style=&#34;display: none; &#34;&gt; 
+  &lt;a class=&#34;top&#34; href=&#34;javascript:void(0)&#34;&gt;&lt;img src=&#34;images/top.jpg&#34;&gt;&lt;span&gt;返回顶部&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;script&gt;
+
+window.onload = function () {
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement(&#34;script&#34;);
+  hm.src = &#34;https://hm.baidu.com/hm.js?55018a7c810a0920c9997b042f7da876&#34;;
+  var s = document.getElementsByTagName(&#34;script&#34;)[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+
+var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement(&#34;script&#34;);
+        hm.src = &#34;https://hm.baidu.com/hm.js?9bf93af51e6ba9068b243c8dd28870b3&#34;;
+        var s = document.getElementsByTagName(&#34;script&#34;)[0];
+        s.parentNode.insertBefore(hm, s);
+})();
+
+
+}
+
+
+&lt;/script&gt;
+
+</pre></div>
+            </div>
+          </div>
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_3">
+      <th class="failure" style="width:5em;">failure</th>
+      <td colspan="2">do_order</td>
+      <td style="text-align:center;width:6em;">93.81 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_3_1">log-1</a>
+        <div id="popup_log_1_3_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_3_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: do_order</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://www.rzmwzc.com/shop/do_order
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;HRUN-Request-ID&#34;: &#34;423ff644-8fa3-4f1d-8d7f-73da3446778a&#34;,
+  &#34;Cookie&#34;: &#34;PHPSESSID=52mh7neif7hijrhec1mt7actn6; fz_area=1&#34;,
+  &#34;Content-Length&#34;: &#34;98&#34;,
+  &#34;Content-Type&#34;: &#34;application/x-www-form-urlencoded&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>carids=0%252C0%252C3765&amp;__hash__=fb014887c9a0d9513c4d1943dfa47360_51a7e052fbf379c66f3af3e7fe30f735</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://www.rzmwzc.com/shop/do_order
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;nginx/1.8.1&#34;,
+  &#34;Date&#34;: &#34;Thu, 16 Apr 2020 08:22:12 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;text/html; charset=utf-8&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Vary&#34;: &#34;Accept-Encoding&#34;,
+  &#34;X-Powered-By&#34;: &#34;ZihaiFx&#34;,
+  &#34;Set-Cookie&#34;: &#34;lzh_think_template=default; expires=Thu, 16-Apr-2020 09:22:12 GMT; Max-Age=3600; path=/; domain=tiannongtuan.com&#34;,
+  &#34;Expires&#34;: &#34;Thu, 19 Nov 1981 08:52:00 GMT&#34;,
+  &#34;Cache-Control&#34;: &#34;private&#34;,
+  &#34;Pragma&#34;: &#34;no-cache&#34;,
+  &#34;Content-Encoding&#34;: &#34;gzip&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            text/html; charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>&lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Transitional//EN&#34; &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&#34;&gt;
+&lt;html xmlns=&#34;http://www.w3.org/1999/xhtml&#34;&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html; charset=utf-8&#34; /&gt;
+&lt;title&gt;提示信息&lt;/title&gt;
+&lt;style type=&#34;text/css&#34;&gt;
+	*{margin:0; padding:0;}
+	body{font-size:12px; color:#000; background:#fff; font-style:normal !important;}
+	img{border:none;}
+	a{text-decoration:none; color:#000;}
+	a:hover{text-decoration:none; color:#000;}
+	li{list-style:no ... OMITTED 1442 CHARACTORS ...</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>2058</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>93.81</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>101.285</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+          <a class="button" href="#popup_attachment_1_3">traceback</a>
+          <div id="popup_attachment_1_3" class="overlay">
+            <div class="popup">
+              <h2>Traceback Message</h2>
+              <a class="close" href="#record_1_3">&times;</a>
+              <div class="content"><pre>Traceback (most recent call last):
+  File &#34;d:\python37\lib\site-packages\httprunner\api.py&#34;, line 69, in test
+    test_runner.run_test(test_dict)
+httprunner.exceptions.ExtractFailure: Failed to extract data with regex! =&gt; onclick=&#34;checkon(this)&#34; value=&#34;(.*?)&#34; class=&#34;gwc_qx&#34;
+response body: &lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Transitional//EN&#34; &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&#34;&gt;
+&lt;html xmlns=&#34;http://www.w3.org/1999/xhtml&#34;&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html; charset=utf-8&#34; /&gt;
+&lt;title&gt;提示信息&lt;/title&gt;
+&lt;style type=&#34;text/css&#34;&gt;
+	*{margin:0; padding:0;}
+	body{font-size:12px; color:#000; background:#fff; font-style:normal !important;}
+	img{border:none;}
+	a{text-decoration:none; color:#000;}
+	a:hover{text-decoration:none; color:#000;}
+	li{list-style:none;}
+	.sucess{width:604px; height:221px; background:url(/Style/tip/images/bg1.png) no-repeat; margin:0 auto; position:absolute; left:50%; top:100px; margin-left:-302px;}
+	.spec1{ text-align:right; padding-right:19px; padding-top:17px; position:relative;}
+	.spec1 a{ position:absolute; top:15px; right:20px; height:22px; width:22px; display:block;}
+	.spec2{font-size:20px; font-family:微软雅黑; color:#4d824d; text-align:center; padding-top:20px; padding-bottom:20px; font-weight:bold;}
+	.spec3{font-size:14px; color:#4d4a4a; text-align:center; font-family:微软雅黑;}
+	.spec3 a{color:#a6292c;}
+	.spec3 span{color:#a6292c;}
+	.shibai{width:604px; height:221px; background:url(/Style/tip/images/bg2.png) no-repeat; margin:0 auto;position:absolute; left:50%; top:50%; margin-top:-110px; margin-left:-302px;}
+	.spec4{font-size:24px; font-family:微软雅黑; color:#a2292b; text-align:center; padding-top:20px; padding-bottom:20px;font-weight:bold;}
+&lt;/style&gt;
+&lt;script&gt;
+function Jump(){
+    window.location.href = &#39;javascript:history.back(-1);&#39;;
+}
+document.onload = setTimeout(&#34;Jump()&#34; , 3* 1000);
+&lt;/script&gt;
+&lt;base target=&#34;_self&#34; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&#34;shibai png&#34;&gt;
+      &lt;p class=&#34;spec1&#34;&gt;&lt;a href=&#34;javascript:history.back(-1);&#34;&gt;&lt;/a&gt;&lt;img src=&#34;/Style/tip/images/gb2.png&#34; class=&#34;png&#34; /&gt;&lt;/p&gt;
+      &lt;p class=&#34;spec4&#34;&gt;数据错误请重新下单！&lt;/p&gt;
+      &lt;p class=&#34;spec3&#34;&gt;系统将在&lt;span&gt;3&lt;/span&gt;秒后自动跳转，如果不想等待，直接点击&lt;a href=&#34;javascript:history.back(-1);&#34;&gt;这里&lt;/a&gt;跳转&lt;/p&gt;
+  &lt;/div&gt;&lt;/body&gt;
+&lt;/html&gt;
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &#34;d:\python37\lib\site-packages\httprunner\api.py&#34;, line 71, in test
+    self.fail(str(ex))
+AssertionError: Failed to extract data with regex! =&gt; onclick=&#34;checkon(this)&#34; value=&#34;(.*?)&#34; class=&#34;gwc_qx&#34;
+response body: &lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Transitional//EN&#34; &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&#34;&gt;
+&lt;html xmlns=&#34;http://www.w3.org/1999/xhtml&#34;&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html; charset=utf-8&#34; /&gt;
+&lt;title&gt;提示信息&lt;/title&gt;
+&lt;style type=&#34;text/css&#34;&gt;
+	*{margin:0; padding:0;}
+	body{font-size:12px; color:#000; background:#fff; font-style:normal !important;}
+	img{border:none;}
+	a{text-decoration:none; color:#000;}
+	a:hover{text-decoration:none; color:#000;}
+	li{list-style:none;}
+	.sucess{width:604px; height:221px; background:url(/Style/tip/images/bg1.png) no-repeat; margin:0 auto; position:absolute; left:50%; top:100px; margin-left:-302px;}
+	.spec1{ text-align:right; padding-right:19px; padding-top:17px; position:relative;}
+	.spec1 a{ position:absolute; top:15px; right:20px; height:22px; width:22px; display:block;}
+	.spec2{font-size:20px; font-family:微软雅黑; color:#4d824d; text-align:center; padding-top:20px; padding-bottom:20px; font-weight:bold;}
+	.spec3{font-size:14px; color:#4d4a4a; text-align:center; font-family:微软雅黑;}
+	.spec3 a{color:#a6292c;}
+	.spec3 span{color:#a6292c;}
+	.shibai{width:604px; height:221px; background:url(/Style/tip/images/bg2.png) no-repeat; margin:0 auto;position:absolute; left:50%; top:50%; margin-top:-110px; margin-left:-302px;}
+	.spec4{font-size:24px; font-family:微软雅黑; color:#a2292b; text-align:center; padding-top:20px; padding-bottom:20px;font-weight:bold;}
+&lt;/style&gt;
+&lt;script&gt;
+function Jump(){
+    window.location.href = &#39;javascript:history.back(-1);&#39;;
+}
+document.onload = setTimeout(&#34;Jump()&#34; , 3* 1000);
+&lt;/script&gt;
+&lt;base target=&#34;_self&#34; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&#34;shibai png&#34;&gt;
+      &lt;p class=&#34;spec1&#34;&gt;&lt;a href=&#34;javascript:history.back(-1);&#34;&gt;&lt;/a&gt;&lt;img src=&#34;/Style/tip/images/gb2.png&#34; class=&#34;png&#34; /&gt;&lt;/p&gt;
+      &lt;p class=&#34;spec4&#34;&gt;数据错误请重新下单！&lt;/p&gt;
+      &lt;p class=&#34;spec3&#34;&gt;系统将在&lt;span&gt;3&lt;/span&gt;秒后自动跳转，如果不想等待，直接点击&lt;a href=&#34;javascript:history.back(-1);&#34;&gt;这里&lt;/a&gt;跳转&lt;/p&gt;
+  &lt;/div&gt;&lt;/body&gt;
+&lt;/html&gt;
+
+</pre></div>
+            </div>
+          </div>
+        
+
+      </td>
+    </tr>
+  
+  </table>
+  
+</body>

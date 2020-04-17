@@ -1,0 +1,21 @@
+# 获取订单的信息
+name: get_order_msg
+base_url: https://www.rzmwzc.com
+variables:
+    carids: xxx
+    hash_code: xxx
+request:
+    headers:
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: keep-alive
+    url: /shop/do_order
+    method: POST
+    data:
+        carids: ${change_carids($carids)}
+        __hash__: $hash_code
+    verify: False
+extract:
+    - jifen: 'id="jifen" value="(.*?)" />'
+    - jine: 'id="jine" value="(.*?)"/>'
+validate:
+    - eq: ["status_code", 200]

@@ -1,0 +1,19 @@
+# 取消订单测试用例
+- config:
+    name: Cancel Order
+
+# 引用提交订单用例               
+- test:  
+    name: post_order
+    testcase: testcases/test_pay.yml
+
+# 取消订单
+- test:  
+    name: cancel_order
+    api: api/cancel_order.yml
+    variables:
+        ordernums: $ordernums
+    extract:
+        - msg: '<p class="spec2">(.*?)</p>'
+    validate:
+        - eq: [$msg, 处理成功]

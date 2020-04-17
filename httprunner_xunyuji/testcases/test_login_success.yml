@@ -1,0 +1,21 @@
+# 测试登录成功用例
+- config:
+    name: TestLogin
+    variables:
+        user: ${ENV(user)}
+        psw: ${ENV(psw)}
+
+# 打开首页(自动获取cooikes) 
+- test:
+    name: get_cookies
+    api: api/home.yml
+
+# 登录
+- test:
+    name: login_success
+    api: api/login.yml
+    variables:
+        user: $user
+        psw: $psw
+    validate:
+      - eq: [content.status, 1]

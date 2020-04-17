@@ -1,0 +1,17 @@
+# 选择任意商品接口
+name: choose goods
+base_url: https://www.rzmwzc.com
+request:
+  headers:
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0
+    Connection: keep-alive
+variables:
+    expected_status_code: 200
+request:
+    url: /shop/shop_show
+    method: GET
+    params:
+        id: ${rand()}
+    verify: False
+validate:
+    - eq: ["status_code", $expected_status_code]

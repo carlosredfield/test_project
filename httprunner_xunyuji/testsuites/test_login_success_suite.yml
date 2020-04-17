@@ -1,0 +1,7 @@
+# 登录成功测试用例集
+config:
+  name: TestLoginSuccessSuite
+
+testcases:
+  case1:
+    testcase: /testcases/test_login_success.yml

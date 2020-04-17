@@ -1,0 +1,33 @@
+# 修改个人设置接口
+name: pensonal_setting
+base_url: https://www.rzmwzc.com
+
+variables:
+    user_name: hunter
+    real_name: 猎人
+    idcard: 441801197608160017
+    sex: 女
+    user_type: 1
+    riskint: 3
+    company_name: 君达集团
+    company_idcard: 
+    token: XXX
+request:
+    headers:
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: keep-alive
+    url: /member/Memberinfo/savexixi
+    method: POST
+    verify: False
+    data: 
+        user_name: $user_name
+        real_name: $real_name
+        idcard: $idcard
+        sex: $sex
+        user_type: $user_type
+        riskint: $riskint
+        company_name: $company_name
+        company_idcard: $company_idcard
+        token: $token
+validate:
+    - eq: ["status_code", 200]

@@ -1,0 +1,26 @@
+# 提交订单接口
+name: post_order
+base_url: https://www.rzmwzc.com
+variables:
+    address: 636
+    carids: 3766
+    pay_way: 1
+    jifen: 0
+    jine: 50
+    liuyan: abc
+request:
+    headers:
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: keep-alive
+    url: /shop/post_order 
+    method: POST
+    data: 
+        address: $address
+        carids: $carids
+        pay_way: $pay_way
+        jifen: $jifen
+        jine: $jine
+        liuyan: $liuyan
+    verify: False
+validate:
+    - eq: ["status_code", 200]

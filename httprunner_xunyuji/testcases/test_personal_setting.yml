@@ -1,0 +1,44 @@
+# 测试修改个人信息用例
+- config:
+    name: TestPersonalSetting
+    variables:
+        user_name: master
+        real_name: 秦始皇
+        idcard: 441801197608160017
+        sex: 男
+        user_type: 1
+        riskint: 3
+        company_name: 雪山集团
+        company_idcard: 
+        token: XXX
+
+# 引用登录成功用例
+- test:
+    name: login_success
+    testcase: testcases/test_login_success.yml
+
+# 获取token
+- test:
+    name: get_token
+    api: api/get_token.yml
+
+# 修改个人信息
+- test:
+    name: change_pensonal_setting
+    api: api/personal_setting.yml
+    variables:
+        user_name: $user_name
+        real_name: $real_name
+        idcard: $idcard
+        sex: $sex
+        user_type: $user_type
+        riskint: $riskint
+        company_name: $company_name
+        company_idcard: $company_idcard
+        token: $token
+    extract:
+        - msg: '<p class="spec2">(.*?)</p>'
+    validate:
+        - eq: [$msg, 修改成功]
+    
+

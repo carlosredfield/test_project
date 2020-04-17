@@ -1,0 +1,16 @@
+# 浏览商品接口
+name: shop
+base_url: https://www.rzmwzc.com
+request:
+  headers:
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0
+    Connection: keep-alive
+  verify: False
+variables:
+    expected_status_code: 200
+request:
+    url: /shop
+    method: GET
+validate:
+    - eq: ["status_code", $expected_status_code]
+

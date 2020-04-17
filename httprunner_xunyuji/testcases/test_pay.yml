@@ -1,0 +1,36 @@
+# 测试结算用例
+- config:
+    name: TestPay
+    variables:
+        address: 636
+        carids: 000
+        pay_way: 1
+        jifen: 0
+        jine: 100
+        liuyan: efg
+    output:
+        - ordernums
+
+# 引用购物车结算结算用例               
+- test:  
+    name: do_order
+    testcase: testcases/test_do_order.yml
+
+# 提交订单
+- test:  
+    name: post_order
+    api: api/post_order.yml
+    variables:
+        address: $address
+        carids: $carids
+        pay_way: $pay_way
+        jifen: $jifen
+        jine: $jine
+        liuyan: $liuyan
+    extract:  # 获取订单号
+        - ordernums: content.ordernums
+
+    validate:
+        - eq: ["status_code", 200]
+        - eq: [content.msg, 操作成功]
+        - eq: [content.status, '1']

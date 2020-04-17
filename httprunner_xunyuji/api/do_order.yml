@@ -1,0 +1,18 @@
+# 购物车结算接口
+name: do_order
+base_url: https://www.rzmwzc.com
+variables:
+    carids: xxx
+    hash_code: xxx
+request:
+  headers:
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0
+    Connection: keep-alive
+  url: /shop/do_order 
+  method: POST
+  verify: False
+  data:
+    carids: ${change_carids($carids)}
+    __hash__: $hash_code
+validate:
+    - eq: ["status_code", 200]

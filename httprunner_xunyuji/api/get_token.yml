@@ -1,0 +1,16 @@
+# 获取token接口
+name: get_token
+base_url: https://www.rzmwzc.com
+request:
+    headers:
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: keep-alive
+    url: /Member/memberinfo/index.html
+    method: GET
+    verify: False
+variables:
+    expected_status_code: 200
+extract:
+    - token: 'type="hidden" name="token" value="(.*?)" />'
+validate:
+    - eq: ["status_code", $expected_status_code]

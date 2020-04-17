@@ -1,0 +1,4147 @@
+骑士计划
+
+1. DJango登录示例
+    1.fomm表单提交数据的三个要点
+        1.form标签要有 action和 method属性,如果有文件的话还需要设置 enctype属性
+        2.获取用户输入的标签必须要设置name属性
+        3.form标签中必须有 submi按钮
+2. request
+    1. request. POST
+    类似于字典,可以按照字典的方式取值
+    2. request method
+    >得到请求的方法(全大写)
+3.基础必会三件套
+    from django shortcuts import Httpresponse, render redirect
+    1.httpresponse >返回字符串
+    2. render >返回HTML
+        1. render(request, 'index. html')
+        2. render(request, 'login.html,['error msg: error msg))
+    3. redirect 重定向(跳转)
+        1. redirect('/ index/")->在同一个网站的不同的地址之间跳转
+        2. redirect(htps:www.uffvcity,com')-->跳转到具体的URL
+
+
+获取请求所有内容
+print(request.POST)
+request.POST['wmail']
+pwd = request.POST.get('pwd',None)#取不到为None
+
+request.method返回的是http请求的方法
+
+
+
+ORM对象关系映射
+面向对象，关系型数据库
+
+新的语法，不需要我们自己写sql语句，帮我们翻译成sql语句
+
+开发效率高、容易掌握、容易移植，缺点代码执行效率低
+
+ORM重点
+类        数据表
+属性      字段
+对象      数据行
+
+
+使用mysql数据库
+setting.py
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+改为
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 数据库名称,
+        'HOST':'127.0.0.1',
+        'PORT':3306,
+        'USER':'root',
+        'PASSWORD':''
+    }
+}
+
+在和setting.py同级的__init__.py中
+
+import pymysql
+
+pymysql.install_as_MySQLdb()#使用pymysql代替默认的MySQLdb
+
+
+models.py
+
+class userinfo(models.Model):
+    id = models.AutoField(primary_key=True)
+    username = models.CharField(max_length=20)#varchar=20
+    password = models.CharField(max_length=20)
+
+python.manage.py makemigrations #看看有哪些变更
+python.manage.py migrate        #把变更记录翻译成sql语句并去数据库执行
+
+命令行mysql查看
+
+mysql>show datatable;
+
+
+删除表只需注释掉就行
+
+
+实例：
+在login表单中输入username：380983372@qq.com,password：123
+
+from models import userinfo
+
+def login（request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        pwd = request.POST.get('pwd')
+        #去数据库中以email和pwd为条件检索
+        res = userinfo.objects.filter(username=username,password=pwd)
+        if res:
+            #登录成功
+            return redirct(xxx)
+        else:
+            #登录失败
+            return redirct(xxx)
+    return render(request,'login.html')
+
+
+增
+前端：
+后端：
+if request.method == 'POST':
+    new_name = request.POST.get('name')
+    userinfo.object.create(name=new_name)
+    return redirct(xxx)
+return render(request,'login.html')
+
+删
+前端：在http中url添加参数
+<a href="/delete_name/?id={{name.id}}">删除</a>
+后端：
+def delete_name(request):
+    delete_id = request.GET.get('id')
+    userinfo.object.filter(id=delete_id).delete()
+    return redirct(xxx)
+return render(request,'login.html')
+
+
+改
+前端：
+<input type="text" name="id" value="{{obj.id}}" style="display:none">
+<input type="text" name="change_username" value="{{obj.name}}">
+后端：
+def change_name(request):
+    if request.method == 'POST':
+        #1取得修改后的数据
+        edit_id = request.POST.get('id')
+        new_name = request.POST.get('change_username')
+        #2去数据库更新一下
+        edit_obj = userinfo.object.get(id=edit_id)
+        edit_obj.name = new_name
+        edit_obj.save()
+        #3.给用户展示
+        return return redirct(xxx)
+    修改完重新获取展示
+    edit_id = request.POST.get('id')
+    ret = userinfo.object.get(id=edit_id)
+    return render(request,'edit.html',{'obj':ret})
+
+总结
+查
+类名.objects.all()          返回所有数据
+类名.objects.filter(条件)   返回列表
+类名.objects.get(条件)      返回对象
+
+增
+类名.objects.create()
+
+删
+类名.objects.filter(条件).delete()
+类名.objects.get(条件).delete()
+
+改
+1.
+    obj = 类名.objects.get(条件)
+    obj.属性 = '新值'
+    obj.save()
+2.update
+    类名.objects.filter(条件).update(字段='新值')
+
+
+外键
+models.ForeignKey(to='外键名')
+ORM在数据库中给外键字段自动添加_id
+
+book_obj.publisher -> 书籍关联的出版社对象
+book_obj.publisher_id -> 书籍关联的出版社id
+
+
+
+django的模板语言{{ }}变量{% %}
+filter
+{{ age|default:'保密'}} 不填默认保密
+{{ name|length }}       计算长度
+{{ name|slice:'0:2'}}   切片截取0-1个字符
+{{ now|date:'Y-m-d H:i:s'}}
+{{ a|safe }}            不输出html标签
+{{ name|cut:'a' }}      把字符串的a都去掉
+{{ list|join:',' }}     给列表的字符用，链接起来
+
+
+自定义filter
+app下新建templatetags包
+在里面新建filter.py
+
+from django import templates
+register = template.Library()
+
+@register.filter()
+def sb(value):
+    return value + 'sb'
+
+在html文件中导入
+{% load filter %}
+引用：{{name|sb}}
+
+forloop.counter     当前循环的索引值
+forloop.counter0    从0开始
+forloop.revcounter  反过来
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Django中文文档说明
+https://docs.djangoproject.com/zh-hans/3.0/
+
+2019 / 12 / 31
+
+django基本知识：
+
+创建项目
+cmd D: \django_project > django - admin startproject mysite
+
+工作方式：客户端(打开网址发送请求)->urls(处理请求)->Views(响应请求，返回内容)->客户端
+
+views.py:
+from django.http import HttpResponse
+
+
+def index(requests):
+    return HttpResponse('tianjiao')
+
+
+urls.py:
+from django.contrib import admin
+from django.urls import path
+from . import Views  # 导入刚刚写好的views.py
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('tian/', views.index),  # 对应views的index方法
+]
+
+python manage.py runserver  # 启动本地服务
+
+# 同步db.sqlite3数据库
+python manage.py migrate
+
+# 创建超级管理员
+python manage.py createsuperuser
+
+
+django基本应用结构：
+1、如果页面比较多，有相似内容
+数据 + 模板
+
+
+python manage.py startapp article
+新建artilce文件夹
+
+编辑models.py
+from django.db import models
+
+
+class Article(models.Model):  # title、content为数据库字段
+    title = models.CharField(max_length=30)  # 对应标题
+    content = models.TextField()  # 对应内容
+
+
+setting.py
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'article'  # 加入新建的app
+
+    LANGUAGE_CODE= 'zh-hans'  # 可以设置页面为中文
+    TIME_ZONE= 'Asia/Shanghai'  # 时区变中国
+    USE_TZ = False #不受ajax等其他影响时间
+
+
+    执行命令
+    python manage.py makemigrations  # 制造迁移
+    python manage.py migrate  # 迁移
+
+    在后台得以应用
+    编辑article文件夹下的admin
+    from django.contrib import admin
+    from .models import Article
+    # Register your models here.
+    admin.site.register(Article)  # 注册Article
+    在后台刷新就能看到Article了，点进去可以添加标题文章
+
+
+
+
+
+
+
+    使用模板显示内容：
+    如何通过一个处理方法获取？
+    文章唯一标识：在article.migrations.0001_initial.py文件下
+    ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+
+    article.views.py
+    from django.shortcuts import render
+    from django.http import HttpResponse
+
+    def article_datail(requests, article_id):  # 定义文章id
+    return HttpResponse('文章id:%s' % article_id)
+
+
+    mysite.urls.py
+    from django.contrib import admin
+    from django.urls import path
+    from . import views
+    from article.views import article_detail
+    urlpatterns= [
+        path('admin/', admin.site.urls),
+        path('tian/', views.index),
+        path('article/<int:article_id>', article_detail, name='av头条'),
+        # 引用文章id，name(起别名)
+    ]
+
+    python manage.py runserver
+    输入http: // 127.0.0.1:8000 / article / 1 - ->文章id:1
+
+
+    模型的objects是获取或操作模型的对象
+    Article.objects.get(条件)
+    Article.objects.all()
+    Article.objects.filter(条件)
+
+    article.views.py  # 更改
+    from django.shortcuts import render
+    from django.http import HttpResponse
+    from article.models import Article
+
+    def article_detail(requests, article_id):
+    article = Article.objects.get(id=article_id)  # id为数据库所建的id
+    return HttpResponse('<h2>文章标题:%s</h2><br>文章内容:%s' % (article.title, article.content))
+
+    文章标题:最佳女优
+    文章内容:桥本有菜
+
+    如果输入不存在的页面返回的响应不友好，所以要判断是否有正确页面
+    from django.shortcuts import render
+    from django.http import HttpResponse, Http404
+    from article.models import Article
+
+    def article_detail(requests, article_id):
+    try:
+        article = Article.objects.get(id=article_id)  # id为数据库所建的id
+    except Article.DoesNotExist:
+        raise Http404('404啊，你找不到我')
+    return HttpResponse('<h2>文章标题:%s</h2><br>文章内容:%s' % (article.title, article.content))
+
+
+    使用模板：前端页面和后端代码分离，减低耦合性
+    在article文件夹新建文件夹templates新建文件article_detail.html
+
+    from django.shortcuts import render  # 简化版,render_to_response
+    from django.http import HttpResponse, Http404
+    from article.models import Article
+
+    def article_detail(requests, article_id):
+    try:
+        article = Article.objects.get(id=article_id)  # id为数据库所建的id
+        context = {}
+        context['article_obj'] = article
+        return render(requests, 'article_detail.html', context)
+        # 简化版return render_to_response('article_detail.html',context)
+    except Article.DoesNotExist:
+        raise Http404('404啊，你找不到我')
+
+    article_detail.html
+    <!DOCTYPE html >
+    < html >
+    < head >
+    < / head >
+    < body >
+        < h2 > {{article_obj.title}} < /h2 >  # 引用
+        < p > {{article_obj.content}} < /p >
+    < / body >
+    < / html >
+
+    最精简版：
+    from django.shortcuts import render, get_object_or_404
+    from article.models import Article
+
+    def article_detail(requests, article_id):
+        article = get_object_or_404(Article, pk=article_id)  # 找不到自动报404
+        context = {}
+        context['article_obj'] = article
+        return render(requests, 'article_detail.html', context)
+
+    获取文章列表
+    from django.shortcuts import render, get_object_or_404
+    from article.models import Article
+
+    def article_detail(requests, article_id):
+    article = get_object_or_404(Article, pk=article_id)  # 找不到自动报404
+    context = {}
+    context['article_obj'] = article
+    return render(requests, 'article_detail.html', context)
+
+    def article_list(requests):
+    articles = Article.objects.all()
+    # articles = Article.objects.filter(is_deleted=False)#过滤显示被删除的
+    context = {}
+    context['articles'] = articles
+    return render(request, 'article_detail.html', context)
+
+    去路由器urls.py编辑添加路径和方法
+        from article.views import article_detail, article_list
+        path('article/', article_list, name='av头条列表'),
+
+    在templates创建article_list.html
+    < html >
+    < head >
+    < / head >
+    < body >
+        { % for article in articles % } #for循环
+    < a href= "{% url 'av头条' article.id %}" > {{article.title}} < /a >
+    # 引用url的别名av头条函数里面的id
+        { % endfor % }                  #结束for循环
+    < /body >
+    < / html >
+
+    最佳女优 最佳美腿 最佳秘书
+
+    总urls包含app的urls
+        - app1
+    总 - --app2
+        - app3
+
+    在article文件夹下新建urls.py，从总的urls.py中剪切过来
+    article.urls.py
+    from django.urls import path
+    from . import views
+    urlpatterns= [
+        path('article/<int:article_id>', views.article_detail, name='av头条'),
+        path('article/', views.article_list, name='av头条列表'),
+    ]
+
+    总urls.py改成以下方式
+    from django.contrib import admin
+    from django.urls import include, path  # 引入include
+    from . import views
+    from article.views import article_detail, article_list
+    urlpatterns= [
+        path('admin/', admin.site.urls),
+        path('tian/', views.index),
+        path('article/', include('article.urls'))  # 注意
+    ]
+
+
+    article.urls.py最终改为：
+    from django.urls import path
+    from . import views
+    urlpatterns= [
+        #localhost:8000/article/ 当前路径
+        path('', views.article_list, name='av头条列表'),
+        path('<int:article_id>', views.article_detail, name='av头条'),
+    ]
+
+
+
+
+
+
+
+    订制后台和修改模型：
+
+    一、订制admin后台: 1、设置模型__str__ 2、订制admin
+
+    1、设置__str__
+    未改前：
+        选择 article 来修改
+        Article
+    Article object(3)
+    Article object(2)
+    Article object(1)
+
+    到article.models增加
+    def __str__(self):
+        return "<Article:%s>" % self.title
+    修改后：
+        选择 article 来修改
+        Article
+    < Article:最佳秘书 >
+    < Article:最佳美腿 >
+    < Article:最佳女优 >
+
+    2、订制admin
+    acticle.admin.py
+
+    from django.contrib import admin
+    from .models import Article
+
+    @admin.register(Article)  # 把Article注册到后台管理(二选一)
+    class ArticleAdmin(admin.ModelAdmin):  # admin定制类
+    list_display = ('id', 'title', 'content')  # 显示内容
+    ordering = ('id',)  # 根据id排序(元祖模式)'-id'表示倒序
+
+    # admin.site.register(Article, ArticleAdmin)把Article注册到后台管理(二选一)
+
+    选择 article 来修改
+
+    ID  Title   Content
+
+    1   最佳女优    桥本有菜
+    2   最佳美腿    桥本有菜
+    3   最佳秘书    三上悠雅
+
+
+    二、修改模型(数据库字段改变)
+    修改模型要更新数据库
+
+    先备份数据库db.sqlite3(复制粘贴副本)
+    打开article.models.py，增加字段
+
+    class Article(models.Model):
+    title = models.CharField(max_length=30)
+    content = models.TextField()
+    created_time= models.DateTimeField()  # 此为增加的
+
+    def __str__(self):
+        return "<Article:%s>" % self.title
+
+    python manage.py makemigrations  # 生成数据库文件
+    python manage.py migrate  # 再应用它
+
+    提示：
+    Please select a fix:
+    1) Provide a one - off default now(will be set on all existing rows with a null value for this column)
+    2) Quit, and let me add a default in models.py
+        Select an option: 1
+        Please enter the default value now, as valid Python
+        The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now
+        Type 'exit' to exit this prompt
+        原因：更新字段没有设置值，1为马上设置，2为退出再设置
+
+        选1：
+        >> > timezone.now
+        python manage.py migrate
+        在article.admin.py添加created_time字段
+
+        @admin.register(Article)  # 把Article注册到后台管理(二选一)
+        class ArticleAdmin(admin.ModelAdmin):  # admin定制类
+        list_display=('id', 'title', 'content', 'created_time')  # 显示内容
+        ordering=('id',)  # 根据id排序(元祖模式)'-id'表示倒序
+
+        # admin.site.register(Article, ArticleAdmin)把Article注册到后台管理(二选一)
+
+        python manage.py runserver
+
+        最新显示如下：
+
+        选择 article 来修改
+
+        ID Title  Content  Created time
+        1 最佳女优 桥本有菜 2019年12月31日 13: 42
+        2 最佳美腿 桥本有菜 2019年12月31日 13: 42
+        3 最佳秘书 三上悠雅 2019年12月31日 13: 42
+
+        选2：
+        先备份数据库db.sqlite3(复制粘贴副本)
+        打开article.models.py，增加字段
+
+        from django.utils import timezone
+        from django.contrib.auth.models import User  # 选泽导入
+
+        class Article(models.Model):
+        # 字符串
+        title=models.CharField(max_length = 30)
+        content=models.TextField()
+        # 时间类型
+        created_time=models.DateTimeField(default = timezone.now)
+        # default=timezone.now 设置默认值
+        #created_time = models.DateTimeField(auto_now_add=True)
+        # auto_now_add=True 当新增的时候自动添加现在的时间(固定)
+        last_update_time=models.DateTimeField(auto_now = True)
+        # auto_now=True自动用现在时间给这个值(会变)
+        author1=models.ForeignKey(User, on_delete = models.DO_NOTHING, default = 1)
+        # on_delete删除作者不删除其余文章，默认为1(1要延伸外键)
+        # 布尔类型
+        is_deleted=models.BooleanField(default = False)
+        # 整形
+        readed_num=models.IntegerField(default = 0)
+
+        def __str__(self):
+        return "<Article:%s>" % self.title
+
+        到article.admin.py修改字段
+        python manage.py makemigrations  # 生成数据库文件
+        python manage.py migrate  # 再应用它
+        python manage.py runserver
+
+        最新显示如下：
+        选择 article 来修改
+
+        ID Title Content Created time Last update time
+        1 最佳女优 桥本有菜 2019年12月31日 13: 42 2019年12月31日 14: 06
+        2 最佳美腿 桥本有菜 2019年12月31日 13: 42 2019年12月31日 14: 03
+        3 最佳秘书 三上悠雅 2019年12月31日 13: 42 2019年12月31日 14: 03
+
+
+        修改字段：
+        如发现字段写错，在models.py和其他需要的地方改正后
+        python manage.py makemigrations  # 生成数据库文件
+        y  # 同意
+        python manage.py migrate  # 再应用它
+
+
+
+
+
+
+        2020 / 01 / 01
+        开始完整制作网站(app可以理解成模块)
+        django - admin startproject myblog
+        cd myblog
+        django - admin startapp blog(建立blog模块)
+
+        初步创建blog应用
+        博文 + 博客分类
+        一篇博客一种分类√
+        一片博客多种分类
+
+        首先在blog.models.py
+        from django.db import models
+        from django.contrib.auth.models import User
+
+        class BlogType(models.Model):
+        type_name=models.CharField(max_length = 15)
+
+        class Blog(models.Model):
+        title=models.CharField(max_length = 30)
+        blog_type=models.ForeignKey(BlogType, on_delete = models.DO_NOTHING)
+        # 有外键，外键父类写前面
+        content=models.TextField()
+        author=models.ForeignKey(User, on_delete = models.DO_NOTHING)
+        created_time=models.DateTimeField(auto_now_add = True)
+        last_updated_time=models.DateTimeField(auto_now = True)
+
+
+        python manage.py migrate       迁移数据到数据库(初始化)
+        python manage.py createsuperuser
+        setting.py 增加blog app
+        python manage.py makemigrations(新增blog数据库和Blog和BlogType两个类)
+
+        Migrations for 'blog':
+        blog\migrations\0001_initial.py
+        - Create model BlogType
+        - Create model Blog
+        再同步数据库
+        python manage.py migrate
+
+        blog.admin.py中注册
+        from django.contrib import admin
+        from . models import BlogType, Blog
+
+        @admin.register(BlogType)
+        class BlogTypeAdmin(admin.ModelAdmin):
+        list_display=('id', 'type_name')
+
+        @admin.register(Blog)
+        class BlogAdmin(admin.ModelAdmin):
+        list_display=('title', 'blog_type', 'author', 'created_time', 'last_updated_time')
+
+        python.manage.py runserver
+
+
+
+
+
+
+
+        2020 / 0102
+
+        常用的模板标签和过滤器
+
+        blog.views.py
+
+        from django.shortcuts import render, get_list_or_404
+        from . models import Blog
+        # Create your views here.
+        def blog_list(requests):
+        context={}
+        context['blogs']=Blog.objects.all()
+        return render(requests, 'blog_list.html', context)
+
+        def blog_detail(requests, blog_pk):
+        context={}
+        context['blog']=get_list_or_404(Blog, pk = blog_pk)
+        return render(requests, 'blog_detail.html', context)
+
+        在blog文件夹新建文件夹templates，在内新建blog_list.html
+
+        <!DOCTYPE html >
+        < html >
+        < head >
+        < title > 我的网站 < /title >
+        < / head >
+        < body >
+    { % for blog in blogs % }
+        < h3 > {{blog.title}} < /h3 >
+        < p > {{blog.content}} < /p >
+    { % endfor % }
+        < /body >
+        < / html >
+
+        blog_detail.html
+        <!DOCTYPE html >
+        < html >
+        < head >
+        < title > {{blog.title}} < /title >
+        < / head >
+        < body >
+    { % for blog in blogs % }
+        < h3 > {{blog.title}} < /h3 >
+        < p > {{blog.content}} < /p >
+    { % endfor % }
+        < /body >
+        < / html >
+
+        blog新建urls.py
+        from django.urls import path
+        from . import views
+
+        # start with blog
+        urlpatterns=[
+    # http://localhost:8000/blog/1
+        path('<int:blog_pk>', views.blog_detail, name='blog_detail'),
+
+]
+
+
+    总url ->myblog.urls.py
+    from django.contrib import admin
+    from django.urls import path, include
+    from blog.views import blog_list
+    urlpatterns = [
+    path('', blog_list, name='home')  # 首页加入博客列表
+    path('admin/', admin.site.urls),
+    path('blog/', include('blog.urls')),
+]
+
+
+    新建博客类型网页：
+    首先定义网址
+    blog.urls.py
+    urlpatterns = [
+# http://localhost:8000/blog/1
+    path('<int:blog_pk>', views.blog_detail, name='blog_detail'),
+    path('type/<int:blog_type_pk>', views.blogs_with_type, name='blogs_with_type'),
+网址路径 + 显示页面views的方法 + 别名
+
+到views增加blogs_with_type方法
+
+
+def blogs_with_type(requests, blog_type_pk):
+    context = {}
+    blog_type = get_object_or_404(BlogType, pk=blog_type_pk)  # 博客类型的字段
+    context['blogs'] = Blog.objects.filter(blog_type=blog_type)  # 博客类型为bolg_type的每一篇文章
+    context['blog_type'] = blog_type
+    return render(requests, 'blogs_with_type.html', context)
+
+
+在templates文件夹新建响应页面'blogs_with_type.html'
+
+<!DOCTYPE html >
+<html >
+<head >
+    <title > {{blog_type.type_name}} < /title >
+< / head >
+<body >
+    <div >
+        <a href = "{% url 'home' %}" >
+            <h3 > 个人博客网站 < /h3 >
+        < / a >
+    < / div >
+    <hr >
+    <h3 > {{blog_type.type_name}} < /h3 >
+    { % for blog in blogs % }#通过博客类型字段过滤后的blogs
+        <a href = "{% url 'blog_detail' blog.pk %}" >
+        # 链接为blog_detail的页面。参数为blog的主键
+            <h3 > {{blog.title}} < /h3 >
+        < / a >
+        <p > {{blog.content | truncatechars: 30}} < /p >#过滤器，显示前30个字符
+    {% empty%}
+        <p > ---暂无博客，敬请期待 - -- < /p >
+    { % endfor % }
+    <p > 一共有{{blogs | length}}篇博客 < /p >
+    <p > {{blogs}} < /p >
+    <p > {{blog_type}} < /p >
+< / body >
+< / html >
+
+常用的过滤器：
+日期：date
+字数截取：truncatechars、truncatechars_html、
+truncatewords、trucatewords_html
+是否信任：safe
+长度：length
+
+
+
+
+
+
+
+模板嵌套
+1、常用模板标签
+循环：for
+条件：if、ifequal、ifnotequal
+链接：url
+模板嵌套：block、extends、include
+注释：{# #}
+
+
+temlpates新建一个base.html,里面装公共模板
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div>
+        <a href="{% url 'home' %}">
+            <h3>个人博客网站</h3>
+        </a>
+    </div>
+    <hr>
+    {% block content%}{% endblock %}
+</body>
+</html>
+
+其他模块嵌套：
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ blog.title }}
+{% endblock %}
+
+{% block content %}
+    <h3>{{ blog.title }}</h3>
+    <p>作者：{{ blog.author }}</p>
+    <p>发表日期：{{ blog.created_time|date:"Y-m-d H:i:s" }}</p>
+    <p>分类：
+        <a href="{% url 'blogs_with_type' blog.blog_type.pk %}">
+            {{ blog.blog_type }}
+        </a>
+    </p>
+    <p>{{ blog }}</p>
+    <p>{{ blog.content }}</p>
+    <p>{{ blog.blog_type.pk }}</p>
+{% endblock %}
+
+以上这都是局部的，建立全局模板:
+
+在项目根目录建立templates文件夹
+在setting.py
+TEMPLATES = [
+            'DIRS': [
+            os.path.join(BASE_DIR,'templates'),
+        ],
+
+把刚刚建立的base.html剪切过来
+在templates文件夹下再建一个属于bolg的文件夹放置blog的返回页面html
+templates->blog
+把之前blog->templates三个文件：
+blog_detail.html
+blog_list.html
+blogs_with_type.html
+剪切到templates->blog
+
+并在blog.views.py下更改文件
+return render(requests, 'blog/blog_list.html', context)
+return render(requests, 'blog/blog_detail.html', context)
+return render(requests, 'blog/blogs_with_type.html', context)
+
+
+
+
+
+
+
+2020/01/03
+
+使用css美化页面：
+建立首页页面链接
+from . import views
+urlpatterns = [
+    path('', views.home, name='home'),
+    path('admin/', admin.site.urls),
+    path('blog/', include('blog.urls')),
+]
+
+在总文件夹新建返回home页面views.py
+from django.shortcuts import render
+
+def home(requests):
+    context = {}
+    return render(requests, 'home.html', context)
+
+
+在根文件目录templates文件夹内新建home.html
+{% extends 'base.html '%}
+
+{% block title %}
+    我的网站|首页
+{% endblock %}
+
+{% block content %}
+    <h3>欢迎访问我的网站</h3>
+{% endblock %}
+
+
+引入css方式一：
+在head内加入
+<head>
+<style type="text/css"><style>
+</head>
+
+
+引入方式二：
+在根目录下新建static文件夹用于存放css和js等静态文件
+在总setting.py中设置静态文件路径
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+在static文件夹下创建base.css
+* {
+    margin: 0;
+    padding:0;
+}
+div.nav{
+    background-color: #eee; 
+    border-bottom: 1px solid #ccc;
+    padding: 10px 5px
+}
+div.nav a{
+    text-decoration: none;
+    color:black;
+    padding: 5px 10px;
+}
+div.nav a.logo {
+    display:inline-block;
+    font-size: 
+}
+
+再从base.html处引用
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/base.css">
+</head>
+
+引入方式三：
+根据步骤二的条件
+在html文件最上方加入
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+</head>
+
+
+总结：
+base.html
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    {% block header_extends %}{% endblock %}#从其他css文件引入作占位符
+</head>
+<body>
+    <div class="nav">
+        <a class="logo" href="{% url 'home' %}">
+            <h3>个人博客网站</h3>
+        </a>
+        <a href="/">首页</a>
+        <a href="{% url 'blog_list' %}">博客</a>
+    </div>
+    {% block content%}{% endblock %}
+</body>
+</html>
+
+
+home.html
+
+{% extends 'base.html '%}
+{% load static %}
+
+{% block title %}
+    我的网站|首页
+{% endblock %}
+
+{% block header_extends %}
+    <link rel="stylesheet" href="/static/home.css">
+{% endblock %}#填充bae.html的占位符，引入css
+
+{% block content %}
+    <h3 class="home-content">欢迎访问我的网站</h3>
+    <link rel="stylesheet" type="text/css" href="">
+{% endblock %}
+
+
+
+
+
+
+
+
+css框架协助前端布局
+易用性、兼容性、大小、效果、功能
+配置bootstrap:
+
+从bootstrap官网下载bootstrap放到static文件夹
+点击一下网址右键另存为下载jquery-1.12.4放到static文件夹
+https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js
+配置完毕后可以从bootstrap官网复制粘贴代码配置css
+
+
+
+
+
+2020/01/06
+
+bootst响应式布局 总列数12
+.col-xs- < 768超小屏幕手机
+.col.sm- >= 768小屏幕 平板
+.col.md- 中等屏幕 桌面显示器
+.col.lg- 大屏幕 大桌面显示器
+基本结构：
+<div class="container">
+    <div class="row">
+        <div class="col-xx-"></div>
+        <div class="col-xx-"></div>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">{#不通过屏幕不同大小#}
+
+
+
+
+shell命令行模式添加博客
+python manage.py shell
+for循环执行新增博客代码
+
+>>> from blog.models import Blog,BlogType
+>>> from django.contrib.auth.models import User
+
+>>> dir()
+['Blog', '__builtins__']
+>>> Blog.objects.all()
+<QuerySet [<Blog: <Blog:新的一年，全新开始>>, <Blog: <Blog:开发之路>>, <Blog: <Blog:掌握技能>>, <Blog: <Blog:python基础笔记>>, <Blog: <Blog:练习11css框架协助前 端布局>>]>
+>>> del Blog()
+['__builtins__']
+>>> Blog.objects.count()
+5
+>>> blog=Blog()
+>>> dir()
+['Blog', '__builtins__', 'blog']
+>>> dir(blog)
+['DoesNotExist', 'MultipleObjectsReturned', '__class__', '__delattr__'...... 
+>>> BlogType.objects.all()
+<QuerySet [<BlogType: Django开发>, <BlogType: selenium自动化教程>, <BlogType: appium教程>, <BlogType: python接口自动化>, <BlogType: 随性随笔>, <BlogType: python教程>, <BlogType: 日常练习>]>
+>>> blog_type=BlogType.objects.all()[0]
+>>> User.objects.all()
+<QuerySet [<User: carlos>]>
+>>> author=User.objects.all()[0]
+
+>>> for i in range(1,11):
+...     blog=Blog()
+...     blog.title="for %s"%i
+...     blog.content="xxxx:%s"%i
+...     blog.blog_type=blog_type
+...     blog.author=author
+...     blog.save()
+
+
+分页功能：
+分页器：from django.core.paginator import Paginator
+实例化：paginator=Paginator(object_list,each_page_count)
+具体页：page1=paginator.page(1)
+
+
+from django.core.paginator import Paginator
+from blog.models import Blog
+blogs = Blog.objects.all()
+blogs.count()#15
+paginator=Paginator(blogs,10)#分10页
+成功！但有警告，去models.py修改排序规则
+class Blog(models.Model):
+    pass
+    class Meta():
+        ordering = ['-created_time']
+
+python manage.py makemigrations
+python manage.py migrate
+再重新执行一次
+dir(paginator)看看有什么方法
+paginator.count ->15(共15条)
+paginator.num_pages -> 2(共两页)
+paginator.page_range ->range(1,3)(页码：1页，2页)
+page1=paginator.page(1)
+page1 -> <page 1 of 4>
+dir(page1)看看有什么方法
+page1.object_list ->查看第一页有什么
+page.has_previous ->是否有上一页
+page.has_next ->是否有下一页
+page1.paginator.page_range ->range(1,3)(页码：1页，2页)
+page.number ->当前页
+page.previous_page_number ->上一页
+page.next_page_number ->下一页
+
+
+实战：设计成http://127.0.0.1:8000/blog/?page=1
+在blog.views.py
+
+from django.core.paginator import Paginator
+def blog_list(request):
+    blogs_all_list = Blog.objects.all()
+    paginator = Paginator(blogs_all_list, 3)  # 每3篇进行分页
+    page_num = request.GET.get('page', 1)  # 获取url页码参数(GET请求)
+    page_of_blogs = paginator.get_page(page_num)  # get_page方法无论输入什么abc都会返回数值类型
+    # 以下为返回给前端页面
+    context = {}
+    #context['blogs'] = page_of_blogs.object_list
+    context['page_of_blogs'] = page_of_blogs
+    context['blog_types'] = BlogType.objects.all()
+    return render(request, 'blog/blog_list.html', context)
+
+blog.temlpates.blog.blog_list.html
+更改：
+博客列表(一共有{{ page_of_blogs.paginator.count }}篇博客
+{% for blog in page_of_blogs.object_list %}
+
+页码显示：(bootstrap官网复制粘贴框架)
+<div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">{#不通过屏幕不同大小#}
+    <div>
+        <ul class="pagination">
+            <li>{#上一页#}
+                {% if page_of_blogs.has_previous %}
+                    <a href="?page={{ page_of_blogs.previous_page_number}}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+                {% else %}
+                    <span aria-hidden="true">&laquo;</span>
+                {% endif %}
+            </li>{#全部页码#}
+            {% for page_num in page_of_blogs.paginator.page_range %}
+                <li><a href="?page={{page_num}}">{{page_num}}</a></li>
+            {% endfor %}
+            <li>{#下一页#}
+                {% if page_of_blogs.has_next %}
+                    <a href="?page={{ page_of_blogs.next_page_number }}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+                {% else %}
+                    <span aria-hidden="true">&raquo;</span>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+优化分页展示
+setting自定义设置
+公用全局设置可放在setting中统一管理
+在setting.py中最后添加
+EACH_PAGE_BLOGS_NUM = 10
+from django.conf import settings
+setting.EACH_PAGE_BLOGS_NUM
+
+1、当前页高亮
+2、不要过多页码选择，影响布局
+
+1、页面高亮：
+</li>{#全部页码#}
+{% for page_num in page_of_blogs.paginator.page_range %}
+    {% if page_num == page_of_blogs.number %}
+        <li class="active"><a href="?page={{page_num}}">{{page_num}}</a></li>
+    {% else %}
+        <li><a href="?page={{page_num}}">{{page_num}}</a></li>
+    {% endif %}
+{% endfor %}
+
+blog.views.py
+
+each_page_blogs_num = 2
+
+def blog_list(request):
+    blogs_all_list = Blog.objects.all()
+    paginator = Paginator(blogs_all_list, each_page_blogs_num)  # 每10页进行分页
+    page_num = request.GET.get('page', 1)  # 获取url页码参数(GET请求)
+    page_of_blogs = paginator.get_page(page_num)  # get_page方法无论输入什么abc都会返回数值类型
+    current_page_num = page_of_blogs.number  # 获取当前页
+    # 获取当前页码前后各两页的页码范围
+    page_range = list(range(max(current_page_num - 2, 1), current_page_num)) + \
+        list(range(current_page_num, min(current_page_num + 2, paginator.num_pages) + 1))
+    # 加上省略页码标记
+    if page_range[0] - 1 >= 2:
+        page_range.insert(0, '...')
+    if paginator.num_pages - page_range[-1] >= 2:
+        page_range.append('...')
+    # 加上首页喝尾页
+    if page_range[0] != 1:
+        page_range.insert(0, 1)
+    if page_range[-1] != paginator.num_pages:
+        page_range.append(paginator.num_pages)
+    # 以下为返回给前端页面
+    context = {}
+   #context['blogs'] = page_of_blogs.object_list
+    context['page_of_blogs'] = page_of_blogs
+    context['blog_types'] = BlogType.objects.all()
+    context['page_range'] = page_range
+    return render(request, 'blog/blog_list.html', context)
+
+
+
+</li>{#全部页码#}
+{% for page_num in page_range %}
+    {% if page_num == page_of_blogs.number %}
+        <li class="active"><a href="?page={{page_num}}">{{page_num}}</a></li>
+    {% else %}
+        {% if page_num == '...' %}
+            <li><span>{{page_num}}</span></li>
+        {% else %}
+            <li><a href="?page={{page_num}}">{{page_num}}</a></li>
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+一共有{{ page_of_blogs.paginator.count }}篇博客,当前第{{page_of_blogs.number}}页，共{{page_of_blogs.paginator.num_pages}}页
+
+
+
+
+
+
+
+
+
+
+2020/01/07
+上下篇博客按月分类
+
+filter筛选条件objects.filter()
+exclude取反 objects.exclude()
+等于：直接筛选
+大于：__gt
+大于等于：__gte
+小于：__lt
+小于等于：__lte
+包含：__contains(__icontains忽略大小写)
+开头是：__startswith
+结尾是：__endswith
+其中之一：__in
+范围：__range
+
+
+上下篇博客设置:
+def blog_detail(request, blog_pk):
+    context = {}
+    blog = get_object_or_404(Blog, pk=blog_pk)
+    context['blog'] = blog
+    context['previous_blog'] = Blog.objects.filter(created_time__gt=blog.created_time).last()
+    context['next_blog'] = Blog.objects.filter(created_time__lt=blog.created_time).first()
+    return render(request, 'blog/blog_detail.html', context)
+
+<div class="blog-more">
+    <p>上一篇:
+        {% if previous_blog %}
+            <a href="{% url 'blog_detail' previous_blog.pk %}">{{ previous_blog.title }}</a>
+        {% else %}
+            没有了
+        {% endif %}
+    </p>    
+    <p>下一篇:
+        {% if next_blog %}
+            <a href="{% url 'blog_detail' next_blog.pk %}">{{ next_blog.title }}</a>
+        {% else %}
+            没有了
+        {% endif %}
+    </p>
+</div>
+
+
+重写blog.views.py公共方法
+def get_blog_list_common_data(request, blogs_all_list):
+    paginator = Paginator(blogs_all_list, each_page_blogs_num)  # 每10页进行分页
+    page_num = request.GET.get('page', 1)  # 获取url页码参数(GET请求)
+    page_of_blogs = paginator.get_page(page_num)  # get_page方法无论输入什么abc都会返回数值类型
+    current_page_num = page_of_blogs.number  # 获取当前页
+    # 获取当前页码前后各两页的页码范围
+    page_range = list(range(max(current_page_num - 2, 1), current_page_num)) + \
+        list(range(current_page_num, min(current_page_num + 2, paginator.num_pages) + 1))
+    # 加上省略页码标记
+    if page_range[0] - 1 >= 2:
+        page_range.insert(0, '...')
+    if paginator.num_pages - page_range[-1] >= 2:
+        page_range.append('...')
+    # 加上首页喝尾页
+    if page_range[0] != 1:
+        page_range.insert(0, 1)
+    if page_range[-1] != paginator.num_pages:
+        page_range.append(paginator.num_pages)
+    # 以下为返回给前端页面
+    context = {}
+   #context['blogs'] = page_of_blogs.object_list
+    context['page_of_blogs'] = page_of_blogs
+    context['blog_types'] = BlogType.objects.all()
+    context['page_range'] = page_range
+    context['blog_dates'] = Blog.objects.dates('created_time', 'month', order='DESC')
+    return context
+
+
+
+按月设置
+
+blog.url.py
+    path('date/<int:year>/<int:month>',views.blogs_with_date,name="blogs_with_date"),
+
+blog.views.py
+def blogs_with_date(request, year, month):
+    blogs_all_list = Blog.objects.filter(created_time__year=year, created_time__month=month)
+    context = get_blog_list_common_data(request, blogs_all_list)
+    context['blogs_with_date'] = '%s年%s月' % (year, month)
+
+    return render(request, 'blog/blogs_with_date.html', context)
+
+blog.templates.blogs_list.html
+<div class="panel panel-default">
+    <div class="panel-heading">日期归档</div>
+    <div class="panel-body">
+        <ul>
+            {% for blog_date in blog_dates %}
+                <li>
+                    <a href="{% url 'blogs_with_date' blog_date.year blog_date.month %}">
+                        {{ blog_date|date:"Y年m月" }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>  
+
+
+blog.templates.blogs_with_date.html
+{% extends 'blog/blog_list.html' %}
+{% block title %}{{ blogs_with_date }}的博客{% endblock %}
+{% block block_list_title %}
+    日期归档：{{ blogs_with_date }}<a href="{% url 'blog_list' %}">查看全部博客</a>
+{% endblock %}
+
+
+
+
+
+
+
+博客分类统计
+方式一、
+from django.db.models import Count
+annotate注释:BlogType.objects.annotate()
+
+blog_type_list = BlogType.objects.annotate(blog_count=Count('blog'))
+
+方式二、
+blog.views.py.get_blog_list_common_data()
+
+    # 获取博客分类的对应博客数量
+    blog_types = BlogType.objects.all()
+    blog_type_list = []
+    for blog_type in blog_types:
+        blog_type.blog_count = Blog.objects.filter(blog_type=blog_type).count()
+        #给BlogType类加上blog_count属性
+        blog_type_list.append(blog_type)#返回的blog——type已经有count属性
+
+完毕改写下面参数
+    context['blog_types'] = blog_type_list
+
+blog_list.html
+    {% for blog_type in blog_types %}
+        <li><a href="{% url 'blogs_with_type' blog_type.pk %}">{{ blog_type.type_name}}({{ blog_type.blog_count }})</a></li>
+    {% empty %}
+        <li>暂无分类</li>
+    {% endfor %}
+
+
+
+
+blog.views.py.get_blog_list_common_data()
+#获取日期归档对应的博客数量
+    blog_dates = Blog.objects.dates('created_time', 'month', order='DESC')
+    blog_dates_dict = {}
+    for blog_date in blog_dates:
+        blog_count = Blog.objects.filter(created_time__year=blog_date.year,created_time__month=blog_date.month).count()
+        blog_dates_dict[blog_date] = blog_count
+
+下方改为：
+    context['blog_dates'] = blog_dates_dict
+
+blog_list.html
+<div class="panel-heading">日期归档</div>
+<div class="panel-body">
+    <ul>
+        {% for blog_date,blog_count in blog_dates.items %}
+            <li>
+                <a href="{% url 'blogs_with_date' blog_date.year blog_date.month %}">
+                    {{ blog_date|date:"Y年m月" }}({{blog_count}})
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+
+
+
+
+
+博客后台富文本编辑
+pip install django-ckeditor
+setting.py app中添加'ckeditor'
+models.py 
+from ckeditor.fields import RichTextField
+content = models.TextField()把字段改为
+content = RichTextField()
+
+
+上传图片功能(根目录新建media文件夹存放媒体信息)
+pip install pillow
+setting.py 
+app中添加'ckeditor_uploader'
+末尾添加如下：
+#配置media用来放上传的图片等媒体信息
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#配置ckeditor
+CKEDITOR_UPLOAD_PATH = 'upload/'
+
+总url中添加路径
+from django.conf import settings
+from django.conf.urls.static import static
+
+path('ckeditor',include('ckeditor_uploader.urls'))
+
+urlpatterns +=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+bolg.models.py
+更改from ckeditor_uploader.fields import RichTextUploadingField
+
+content = RichTextUploadingField()
+
+
+
+
+
+外键那些事儿
+
+1、OneToOne
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    nickname = models.CharField(max_length=24)
+
+    def __str__(self):
+        return '<Profile: {0}>'.format(self.nickname)
+
+    __unicode__ = __str__
+
+    # 基本使用方法和ForeignKey一样
+
+    # 正向：顺理成章
+    # profile = Profile.objects.first()
+    # user = profile.user
+
+    # 反向：冥冥之中，我知道你的存在
+    # user = User.objects.first()
+    # profile = user.profile
+
+    # 编辑该字段，直接赋值即可
+
+2、many_to_many
+
+class Author(models.Model):
+    author_name = models.CharField(max_length=24)
+
+    def __str__(self):
+        return '<Author: {0}>'.format(self.author_name)
+
+    __unicode__ = __str__
+
+# 书籍表
+class Book(models.Model):
+    book_name = models.CharField(max_length=48)
+    authors = models.ManyToManyField(Author)
+
+    def __str__(self):
+        return '<Book: {0}>'.format(self.book_name)
+
+    __unicode__ = __str__
+
+    # 正向（顺理成章）
+    # book = Book.objects.first()
+    # authors = book.authors.all()  # 获得该书所有作者
+
+    # 反向（冥冥之中）
+    # author = Author.objects.first()
+    # books = author.book_set.all()  # 获得该作者所有书
+
+    # related_name，明确关系，同ForeignKey
+    # authors = models.ManyToManyField(Author, related_name='books')
+
+
+    # 编辑ManyToMany字段，无需执行save()保存
+    # 参考：https://docs.djangoproject.com/en/2.2/ref/models/relations/#django.db.models.fields.related.RelatedManager
+    # add, remove, clear
+    # book = Book.objects.first()
+    # author = Author.objects.first()
+
+    # 1、书籍新增作者
+    # book.authors.add(author)
+
+    # 2、书籍移除作者
+    # book.authors.remove(author)
+
+    # 3、作者添加书籍
+    # author.book_set.add(book)
+
+    # 4、作者移除书籍
+    # author.book_set.remove(book)
+
+
+3、foreign_key
+
+# 班级表
+class SchoolClass(models.Model):
+    class_name = models.CharField(max_length=12)
+    class_master = models.CharField(max_length=12)
+
+    def __str__(self):
+        return '<SchoolClass: {0}>'.format(self.class_name)
+
+    __unicode__ = __str__
+
+# 学生表
+class Student(models.Model):
+    school_class = models.ForeignKey(SchoolClass, on_delete=models.CASCADE)
+    # （on_delete属性说明）
+    # 必填，对应关联的记录（班级），删除的时候，该记录（学生）怎么处理
+    # 参考：https://docs.djangoproject.com/en/2.2/ref/models/fields/#django.db.models.ForeignKey.on_delete
+
+    # 1、CASCADE, 级联删除。
+    # 当班级删除记录的时候，删除对应的所有学生。确保数据完整
+
+    # 2、PROTECT, 保护。
+    # 当班级删除记录的时候，若有学生关联该班级，则不给删除班级
+
+    # 3、SET_NULL, 设置为NULL。 
+    # 当班级删除记录的时候，若有学生关联该班级，则将这些学生的班级外键字段，值设置为null。
+    # school_class = models.ForeignKey(SchoolClass, on_delete=models.SET_NULL, null=True)  # 需要设置null为True
+
+    # 4、SET_DEFAULT，设置为默认值。
+    # def default_class():
+    #     return SchoolClass.objects.first()
+    # school_class = models.ForeignKey(SchoolClass, on_delete=models.SET_DEFAULT, default=default_class)  # 需要设置default
+
+    # 5、SET()，自定义方法，返回一个值，设置该字段的值
+    # 参考：https://docs.djangoproject.com/en/2.2/ref/models/fields/#django.db.models.SET
+
+    # 6、DO_NOTHING，什么时候都不做。
+    # 这个会破坏数据完整性，慎用。
+
+
+    # （正向：顺理成章）
+    # s = Student.objects.first()
+    # s.school_class  # 找到关联的班级对象
+
+    # （反向：冥冥之中）
+    # c = SchoolClass.objects.first()
+    # c.student_set.all()  # xxxx_set 找到被关联的对象
+
+    # related_name，明确关系，班级通过什么属性找到学生
+    # school_class = models.ForeignKey(SchoolClass, on_delete=models.CASCADE, related_name='students')
+    # c = SchoolClass.objects.first()
+    # c.students.all()
+
+
+    # 编辑该字段，直接赋值即可
+    # c = SchoolClass.objects.first()
+    # s = Student()
+    # s.student_name = 'test'
+    # s.school_class = c
+    # s.save()
+
+    
+    SEX_CHOICES = (
+        (0, '男'),
+        (1, '女'),
+    )
+    student_name = models.CharField(max_length=12)
+    sex = models.IntegerField(choices=SEX_CHOICES, default=0)
+
+    def __str__(self):
+        return '<Student: {0}>'.format(self.student_name)
+
+    __unicode__ = __str__
+
+
+4、content_type
+
+from django.db import models
+from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
+from django.contrib.contenttypes.models import ContentType
+
+# Create your models here.
+# 文章表
+class Article(models.Model):
+    title = models.CharField(max_length=36)
+    content = models.TextField(blank=True)
+    # comments = GenericRelation('Comment')  # 由于Comment后面才定义，所以用字符串惰性引用
+
+    def __str__(self):
+        return '<Article: {0}>'.format(self.title)
+
+    __unicode__ = __str__
+
+# 视频表
+class Video(models.Model):
+    video_name = models.CharField(max_length=36)
+    url = models.URLField()
+
+    def __str__(self):
+        return '<Video: {0}>'.format(self.video_name)
+
+    __unicode__ = __str__
+
+# 评论表
+class Comment(models.Model):
+    # 无法同时指向多个对象
+    # article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    # video = models.ForeignKey(Video, on_delete=models.CASCADE)
+
+    # 万能关系
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)  # 记录关联对象的类型
+    object_id = models.PositiveIntegerField()  # 记录关联对象的主键值
+    content_object = GenericForeignKey('content_type', 'object_id')  # 常规字段，便于使用
+
+    # 评论内容
+    text = models.TextField()
+
+    def __str__(self):
+        return '<Comment: {0}>'.format(self.text)
+
+    __unicode__ = __str__
+
+    # 正向，使用content_object可直接访问
+    '''
+    comment = Comment.objects.first()
+    obj = comment.content_object  # 直接得到所被评论的对象
+    '''
+
+    # 反向，无法直接从其他对象找到Comment对应的评论
+    '''
+    from django.contrib.contenttypes.models import ContentType
+
+    article = Article.objects.first()
+    article_content_type = ContentType.objects.get_for_model(article)
+
+    # 通过Comment自身的筛选查询得到
+    comments = Comment.objects.filter(content_type=article_content_type, object_id=article.pk)
+    '''
+
+    # 反向，方法2，主动建立关系
+    # 参考：https://docs.djangoproject.com/en/2.2/ref/contrib/contenttypes/#reverse-generic-relations
+    '''
+    from django.contrib.contenttypes.fields import GenericRelation
+    # 对应模型加入 comments = GenericRelation('Comment') 字段
+
+    article = Article.objects.first()
+    comments = article.comments.all()
+    '''
+
+
+
+
+
+
+
+models->admin->views->html
+博客阅读计数(通用功能做成一个模型)
+
+python manage.py startapp readcount
+
+readcount.models.py创建字段
+
+from django.db import models
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
+
+
+class ReadNum(models.Model):
+    read_num = models.IntegerField(default=0)
+    # 外键指向contenttype
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    # 对应模型主键值
+    object_id = models.PositiveIntegerField()
+    # 把以上两个组合
+    content_object = GenericForeignKey('content_type', 'object_id')
+
+
+总setting.py注册
+python manage.py makemigrations
+python manage.py migrate
+
+readcount.admin.py
+
+from django.contrib import admin
+from .models import ReadNum
+# Register your models here.
+
+@admin.register(ReadNum)
+class ReadNumAdmin(admin.ModelAdmin):
+    list_display = ('read_num', 'content_object')
+
+
+怎么在blog中显示readcount?(不同app关联)
+
+1、找到blog在ContentType对应的记录
+ContentType.objects.get_for_model(Blog)
+<ContentType:blog>
+#赋值
+ct = ContentType.objects.get_for_model(Blog)
+
+2、找到对应主键值
+blog = Blog.objects.first()#拿第一条
+blog.pk     #16
+
+3、ReadNum.objects.filter(content_type=ct,object_id=blog.pk)
+得到一个集合set,取第一个
+rn = ReadNum.objects.filter(content_type=ct,object_id=blog.pk)[0]
+得到具体一个object
+rn.read_num ->10
+
+
+故在blog.models.py.class Blog中添加方法
+from django.contrib.contenttypes.models import ContentType
+from readcount.models import ReadNum
+
+def get_read_num(self):(没有阅读显示0)
+    try:
+        ct = ContentType.objects.get_for_model(Blog)
+        readnum = ReadNum.objects.get(content_type=ct,object_id=self.pk)
+        return readnum.read_num
+    except:
+        return 0
+
+在blog.admin.py写进显示
+    list_display = ('id', 'title', 'get_read_num'......)
+
+
+在blog.views.py
+def blog_detail(request, blog_pk):
+    blog = get_object_or_404(Blog, pk=blog_pk)
+    if not request.COOKIES.get('blog_%s_readed' % blog_pk):
+        ct = ContentType.objects.get_for_model(Blog)
+        if ReadNum.objects.filter(content_type=ct, object_id=blog.pk).count():#count()不是统计，是检查有没有被记录
+            # 存在记录
+            readnum = ReadNum.objects.get(content_type=ct, object_id=blog.pk)
+        else:
+            # 不存在记录
+            readnum = ReadNum(content_type=ct, object_id=blog.pk)
+        # 计数加1
+        readnum.read_num += 1
+        readnum.save()
+
+    context = {}
+    context['blog'] = blog
+    context['previous_blog'] = Blog.objects.filter(created_time__gt=blog.created_time).last()
+    context['next_blog'] = Blog.objects.filter(created_time__lt=blog.created_time).first()
+    response = render(request, 'blog/blog_detail.html', context)  # 响应
+    response.set_cookie('blog_%s_readed' % blog_pk, 'true')  # max_age=60(60秒有效),expires=datetime(指定日期有效)，不写代表浏览器关掉就消除cookies 
+    return response
+
+
+
+以上代码冗余
+方法优化：用类的继承，谁需要谁继承
+
+1、在readcount.models.py新建父类
+class ReadNumExpand():
+    def get_read_num(self):
+        try:
+            ct = ContentType.objects.get_for_model(self)  # Blog也行，self本身是个具体的Blog对象
+            readnum = ReadNum.objects.get(content_type=ct, object_id=self.pk)
+            return readnum.read_num
+        except:
+            return 0
+
+blog.views.py classBlog需要
+class Blog(models.Model, ReadNumExpand):
+    pass
+
+2、在readcount根目录新建util.py
+
+from django.contrib.contenttypes.models import ContentType
+from .models import ReadNum
+
+def readcount_once_read(request,obj):
+    ct = ContentType.objects.get_for_model(obj)
+    key = "%s_%s_read" %(ct.model,obj.pk)
+
+    if not request.COOKIES.get(key):
+        if ReadNum.objects.filter(content_type=ct, object_id=obj.pk).count():
+            # 存在记录
+            readnum = ReadNum.objects.get(content_type=ct, object_id=obj.pk)
+        else:
+            # 不存在记录
+            readnum = ReadNum(content_type=ct, object_id=obj.pk)
+        # 计数加1
+        readnum.read_num += 1
+        readnum.save()
+       return key
+
+
+在blog.views.py classdetail
+def blog_detail(request, blog_pk):
+    blog = get_object_or_404(Blog, pk=blog_pk)
+    read_cookies_key = readcount_once_read(request, blog)
+
+    context = {}
+    context['blog'] = blog
+    context['previous_blog'] = Blog.objects.filter(created_time__gt=blog.created_time).last()
+    context['next_blog'] = Blog.objects.filter(created_time__lt=blog.created_time).first()
+    response = render(request, 'blog/blog_detail.html', context)  # 响应
+    response.set_cookie(read_cookies_key, 'true')  #阅读cookies标记
+    return response
+
+
+
+
+
+
+
+2020/01/08
+阅读按天计数统计和显示
+
+readcount.models.py
+
+from django.utils import timezone
+
+class ReadDetail(models.Model):
+    date = models.DateField(default=timezone.now)
+    read_num = models.IntegerField(default=0)
+
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    content_object = GenericForeignKey('content_type', 'object_id')
+
+同步数据库
+
+readcount.admin.py
+
+@admin.register(ReadDetail)
+class ReadDetailAdmin(admin.ModelAdmin):
+    list_display = ('date', 'read_num', 'content_object')
+
+
+readcount.util.py
+def readcount_once_read(request, obj):
+    ct = ContentType.objects.get_for_model(obj)
+    key = "%s_%s_read" % (ct.model, obj.pk)
+
+    if not request.COOKIES.get(key):
+        #总的阅读
+        if ReadNum.objects.filter(content_type=ct, object_id=obj.pk).count():  # count()不是统计，是检查有没有被记录
+            # 存在记录
+            readnum = ReadNum.objects.get(content_type=ct, object_id=obj.pk)
+        else:
+            # 不存在记录
+            readnum = ReadNum(content_type=ct, object_id=obj.pk)
+        # 计数加1
+        readnum.read_num += 1
+        readnum.save()
+
+        #每天的阅读
+        date = timezone.now().date()
+        if ReadDetail.objects.filter(content_type=ct, object_id=obj.pk, date=date).count():
+            readdetail = ReadDetail.objects.get(content_type=ct, object_id=obj.pk, date=date)
+        else:
+            readdetail = ReadDetail(content_type=ct, object_id=obj.pk, date=date)
+        readdetail.read_num += 1
+        readdetail.save()
+    return key
+
+
+优化：(get_or_create())
+def readcount_once_read(request, obj):
+    ct = ContentType.objects.get_for_model(obj)
+    key = "%s_%s_read" % (ct.model, obj.pk)
+
+    if not request.COOKIES.get(key):
+        # 总的阅读(get_or_create返回一个元祖，用两个参数接收，created是没有用的)
+        readnum, created = ReadNum.objects.get_or_create(content_type=ct, object_id=obj.pk)
+        # 计数加1
+        readnum.read_num += 1
+        readnum.save()
+
+        # 每天的阅读
+        date = timezone.now().date()
+        readdetail, created = ReadDetail.objects.get_or_create(content_type=ct, object_id=obj.pk, date=date)
+        readdetail.read_num += 1
+        readdetail.save()
+    return key
+
+
+
+
+显示7天的阅读数据 aggregate():聚合函数
+readcount.util.py
+
+from django.db.models import Sum
+from django.utils import timezone
+
+def get_sevendays_readdate(content_type):
+    today = timezone.now().date()
+    dates = []
+    read_nums = []
+    for i in range(7, 0, -1):  # 前7天
+        date = today - datetime.timedelta(days=i)
+        dates.append(date.strftime('%m/%d'))
+        read_details = ReadDetail.objects.filter(content_type=content_type, date=date)
+        result = read_details.aggregate(read_num_sum=Sum('read_num'))  # 对read_num字段统计,得到{'read_num_sum':6}
+        read_nums.append(result['read_num_sum'] or 0)  # 如果为False则写0
+    return dates, read_nums
+
+
+
+把这数据显示到首页
+
+总views.py
+from django.shortcuts import render
+from django.contrib.contenttypes.models import ContentType
+from readcount.util import get_sevendays_readdate
+from blog.models import Blog
+
+
+def home(requests):
+    blog_content_type = ContentType.objects.get_for_model(Blog)
+    dates, read_nums = get_sevendays_readdate(blog_content_type)
+
+    context = {}
+    context['read_nums'] = read_nums
+    context['dates'] = dates
+    return render(requests, 'home.html', context)
+
+
+使用图表显示数据
+后台+前端：后台提供数据，前端使用数据
+使用highchars(复制粘贴)
+https://www.highcharts.com.cn/docs/start-helloworld
+<script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>{#配置信息#}
+
+
+总home.html(从highchars网址教程复制粘贴)
+
+{% extends 'base.html '%}
+{% load static %}
+{% block title %}我的网站|首页{% endblock %}
+
+{% block header_extends %}
+    <link rel="stylesheet" href="/static/home.css">
+    <script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>{#配置信息#}
+
+{% endblock %}
+
+{% block nav_home_active %}active{% endblock %}
+
+{% block content %}
+    <h3 class="home-content">欢迎访问我的网站</h3>
+    <!-- 图表容器 DOM -->
+    <div id="container"></div>
+    <script>
+        // 图表配置
+        var options = {
+            chart: {type: 'line'},//指定图表的类型，默认是折线图（line）
+            
+            title: {text: null},                 // 标题
+            
+            xAxis: {
+                categories: {{ dates|safe }},   // x 轴分类
+                tickmarkPlacement:'on'，
+                title:{text:'前7日阅读量变化'}
+            },
+            yAxis: {
+                title: {text: null},                // y 轴标题
+                labels:{enabled: false},
+                gridLineDashStyle:'Dash',
+            },
+            series: [{                              // 数据列
+                name: '阅读量',                     // 数据列名
+                data: {{ read_nums }}              // 数据
+            }],
+            plotOptions: {
+                line: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            legend:{enabled: false},
+            credits:{enabled: false},
+        };
+        // 图表初始化函数
+        var chart = Highcharts.chart('container', options);
+    </script>
+{% endblock %}
+
+总home.css
+
+h3.home-content{
+    font-size: 222%;
+    text-align: center;
+    margin-top: 4em;
+    margin-bottom: 2em;
+}
+
+div#container{
+    margin: 0 auto;
+    height: 20em;
+    min-width: 20em;
+    max-width: 30em;
+}
+
+
+
+
+
+
+
+利用阅读量数据排行
+24小时内
+昨日
+一周
+一月
+
+
+
+readcount.util.py
+#得到今天热门数据
+def get_today_hotdata(content_type):
+    today = timezone.now().date()
+    read_details = ReadDetail.objects.filter(content_type=ct, date=date)
+    return read_details.order_by('-read_num')[:7]#对read_num字段倒序排序和展示前7篇 
+
+总views.py
+from readcount.util import get_today_hotdata
+
+blog_content_type = ContentType.objects.get_for_model(Blog)
+today_hot_data = get_today_hotdata(blog_content_type)
+context['today_hot_data'] = today_hot_data
+
+
+总home.html(hot_data.content_object=<Blog:新的一年，全新开始>=具体的实例对象)
+ <h3>今天热门点击</h3>
+    <ul>
+        {% for hot_data in today_hot_data %}
+            <li><a href="{% url 'blog_detail' hot_data.content_object.pk %}">{{ hot_data.content_object.title }}</a>({{ hot_data.read_num }})</li>
+        {% empty %}
+            <li>今天暂无热门博客</li>
+        {% endfor %}
+    </ul>
+
+
+
+
+昨天热门统计
+readcount.util.py
+def get_yesterday_hotdata(content_type):
+    today = timezone.now().date()
+    yesterday = today - datetime.timedelta(days=1)
+    read_details = ReadDetail.objects.filter(content_type=content_type, date=yesterday)
+    return read_details.order_by('-read_num')[:7]#对read_num字段倒序排序和展示前7篇
+
+总views.py
+from readcount.util import get_yesterday_hotdata
+context['yesterday_hot_data'] = get_yesterday_hotdata(blog_content_type)
+
+总home.html(hot_data.content_object=<Blog:新的一年，全新开始>=具体的实例对象)
+<h3>昨天热门点击</h3>
+<ul>
+    {% for hot_data in yesterday_hot_data %}
+        <li><a href="{% url 'blog_detail' hot_data.content_object.pk %}">{{ hot_data.content_object.title }}</a>({{ hot_data.read_num }})</li>
+    {% empty %}
+        <li>昨天暂无热门博客</li>
+    {% endfor %}
+</ul>
+
+
+
+7天内热门统计
+blog.models.py
+from readcount.models import ReadNumExpand, ReadDetail
+from django.contrib.contenttypes.fields import GenericRelation
+
+class Blog(models.Model, ReadNumExpand):#Blog反向关联(ReadDetail
+    read_details = GenericRelation(ReadDetail)
+
+总views.py
+
+import datetime
+from django.utils import timezone
+from django.db.models import Sum
+
+新建方法
+def get_sevenday_hotdata():
+    today = timezone.now().date()
+    date = today - datetime.timedelta(days=7)
+    blogs = Blog.objects \
+                        .filter(read_details__date__lt=today,read_details__date__gte=date)\
+                        .values('id','title') \
+                        .annotate(read_num_sum = Sum('read_details__read_num')) \
+                        .order_by('-read_num_sum')
+    return blogs
+
+''' 解释说明：
+    blogs.values('id','title')#7天内的每一篇阅读
+    ->[('id':16,'title':'for 16'),('id':16,'title':'for 16'),('id':16,'title':'for 16'),('id':15,'title':'for 15')......]
+    .annotate(Sum('read_details__read_num'))
+    ->[('id':16,'title':'for 16','read_details__read_num__sum':5),('id':15,'title':'for 15','read_details__read_num__sum':3)......]
+'''
+
+def home(requests):
+    context['sevenday_hot_data'] = get_sevenday_hotdata()
+
+
+总home.html(刚刚values定义了('id','title')可以在下方引用)
+<h3>七天热门点击</h3>
+    <ul>
+        {% for hot_data in sevenday_hot_data %}
+            <li><a href="{% url 'blog_detail' hot_data.id %}">{{ hot_data.title }}</a>({{ hot_data.read_num_sum }})</li>
+        {% empty %}
+            <li>七天暂无热门博客</li>
+        {% endfor %}
+    </ul>
+
+
+
+缓存提速
+每次计算都耗时,策略：缓存数据，不用每次都计算
+
+django内置三种：
+内存缓存：Memcached、Redis
+数据库缓存
+文件缓存
+
+https://docs.djangoproject.com/zh-hans/3.0/
+
+数据库缓存：
+总setting.py最后设置
+
+#缓存设置
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'my_cache_table',
+    }
+}
+
+创建缓存表
+python manage.py createcachetable
+
+在总views.py
+from django.core.cache import cache
+
+def home(request):
+    #获取7天热门博客的缓存数据
+    sevenday_hot_data = cache.get('sevenday_hot_data')
+    if sevenday_hot_data is None:
+        sevenday_hot_data = get_sevenday_hotdata()
+        cache.set('sevenday_hot_data',sevenday_hot_data,3600)#缓存时间为3600秒共1小时
+    /*    print('cal')
+    else:
+        print('use cache')
+*/
+    context['sevenday_hot_data'] = sevenday_hot_data
+
+
+
+
+
+
+
+
+2020/01/09
+
+评论功能和用户登录
+
+实现评论功能的方式
+1、三方社会化评论插件
+2、Django评论库 django-comment
+3、自己写代码
+
+创建评论模型
+
+评论对象
+评论内容
+评论时间
+评论者
+
+
+创建评论app
+python manage.py startapp comment
+
+
+comment.models.py 创建模型
+
+from django.db import models
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.auth.models import User
+
+# Create your models here.
+class Comment(models.Model):
+    # 外键指向contenttype
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    # 对应模型主键值
+    object_id = models.PositiveIntegerField()
+    # 把以上两个组合
+    content_object = GenericForeignKey('content_type', 'object_id')
+
+    text = models.TextField()
+    comment_time = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+
+    #排序规则
+    class Meta():
+        ordering = ['-comment_time']
+
+
+comment.admin.py注册
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('content_object', 'text', 'comment_time', 'user')
+
+总setting.py注册
+
+同步数据库
+python manage.py makemigrations
+python manage.py migrate
+
+
+评论需要登录用户
+确保较低程度减少垃圾评论
+提高评论门槛(三方登录解决)，还可以通知用户
+
+django里面默认配置了auth方法，用{{user}}可以显示当前用户
+user.is_authenticated 表示是否登录返回bool
+
+
+<div>
+    <h3>提交评论</h3>
+    {% if user.is_authenticated %}
+        已登录
+    {% else %}
+        未登录{#action表示提交到哪里#}
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}{#安全机制令牌#}
+            <input type="text" name="username">
+            <input type="password" name="password">
+            <input type="submit" value="登录">
+        </form>
+    {% endif %}
+</div>
+
+总urls.py新建提交网址
+path('login/',views.login,name='login'),
+
+总views.py创建登录方法
+
+from django.shortcuts import render, redirect # 跳转方法
+from django.contrib import auth
+from django.urls import reverse
+
+def login(request):
+    username = request.POST.get('username', '')  # 获取不到就为空
+    password = request.POST.get('password', '')  # 获取不到就为空
+    user = auth.authenticate(request, username=username, password=password)
+    referer = request.META.get('HTTP_REFERER',reverse('hmoe'))
+                            #refer之前的页面，找不到就返回首页
+    if user is not None:
+        auth.login(request, user)
+        return redirect(referer)  
+    else:
+        return render(request, 'error.html', {'message': '用户名或密码不正确'})
+
+
+
+总templates新建error.html
+
+{% block title %}
+    我的网站|错误
+{% endblock %}
+{% block nav_home_active %}active{% endblock %}
+{% block content %}
+    {{ message }}<a href="{{ redirect_to }}">返回</a>
+{% endblock %}
+
+
+
+
+
+
+html表单提交评论
+blog.templates.blog.blog_detail.html
+
+<h3 class="comment-area-title">提交评论</h3>
+{% if user.is_authenticated %}
+    {{ user.usrname }}欢迎评论~
+    <form action="" method="POST">
+        <textarea id="comment_text"name="text"></textarea>{#评论框#}
+        <input type="hidden" name="object_id" value="{{blog.pk}}">{#Comment需要的object_id字段#}
+        <input type="hidden" name="content_type" value="blog">{#Comment需要的content_type字段#}
+        <input type="submit" value="评论">
+    </form>
+{% else %}
+
+
+comment新建urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('update_comment',views.update_comment,name='update_comment')
+]
+总urls.py添加
+path('comment/', include('comment.urls')),
+
+
+comment.views.py从前端页面得到的数据进行处理
+
+from django.shortcuts import render, redirect
+from .models import Comment
+from django.urls import reverse
+from django.contrib.contenttypes.models import ContentType
+
+
+def update_comment(request):
+    referer = request.META.get('HTTP_REFERER', reverse('home'))
+
+    # 数据检查
+    if not request.user.is_authenticated:
+        return render(request, 'error.html', {'message': '用户未登录', 'redirect_to': referer})
+    text = request.POST.get('text', '')  # 取评论内容取不到取空
+    if text == '':
+        return render(request, 'error.html', {'message': '评论内容为空', 'redirect_to': referer})
+    try:
+        content_type = request.POST.get('content_type', '')
+        object_id = int(request.POST.get('object_id', ''))
+        model_class = ContentType.objects.get(model=content_type).model_class()  # =Blog
+        model_obj = model_class.objects.get(pk=object_id)  # =Blog.objects.get()
+    except Exception as e:
+        return render(request, 'error.html', {'message': '评论对象不存在', 'redirect_to': referer})
+
+    # 检查通过，保存数据
+    comment = Comment()  # 实例化
+    comment.user = request.user
+    comment.text = text
+    comment.content_object = model_obj
+    comment.save()
+
+    return redirect(referer)
+
+admin后台可以看到数据
+
+
+显示在评论下方显示评论列表：
+
+blog.views.py
+
+from django.contrib.contenttypes.models import ContentType
+from comment.models import Comment
+
+def blog_detail(request, blog_pk):
+    blog_content_type = ContentType.objects.get_for_model(blog)
+    comments = Comment.objects.filter(content_type=blog_content_type,object_id=blog.pk)
+
+    context['comments'] = comments
+
+
+blog.templates.blog.blog_detail.html
+
+<h3 class="comment-area-title">评论列表</h3>
+{% for comment in comments %}
+<div>
+    {{ comment.user.username }}
+    ({{ comment.comment_time|date:"Y-m-d H:i:s" }}):
+    {{ comment.text }}
+</div>
+{% empty %}
+    暂无评论
+{% endfor %}
+
+
+
+
+
+2020/01/16
+使用djangoform表单
+
+django用form类描述html表单。帮助或简化操作
+1、接收喝处理用户提交的数据
+    可检查提交的数据
+    可将数据转换成python的数据类型
+
+2、可自动生成html代码
+
+
+
+
+在根目录下创建forms.py(相当于model字段)
+
+from django import forms
+from django.contrib import auth
+
+class LoginForm(forms.Form):
+
+    username = forms.CharField(label='用户名', required=True, widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': '请输入用户名'}))
+    # 接受前端传来的信息,required=True必填False可以不填，,placeholder默认显示
+    password = forms.CharField(label='密码', widget=forms.PasswordInput(
+        attrs={'class': 'form-control', 'placeholder': '请输入密码'}))
+    # wiget加密显示,attrs={'class':'form-control')输入框样式调整
+
+    def clean(self):  # 验证数据，执行is_vaild()方法
+        username = self.cleaned_data['username']  # 获取提交的username
+        password = self.cleaned_data['password']  # 获取提交的password
+        # 检查是否有问题
+        user = auth.authenticate(username=username, password=password)
+        if user is None:
+            raise forms.ValidationError('用户名或密码不正确')#显示出用户名或密码不正确
+        else:
+            self.cleaned_data['user'] = user  # 添加user,待会从views引用
+        return self.cleand_data
+
+
+总url中添加路径
+path('login/', views.login, name='login'),
+
+
+根目录views.py
+
+def login(request):
+
+    if request.method == 'POST':#post请求，即在登录页面点登录提交所输入的数据
+        login_form = LoginForm(request.POST)#带有已经提交的数据
+        if login_form.is_valid():#验证通过
+            user = login_form.cleaned_data['user']#获取user
+            auth.login(request, user)#登录
+            return redirect(request.GET.get('from',reverse('home')))
+            #返回到有from这个参数的页面，如果找不到就返回到home页面  
+    
+    else:  #get请求，即进入登录页面
+        login_form = LoginForm()  # 实例化，创建一个对象，不带有已经提交的数据
+
+    context = {}
+    context['login_form'] = login_form
+    return render(request, 'login.html', context)
+
+    '''对比
+    username = request.POST.get('username', '')  # 获取不到就为空
+    password = request.POST.get('password', '')  # 获取不到就为空
+    user = auth.authenticate(request, username=username, password=password)
+    referer = request.META.get('HTTP_REFERER',reverse('hmoe'))
+                            #refer之前的页面，找不到就返回首页
+    if user is not None:
+        auth.login(request, user)
+        return redirect(referer)  
+    else:
+        return render(request, 'error.html', {'message': '用户名或密码不正确'})
+    '''
+
+
+根目录templates.login.html
+    <form action="" method="POST">{# 指向自己的链接可以写成#或空 #}
+        {% csrf_token %}
+        {% for field in login_form %}{# 遍历字段 #}
+            <label for="{{ field.id_for_label }}">{{field.label}}</label>{# 去冒号，field.label代表用户名和密码这两个词语#}
+            {{ field }}{# 输入框 #}
+            <p class="text-danger">{{ field.error.as_text }}</p>
+            {# 字段错误标红 #}
+        {% endfor %}
+        <span class="pull-left text-danger">{{ login_form.non_field_errors }}</span>{# 其他错误标红#}
+        <input type="submit" value="登录" class="btn btn-primary pull-right">
+    </form>
+
+
+
+
+注册流程
+
+/froms.py
+
+from django.contrib.auth.models import User
+
+class RegForm(forms.Form):
+    username = forms.CharField(label='用户名', max_length=30, min_length=3, required=True, widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': '请输入3-30位用户名'}))
+    email = forms.EmailField(label='邮箱', widget=forms.EmailInput(
+        attrs={'class': 'form-control', 'placeholder': '请输入邮箱'}))
+    password = forms.CharField(label='密码', min_length=6, widget=forms.PasswordInput(
+        attrs={'class': 'form-control', 'placeholder': '请输入密码'}))
+    password_again = forms.CharField(label='密码', min_length=6, widget=forms.PasswordInput(
+        attrs={'class': 'form-control', 'placeholder': '请再一次输入密码'}))
+
+    def clean_username(self):  # 验证用户名
+        username = self.cleaned_data['username']
+        if User.objects.filter(username=username).exists():
+            raise forms.ValidationError('用户名已存在')
+        return username
+
+    def clean_email(self):  # 验证邮箱
+        email = self.cleaned_data['email']
+        if User.objects.filter(email=email).exists():
+            raise forms.ValidationError('邮箱已存在')
+        return email
+
+    def clean_password_again(self):  # 验证两次密码
+        password = self.cleaned_data['password']
+        password_again = self.cleaned_data['password_again']
+        if password != password_again:
+            raise forms.ValidationError('两次输入密码不一致')
+        return password_again
+
+
+
+/urls.py
+
+path('register/',views.register,name='register'),
+
+
+/view.py
+
+from .forms import RegForm
+from django.contrib.auth.models import User
+
+def register(request):
+    if request.method == 'POST':  # post请求，即在登录页面点登录提交所输入的数据
+        reg_form = RegForm(request.POST)  # 带有已经提交的数据
+        if reg_form.is_valid():
+            username = reg_form.cleaned_data['username']
+            email = reg_form.cleaned_data['email']
+            password = reg_form.cleaned_data['password']
+            # 第一种
+            user = User.objects.create_user(username, email, password)
+            user.save()
+            '''第二种实例化
+            user = User()
+            user.username = username
+            user.email = email
+            user.set_password(password)
+            user.save()'''
+
+            # 注册完登录用户
+            user = auth.authenticate(username=username, password=password)
+            auth.login(request, user)  # 登录
+            return redirect(request.GET.get('from', reverse('home')))
+            # 返回登录前页面
+    else:  # get请求，即进入注册页面
+        reg_form = RegForm()  # 实例化，创建一个对象，不带有已经提交的数据
+
+    context = {}
+    context['reg_form'] = reg_form
+    return render(request, 'register.html', context)
+
+
+/templates.register.html(和登录模板差不多)
+
+{% extends 'base.html '%}
+{% load static %}
+
+{% block title %}
+    我的网站|注册
+{% endblock %}
+{% block nav_home_active %}active{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">注册</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form action="" method="POST">{# 指向自己的链接可以写成#或空 #}
+                            {% csrf_token %}
+                            {% for field in reg_form %}{# 遍历字段 #}
+                                <label for="{{ field.id_for_label }}">{{field.label}}</label>{# 去冒号，field.label代表用户名和密码这两个词语#}
+                                {{ field }}
+                                <p class="text-danger">{{ field.errors.as_text }}</p>
+                                {# 字段错误标红 #}
+                            {% endfor %}
+                            <span class="pull-left text-danger">{{ login_form.non_field_errors }}</span>
+                            <input type="submit" value="注册" class="btn btn-primary pull-right">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+django-ckeditor富文本表单
+
+每个字段类型都有一个适当的默认Widget类
+django-ckeditor提供widget
+from ckeditor.widgets import CKEditorWidget
+'''示例：
+
+comment文件夹下创建forms.py
+
+from django import forms
+
+class CommentForm():
+    content_type = forms.CharField()
+    object_id = forms.IntegerField()
+    text = forms.CharField()
+
+
+blog.views.py blog.detail方法
+
+from comment.forms import CommentForm
+
+context['comment_form'] = CommentForm()
+
+
+在blog_detail.html渲染出来
+
+{{ comment_form }}
+
+显示出：
+content_type(输入框)object_id(输入框)text(输入框)
+
+示例完毕'''
+
+
+
+实战
+
+comment文件夹下创建forms.py
+
+from django import forms
+from django.contrib.contenttypes.models import ContentType
+from django.db.models import ObjectDoesNotExist
+
+
+class CommentForm(forms.Form):
+    content_type = forms.CharField(widget=forms.HiddenInput)
+    object_id = forms.IntegerField(widget=forms.HiddenInput)
+    text = forms.CharField(widget=forms.Textarea)
+
+    def __init__(self, *args, **kwargs):#获取views存入的user,不知道父类init有什么参数，故用万金油*args, **kwargs
+        if 'user' in kwargs:#用构造方法__init__方法会调用父类的__init__
+            self.user = kwargs.pop('user')#故取出uesr不再储存(pop取出后不留在kwargs)
+        super(CommentForm, self).__init__(*args, **kwargs)#再调用父类__init__方法还原(相当于重写__init__？)
+
+    def clean(self):
+        # 判断用户是否登录
+        if self.user.is_authenticated:
+            self.cleaned_data['user'] = self.user
+        else:
+            raise forms.ValidationError('用户尚未登录')
+
+        # 评论对象验证
+        content_type = self.cleaned_data['content_type']
+        object_id = self.cleaned_data['object_id']
+        try:
+            model_class = ContentType.objects.get(model=content_type).model_class()
+            model_obj = model_class.objects.get(pk=object_id)
+            self.cleaned_data['content_object'] = model_obj
+            # 写入然后在views获取
+        except ObjectDoesNotExist:
+            raise forms.ValidationError('评论对象不存在')
+
+        return self.cleaned_data
+
+
+
+blog.views.py blog.detail方法
+
+from comment.forms import CommentForm
+
+context['comment_form'] = CommentForm(initial={'content_type': blog_content_type.model, 'object_id': blog_pk})
+#CommentForm实例化再初始化存入content_type，object_id来携带
+
+
+重写comment.views.pu.update_comment方法
+
+from django.shortcuts import render, redirect
+from .models import Comment
+from django.urls import reverse
+from django.contrib.contenttypes.models import ContentType
+from .forms import CommentForm
+
+
+def update_comment(request):
+    referer = request.META.get('HTTP_REFERER', reverse('home'))  # 返回页面
+    comment_form = CommentForm(request.POST, user=request.user) #存入用POST请求参数的user让CommentForm获取
+
+    if comment_form.is_valid():
+        # 检查通过，保存数据
+        comment = Comment()  # 实例化,如果通过则写入评论
+        comment.user = comment_form.cleaned_data['user']
+        comment.text = comment_form.cleaned_data['text']
+        comment.content_object = comment_form.cleaned_data['content_object']
+        comment.save()
+        return redirect(referer)
+
+    else:
+        return render(request, 'error.html', {'message': comment_form.errors, 'redirect_to': referer})
+
+    '''对比
+    把之前的删除
+    referer = request.META.get('HTTP_REFERER', reverse('home'))
+    # 数据检查
+    if not request.user.is_authenticated:
+        return render(request, 'error.html', {'message': '用户未登录', 'redirect_to': referer})
+    text = request.POST.get('text', '')  # 取评论内容取不到取空
+    if text == '':
+        return render(request, 'error.html', {'message': '评论内容为空', 'redirect_to': referer})
+    try:
+        content_type = request.POST.get('content_type', '')
+        object_id = int(request.POST.get('object_id', ''))
+        model_class = ContentType.objects.get(model=content_type).model_class()  # =Blog
+        model_obj = model_class.objects.get(pk=object_id)  # =Blog.objects.get()
+    except Exception as e:
+        return render(request, 'error.html', {'message': '评论对象不存在', 'redirect_to': referer})
+
+    # 检查通过，保存数据
+    comment = Comment()  # 实例化
+    comment.user = request.user
+    comment.text = text
+    comment.content_object = model_obj
+    comment.save()
+
+    return redirect(referer)
+    对比完毕'''
+
+
+在blog_detail.html渲染出来
+
+原来：
+<form action="{% url 'update_comment' %}" method="POST" style="overflow:hidden">
+    {% csrf_token %}
+    <div class="form-gtoup">
+        <label for="comment_text">{{ user.username }}欢迎评论~</label>
+        <textarea id="comment_text" class="form-control" name="text" rows="4"></textarea>
+    </div>
+    
+    <input type="hidden" name="object_id" value="{{blog.pk}}">
+    <input type="hidden" name="content_type" value="blog">
+    <input type="submit" value="评论" class="btn btn-primary" style="float:right">
+</form>
+
+优化：
+<form action="{% url 'update_comment' %}" method="POST" style="overflow:hidden">
+    <label>{{ user.username }}欢迎评论~</label>
+    {% csrf_token %}
+    {{ comment_form }}
+    <input type="submit" value="评论" class="btn btn-primary" style="float:right">
+</form>
+
+
+
+
+
+
+
+富文本评论
+https://github.com/django-ckeditor/django-ckeditor
+
+comment.forms.py
+
+from ckeditor.widgets import CKEditorWidget
+
+text = forms.CharField(widget=forms.Textarea)改为
+    text = forms.CharField(label=False, widget=CKEditorWidget(config_name='comment_ckeditor'))#label=False界面不显示text
+
+
+
+在blog.templates.blog.blog_detail.html头部添加
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+
+
+/setting.py添加
+
+# 富文本评论设置
+CKEDITOR_CONFIGS = {
+    'default': {},
+    'comment_ckeditor': {
+        'toolbar': 'custom',  # 表示工具栏
+        'toolbar_custom': [
+            ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript'],
+            ["TextColor", "BGColor", 'RemoveFormat'],
+            ['NumberedList', 'BulletedList'],
+            ['Link', 'Unlink'],
+            ["Smiley", "SpecialChar", 'Blockquote'],
+        ],
+        'width': 'auto',
+        'height': '180',
+        'tabSpaces': 4,
+        'removePlugins': 'elementspath',  # 下面两行作用把底部宽条去掉
+        'resize_enabled': False,
+    }
+}
+
+
+blog.static.blog.css
+
+div.django-ckeditor-widget{
+    width: 100%;
+}
+富评论编辑完成
+
+comment.text|safe
+文本不会出现<p>23333</p>等标签
+
+
+
+
+Ajax异步提交
+
+base.html下方添加用于插入jquery
+{% block script_extends %}{% endblock %}
+
+blog_detail.html
+
+form添加id="comment_form" span添加id="comment_error"
+<form id="comment_form" action="{% url 'update_comment' %}" method="POST" style="overflow:hidden">
+    <label>{{ user.username }}，欢迎评论~</label>
+    {% csrf_token %}                            
+    {{ comment_form }}
+    <span id="comment_error" class="text-danger pull-left"></span>
+    <input type="submit" value="评论" class="btn btn-primary pull-right">
+</form>
+
+
+评论列表添加id="comment_list"
+
+<h3 class="comment-area-title">评论列表</h3>
+<div id="comment_list">
+    {% for comment in comments %}
+        <div>
+            {{ comment.user.username }}
+            ({{ comment.comment_time|date:"Y-m-d H:i:s" }})：
+            {{ comment.text|safe }}
+        </div>
+    {% empty %}
+        暂无评论
+    {% endfor %}
+</div>
+
+插入方法
+{% block script_extends %}
+    <script type="text/javascript">
+        $("#comment_form").submit(function(){//提交时触发一个function
+            // 判断是否为空
+            $("#comment_error").text('');//错误信息出现后点输入框错误信息清空
+            if(CKEDITOR.instances["id_text"].document.getBody().getText().trim()==''){
+                $("#comment_error").text('评论内容不能为空');
+                return false;//阻止提交
+            }
+
+            // 更新数据到textarea(用了ckeditor要先将数据提交到textarea)
+            CKEDITOR.instances['id_text'].updateElement();
+
+            // 异步提交
+            $.ajax({
+                url: "{% url 'update_comment' %}",
+                type: 'POST',
+                data: $(this).serialize(),//this="#comment_from"
+                cache: false,
+                success: function(data){//成功后执行的方法，data为function的参数
+                    console.log(data);//控制台打印data
+                    if(data['status']=="success"){
+                        // 插入数据
+                        var comment_html = '<div>' + data['username'] + 
+                                           ' (' + data['comment_time'] + ')：' + 
+                                           data['text'] + '</div>';
+                        $("#comment_list").prepend(comment_html);
+                        //向id为comment_list的块插入一小段html页面
+                        CKEDITOR.instances['id_text'].setData('');
+                        // 清空编辑框的内容
+                    }else{
+                        // 显示错误信息
+                        $("#comment_error").text(data['message']);
+                    }                    
+                },
+                error: function(xhr){//回调函数，xhr为jquery定义好的错误参数？
+                    console.log(xhr);
+                }
+            });
+            return false;//阻止提交
+        });
+    </script>
+{% endblock %}
+
+
+comment.views.py.update_comment方法改成
+
+from django.http import JsonResponse
+
+def update_comment(request):
+    referer = request.META.get('HTTP_REFERER', reverse('home'))  # 返回页面
+    comment_form = CommentForm(request.POST, user=request.user)  # 存入用POST请求参数的user让CommentForm获取
+    data = {}
+
+    if comment_form.is_valid():
+        # 检查通过，保存数据
+        comment = Comment()  # 实例化,如果通过则写入评论
+        comment.user = comment_form.cleaned_data['user']
+        comment.text = comment_form.cleaned_data['text']
+        comment.content_object = comment_form.cleaned_data['content_object']
+        comment.save()
+
+        # 返回数据
+        data['status'] = 'success'
+        data['username'] = comment.user.username
+        data['comment_time'] = comment.comment_time.strftime('%Y-%m-%d %H:%M:%S')
+        data['text'] = comment.text
+
+    else:
+        # return render(request, 'error.html', {'message': comment_form.errors, 'redirect_to': referer})
+        data['status'] = 'error'
+        data['message'] = list(comment_form.errors.values())[0][0]
+    return JsonResponse(data)
+
+
+
+
+
+
+回复功能设计和树结构
+
+在comment.model.py中创建自关联(回复自关联评论，类似于广州自关联广东)
+
+class Comment(models.Model):
+    # 外键指向contenttype
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    # 对应模型主键值
+    object_id = models.PositiveIntegerField()
+    # 把以上两个组合
+    content_object = GenericForeignKey('content_type', 'object_id')
+
+    text = models.TextField()
+    comment_time = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, related_name='comments', on_delete=models.CASCADE)  # 谁写的评论
+
+    root = models.ForeignKey('self', related_name='root_comment', null=True,
+                             on_delete=models.CASCADE)  # 每条回复基于哪条评论(顶级评论)
+    
+    # parent_id = models.IntegerField(default=0)  # 创造一个指向object_id的父键(1,2,3等等)
+    parent = models.ForeignKey('self', related_name='parent_comment', null=True, on_delete=models.CASCADE)
+    # 指向自己，没有的允许为空，相当于自关联,在admin显示Comment object(1),Comment object(2)...
+    reply_to = models.ForeignKey(User, related_name='replies', null=True, on_delete=models.CASCADE)  # 回复谁
+
+    def __str__(self):
+        return self.text  # 返回具体的评论内容23333等
+
+    class Meta():
+        ordering = ['-comment_time']
+
+
+blog.views.py. def blog_detail():添加parent=None
+
+ comments = Comment.objects.filter(content_type=blog_content_type, object_id=blog.pk, parent=None)  # 顶级只是评论没有回复(评论和回复没有同一列)
+
+
+
+blog.templates.blog.blog_detail.html
+
+<h3 class="comment-area-title">评论列表</h3>
+<div id="comment_list">
+    {% for comment in comments %}
+        <div class="comment">
+            {{ comment.user.username }}
+            ({{ comment.comment_time|date:"Y-m-d H:i:s" }})
+            {{ comment.text|safe }}
+            {#遍历评论下每条回复#}
+            {% for reply in comment.root_comment.all %}
+                <div class="reply">
+                    {{ reply.user.username }}
+                    ({{ reply.comment_time|date:"Y-m-d H:i:s" }})
+                    回复
+                    {{ reply.reply_to.username }}:
+                    {{ reply.text|safe }}
+                </div>
+            {% endfor %}
+        </div>
+    {% empty %}
+        暂无评论
+    {% endfor %}
+</div>
+
+
+
+blog.static.blog.css
+
+div.comment{
+    border-bottom: 1px dashed #ccc;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+div.reply{
+    margin-left: 2em;
+}
+
+
+user =  谁写的评论
+root = 顶级评论
+parent = 类似省id
+reply_to = 回复谁
+reply_comment_id = 回复的id
+
+
+comment.forms.py增加id
+reply_comment_id = forms.IntegerField(widget=forms.HiddenInput(attrs={'id':'reply_comment_id'}))
+#回复的id，attrs={'id':'reply_comment_id'}可以通过前端页面获取
+
+
+blog.views.py. def blog_detail()修改
+context['comment_form'] = CommentForm(initial={'content_type': blog_content_type.model, 'object_id': blog_pk,'reply_comment_id'=0})
+#顶级评论表单'reply_comment_id'=0
+
+
+
+
+blog.templates.blog.blog_detail.html
+
+(回复时才会弹出回复什么评论)
+<label>{{ user.username }}，欢迎评论~</label>
+<div id="reply_content_container" style="display:none;">
+    <p>回复:</p>
+    <div id="reply_content"></div>
+</div>
+
+
+
+新建function：
+function reply(reply_comment_id){
+    //设置值
+    $('#reply_comment_id').val(reply_comment_id);
+    var html = $("#comment_"+reply_comment_id).html();
+    $('#reply_content').html(html);
+    $('#reply_content_container').show();
+    $('html').animate({scrollTop:$('#comment_form').offset().top -60},300,function(){
+            CKEDITOR.instances["id_text"].focus();
+    });
+}
+
+
+<div id="comment_list">
+    {% for comment in comments %}
+        <div id="root_{{comment.pk}}" class="comment">
+            <span>{{ comment.user.username }}</span>
+            <span>({{ comment.comment_time|date:"Y-m-d H:i:s" }})</span>
+            <div id="comment_{{comment.pk}}">
+                {{ comment.text|safe }}
+            </div>
+            {# 执行下面JavaScript reply()代码#}
+            <a href="javascript:reply({{comment.pk}});">回复</a>
+            {#遍历评论下每条回复#}
+            {% for reply in comment.root_comment.all %}
+                <div class="reply">
+                    <span>{{ reply.user.username }}</span>
+                    <span>({{ reply.comment_time|date:"Y-m-d H:i:s" }})</span>
+                    <span>回复</span>
+                    <span>{{ reply.reply_to.username }}:</span>
+                    <div id="comment_{{reply.pk}}">
+                        {{ reply.text|safe }}
+                    </div>
+                    <a href="javascript:reply({{reply.pk}});">回复</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% empty %}
+        <span id="no_comment">暂无评论</span>
+    {% endfor %}
+</div>     
+
+修改
+if(data['status']=="success"){
+    //判断是否评论还是回复                  
+    if($('#reply_comment_id').val()==0){
+        //插入评论
+        var comment_html = '<div id="root_'+data['pk']+'" class="comment"><span>'+data['username']+'</span><span>('+data['comment_time']+')</span><div id="comment_'+data['pk']+'">'+data['text']+'</div><a href="javascript:reply('+data['pk']+');">回复</a></div>';
+        //向id为comment_list的块插入一小段html页面
+        $("#comment_list").prepend(comment_html);
+    }else{
+        //插入回复
+        var reply_html = '<div class="reply"><span>'+data['username']+'</span><span>('+data['comment_time']+')</span><span>回复</span><span>'+data['reply_to']+':</span><div id="comment_'+data['pk']+'">'+data['text']+'</div><a href="javascript:reply('+data['pk']+');">回复</a></div>';
+        //向id为#root_xxx的评论后插入一回复的html页面'
+        $("#root_"+data['root_pk']).append(reply_html);
+    }
+    CKEDITOR.instances['id_text'].setData('');
+    // 清空编辑框的内容
+    $('#reply_content_container').hide();
+    //回复完隐藏上方的回复谁谁谁
+    $('#reply_comment_id').val('0');
+    //回复完把reply_comment_id重置为0
+    $('#no_comment').remove()
+    //评论后移除暂无评论这些标语
+}else{
+    // 显示错误信息
+    $("#comment_error").text(data['message']);
+}
+
+
+
+comment.forms.py.class CommentForm 新增方法
+
+# 验证回复是否有效(前端form校验)
+def clean_reply_comment_id(self):
+    reply_comment_id = self.cleaned_data['reply_comment_id']
+    if reply_comment_id < 0:
+        raise forms.ValidationError('回复出错')
+    elif reply_comment_id == 0:  # = 0说明是顶级评论
+        self.cleaned_data['parent'] = None
+    elif Comment.objects.filter(pk=reply_comment_id).exists():
+        self.cleaned_data['parent'] = Comment.objects.get(pk=reply_comment_id)
+    else:
+        raise forms.ValidationError('回复出错')
+    return reply_comment_id
+
+
+comment.views.py写入parent
+
+parent = comment_form.cleaned_data['parent']  # parent类似于省id
+if not parent is None:  # 如果是回复(不是评论)
+    comment.root = parent.root if not parent.root is None else parent
+    # not parent.root is None=回复(不是评论)说明是回复写入parent.root，是评论则写入parent
+    comment.parent = parent
+    comment.reply_to = parent.user
+comment.save()
+
+# 返回数据
+data['status'] = 'success'
+data['username'] = comment.user.username
+data['comment_time'] = comment.comment_time.strftime('%Y-%m-%d %H:%M:%S')
+data['text'] = comment.text
+if not parent is None:  # 如果是回复(不是评论)
+    data['reply_to'] = comment.reply_to.username
+else:  # reply_to(回复谁)
+    data['reply_to'] = ''
+data['pk'] = comment.pk
+data['root_pk'] = comment.root.pk if not comment.root is None else ''
+
+
+
+
+
+
+
+
+2020/01/19
+
+减少耦合度
+自定义模板标签
+
+app内创建templatetags包(文件夹内新建__init__.py)
+创建comment_tags.py
+{% load file %} 
+
+例子：
+from django import template
+
+register = template.Library()
+
+@register.simple_tag
+def test(who):
+    return 'tianshui'+ who
+
+在html文件最上方加入{% load comment_tags %}
+
+{% test 'qiaoben' %} -> tianshui qiaoben
+{% test 'qiaoben' as q %}
+{% for i in q %}...
+
+
+
+添加评论统计
+
+comment文件夹下创建templatetags
+templatetags创建__init__.py,comment_tags.py
+
+from django import template
+from django.contrib.contenttypes.models import ContentType
+from ..models import Comment
+
+register = template.Library()
+
+@register.simple_tag
+def get_comment_count(obj):
+    content_type = ContentType.objects.get_for_model(obj)
+    return Comment.objects.filter(content_type=content_type, object_id=obj.pk).count()
+
+
+blog.templates.blog.blog_detail.html
+
+{% load comment_tags %}
+<li>评论({% get_comment_count blog %})</li>
+
+blog.templates.blog.blog_list.html
+
+{% load comment_tags %}
+评论({% get_comment_count blog %})
+
+
+
+comment和blog分离
+
+
+comment.templatetags.comment_tags.py
+
+from ..forms import CommentForm
+
+@register.simple_tag
+def get_comment_form(obj):
+    content_type = ContentType.objects.get_for_model(obj)
+    form = CommentForm(
+        initial={'content_type': content_type.model, 'object_id': obj.pk, 'reply_comment_id': 0})
+    # CommentForm实例化再初始化存入content_type，object_id来携带，顶级评论表单'reply_comment_id'=0
+    return form
+
+@register.simple_tag
+def get_comment_list(obj): #顶级评论root
+    content_type = ContentType.objects.get_for_model(obj)
+    comments = Comment.objects.filter(content_type=content_type, object_id=obj.pk, parent=None)  # 只是评论没有回复
+    return comments.order_by('-comment_time')  # 顶级评论倒序排序
+
+
+blog.templates.blog.blog_detail.html
+
+{{ comment_form }}改为:
+{% get_comment_form blog %}
+
+{% for comment in comments %}改为:
+{% get_comment_list blog as comments %}
+{% for comment in comments %}
+
+
+把blog.views.py 里面有关comments的都删掉
+删掉：{
+from comment.models import Comment
+from comment.forms import CommentForm
+context['comment_form'] = CommentForm(
+        initial={'content_type': blog_content_type.model, 'object_id': blog_pk, 'reply_comment_id': 0})
+comments = Comment.objects.filter(content_type=blog_content_type, object_id=blog.pk, parent=None)  # 只是评论没有回复
+context['comments'] = comments.order_by('-comment_time')  # 顶级评论倒序排序
+}  
+
+
+
+
+
+2020/01/20
+点赞功能实现
+
+流程：
+前端点击-跳转ajax异步提交-url-views(处理并返回数据)-ajax(执行方法)-渲染页面(自定义模板显示)
+
+博客、评论、回复都可以点赞
+可以取消点赞
+显示点赞总数
+
+python manage.py startapp likes
+
+likes.models.py
+
+from django.db import models
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.auth.models import User
+
+
+class LikeCount(models.Model):
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    content_object = GenericForeignKey('content_type', 'object_id')
+
+    like_num = models.IntegerField(default=0)
+
+
+class LikeRecord(models.Model):
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    content_object = GenericForeignKey('content_type', 'object_id')
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    liked_time = models.DateTimeField(auto_now_add=True)
+
+
+setting.py
+增加likes app
+
+likes文件夹新建urls.py
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('like_change', views.like_change, name='like_change')
+]
+
+总urls.py
+
+path('likes/', include('likes.urls')),
+
+自定义模板标签
+在like文件夹下新建templatetagss文件夹
+再新建likes_tags.py
+
+from django import template
+from django.contrib.contenttypes.models import ContentType
+from ..models import LikeCount,LikeRecord
+
+register = template.Library()
+
+
+@register.simple_tag
+def get_like_count(obj):
+    content_type = ContentType.objects.get_for_model(obj)
+    like_count, created = LikeCount.objects.get_or_create(content_type=content_type, object_id=obj.pk)
+    return like_count.like_num
+
+@register.simple_tag(takes_context=True)#可以从前端获取context字典
+def get_like_status(context,obj):
+    content_type = ContentType.objects.get_for_model(obj)
+    user = context['user']
+    if not user.is_authenticated:
+        return ''
+    if LikeRecord.objects.filter(content_type=content_type, object_id=obj.pk,user=context['user']).exists():
+        return 'active'
+    else:
+        return ''
+
+@register.simple_tag
+def get_content_type(obj):
+    content_type = ContentType.objects.get_for_model(obj)
+    return content_type.model
+
+
+blog.templates.blog.blog_detail.html
+
+{% load likes_tags %}
+
+{#显示在文章下方#}
+<div class="like" onclick="likechange(this,'{% get_content_type blog %}',{{blog.pk}})">
+    {#this代表div本身自己#}
+    <span class="glyphicon glyphicon-thumbs-up {% get_like_status blog %}"></span>
+    <span class="like-num">{% get_like_count blog %}</span>
+    <span>喜欢</span>
+</div>
+
+{#显示在评论旁#}
+<div class="like" onclick="likechange(this,'{% get_content_type comment %}',{{comment.pk}})">
+    {#this代表div本身自己#}
+    <span class="glyphicon glyphicon-thumbs-up {% get_like_status comment %}"></span>
+    <span class="like-num">{% get_like_count comment %}</span>
+</div>
+
+{#显示在回复旁#}
+<div class="like" onclick="likechange(this,'{% get_content_type reply %}',{{reply.pk}})">
+    {#this代表div本身自己#}
+    <span class="glyphicon glyphicon-thumbs-up {% get_like_status reply %}"></span>
+    <span class="like-num">{% get_like_count reply %}</span>
+</div>
+
+
+function likechange(obj,content_type,object_id){
+    //判断是否有active，没有则还没点赞，要去点赞
+    var is_like = obj.getElementsByClassName('active').length ==0
+    $.ajax({
+        url:"{% url 'like_change' %}",
+        type:'GET',
+        data:{ //把data的信息传到url->views中
+            content_type:content_type,
+            object_id:object_id,
+            is_like:is_like
+        },
+        cache:false,
+        success:function(data){
+            console.log(data)
+            if(data['status']=='SUCCESS'){
+                //更新点赞状态
+                //根据ClassName('glyphicon')获取span标签 $()变成jQuery对象
+                var element = $(obj.getElementsByClassName('glyphicon'));
+                if(is_like){
+                    element.addClass('active');
+                }else{
+                    element.removeClass('active');
+                }
+                //更新点赞数量
+                //根据ClassName('like_num')获取span标签 $()变成jQuery对象
+                var like_num = $(obj.getElementsByClassName('like-num'));
+                like_num.text(data['like_num'])//设置like_num类里面的信息
+            }else{
+                alert(data['message']);
+            }
+        },
+        error:function(xhr){
+            console.log(xhr)
+        }
+    });
+}
+
+blog.css
+div.like{
+    color:#337ab7;
+    cursor:pointer;{#可以点击#}
+    display:inline-block;
+    padding: 0.5em 0.3em;
+}
+
+div.like .active{
+    color:#f22;{#存在active时变红#}
+}
+
+
+
+like.views.py
+
+from django.shortcuts import render
+from django.contrib.contenttypes.models import ContentType
+from django.http import JsonResponse
+from django.db.models import ObjectDoesNotExist
+from .models import LikeCount, LikeRecord
+
+
+def SuccessResponse(like_num):
+    data = {}
+    data['status'] = 'SUCCESS'
+    data['like_num'] = like_num
+    return JsonResponse(data)
+
+
+def ErrorResponse(code, message):
+    data = {}
+    data['status'] = 'ERROR'
+    data['code'] = code
+    data['messaage'] = message
+    return JsonResponse(data)
+
+
+def like_change(request):
+    # 从Ajax获取的数据
+    user = request.user
+    if not user.is_authenticated:  # 验证是否登录
+        return ErrorResponse(400, '还没有登录哦')
+
+    content_type = request.GET.get('content_type')  # 前端获取的
+    object_id = int(request.GET.get('object_id'))
+
+    try:
+        content_type = ContentType.objects.get(model=content_type)  # 后端获取的
+        model_class = content_type.model_class()
+        model_obj = model_class.objects.get(pk=object_id)
+    except ObjectDoesNotExist:
+        return ErrorResponse(401, '不存在哦')
+
+    # 处理数据
+    if request.GET.get('is_like') == 'true':  # 'active'.length ==0,要点赞
+        # 记录谁的点赞
+        like_record, created = LikeRecord.objects.get_or_create(
+            content_type=content_type, object_id=object_id, user=user)
+
+        if created:  # 如果是新增的（之前没有点过赞）
+            like_count, created = LikeCount.objects.get_or_create(content_type=content_type, object_id=object_id)
+            like_count.like_num += 1
+            like_count.save()
+            return SuccessResponse(like_count.like_num)
+        else:  # 点过赞已经有记录，但active为0，说明重复点赞？
+            return ErrorResponse(402, '你已经点赞过了哦')
+    else:  # 'active'.length !=0,取消点赞
+        # 如果有点赞记录就取消点赞
+        if LikeRecord.objects.filter(content_type=content_type, object_id=object_id, user=user).exists():
+            like_record = LikeRecord.objects.get(content_type=content_type, object_id=object_id, user=user)
+            like_record.delete()  # 清除点赞记录
+            # 点赞减一
+            like_count, created = LikeCount.objects.get_or_create(content_type=content_type, object_id=object_id)
+            if not created:
+                like_count.like_num -= 1
+                like_count.save()
+                return SuccessResponse(like_count.like_num)
+            else:  # 有点赞记录但属于create,错误
+                return ErrorResponse(404, '数据错误哦')
+
+        else:  # 如果没有点赞记录但active处于激活状态
+            return ErrorResponse(403, '没有点赞过，不能取消哦')
+
+
+
+
+
+
+完善点赞功能
+
+新增评论和回复没有onclick事件
+
+略
+
+没有登录就点赞->弹出登录框
+用boostrap->javascript->模态框->动态实例(复制模板)
+
+
+blog.templates.blog.blog_detail.html
+
+<!-- Modal -->
+<div class="modal fade" id="login_modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <form id="login_modal_form"action="" method="POST">{# 指向自己的链接可以写成#或空 #}
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">登录</h4>
+                </div>
+                <div class="modal-body">
+                    {% csrf_token %}
+                    {% for field in login_form %}{# 遍历字段 #}
+                        <label for="{{ field.id_for_label }}">{{field.label}}</label>{# 去冒号，field.label代表用户名和密码这两个词语#}
+                        {{ field }}
+                    {% endfor %}
+                    <span id="login_modal_tip"class="text-danger"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">登录</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+function likechange(obj,content_type,object_id){
+    ...
+success:function(data){
+    ...
+else{
+    if(data['code']==400){//如果是400说明没登录，弹出登录框
+        $('#login_modal').modal('show');
+    }else{
+        alert(data['message']);
+    }
+
+$("#login_modal_form").submit(function(event){
+    event.preventDefault();//阻止提交
+    $.ajax({
+        url:"{% url 'login_for_modal' %}",
+        type:'POST',
+        data:$(this).serialize(),
+        cache:false,
+        success:function(data){
+            if(data['status']=='SUCCESS'){
+                window.location.reload();//刷新
+            }else{
+                $('#login_modal_tip').text('用户名或密码不正确');
+                //id=login_modal_tip的内容改为用户名或密码不正确
+            }
+        }
+    });
+});
+
+blog.views.py def blog_detail
+
+from myblog.forms import LoginForm
+context['login_form'] = LoginForm()
+#前端form需要提交到blog.views.Loginform
+
+总urls.py
+path('login_for_modal/', views.login_for_modal, name='login_for_modal'),
+
+
+总views.py
+
+from django.http import JsonResponse
+
+def login_for_modal(request):
+    login_form = LoginForm(request.POST)
+    data = {}
+    if login_form.is_valid():  # 验证通过
+        user = login_form.cleaned_data['user']  # 获取user
+        auth.login(request, user)  # 登录
+        data['status'] = 'SUCCESS'
+    else:
+        data['status'] = 'ERROR'
+
+    return JsonResponse(data)
+
+
+
+
+
+
+
+
+2020/01/21
+
+导航栏添加用户操作
+
+<ul class="nav navbar-nav navbar-right">
+	{% if not user.is_authenticated %}
+    <li><a href="{% url 'login' %}?from={{ request.get_full_path }}">登录</a></li>
+    {# 点了登录按钮后登录页面链接后缀会有fromxxx方便返回上一页面#}
+    <li><a href="{% url 'register' %}?from={{ request.get_full_path }}">注册</a></li>
+    {# 点了注册按钮后注册页面链接后缀会有fromxxx方便返回上一页面#}
+    {% else %}
+        <li class="dropdown">
+          	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">{{user.username}}<span class="caret"></span></a>
+	        <ul class="dropdown-menu">
+	        	<li><a href="{% url 'user_info' %}">个人资料</a></li>
+	            <li><a href="{% url 'logout' %}?from={{ request.get_full_path }}">退出</a></li>
+	        </ul>
+    	</li>
+    {% endif %}
+</ul>
+
+总views.py
+
+def logout(request):
+    auth.logout(request)
+    return redirect(request.GET.get('from', reverse('home')))
+
+
+def user_info(request):
+    context = {}
+    return render(request, 'user_info.html', context)
+
+
+总urls.py
+
+path('logout/', views.logout, name='logout'),
+path('user_info/', views.user_info, name='user_info'),
+
+
+
+myblog.templates.user_info.html
+
+{% extends 'base.html '%}
+
+{% block title %}个人资料{% endblock %}
+{% block nav_home_active %}active{% endblock %}
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1">
+				{% if user.is_authenticated %}
+				<h2>{{user.username}}</h2>
+					<ul>
+						<li>昵称：<a href="#">修改昵称</a></li>
+						<li>邮箱：{%if user.email%}{{user.email}}{%else%}未绑定<a href="#">绑定邮箱</a>{%endif%}</li>
+						<li>上一次登录时间：{{user.last_login|date:"Y-m-d H:i:s"}}</li>
+						<li><a href="#">修改密码</a></li>
+					</ul>
+				{% else %}
+					<span>未登录，跳转到首页...</span>
+					<script type="text/javascript">
+						window.location.href = '/';
+					</script>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+
+
+
+
+
+
+以上用户登录登出都和user有关，现在重构整个user模块
+
+myblog下新建user文件夹
+添加__init__.py和migrations文件夹
+migrations文件夹再添加__init__.py
+新建views.py
+
+从总views.py复制下面方法到user.views.py
+
+def login(request):
+def login_for_modal(request):
+def register(request):
+def logout(request):
+def user_info(request):
+
+myblog.forms.py 剪切到user文件夹下
+
+总templates 剪切以下html到user.templates.user文件夹下
+
+login.html
+register.html
+logout.html
+
+总urls.py 添加path('user/',include('user.urls')),
+
+并剪切以下文件到user.urls.py
+
+path('login_for_modal/', views.login_for_modal, name='login_for_modal'),
+path('login/', views.login, name='login'),
+path('logout/', views.logout, name='logout'),
+path('register/', views.register, name='register'),
+path('user_info/', views.user_info, name='user_info'),
+
+
+总setting.py注册
+
+完成重构！
+
+
+
+
+
+实现未登录时点赞和回复等各种操作都弹出登录框
+LoginForm设置公共模板变量
+
+user文件夹新建context_processors.py
+
+from .forms import LoginForm
+
+def login_modal_form(request):
+    return {'login_modal_form': LoginForm()}
+
+
+总setting.py
+TEMPLATES = [
+    'OPTIONS': {'user.context_processors.login_modal_form',}
+            ]
+
+删除
+from user.forms import LoginForm
+context['login_form'] = LoginForm()
+
+
+
+从blog_detail.html弹窗html和js代码剪切到base.html中
+
+<!-- Modal -->
+<div class="modal fade" id="login_modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <form id="login_modal_form"action="" method="POST">{# 指向自己的链接可以写成#或空 #}
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">登录</h4>
+                </div>
+                <div class="modal-body">
+                    {% csrf_token %}
+                    {% for field in login_modal_form %}{# 遍历字段 #}
+                        <label for="{{ field.id_for_label }}">{{field.label}}</label>{# 去冒号，field.label代表用户名和密码这两个词语#}
+                        {{ field }}
+                    {% endfor %}
+                    <span id="login_modal_tip"class="text-danger"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">登录</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+	$("#login_modal_form").submit(function(event){
+	    event.preventDefault();//阻止提交
+	    $.ajax({
+	        url:"{% url 'login_for_modal' %}",
+	        type:'POST',
+	        data:$(this).serialize(),
+	        cache:false,
+	        success:function(data){
+	            if(data['status']=='SUCCESS'){
+	                window.location.reload();//刷新
+	            }else{
+	                $('#login_modal_tip').text('用户名或密码不正确');
+	                //id=login_modal_tip的内容改为用户名或密码不正确
+	            }
+	        }
+	    });
+	});
+</script>
+
+
+
+
+
+
+自定义模型,新建昵称
+
+1、继承
+优点：自定义强，没有不必要的字段（需要继承AbstarctBaseUser)
+缺点：需要删库重来或项目一开始使用，配置admin麻烦
+
+2、拓展
+方法：
+1、创建自定义模型
+2、外键关联User
+
+
+user.models.py
+
+from django.db import models
+from django.contrib.auth.models import User
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)#一个用户对应一个昵称
+    nickname = models.CharField(max_length=20,verbose_name='昵称')#拓展nickname
+
+    def __str__(self):
+        return '<Profile:%s for %s>' % (self.nickname, self.user.username)
+
+同步数据库
+
+user.admin.py
+
+from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.contrib.auth.models import User
+from .models import Profile
+
+
+class ProfileInline(admin.StackedInline):
+    model = Profile
+    can_delete = False  # 不允许删除
+
+
+class UserAdmin(BaseUserAdmin):
+    inlines = (ProfileInline, )
+    list_display = ('username', 'nickname', 'email', 'is_staff', 'is_active', 'is_superuser')
+
+    def nickname(self, obj): #UserAdmin没有nickname，自定义出来
+        return obj.profile.nickname #obj->user
+    nickname.short_description = '昵称' #字段起别名
+
+
+# Re-register UserAdmin
+admin.site.unregister(User)				#User取消注册
+admin.site.register(User, UserAdmin)	#重新注册User, UserAdmin
+
+
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ('user', 'nickname')
+
+
+
+
+
+
+修改用户信息
+创建修改昵称的表单
+
+
+user.forms.py
+
+class ChangeNickNameForm(forms.Form):
+    nickname_new = forms.CharField(label='新的昵称', max_length=20, widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': '请输入新的昵称'}))
+
+    # 验证用户是否登录有用，目的是获取self.user
+    def __init__(self, *args, **kwargs):  # 获取views存入的user,不知道父类init有什么参数，故用万金油*args, **kwargs
+        if 'user' in kwargs:  # 用构造方法__init__方法会调用父类的__init__
+            self.user = kwargs.pop('user')  # 故取出uesr不再储存(pop取出后不留在kwargs)
+        super(ChangeNickNameForm, self).__init__(*args, **kwargs)  # 再调用父类__init__方法还原(相当于重写__init__？)
+
+    def clean(self):
+        # 前端校验用户是否登录
+        if self.user.is_authenticated:
+            self.cleaned_data['user'] = self.user
+        else:
+            raise forms.ValidationError('用户尚未登录')
+        return self.cleaned_data
+
+    def clean_nickname_new(self):  # 前端校验数据是否为空
+        nickname_new = self.cleaned_data.get('nickname_new', '').strip()
+        if nickname_new == '':
+            raise ValidationError('新的昵称不能为空')
+        return nickname_new
+
+user.urls.py
+
+path('change_nickname/', views.change_nickname, name='change_nickname'),
+
+
+user.views.py
+
+from .forms import ChangeNickNameForm
+
+def change_nickname(request):
+    redirect_to = request.GET.get('from', reverse('home'))  # 跳转地址
+
+    if request.method == 'POST':
+        form = ChangeNickNameForm(request.POST, user=request.user)
+        if form.is_valid():  # ChangeNickNameForm.clean和clean_nickname_new验证
+            nickname_new = form.cleaned_data['nickname_new']
+            profile, created = Profile.objects.get_or_create(user=request.user)
+            profile.nickname = nickname_new
+            profile.save()
+            return redirect(redirect_to)  # 保存后跳转到这个地址
+    else:  # GET请求
+        form = ChangeNickNameForm()
+
+    context = {}
+    context['page_title'] = '修改昵称'
+    context['form_title'] = '修改昵称'
+    context['submit_text'] = '修改'
+    context['return_back_url'] = redirect_to
+    context['form'] = form
+    return render(request, 'form.html', context)
+
+
+总templates创建通用表单form.py(复制之前的login.html里面的表单)
+
+{% extends 'base.html '%}
+{% load static %}
+
+{% block title %}{{ page_title }}{% endblock %}
+{% block nav_home_active %}active{% endblock %}
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-4 col-xs-offset-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">{{ form_title }}</h3>
+					</div>
+					<div class="panel-body">
+						<form action="" method="POST">{# 指向自己的链接可以写成#或空 #}
+							{% csrf_token %}
+						    {% for field in form %}{# 遍历字段 #}
+						    	{% if not field.is_hidden %}{#如果不是隐藏字段则显示出来#}
+						        	<label for="{{ field.id_for_label }}">{{field.label}}</label>{# 去冒号，field.label代表用户名和密码这两个词语#}
+						        {% endif %}
+						        {{ field }}
+						        <p class="text-danger">{{ field.errors.as_text }}</p>
+						        {# 字段错误标红 #}
+						    {% endfor %}
+						    <span class="pull-left text-danger">{{ form.non_field_errors }}</span>{# 其他错误标红#}
+						    <div class="pull-right">
+						    	<input type="submit" value="{{submit_text}}" class="btn btn-primary">
+						    	<button class="btn btn-default" onclick="window.location.href='{{ return_back_url }}'">返回</button>
+						    </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+
+
+
+
+
+2020/01/22
+
+
+<li>昵称：{{user.profile.nickname}}<a href="{% url 'change_nickname' %}?from={{request.get_full_path}}">修改昵称</a></li>
+
+问题：没有昵称nickname时候没有profile
+新增get_nickname方法(注意和class同级)
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)  # 一个用户对应一个昵称
+    nickname = models.CharField(max_length=20, verbose_name='昵称')  # 拓展nickname
+
+    def __str__(self):
+        return '<Profile:%s for %s>' % (self.nickname, self.user.username)
+
+
+def get_nickname(self):
+    if Profile.objects.filter(user=self).exists():
+        profile = Profile.objects.get(user=self)
+        return profile.nickname
+    else:
+        return ''
+
+
+User.get_nickname = get_nickname
+
+改为：
+<li>昵称：{{user.get_nickname}}<a href="{% url 'change_nickname' %}?from={{request.get_full_path}}">修改昵称</a></li>
+
+加强：
+def get_nickname_or_username(self):#有昵称显示昵称，无昵称显示用户名
+	if Profile.objects.filter(user=self).exists():
+		profile = Profile.objects.get(user=self)
+		return profile.nickname
+	else:
+		return self.username
+
+User.get_nickname_or_username = get_nickname_or_username
+
+
+<li>昵称：{{user.get_nickname_or_username}}<a href="{% url 'change_nickname' %}?from={{request.get_full_path}}">修改昵称</a></li>
+其他模板user.username改为user.get_nickname_or_username（模板页面方法不需要加()）
+
+comment.views.py def update_comment()
+data['username'] = comment.user.username改为
+data['username'] = comment.user.get_nickname_or_username()#需要加括号
+data['reply_to'] = comment.reply_to..get_nickname_or_username()
+
+
+
+
+
+
+
+绑定邮箱
+需求分析：需要两个字段
+1、邮箱
+2、验证码
+
+settings.py
+
+# 发送邮件设置
+#QQ邮箱设置开启POP3/SMTP服务
+# https://docs.djangoproject.com/en/2.0/ref/settings/#email
+# https://docs.djangoproject.com/en/2.0/topics/email/
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = '380983372@qq.com'
+EMAIL_HOST_PASSWORD = 'ihbhbdtrxighbgja'  # 授权码
+EMAIL_SUBJECT_PREFIX = '[炽蝶的博客] '
+EMAIL_USE_TLS = True  # 与SMTP服务器通信时，是否启动TLS链接(安全链接)
+
+
+
+user.forms.py
+
+class BindEmailForm(forms.Form):
+    email = forms.CharField(label='邮箱', widget=forms.EmailInput(
+        attrs={'class': 'form-control', 'placeholder': '请输入正确的邮箱'}))
+
+    ver_code = forms.CharField(label='验证码', required=False, widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': '点击“发送验证码”发送到邮箱'}))
+
+
+
+user.views.py
+
+def bind_email(request):
+
+
+user.urls.py
+
+path('bind_email/', views.bind_email, name='bind_email'),
+path('send_vercode/', views.send_vercode, name='send_vercode'),
+
+
+user_info.html
+
+<li>邮箱：{%if user.email%}{{user.email}}{%else%}未绑定<a href="{% url 'bind_email' %}?from={{request.get_full_path}}">绑定邮箱</a>{%endif%}</li>
+
+绑定邮箱需要额外增加发送验证码这个按钮，故在通用模板form.html按钮位置插入
+
+<div class="pull-left">
+	{% block other_buttons %}{% endblock %}
+</div>
+
+
+user.templates.user新建bind_email.html
+
+{% extends 'form.html' %}
+
+{% block other_buttons %}
+	<button class="btn btn-primary">发送验证码</button>
+{% endblock %}
+
+{% block script_extends %}{# form继承base #}
+
+{% endblock %}

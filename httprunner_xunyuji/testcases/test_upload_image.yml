@@ -1,0 +1,19 @@
+# 上传头像测试用例
+- config:
+    name: TestUploadImage
+      
+# 引用登录成功用例
+- test:
+    name: login_success
+    testcase: testcases/test_login_success.yml
+
+
+# 上传头像
+- test:
+    name: upload image
+    api: api/upload_image.yml
+    variables:
+        file: data/girls.png
+    validate:
+        - eq: ["status_code", 200]
+        - eq: [content.status, 1]

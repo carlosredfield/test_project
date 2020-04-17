@@ -1,0 +1,10 @@
+# 修改个人信息测试用例集
+config:
+  name: TestPersonalSettingSuite
+
+testcases:
+
+  test_personal_setting:
+    testcase: /testcases/test_personal_setting.yml
+    parameters:  # 参数化
+      user_name-real_name-idcard-sex-user_type-riskint-company_name-company_idcard: ${P(data/test_personal_setting.csv)}

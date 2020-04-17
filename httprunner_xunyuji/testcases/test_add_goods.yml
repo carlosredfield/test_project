@@ -1,0 +1,25 @@
+# 测试添加商品用例
+- config:
+    name: TestAddGoods
+    variables:
+        gid: 38
+      
+# 引用登录成功用例
+- test:
+    name: login_success
+    testcase: testcases/test_login_success.yml
+
+# 浏览商品
+- test:
+    name: broswe_shop
+    api: api/shop.yml
+
+# 添加商品
+- test:
+    name: add_goods
+    api: api/add_shopping_car.yml
+    variables:
+        gid: $gid
+    validate:
+    - eq: ["status_code", 200]
+    - eq: [content.msg, 添加成功]

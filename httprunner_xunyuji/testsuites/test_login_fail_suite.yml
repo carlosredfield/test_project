@@ -1,0 +1,10 @@
+# 登录失败测试用例集
+config:
+  name: TestLoginFailSuite
+
+testcases:
+
+  case1:
+    testcase: /testcases/test_login_fail.yml
+    parameters:  # 参数话
+      user-psw: ${P(data/test_login_fail.csv)}

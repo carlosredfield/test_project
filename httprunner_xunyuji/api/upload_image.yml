@@ -1,0 +1,18 @@
+# 上传头像接口
+name: upload_image
+base_url: https://www.rzmwzc.com
+# variables:
+#     file: data/girls.jpg
+request:
+    headers:
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: keep-alive
+        Content-Type: multipart/form-data
+    url: /Wapmember/memberinfo/addimg
+    method: POST
+    upload:
+        file: data/girls.jpg
+    verify: False
+validate:
+    - eq: ["status_code", 200]
+    - eq: [content.status, 1]
