@@ -1,0 +1,9 @@
+2020-04-17 15:54:13,521 conftest.py[line:22] INFO 获取cookies
+2020-04-17 15:54:13,537 method.py[line:13] INFO 发起get请求
+2020-04-17 15:54:13,912 conftest.py[line:25] INFO 返回cookies
+2020-04-17 15:54:13,912 conftest.py[line:29] INFO 登录
+2020-04-17 15:54:13,912 method.py[line:18] INFO 发起post请求
+2020-04-17 15:54:14,224 conftest.py[line:33] INFO 登录成功
+2020-04-17 15:54:14,240 test_change_personal_settings.py[line:19] INFO 开始测试：修改个人信息用例
+2020-04-17 15:54:14,240 test_change_personal_settings.py[line:24] INFO 修改个人信息
+2020-04-17 15:54:14,240 method.py[line:18] INFO 发起post请求

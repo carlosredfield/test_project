@@ -1,0 +1,9 @@
+INFO     root:conftest.py:22 获取cookies
+INFO     root:method.py:13 发起get请求
+INFO     root:conftest.py:25 返回cookies
+INFO     root:conftest.py:29 登录
+INFO     root:method.py:18 发起post请求
+INFO     root:conftest.py:33 登录成功
+INFO     root:test_change_personal_settings.py:19 开始测试：修改个人信息用例
+INFO     root:test_change_personal_settings.py:24 修改个人信息
+INFO     root:method.py:18 发起post请求

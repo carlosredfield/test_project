@@ -1,0 +1,12 @@
+INFO     root:test_shopping_car.py:19 购物车模块测试：商品添加至购物车，在购物车内成功添加
+INFO     root:shopping_car_page.py:27 点击"分类"按钮
+INFO     root:classify_page.py:17 点击铁观音
+INFO     root:classify_page.py:19 点击铁观音分类下的2号商品
+INFO     root:goods_page.py:30 点击加入购物车
+INFO     root:base_page.py:72 获取toast
+INFO     root:goods_page.py:52 点击收藏
+INFO     root:home_page.py:18 点击购物车按钮
+INFO     root:shopping_car_page.py:49 删除所有购物车商品
+INFO     root:shopping_car_page.py:37 点击编辑按钮
+INFO     root:shopping_car_page.py:41 点击全选
+INFO     root:shopping_car_page.py:45 点击删除所选

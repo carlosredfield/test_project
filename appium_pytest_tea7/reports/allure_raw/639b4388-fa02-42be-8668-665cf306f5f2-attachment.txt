@@ -1,0 +1,10 @@
+INFO     root:my_page.py:16 点击登录/注册按钮
+INFO     root:test_login.py:25 开始运行登录失败测试
+INFO     root:login_page.py:32 点击密码登录
+INFO     root:login_page.py:15 输入手机号
+INFO     root:login_page.py:21 输入密码
+INFO     root:login_page.py:27 点击登录
+INFO     root:base_page.py:72 获取toast
+INFO     root:login_page.py:48 查找是否存在登录按钮来判断登录是否成功
+INFO     root:login_page.py:51 还存在登录按钮，登录失败
+INFO     root:base_page.py:64 找不到元素

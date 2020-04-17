@@ -1,0 +1,13 @@
+2020-04-17 17:51:07,094 conftest.py[line:37] INFO 开始启动app
+2020-04-17 17:51:50,724 conftest.py[line:40] INFO 启动完毕
+2020-04-17 17:51:50,739 home_page.py[line:13] INFO 点击"我的"跳转到该页
+2020-04-17 17:51:56,208 my_page.py[line:16] INFO 点击登录/注册按钮
+2020-04-17 17:51:57,380 test_login.py[line:25] INFO 开始运行登录失败测试
+2020-04-17 17:51:57,380 login_page.py[line:32] INFO 点击密码登录
+2020-04-17 17:51:58,630 login_page.py[line:15] INFO 输入手机号
+2020-04-17 17:52:01,255 login_page.py[line:21] INFO 输入密码
+2020-04-17 17:52:02,943 login_page.py[line:27] INFO 点击登录
+2020-04-17 17:52:03,583 base_page.py[line:72] INFO 获取toast
+2020-04-17 17:52:04,552 login_page.py[line:48] INFO 查找是否存在登录按钮来判断登录是否成功
+2020-04-17 17:52:04,708 login_page.py[line:51] INFO 还存在登录按钮，登录失败
+2020-04-17 17:52:15,224 base_page.py[line:64] INFO 找不到元素
