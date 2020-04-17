@@ -11,16 +11,20 @@ python+requests+pytest+allure
 	logs：		存放日志
 	reports：	测试报告
 	test_case：	测试用例
-	test_main:	启动
+	test_run:	主启动
 	util： 		公共方法
 
 
 单条用例测试示例
 
-![购物车测试用例]()
+![购物车模块测试]()
 
 ![所需数据]()
 
 ![运行结果]()
 
 ![测试报告]()
+
+![自动发邮件]()
+
+![jenkins持续集成]()

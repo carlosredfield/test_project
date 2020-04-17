@@ -12,3 +12,7 @@ debugtalk用于编写用例所需辅助函数。
 ![运行结果](https://github.com/carlosredfield/test_project/blob/master/zPicture_Explain/httprunner/3.png)
 
 ![测试报告](https://github.com/carlosredfield/test_project/blob/master/zPicture_Explain/httprunner/4.png)
+
+![locust性能测试](https://github.com/carlosredfield/test_project/blob/master/zPicture_Explain/httprunner/4.png)
+
+
